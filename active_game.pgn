@@ -1,0 +1,12 @@
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "V7P3R"]
+[Black "Stockfish"]
+[Result "*"]
+[BlackElo "0"]
+[WhiteElo "1600"]
+
+1. Nc3 e6 2. h4 Be7 3. Rb1 a6 4. e4 d5 5. Nge2 b6 6. d4 c6 7. exd5 cxd5 8. a3 Bb7 9. Nxd5 Bxd5 10. c3 Nd7 11. Rh3 Ngf6 12. a4 Nf8 13. b4 h5 14. b5 a5 15. Kd2 Ng4 16. f3 Nf6 17. f4 Ne4+ 18. Kd3 Nf2+ 19. Kd2 Rc8 20. f5 Nxd1 21. fxe6 Nf2 22. Ke3 Bxh4 23. Bb2 Qf6 24. Rxh4 Qxh4 25. Rc1 Ng6 26. e7 Rc7 27. Kd2 Qxe7 28. Rd1 Bb3 29. d5 Rc5 30. d6 Qe5 31. Rc1 Ne7 32. dxe7 Rh6 33. Rd1 Re6 34. g4 hxg4 35. Bh3 Qe3+ 36. Ke1 Qxe2# *
+

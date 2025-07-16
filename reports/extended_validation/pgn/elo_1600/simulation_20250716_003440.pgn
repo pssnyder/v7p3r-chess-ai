@@ -1,0 +1,65 @@
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "V7P3R"]
+[Black "Stockfish"]
+[Result "0-1"]
+[BlackElo "0"]
+[Termination "Checkmate"]
+[WhiteElo "1600"]
+
+1. Nc3 Nf6 2. h4 b6 3. Rb1 d6 4. e4 e6 5. Nge2 c5 6. d4 d5 7. exd5 exd5 8. a3 h6 9. Rh3 Bd6 10. f4 Nc6 11. Nxd5 cxd4 12. Kd2 Nxd5 13. a4 Bxh3 14. Qe1 Bf5 15. c3 Qe7 16. b4 Nxc3 17. Bb2 Qe3# 0-1
+
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "Stockfish"]
+[Black "V7P3R"]
+[Result "1-0"]
+[BlackElo "1600"]
+[Termination "Checkmate"]
+[WhiteElo "0"]
+
+1. e4 e5 2. Nc3 Nc6 3. Nf3 Bb4 4. Bc4 Bxc3 5. bxc3 Nd4 6. cxd4 f6 7. O-O h5 8. h3 Qe7 9. Rb1 g6 10. Qe1 a5 11. h4 Ra7 12. Qe3 d6 13. a3 Bg4 14. Be2 c5 15. Bb5+ Kf7 16. Bc4+ d5 17. Bxd5+ Kg7 18. dxc5 b6 19. Bb2 bxc5 20. Nh2 a4 21. Qe1 g5 22. f3 Rh7 23. Ba1 Kh8 24. Bc3 f5 25. fxg4 gxh4 26. Rxf5 Nf6 27. Bxe5 Qxe5 28. Rxe5 h3 29. Qf2 hxg2 30. Qxf6+ Rhg7 31. Rb8+ Kh7 32. Bg8+ Rxg8 33. Rb7+ Rg7 34. Rxh5+ Kg8 35. Qd8# 1-0
+
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "V7P3R"]
+[Black "Stockfish"]
+[Result "0-1"]
+[BlackElo "0"]
+[Termination "Checkmate"]
+[WhiteElo "1600"]
+
+1. Nc3 e6 2. h4 Bb4 3. Rb1 h6 4. e4 a6 5. Nge2 d6 6. d4 Nf6 7. d5 e5 8. Rh3 Nxe4 9. Rd3 Bg4 10. a3 Bxc3+ 11. bxc3 Nc5 12. Rxb7 Nxd3+ 13. Qxd3 Nd7 14. Rxc7 Nc5 15. Rxf7 Nxd3+ 16. Kd2 Nxc1 17. a4 Qxh4 18. f3 Kxf7 19. f4 Na2 20. fxe5 dxe5 21. d6 Qf2 22. d7 Rhd8 23. Kd3 Qc5 24. g3 Bf5+ 25. Kd2 Rac8 26. g4 Bxg4 27. Bh3 Bxh3 28. Kd3 Bf1 29. Kd2 Qf2 30. a5 Bxe2 31. c4 Bf1+ 32. Kd1 Qe2# 0-1
+
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "Stockfish"]
+[Black "V7P3R"]
+[Result "1-0"]
+[BlackElo "1600"]
+[Termination "Checkmate"]
+[WhiteElo "0"]
+
+1. e3 e5 2. a3 b6 3. Nc3 Bb7 4. Nf3 Be7 5. Bd3 e4 6. Nxe4 f6 7. O-O c5 8. b4 a6 9. Bb2 Ra7 10. h4 Kf7 11. Re1 g6 12. Nfg5+ Ke8 13. bxc5 d6 14. Nxd6+ Qxd6 15. cxd6 h5 16. c4 Rh7 17. Ne6 g5 18. Bxh7 g4 19. Bxg8 g3 20. c5 bxc5 21. Qxh5+ Kd7 22. dxe7 Bxg2 23. e8=Q+ Kd6 24. Qxc5# 1-0
+
+[Event "V7P3R vs Stockfish Simulation"]
+[Site "Local"]
+[Date "2025.07.16"]
+[Round "1"]
+[White "V7P3R"]
+[Black "Stockfish"]
+[Result "0-1"]
+[BlackElo "0"]
+[Termination "Checkmate"]
+[WhiteElo "1600"]
+
+1. Nc3 e6 2. h4 Be7 3. Rb1 a6 4. e4 d5 5. Nge2 b6 6. d4 c6 7. exd5 cxd5 8. a3 Bb7 9. Nxd5 Bxd5 10. c3 Nd7 11. Rh3 Ngf6 12. a4 Nf8 13. b4 h5 14. b5 a5 15. Kd2 Ng4 16. f3 Nf6 17. f4 Ne4+ 18. Kd3 Nf2+ 19. Kd2 Rc8 20. f5 Nxd1 21. fxe6 Nf2 22. Ke3 Bxh4 23. Bb2 Qf6 24. Rxh4 Qxh4 25. Rc1 Ng6 26. e7 Rc7 27. Kd2 Qxe7 28. Rd1 Bb3 29. d5 Rc5 30. d6 Qe5 31. Rc1 Ne7 32. dxe7 Rh6 33. Rd1 Re6 34. g4 hxg4 35. Bh3 Qe3+ 36. Ke1 Qxe2# 0-1
+
