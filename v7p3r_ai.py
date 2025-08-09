@@ -1,3 +1,93 @@
+import sys
+import chess
+import random
+import pickle
+import os
+import numpy as np
+import time
+from chess_core import ChessConfig, BoardEvaluator, FeatureExtractor
+from personal_style_analyzer import PersonalStyleAnalyzer
+
+# UCI protocol handler for V7P3R Chess AI
+class UCIHandler:
+    """Handles UCI protocol communication for V7P3R Chess AI"""
+    def __init__(self, ai):
+        self.ai = ai
+        self.board = chess.Board()
+        self.running = True
+
+    def run(self):
+        while self.running:
+            try:
+                line = sys.stdin.readline()
+                if not line:
+                    break
+                line = line.strip()
+                if line == "uci":
+                    print("id name V7P3R Chess AI")
+                    print("id author pssnyder")
+                    print("uciok")
+                    sys.stdout.flush()
+                elif line == "isready":
+                    print("readyok")
+                    sys.stdout.flush()
+                elif line.startswith("setoption"):
+                    pass  # Optionally handle engine options
+                elif line == "ucinewgame":
+                    self.board.reset()
+                elif line.startswith("position"):
+                    self._handle_position(line)
+                elif line.startswith("go"):
+                    self._handle_go(line)
+                    sys.stdout.flush()
+                elif line == "quit":
+                    self.running = False
+                elif line == "stop":
+                    pass  # Handle stop command
+                # Add more UCI commands as needed
+            except Exception as e:
+                print(f"info string UCI error: {e}")
+                sys.stdout.flush()
+
+    def _handle_position(self, line):
+        tokens = line.split()
+        if "startpos" in tokens:
+            self.board.reset()
+            moves_idx = tokens.index("startpos") + 1
+        elif "fen" in tokens:
+            fen_idx = tokens.index("fen") + 1
+            fen = " ".join(tokens[fen_idx:fen_idx+6])
+            self.board.set_fen(fen)
+            moves_idx = fen_idx + 6
+        else:
+            return
+        if "moves" in tokens:
+            moves_idx = tokens.index("moves") + 1
+            for move in tokens[moves_idx:]:
+                try:
+                    self.board.push_uci(move)
+                except Exception:
+                    pass
+
+    def _handle_go(self, line):
+        # For simplicity, ignore time controls and just pick a move
+        try:
+            move = self.ai.get_move(self.board)
+            if move:
+                print(f"bestmove {move.uci()}")
+            else:
+                print("bestmove 0000")
+        except Exception as e:
+            print(f"info string Error getting move: {e}")
+            print("bestmove 0000")
+        sys.stdout.flush()
+# UCI entry point
+def main_uci():
+    config = ChessConfig()
+    ai = V7P3RAI(config)
+    uci = UCIHandler(ai)
+    uci.run()
+
 # v7p3r_ai.py
 """Main AI handler for V7P3R Chess AI
 Coordinates between different components of the chess AI to facilitate gameplay using the specified model.
@@ -23,14 +113,18 @@ class V7P3RAI:
         self.model = None
         self.evaluator = BoardEvaluator(self.config)
         self.feature_extractor = FeatureExtractor()
-        self.search_depth = self.v7p3r_config.get("search_depth", 3)
+        self.search_depth = self.v7p3r_config.get("search_depth", 2)  # Reduced for Arena compatibility
         self.model_path = self.v7p3r_config.get("model_path", "models/v7p3r_model.pkl")
-        self.use_personal_history = self.v7p3r_config.get("use_personal_history", True)
+        self.use_personal_history = False  # Disabled for Arena compatibility
         
-        # Load personal style analyzer if enabled
+        # Load personal style analyzer if enabled - simplified for Arena compatibility
         self.personal_style = None
         if self.use_personal_history:
-            self.personal_style = PersonalStyleAnalyzer(self.config)
+            try:
+                self.personal_style = PersonalStyleAnalyzer(self.config)
+            except Exception as e:
+                print(f"info string Personal style analyzer disabled: {e}")
+                self.personal_style = None
         
         # Load trained model if available
         self._load_model()
@@ -54,28 +148,38 @@ class V7P3RAI:
         if board.is_game_over():
             return None
         
-        # Check for personal style moves if enabled
+        # Quick move for Arena compatibility - limit analysis time
+        legal_moves = list(board.legal_moves)
+        if not legal_moves:
+            return None
+            
+        # Very simple move selection for faster response
+        if len(legal_moves) == 1:
+            return legal_moves[0]
+        
+        # Check for personal style moves if enabled (but with timeout)
         if self.personal_style:
-            # Detect game phase
-            game_phase = self.personal_style.detect_game_phase(board)
-            
-            # Check for checkmate patterns first (highest priority)
-            checkmate_move = self.personal_style.check_for_checkmate_pattern(board)
-            if checkmate_move:
-                print("Using checkmate pattern move")
-                return checkmate_move
-            
-            # Try to get a move from personal history based on game phase
-            personal_move = self.personal_style.get_personal_move(board, phase=game_phase)
-            if personal_move:
-                print(f"Using personal {game_phase} style move")
-                return personal_move
+            try:
+                # Detect game phase
+                game_phase = self.personal_style.detect_game_phase(board)
+                
+                # Check for checkmate patterns first (highest priority)
+                checkmate_move = self.personal_style.check_for_checkmate_pattern(board)
+                if checkmate_move:
+                    return checkmate_move
+                
+                # Try to get a move from personal history based on game phase
+                personal_move = self.personal_style.get_personal_move(board, phase=game_phase)
+                if personal_move:
+                    return personal_move
+            except Exception as e:
+                print(f"info string Personal style error: {e}")
         
         # Use model-based evaluation if model is loaded
         if self.model:
             return self._get_model_move(board)
         else:
-            # Fallback to static evaluation
+            # Fallback to static evaluation with reduced depth for speed
             return self._get_static_evaluation_move(board)
     
     def _get_model_move(self, board):
@@ -320,3 +424,20 @@ class QNetwork:
     def _relu_derivative(self, x):
         """Derivative of ReLU function"""
         return np.where(x > 0, 1, 0)
+
+
+# CLI entry point for UCI or normal mode
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="V7P3R Chess AI")
+    parser.add_argument("--uci", action="store_true", help="Run engine in UCI mode")
+    args = parser.parse_args()
+    
+    # If no arguments provided, assume UCI mode (for Arena compatibility)
+    if len(sys.argv) == 1:
+        main_uci()
+    elif args.uci:
+        main_uci()
+    else:
+        print("V7P3R Chess AI - Use --uci for UCI mode")
+        main_uci()  # Default to UCI mode
