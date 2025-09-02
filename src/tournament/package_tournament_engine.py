@@ -443,19 +443,19 @@ def create_package_structure(model_path, gen_number):
     
     # Create the main engine script
     engine_script = os.path.join(package_dir, "v7p3r_tournament_engine.py")
-    with open(engine_script, 'w') as f:
+    with open(engine_script, 'w', encoding='utf-8') as f:
         f.write(create_tournament_engine_wrapper())
     print(f"  ✅ Created engine wrapper")
     
     # Create the AI implementation
     ai_script = os.path.join(package_dir, "v7p3r_tournament_ai.py") 
-    with open(ai_script, 'w') as f:
+    with open(ai_script, 'w', encoding='utf-8') as f:
         f.write(create_tournament_ai())
     print(f"  ✅ Created tournament AI")
     
     # Create requirements.txt
     requirements = os.path.join(package_dir, "requirements.txt")
-    with open(requirements, 'w') as f:
+    with open(requirements, 'w', encoding='utf-8') as f:
         f.write("""torch>=2.0.0
 python-chess>=1.999
 numpy>=1.21.0
@@ -464,7 +464,7 @@ numpy>=1.21.0
     
     # Create README
     readme = os.path.join(package_dir, "README.md")
-    with open(readme, 'w') as f:
+    with open(readme, 'w', encoding='utf-8') as f:
         f.write(f"""# V7P3R Chess AI v2.0 Tournament Engine
 
 ## Tournament Package Information
@@ -487,7 +487,7 @@ python v7p3r_tournament_engine.py
 
 ## Arena Integration
 
-1. In Arena, go to Engines → Install New Engine
+1. In Arena, go to Engines -> Install New Engine
 2. Browse to `v7p3r_tournament_engine.py`
 3. Set engine name to "V7P3R v2.0 Gen{gen_number}"
 4. Configure time controls as needed
@@ -521,7 +521,7 @@ Record your tournament results here:
     
     # Create a batch file for Windows
     batch_file = os.path.join(package_dir, "run_engine.bat")
-    with open(batch_file, 'w') as f:
+    with open(batch_file, 'w', encoding='utf-8') as f:
         f.write(f"""@echo off
 echo Starting V7P3R Tournament Engine v2.0 Generation {gen_number}
 python v7p3r_tournament_engine.py
@@ -572,7 +572,7 @@ except Exception as e:
     sys.exit(1)
 """
         
-        with open("test_engine.py", 'w') as f:
+        with open("test_engine.py", 'w', encoding='utf-8') as f:
             f.write(test_script)
         
         # Run the test
@@ -597,7 +597,7 @@ def create_arena_instructions(package_dir, package_name):
 ## Step 1: Install the Engine
 
 1. Open Arena Chess GUI
-2. Go to **Engines** → **Install New Engine**
+2. Go to **Engines** -> **Install New Engine**
 3. Navigate to: `{os.path.abspath(package_dir)}`
 4. Select: `v7p3r_tournament_engine.py`
 5. Engine Name: `V7P3R v2.0 Tournament`
@@ -605,7 +605,7 @@ def create_arena_instructions(package_dir, package_name):
 
 ## Step 2: Configure Engine Settings
 
-1. Go to **Engines** → **Manage Engines**
+1. Go to **Engines** -> **Manage Engines**
 2. Find "V7P3R v2.0 Tournament" in the list
 3. Click **Details** and configure:
    - **Time per move**: 5-10 seconds (for testing)
@@ -615,7 +615,7 @@ def create_arena_instructions(package_dir, package_name):
 
 ## Step 3: Test the Engine
 
-1. Go to **Engines** → **New Engine Match**
+1. Go to **Engines** -> **New Engine Match**
 2. Select V7P3R v2.0 as Player 1
 3. Select another engine as Player 2
 4. Set time control: 5+3 (5 minutes + 3 second increment)
@@ -624,7 +624,7 @@ def create_arena_instructions(package_dir, package_name):
 ## Step 4: Tournament Setup
 
 ### Quick Tournament:
-1. **Engines** → **Tournament**
+1. **Engines** -> **Tournament**
 2. Add V7P3R v2.0 and other engines
 3. Set time control: 15+5 or 10+3
 4. Set rounds: 10-20 games per opponent
@@ -688,7 +688,7 @@ Good luck in your tournaments! 🏆
 """
 
     instructions_file = os.path.join(package_dir, "ARENA_SETUP.md")
-    with open(instructions_file, 'w') as f:
+    with open(instructions_file, 'w', encoding='utf-8') as f:
         f.write(instructions)
     
     print(f"  ✅ Created Arena setup instructions")

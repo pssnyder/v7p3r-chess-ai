@@ -57,6 +57,10 @@ class V7P3RGPUGeneticTrainer:
         self.bounty_system = ExtendedBountyEvaluator()
         self.board_evaluator = BoardEvaluator()
         
+        # Performance optimizer for move preparation
+        from core.performance_optimizer import PerformanceOptimizer
+        self.performance_optimizer = PerformanceOptimizer()
+        
         # Feature extractor
         self.feature_extractor = GPUChessFeatureExtractor()
         self.feature_extractor.to(self.device)
@@ -183,40 +187,87 @@ class V7P3RGPUGeneticTrainer:
                 break
             
             try:
-                # Extract current position features
+                # Use performance optimizer for smart move preparation
+                try:
+                    optimized_moves = self.performance_optimizer.optimize_move_selection(board, time_limit=0.02)
+                    if optimized_moves:
+                        # Use pre-filtered and ordered moves from performance optimizer
+                        candidate_moves = [move for move, score in optimized_moves[:min(10, len(optimized_moves))]]
+                    else:
+                        candidate_moves = legal_moves
+                except:
+                    # Fallback if performance optimizer fails
+                    candidate_moves = legal_moves
+                
+                # Enhanced move selection with multiple evaluation methods
+                best_move = None
+                best_combined_score = -float('inf')
+                
+                # Extract current position features for model
                 features = self.feature_extractor.extract_features(board)
-                features_tensor = torch.tensor(features, dtype=torch.float32, device=self.device).unsqueeze(0).unsqueeze(0)  # Add sequence dimension
+                features_tensor = torch.tensor(features, dtype=torch.float32, device=self.device).unsqueeze(0).unsqueeze(0)
                 
-                # Get model prediction
-                output, _ = model(features_tensor)
-                move_values = output.squeeze().cpu().numpy()
-                
-                # Ensure move_values is 1D
-                if move_values.ndim == 0:
-                    move_values = np.array([move_values])
-                elif move_values.ndim > 1:
-                    move_values = move_values.flatten()
-                
-                # Select best move
-                best_move_idx = 0
-                best_value = -float('inf')
-                
-                for i, move in enumerate(legal_moves):
-                    move_idx = min(i, len(move_values) - 1)
-                    value = move_values[move_idx]
+                for move in candidate_moves:
+                    # Make move on copy to get resulting position
+                    board_copy = board.copy()
+                    board_copy.push(move)
                     
-                    if value > best_value:
-                        best_value = value
-                        best_move_idx = i
+                    # Get features for resulting position
+                    next_features = self.feature_extractor.extract_features(board_copy)
+                    next_features_tensor = torch.tensor(next_features, dtype=torch.float32, device=self.device).unsqueeze(0).unsqueeze(0)
+                    
+                    # Get model prediction for resulting position
+                    output, _ = model(next_features_tensor)
+                    nn_value = output.squeeze().cpu().item() if output.numel() > 0 else 0.0
+                    
+                    # Get enhanced bounty evaluation
+                    try:
+                        bounty_score = self.bounty_system.evaluate_move(board, move)
+                        
+                        # Get move preparation features for additional context
+                        move_features = self.performance_optimizer.get_neural_network_features(board, move)
+                        
+                        # Combined evaluation with multiple factors (V2.0 enhancement)
+                        combined_score = (
+                            nn_value * 0.4 +                        # Neural network prediction
+                            bounty_score.total() * 0.003 +          # Total bounty (scaled)
+                            bounty_score.offensive_total() * 0.002 + # Offensive component
+                            bounty_score.defensive_total() * 0.003 + # Defensive component (weighted higher for balance)
+                            bounty_score.outcome_total() * 0.004 +   # Outcome-based rewards
+                            move_features[:5].sum() * 0.1 if len(move_features) >= 5 else 0  # Move preparation features
+                        )
+                    except Exception as e:
+                        # Fallback to just neural network value
+                        combined_score = nn_value
+                    
+                    if combined_score > best_combined_score:
+                        best_combined_score = combined_score
+                        best_move = move
                 
-                chosen_move = legal_moves[best_move_idx]
+                # Fallback if no move was selected
+                if best_move is None:
+                    best_move = legal_moves[0]
                 
-                # Calculate bounty reward BEFORE making the move
+                chosen_move = best_move
+                
+                # Calculate comprehensive reward BEFORE making the move
                 try:
                     bounty_score = self.bounty_system.evaluate_move(board, chosen_move)
-                    bounty_reward = bounty_score.total()
+                    
+                    # Enhanced reward calculation with all bounty components (V2.0)
+                    bounty_reward = (
+                        bounty_score.offensive_total() * 0.8 +      # Offensive play
+                        bounty_score.defensive_total() * 1.0 +      # Defensive play (important for balance!)
+                        bounty_score.outcome_total() * 0.9 +        # Outcome-based rewards
+                        bounty_score.center_control * 0.3 +         # Specific strategic components
+                        bounty_score.king_safety * 0.5 +
+                        bounty_score.tactical_patterns * 0.7 +
+                        bounty_score.material_balance * 0.4 +
+                        bounty_score.initiative * 0.6
+                    )
+                    
                 except Exception as e:
-                    print(f"Bounty evaluation error: {e}")
+                    print(f"Enhanced bounty evaluation error: {e}")
                     bounty_reward = 0.0
                 
                 board.push(chosen_move)

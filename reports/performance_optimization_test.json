@@ -1,0 +1,51 @@
+{
+  "configuration": {
+    "max_candidates_opening": 25,
+    "max_candidates_middlegame": 20,
+    "max_candidates_endgame": 30,
+    "complexity_threshold_high": 80.0,
+    "complexity_threshold_low": 20.0,
+    "bounty_weight": 0.6,
+    "move_order_weight": 0.4,
+    "enable_pruning": true,
+    "enable_caching": true
+  },
+  "current_metrics": {
+    "moves_evaluated": 25,
+    "evaluation_time": 0.009972572326660156,
+    "moves_per_second": 2506.875776991489,
+    "accuracy_score": 0.0,
+    "efficiency_ratio": 1.0,
+    "memory_usage": 0.0
+  },
+  "performance_history": [
+    {
+      "moves_evaluated": 20,
+      "evaluation_time": 0.00797724723815918,
+      "moves_per_second": 2507.1305179473384,
+      "accuracy_score": 0.0,
+      "efficiency_ratio": 1.0,
+      "memory_usage": 0.0
+    },
+    {
+      "moves_evaluated": 20,
+      "evaluation_time": 0.007978439331054688,
+      "moves_per_second": 2506.75591680612,
+      "accuracy_score": 0.0,
+      "efficiency_ratio": 1.0,
+      "memory_usage": 0.0
+    },
+    {
+      "moves_evaluated": 25,
+      "evaluation_time": 0.009972572326660156,
+      "moves_per_second": 2506.875776991489,
+      "accuracy_score": 0.0,
+      "efficiency_ratio": 1.0,
+      "memory_usage": 0.0
+    }
+  ],
+  "cache_statistics": {
+    "position_cache_size": 3,
+    "evaluation_cache_size": 65
+  }
+}
