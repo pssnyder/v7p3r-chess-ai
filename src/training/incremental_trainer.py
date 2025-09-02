@@ -27,7 +27,10 @@ class V7P3RIncrementalTrainer(V7P3RGPUGeneticTrainer):
         
     def find_latest_best_model(self) -> Optional[str]:
         """Find the most recent best model file"""
-        model_pattern = "models/best_gpu_model_gen_*.pth"
+        import os
+        # Use absolute path from script location
+        script_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        model_pattern = os.path.join(script_dir, "models", "best_gpu_model_gen_*.pth")
         model_files = glob.glob(model_pattern)
         
         if not model_files:
@@ -161,8 +164,8 @@ class V7P3RIncrementalTrainer(V7P3RGPUGeneticTrainer):
             'original_report': report
         }
         
-        report_path = f"reports/incremental_training_report_{timestamp}.json"
-        os.makedirs("reports", exist_ok=True)
+        report_path = f"../../reports/incremental_training_report_{timestamp}.json"
+        os.makedirs("../../reports", exist_ok=True)
         
         with open(report_path, 'w') as f:
             json.dump(incremental_report, f, indent=2)

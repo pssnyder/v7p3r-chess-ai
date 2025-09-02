@@ -218,13 +218,7 @@ class V7P3RGPUGeneticTrainer:
                     
                     # Get model prediction for resulting position
                     output, _ = model(next_features_tensor)
-                    # Convert 64-element output tensor to scalar by taking the mean
-                    if output.numel() > 1:
-                        nn_value = output.squeeze().mean().cpu().item()
-                    elif output.numel() == 1:
-                        nn_value = output.squeeze().cpu().item()
-                    else:
-                        nn_value = 0.0
+                    nn_value = output.squeeze().cpu().item() if output.numel() > 0 else 0.0
                     
                     # Get enhanced bounty evaluation
                     try:
@@ -462,8 +456,8 @@ class V7P3RGPUGeneticTrainer:
             
             # Save best model
             best_model = self.population[best_idx]
-            model_path = f"../../models/best_gpu_model_gen_{self.generation}.pth"
-            os.makedirs("../../models", exist_ok=True)
+            model_path = f"models/best_gpu_model_gen_{self.generation}.pth"
+            os.makedirs("models", exist_ok=True)
             
             best_model.save_model(model_path)
             print(f"New best fitness: {max_fitness:.2f} (saved to {model_path})")
@@ -527,7 +521,7 @@ class V7P3RGPUGeneticTrainer:
                 
                 # Save progress periodically
                 if (gen + 1) % 10 == 0:
-                    self.save_training_progress(f"../../reports/training_progress_gen_{self.generation-1}.json")
+                    self.save_training_progress(f"reports/training_progress_gen_{self.generation-1}.json")
                 
                 # Early stopping check
                 if len(self.fitness_history) >= 20:
@@ -559,8 +553,8 @@ class V7P3RGPUGeneticTrainer:
         
         # Save final results
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        report_path = f"../../reports/gpu_training_report_{timestamp}.json"
-        os.makedirs("../../reports", exist_ok=True)
+        report_path = f"reports/gpu_training_report_{timestamp}.json"
+        os.makedirs("reports", exist_ok=True)
         
         with open(report_path, 'w') as f:
             json.dump(final_report, f, indent=2)
