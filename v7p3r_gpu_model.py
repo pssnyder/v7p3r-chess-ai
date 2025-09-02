@@ -80,6 +80,9 @@ class V7P3RGPU_LSTM(nn.Module):
         """Forward pass through the network"""
         # x shape: (batch_size, sequence_length, input_size)
         
+        # Ensure LSTM parameters are contiguous for optimal performance
+        self.lstm.flatten_parameters()
+        
         # LSTM forward pass
         lstm_out, hidden = self.lstm(x, hidden)
         
@@ -137,6 +140,9 @@ class V7P3RGPU_LSTM(nn.Module):
                 mutations = torch.normal(0, mutation_strength, param.shape, device=self.device)
                 param.data[mutation_mask] += mutations[mutation_mask]
         
+        # Ensure parameters are contiguous after mutation
+        new_model.lstm.flatten_parameters()
+        
         return new_model
     
     def crossover(self, other: 'V7P3RGPU_LSTM', crossover_rate: float = 0.5) -> 'V7P3RGPU_LSTM':
@@ -153,6 +159,9 @@ class V7P3RGPU_LSTM(nn.Module):
             ):
                 crossover_mask = torch.rand_like(parent1_param) < crossover_rate
                 child_param.data = torch.where(crossover_mask, parent1_param.data, parent2_param.data)
+        
+        # Ensure parameters are contiguous after crossover
+        child.lstm.flatten_parameters()
         
         return child
     
@@ -184,6 +193,10 @@ class V7P3RGPU_LSTM(nn.Module):
         )
         
         model.load_state_dict(checkpoint['state_dict'])
+        
+        # Ensure parameters are contiguous after loading
+        model.lstm.flatten_parameters()
+        
         return model
 
 

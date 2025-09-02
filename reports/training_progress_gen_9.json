@@ -1,0 +1,59 @@
+{
+  "generation": 10,
+  "best_fitness": 47479.5,
+  "fitness_history": [
+    20913.21875,
+    15161.75,
+    14271.3125,
+    12423.625,
+    17358.03125,
+    16120.0,
+    14997.21875,
+    19368.0625,
+    26750.375,
+    30001.65625
+  ],
+  "stats": {
+    "generations_trained": 10,
+    "total_games_played": 480,
+    "average_fitness_history": [
+      20913.21875,
+      15161.75,
+      14271.3125,
+      12423.625,
+      17358.03125,
+      16120.0,
+      14997.21875,
+      19368.0625,
+      26750.375,
+      30001.65625
+    ],
+    "best_fitness_history": [
+      42278.0,
+      42278.0,
+      30288.0,
+      22875.0,
+      37461.5,
+      36317.0,
+      25874.0,
+      47479.5,
+      43640.0,
+      43640.0
+    ],
+    "training_time": 0.0
+  },
+  "config": {
+    "population_size": 16,
+    "games_per_evaluation": 3,
+    "max_parallel_evaluations": 4,
+    "tournament_size": 3,
+    "mutation_rate": 0.08,
+    "max_moves_per_game": 120,
+    "model": {
+      "input_size": 816,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "output_size": 64
+    }
+  }
+}

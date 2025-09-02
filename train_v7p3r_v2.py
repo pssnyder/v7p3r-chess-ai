@@ -11,6 +11,7 @@ from pathlib import Path
 
 from v7p3r_genetic_trainer import GeneticTrainer, GeneticConfig
 from v7p3r_gpu_genetic_trainer_clean import V7P3RGPUGeneticTrainer
+from incremental_trainer import V7P3RIncrementalTrainer
 from training_configs import (
     get_initial_exploration_config, get_development_config, 
     get_production_config, get_quick_test_config, 
@@ -65,6 +66,8 @@ def main():
                         help='Start training monitor in background')
     parser.add_argument('--gpu', action='store_true',
                         help='Use GPU acceleration (requires PyTorch/CUDA)')
+    parser.add_argument('--continue-training', action='store_true',
+                        help='Load previous best model and continue training')
     
     args = parser.parse_args()
     
@@ -169,7 +172,12 @@ def main():
                 }
             }
             
-            trainer = V7P3RGPUGeneticTrainer(gpu_config)
+            # Use incremental trainer if continue-training is requested
+            if args.continue_training:
+                print("Using incremental trainer to continue from previous best model")
+                trainer = V7P3RIncrementalTrainer(gpu_config, load_previous_best=True)
+            else:
+                trainer = V7P3RGPUGeneticTrainer(gpu_config)
         else:
             if use_gpu:
                 print("GPU requested but not available, falling back to CPU trainer")

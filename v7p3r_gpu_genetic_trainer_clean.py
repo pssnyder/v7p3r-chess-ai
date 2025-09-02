@@ -103,6 +103,10 @@ class V7P3RGPUGeneticTrainer:
                 device=self.device
             )
             model.to(self.device)
+            
+            # Ensure optimal memory layout for new models
+            model.lstm.flatten_parameters()
+            
             population.append(model)
             
             if (i + 1) % 10 == 0:
@@ -292,6 +296,12 @@ class V7P3RGPUGeneticTrainer:
         
         return offspring[:len(parents)]  # Maintain population size
     
+    def compact_population_memory(self):
+        """Ensure all models in population have optimal memory layout"""
+        for model in self.population:
+            if hasattr(model, 'lstm'):
+                model.lstm.flatten_parameters()
+    
     def train_generation(self) -> Dict[str, Any]:
         """Train one generation"""
         generation_start = time.time()
@@ -332,6 +342,9 @@ class V7P3RGPUGeneticTrainer:
             selected_parents, 
             self.config.get('mutation_rate', 0.1)
         )
+        
+        # Compact memory layout for optimal performance
+        self.compact_population_memory()
         
         generation_time = time.time() - generation_start
         
