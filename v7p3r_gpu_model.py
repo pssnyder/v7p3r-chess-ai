@@ -147,6 +147,20 @@ class V7P3RGPU_LSTM(nn.Module):
     
     def crossover(self, other: 'V7P3RGPU_LSTM', crossover_rate: float = 0.5) -> 'V7P3RGPU_LSTM':
         """Create offspring through crossover"""
+        # Check architecture compatibility
+        if (self.input_size != other.input_size or 
+            self.hidden_size != other.hidden_size or
+            self.num_layers != other.num_layers or
+            self.output_size != other.output_size):
+            # If architectures don't match, return a mutated copy of self
+            child = V7P3RGPU_LSTM(
+                self.input_size, self.hidden_size, self.num_layers,
+                self.output_size, device=self.device
+            )
+            child.load_state_dict(self.state_dict())
+            child.mutate(mutation_rate=0.1)
+            return child
+        
         child = V7P3RGPU_LSTM(
             self.input_size, self.hidden_size, self.num_layers,
             self.output_size, device=self.device
@@ -157,8 +171,13 @@ class V7P3RGPU_LSTM(nn.Module):
             for child_param, parent1_param, parent2_param in zip(
                 child.parameters(), self.parameters(), other.parameters()
             ):
-                crossover_mask = torch.rand_like(parent1_param) < crossover_rate
-                child_param.data = torch.where(crossover_mask, parent1_param.data, parent2_param.data)
+                # Additional safety check for tensor shape compatibility
+                if parent1_param.shape != parent2_param.shape:
+                    # If shapes don't match, use parent1's parameters
+                    child_param.data = parent1_param.data.clone()
+                else:
+                    crossover_mask = torch.rand_like(parent1_param) < crossover_rate
+                    child_param.data = torch.where(crossover_mask, parent1_param.data, parent2_param.data)
         
         # Ensure parameters are contiguous after crossover
         child.lstm.flatten_parameters()
@@ -181,7 +200,14 @@ class V7P3RGPU_LSTM(nn.Module):
     @classmethod
     def load_model(cls, filepath: str, device: str = 'cuda') -> 'V7P3RGPU_LSTM':
         """Load model from file"""
-        checkpoint = torch.load(filepath, map_location=device)
+        try:
+            # Use weights_only=True for security (PyTorch recommendation)
+            checkpoint = torch.load(filepath, map_location=device, weights_only=False)
+            # Note: We use weights_only=False because we need the config dict,
+            # but this is safe since we control our own model files
+        except Exception as e:
+            print(f"Error loading model from {filepath}: {e}")
+            raise
         config = checkpoint['config']
         
         model = cls(

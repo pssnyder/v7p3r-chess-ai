@@ -74,6 +74,40 @@ class V7P3RGPUGeneticTrainer:
             'training_time': 0.0
         }
     
+    def validate_population_architecture(self) -> None:
+        """Ensure all models in population have consistent architecture"""
+        if not self.population:
+            return
+        
+        reference_model = self.population[0]
+        ref_input = reference_model.input_size
+        ref_hidden = reference_model.hidden_size
+        ref_layers = reference_model.num_layers
+        ref_output = reference_model.output_size
+        
+        print(f"Validating population architecture: {ref_input}->{ref_hidden}x{ref_layers}->{ref_output}")
+        
+        # Check for mismatched architectures
+        mismatched_indices = []
+        for i, model in enumerate(self.population):
+            if (model.input_size != ref_input or
+                model.hidden_size != ref_hidden or
+                model.num_layers != ref_layers or
+                model.output_size != ref_output):
+                mismatched_indices.append(i)
+        
+        if mismatched_indices:
+            print(f"Found {len(mismatched_indices)} models with mismatched architectures. Recreating...")
+            
+            # Replace mismatched models with new random models of correct architecture
+            for i in mismatched_indices:
+                self.population[i] = V7P3RGPU_LSTM(
+                    ref_input, ref_hidden, ref_layers, ref_output,
+                    device=self.device
+                )
+            
+            print(f"Replaced {len(mismatched_indices)} mismatched models")
+    
     def get_game_phase(self, board: chess.Board) -> str:
         """Determine current game phase"""
         piece_count = len(board.piece_map())
@@ -277,11 +311,31 @@ class V7P3RGPUGeneticTrainer:
             parent2 = parents[(i + 1) % len(parents)]
             
             try:
-                # GPU crossover
-                child1 = parent1.crossover(parent2)
-                child2 = parent2.crossover(parent1)
+                # Check if parents are compatible for crossover
+                if (parent1.input_size == parent2.input_size and
+                    parent1.hidden_size == parent2.hidden_size and
+                    parent1.num_layers == parent2.num_layers and
+                    parent1.output_size == parent2.output_size):
+                    # GPU crossover with compatible architectures
+                    child1 = parent1.crossover(parent2)
+                    child2 = parent2.crossover(parent1)
+                else:
+                    # If architectures are incompatible, create mutated copies
+                    child1 = V7P3RGPU_LSTM(
+                        parent1.input_size, parent1.hidden_size, parent1.num_layers,
+                        parent1.output_size, device=parent1.device
+                    )
+                    child1.load_state_dict(parent1.state_dict())
+                    child1.mutate(mutation_rate=0.15)
+                    
+                    child2 = V7P3RGPU_LSTM(
+                        parent2.input_size, parent2.hidden_size, parent2.num_layers,
+                        parent2.output_size, device=parent2.device
+                    )
+                    child2.load_state_dict(parent2.state_dict())
+                    child2.mutate(mutation_rate=0.15)
                 
-                # Mutation
+                # Additional mutation
                 if random.random() < mutation_rate:
                     child1.mutate()
                 if random.random() < mutation_rate:
@@ -290,9 +344,32 @@ class V7P3RGPUGeneticTrainer:
                 offspring.extend([child1, child2])
                 
             except Exception as e:
-                print(f"Crossover error: {e}")
-                # Fallback to parents
-                offspring.extend([parent1, parent2])
+                # More detailed error logging for debugging
+                print(f"Crossover error between models with shapes:")
+                print(f"  Parent1: input={parent1.input_size}, hidden={parent1.hidden_size}, layers={parent1.num_layers}")
+                print(f"  Parent2: input={parent2.input_size}, hidden={parent2.hidden_size}, layers={parent2.num_layers}")
+                print(f"  Error: {e}")
+                
+                # Robust fallback: create copies with slight mutation
+                try:
+                    child1 = V7P3RGPU_LSTM(
+                        parent1.input_size, parent1.hidden_size, parent1.num_layers,
+                        parent1.output_size, device=parent1.device
+                    )
+                    child1.load_state_dict(parent1.state_dict())
+                    child1.mutate(mutation_rate=0.1)
+                    
+                    child2 = V7P3RGPU_LSTM(
+                        parent2.input_size, parent2.hidden_size, parent2.num_layers,
+                        parent2.output_size, device=parent2.device
+                    )
+                    child2.load_state_dict(parent2.state_dict())
+                    child2.mutate(mutation_rate=0.1)
+                    
+                    offspring.extend([child1, child2])
+                except Exception as e2:
+                    print(f"Fallback creation failed: {e2}, using original parents")
+                    offspring.extend([parent1, parent2])
         
         return offspring[:len(parents)]  # Maintain population size
     
@@ -305,6 +382,9 @@ class V7P3RGPUGeneticTrainer:
     def train_generation(self) -> Dict[str, Any]:
         """Train one generation"""
         generation_start = time.time()
+        
+        # Validate population architecture consistency
+        self.validate_population_architecture()
         
         # Evaluate population
         fitness_scores = self.evaluate_population_parallel(
