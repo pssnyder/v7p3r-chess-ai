@@ -1,0 +1,48 @@
+{
+  "training_summary": {
+    "total_generations": 1,
+    "total_training_time": 0.334697961807251,
+    "best_fitness_achieved": 3662.5,
+    "final_avg_fitness": 2970.375,
+    "device_used": "cuda"
+  },
+  "generation_reports": [
+    {
+      "generation": 0,
+      "avg_fitness": 2970.375,
+      "max_fitness": 3662.5,
+      "min_fitness": 1919.0,
+      "best_fitness_so_far": 3662.5,
+      "generation_time": 0.16830015182495117,
+      "population_size": 4
+    }
+  ],
+  "fitness_history": [
+    2970.375
+  ],
+  "config_used": {
+    "population_size": 4,
+    "games_per_evaluation": 1,
+    "max_parallel_evaluations": 2,
+    "tournament_size": 2,
+    "mutation_rate": 0.15,
+    "max_moves_per_game": 20,
+    "model": {
+      "input_size": 816,
+      "hidden_size": 32,
+      "num_layers": 1,
+      "output_size": 16
+    }
+  },
+  "statistics": {
+    "generations_trained": 1,
+    "total_games_played": 4,
+    "average_fitness_history": [
+      2970.375
+    ],
+    "best_fitness_history": [
+      3662.5
+    ],
+    "training_time": 0.334697961807251
+  }
+}

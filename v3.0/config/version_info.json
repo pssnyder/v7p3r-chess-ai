@@ -1,0 +1,11 @@
+{
+  "version": "3.0",
+  "description": "Experimental V7P3R approach - TBD",
+  "features": [
+    "To be determined based on v2.0 learnings",
+    "Potential new architecture",
+    "Advanced evaluation methods"
+  ],
+  "status": "experimental",
+  "main_files": {}
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "description": "Original V7P3R Chess AI with personal style learning",
+  "features": [
+    "Personal game analysis",
+    "Style-based move selection",
+    "Stockfish integration",
+    "Basic reinforcement learning"
+  ],
+  "main_files": {
+    "training": "train_v7p3r.py",
+    "playing": "play_game.py",
+    "analysis": "analyze_personal_games.py"
+  }
+}

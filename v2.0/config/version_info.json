@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "description": "Enhanced V7P3R with GPU acceleration and genetic algorithms",
+  "features": [
+    "GPU-accelerated training",
+    "Genetic algorithm evolution",
+    "Bounty-based fitness system",
+    "Tournament engine packaging",
+    "Multi-opponent training",
+    "Non-deterministic evaluation"
+  ],
+  "main_files": {
+    "training": "v7p3r_gpu_genetic_trainer_clean.py",
+    "enhanced_training": "scripts/enhanced_training_integration.py",
+    "incremental": "src/training/incremental_trainer.py"
+  }
+}

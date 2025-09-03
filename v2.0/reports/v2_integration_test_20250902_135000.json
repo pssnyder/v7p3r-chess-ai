@@ -1,0 +1,168 @@
+{
+  "v7p3r_version": "2.0",
+  "integration_manager": {
+    "config": {
+      "max_moves_per_position": 15,
+      "move_evaluation_time_limit": 0.02,
+      "bounty_weight_offensive": 0.8,
+      "bounty_weight_defensive": 1.0,
+      "bounty_weight_outcome": 0.9,
+      "neural_network_weight": 0.4,
+      "move_prep_weight": 0.1,
+      "enable_move_filtering": true,
+      "enable_performance_optimization": true,
+      "enable_caching": true,
+      "detailed_logging": false
+    },
+    "statistics": {
+      "games_played": 1,
+      "moves_evaluated": 19,
+      "total_bounty_rewards": 3326.0,
+      "average_game_length": 3,
+      "performance_metrics": [
+        {
+          "timestamp": "2025-09-02T13:50:00.377266",
+          "selection_time": 0.013965606689453125,
+          "candidates_considered": 15,
+          "reward": 68.495
+        }
+      ],
+      "training_start_time": 1756835400.3623023,
+      "training_duration": 0.01894974708557129,
+      "moves_per_second": 19.0,
+      "games_per_hour": 3600.0,
+      "average_bounty_reward": 175.05263157894737
+    }
+  },
+  "bounty_system": {
+    "type": "ExtendedBountyEvaluator",
+    "bounty_rates": {
+      "center_control": {
+        "center_4": 3,
+        "center_ring": 2,
+        "central_edge": 1,
+        "outer_edges": -1
+      },
+      "piece_values": {
+        "6": 100,
+        "5": 9,
+        "4": 5,
+        "3": 4,
+        "2": 3,
+        "1": 1
+      },
+      "attacks": {
+        "equal_value": 1,
+        "higher_value": 2,
+        "lower_undefended": -5,
+        "capture_defended": -2,
+        "safe_capture": 3
+      },
+      "defense": {
+        "protect_higher_value": 3,
+        "protect_equal_value": 2,
+        "block_attack": 2,
+        "counter_attack": 3,
+        "defensive_piece_activity": 1
+      },
+      "king_safety": {
+        "near_king_attack": 5,
+        "near_king_defense": 4,
+        "check": 10,
+        "block_check": 8,
+        "checkmate": 1000,
+        "prevent_mate": 500
+      },
+      "tactical": {
+        "pin": 5,
+        "skewer": 5,
+        "fork": 5,
+        "defender_removal": 5,
+        "deflection": 5,
+        "block_tactical": 4,
+        "escape_tactical": 3
+      },
+      "mate_finding": {
+        "mate_in_1": 100,
+        "mate_in_2": 500,
+        "mate_in_3_plus": 1000,
+        "avoid_mate": 200
+      },
+      "coordination": {
+        "rook_same_rank_file": 5,
+        "bishop_long_diagonal": 5,
+        "defensive_coordination": 4,
+        "piece_support": 3
+      },
+      "castling": {
+        "castling_move": 25,
+        "losing_rights": -10,
+        "maintain_castling": 5
+      },
+      "material": {
+        "material_advantage": 10,
+        "material_equality": 0,
+        "material_deficit": -5
+      },
+      "game_phase": {
+        "opening_development": 3,
+        "middlegame_activity": 2,
+        "endgame_king_activity": 4,
+        "endgame_pawn_advance": 3
+      },
+      "initiative": {
+        "forcing_move": 3,
+        "tempo_gain": 2,
+        "tempo_loss": -2,
+        "maintain_pressure": 1
+      },
+      "pawn_structure": {
+        "pawn_storm": 3,
+        "passed_pawn": 4,
+        "isolated_pawn": -2,
+        "doubled_pawn": -1,
+        "backward_pawn": -1
+      },
+      "piece_activity": {
+        "active_piece": 2,
+        "trapped_piece": -3,
+        "outpost": 3
+      },
+      "space_control": {
+        "space_advantage": 1,
+        "territory_expansion": 2
+      },
+      "tempo": {
+        "gaining_tempo": 2,
+        "losing_tempo": -1,
+        "forcing_move": 3
+      }
+    },
+    "piece_values": {
+      "6": 100,
+      "5": 9,
+      "4": 5,
+      "3": 4,
+      "2": 3,
+      "1": 1
+    }
+  },
+  "performance_optimizer": {
+    "config": {
+      "max_candidates_opening": 15,
+      "max_candidates_middlegame": 15,
+      "max_candidates_endgame": 20,
+      "complexity_threshold_high": 80.0,
+      "complexity_threshold_low": 20.0,
+      "bounty_weight": 0.6,
+      "move_order_weight": 0.4,
+      "enable_pruning": true,
+      "enable_caching": true
+    },
+    "cache_sizes": {
+      "position_cache": 1,
+      "evaluation_cache": 17
+    }
+  },
+  "timestamp": "2025-09-02T13:50:00.381252"
+}
