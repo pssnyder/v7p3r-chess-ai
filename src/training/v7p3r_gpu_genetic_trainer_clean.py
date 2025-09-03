@@ -176,7 +176,19 @@ class V7P3RGPUGeneticTrainer:
     
     def play_evaluation_game_gpu(self, model: V7P3RGPU_LSTM) -> float:
         """Play evaluation game using GPU model"""
+        # Add randomness: random starting positions and some stochastic elements
         board = chess.Board()
+        
+        # 30% chance to start from a random opening position
+        if random.random() < 0.3:
+            # Make 2-6 random opening moves to create position diversity
+            opening_moves = random.randint(2, 6)
+            for _ in range(opening_moves):
+                if not board.is_game_over():
+                    legal_moves = list(board.legal_moves)
+                    if legal_moves:
+                        board.push(random.choice(legal_moves))
+        
         total_reward = 0.0
         move_count = 0
         max_moves = self.config.get('max_moves_per_game', 200)
@@ -254,7 +266,12 @@ class V7P3RGPUGeneticTrainer:
                 if best_move is None:
                     best_move = legal_moves[0]
                 
-                chosen_move = best_move
+                # Add some randomness to move selection (10% chance of random exploration)
+                if random.random() < 0.1:
+                    # 10% chance to choose a random move for exploration
+                    chosen_move = random.choice(legal_moves)
+                else:
+                    chosen_move = best_move
                 
                 # Calculate comprehensive reward BEFORE making the move
                 try:

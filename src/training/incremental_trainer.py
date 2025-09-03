@@ -24,6 +24,23 @@ class V7P3RIncrementalTrainer(V7P3RGPUGeneticTrainer):
         super().__init__(config)
         self.load_previous_best = load_previous_best
         self.previous_model_path = None
+        self.starting_generation = 0
+        
+        # If loading previous best, set generation counter to continue from that point
+        if self.load_previous_best:
+            latest_model_path = self.find_latest_best_model()
+            if latest_model_path:
+                self.previous_model_path = latest_model_path
+                # Extract generation number and continue from next generation
+                try:
+                    base = os.path.basename(latest_model_path)
+                    gen_part = base.split('gen_')[1].split('.')[0]
+                    self.starting_generation = int(gen_part) + 1
+                    self.generation = self.starting_generation
+                    print(f"Continuing from generation {gen_part}, starting at generation {self.starting_generation}")
+                except:
+                    print(f"Could not extract generation number from {latest_model_path}, starting from 0")
+                    self.starting_generation = 0
         
     def find_latest_best_model(self) -> Optional[str]:
         """Find the most recent best model file"""
@@ -81,21 +98,17 @@ class V7P3RIncrementalTrainer(V7P3RGPUGeneticTrainer):
         population = []
         
         # Try to load previous best model if requested
-        if self.load_previous_best:
-            latest_model_path = self.find_latest_best_model()
+        if self.load_previous_best and self.previous_model_path:
+            print(f"Found previous best model: {self.previous_model_path}")
             
-            if latest_model_path:
-                self.previous_model_path = latest_model_path
-                print(f"Found previous best model: {latest_model_path}")
-                
-                # Seed 25% of population with previous best model variants
-                num_seeded = max(1, population_size // 4)
-                seeded_models = self.load_best_model_into_population(latest_model_path, num_seeded)
-                population.extend(seeded_models)
-                
-                print(f"Seeded {len(seeded_models)}/{population_size} models from previous training")
-            else:
-                print("No previous best model found, starting fresh")
+            # Seed 25% of population with previous best model variants
+            num_seeded = max(1, population_size // 4)
+            seeded_models = self.load_best_model_into_population(self.previous_model_path, num_seeded)
+            population.extend(seeded_models)
+            
+            print(f"Seeded {len(seeded_models)}/{population_size} models from previous training")
+        else:
+            print("No previous best model found, starting fresh")
         
         # Fill remaining population with random models
         remaining = population_size - len(population)
