@@ -6,4 +6,4 @@ validation_results/*
 game_history/*
 stockfish/*
 
-*.db
+*.db*
