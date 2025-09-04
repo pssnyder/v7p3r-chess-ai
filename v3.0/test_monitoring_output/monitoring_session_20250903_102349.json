@@ -1,0 +1,90 @@
+{
+  "session_info": {
+    "session_duration": 0.0009694099426269531,
+    "total_events": 5,
+    "total_positions": 1,
+    "total_thinking_updates": 2,
+    "total_moves_made": 1,
+    "events_per_second": 50.0,
+    "start_time": 1756909429.2139938
+  },
+  "events": [
+    {
+      "timestamp": 1756909429.2139938,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "test_game_001",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756909429.2149632,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3",
+          "b1a3",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.828049890734686,
+          0.9586590192691035,
+          0.9631454822213141,
+          0.1733905452984431,
+          0.41104179061196344
+        ],
+        "thinking_time": 1.2,
+        "ai_type": "thinking_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756909429.2149632,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3",
+          "b1a3",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.828049890734686,
+          0.9586590192691035,
+          0.9631454822213141,
+          0.1733905452984431,
+          0.41104179061196344
+        ],
+        "thinking_time": 0.8,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756909429.2149632,
+      "event_type": "move_made",
+      "data": {
+        "move": "b2b3",
+        "source": "gameplay_brain",
+        "evaluation": 0.75,
+        "from_square": "b2",
+        "to_square": "b3"
+      }
+    },
+    {
+      "timestamp": 1756909429.2149632,
+      "event_type": "game_end",
+      "data": {
+        "result": "White wins",
+        "reason": "Checkmate",
+        "total_moves": 42,
+        "game_duration": 0.0009694099426269531
+      }
+    }
+  ]
+}

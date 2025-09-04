@@ -1,0 +1,82 @@
+{
+  "session_info": {
+    "session_duration": 0.0009851455688476562,
+    "total_events": 5,
+    "total_positions": 1,
+    "total_thinking_updates": 2,
+    "total_moves_made": 1,
+    "events_per_second": 50.0,
+    "start_time": 1756908983.4268942
+  },
+  "events": [
+    {
+      "timestamp": 1756908983.4268942,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "config_test",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4278793,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3"
+        ],
+        "probabilities": [
+          0.4,
+          0.3,
+          0.3
+        ],
+        "thinking_time": 0.5,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4278793,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3"
+        ],
+        "probabilities": [
+          1.0,
+          0.0,
+          0.4999999999999997
+        ],
+        "thinking_time": 0.2,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4278793,
+      "event_type": "move_made",
+      "data": {
+        "move": "g1h3",
+        "source": "test_brain",
+        "evaluation": 0.8,
+        "from_square": "g1",
+        "to_square": "h3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4278793,
+      "event_type": "game_end",
+      "data": {
+        "result": "Test complete",
+        "reason": "Integration test",
+        "total_moves": 1,
+        "game_duration": 0.0009851455688476562
+      }
+    }
+  ]
+}

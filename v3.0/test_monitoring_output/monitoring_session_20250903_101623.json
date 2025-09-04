@@ -1,0 +1,90 @@
+{
+  "session_info": {
+    "session_duration": 0.0,
+    "total_events": 5,
+    "total_positions": 1,
+    "total_thinking_updates": 2,
+    "total_moves_made": 1,
+    "events_per_second": 50.0,
+    "start_time": 1756908983.4099271
+  },
+  "events": [
+    {
+      "timestamp": 1756908983.4099271,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "test_game_001",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4099271,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3",
+          "b1a3",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.2850228210268845,
+          0.1514327903823357,
+          0.7322290675431395,
+          0.14429686999791858,
+          0.5409255149779781
+        ],
+        "thinking_time": 1.2,
+        "ai_type": "thinking_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4099271,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "g1f3",
+          "b1c3",
+          "b1a3",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.2850228210268845,
+          0.1514327903823357,
+          0.7322290675431395,
+          0.14429686999791858,
+          0.5409255149779781
+        ],
+        "thinking_time": 0.8,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4099271,
+      "event_type": "move_made",
+      "data": {
+        "move": "b1a3",
+        "source": "gameplay_brain",
+        "evaluation": 0.75,
+        "from_square": "b1",
+        "to_square": "a3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4099271,
+      "event_type": "game_end",
+      "data": {
+        "result": "White wins",
+        "reason": "Checkmate",
+        "total_moves": 42,
+        "game_duration": 0.0
+      }
+    }
+  ]
+}

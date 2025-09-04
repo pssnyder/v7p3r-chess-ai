@@ -1,0 +1,3853 @@
+{
+  "session_info": {
+    "session_duration": 0.007992029190063477,
+    "total_events": 246,
+    "total_positions": 63,
+    "total_thinking_updates": 120,
+    "total_moves_made": 60,
+    "events_per_second": 2460.0,
+    "start_time": 1756908983.4119225
+  },
+  "events": [
+    {
+      "timestamp": 1756908983.4119225,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e2e3",
+          "h2h3",
+          "f2f4"
+        ],
+        "probabilities": [
+          0.9198815652109251,
+          0.5678228194470488,
+          0.8375173384980649
+        ],
+        "thinking_time": 0.6857083827562847,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h2h3",
+          "b1c3",
+          "c2c4",
+          "c2c3",
+          "e2e4"
+        ],
+        "probabilities": [
+          1.0,
+          0.0,
+          0.07148904969127391,
+          0.9402939821063494,
+          0.6211409930622585
+        ],
+        "thinking_time": 0.14419116384456468,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "c2c3",
+        "source": "gameplay_brain",
+        "evaluation": 0.46968039391412275,
+        "from_square": "c2",
+        "to_square": "c3"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/2P5/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b8c6",
+          "g7g6",
+          "a7a5"
+        ],
+        "probabilities": [
+          0.728258409542785,
+          0.4932335612707234,
+          0.9041714109535935
+        ],
+        "thinking_time": 0.8764327979879438,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h6",
+          "b8c6",
+          "c7c5",
+          "g8h6",
+          "f7f6"
+        ],
+        "probabilities": [
+          0.46849830337805687,
+          0.7689312716684832,
+          0.17753300015120949,
+          1.0,
+          0.0
+        ],
+        "thinking_time": 0.08347534987494493,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "g7g6",
+        "source": "gameplay_brain",
+        "evaluation": 0.16157070007234442,
+        "from_square": "g7",
+        "to_square": "g6"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp1p/6p1/8/8/2P5/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d2d3",
+          "a2a4",
+          "g1h3"
+        ],
+        "probabilities": [
+          0.3390125685353823,
+          0.4029364185077662,
+          0.21409238564101785
+        ],
+        "thinking_time": 0.8106320601576769,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e2e4",
+          "h2h4",
+          "f2f4",
+          "f2f3",
+          "g2g4"
+        ],
+        "probabilities": [
+          1.0,
+          0.3135528972905465,
+          0.0,
+          0.4696440316790066,
+          0.9006723977250304
+        ],
+        "thinking_time": 0.18359477184311213,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "d1b3",
+        "source": "gameplay_brain",
+        "evaluation": -0.2652998406913506,
+        "from_square": "d1",
+        "to_square": "b3"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp1p/6p1/8/8/1QP5/PP1PPPPP/RNB1KBNR b KQkq - 1 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g8h6",
+          "f8g7",
+          "e7e6"
+        ],
+        "probabilities": [
+          0.38315055616735005,
+          0.5089133681993648,
+          0.3997111926573442
+        ],
+        "thinking_time": 0.5088695741582923,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "f7f6",
+          "e7e5",
+          "f7f5",
+          "a7a5"
+        ],
+        "probabilities": [
+          0.7480650300917709,
+          0.0,
+          0.21677408776124937,
+          0.26337997368074695,
+          1.0
+        ],
+        "thinking_time": 0.18990270698243955,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "g6g5",
+        "source": "gameplay_brain",
+        "evaluation": -0.005703340123908385,
+        "from_square": "g6",
+        "to_square": "g5"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp1p/8/6p1/8/1QP5/PP1PPPPP/RNB1KBNR w KQkq - 0 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b3c2",
+          "h2h4",
+          "b3a3"
+        ],
+        "probabilities": [
+          0.8239899722950926,
+          0.9470037637753992,
+          0.6887229128290316
+        ],
+        "thinking_time": 0.5172218297588012,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1f3",
+          "g2g3",
+          "b3e6",
+          "b3d1",
+          "a2a3"
+        ],
+        "probabilities": [
+          0.42099545380882863,
+          0.5360428634003904,
+          0.0,
+          1.0,
+          0.4211985582918372
+        ],
+        "thinking_time": 0.1969632800803076,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "g2g4",
+        "source": "gameplay_brain",
+        "evaluation": -0.1476109376464403,
+        "from_square": "g2",
+        "to_square": "g4"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp1p/8/6p1/6P1/1QP5/PP1PPP1P/RNB1KBNR b KQkq - 0 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c5",
+          "g8f6",
+          "b7b5"
+        ],
+        "probabilities": [
+          0.4655354745573562,
+          0.9018827232765774,
+          0.35150750602645864
+        ],
+        "thinking_time": 0.24819013204500384,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c6",
+          "a7a6",
+          "f7f5",
+          "e7e6",
+          "f8g7"
+        ],
+        "probabilities": [
+          0.8578310019180534,
+          1.0,
+          0.8498149456124516,
+          0.5552838709613506,
+          0.0
+        ],
+        "thinking_time": 0.18667838934397374,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "h7h5",
+        "source": "gameplay_brain",
+        "evaluation": 0.4554722114065002,
+        "from_square": "h7",
+        "to_square": "h5"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp2/8/6pp/6P1/1QP5/PP1PPP1P/RNB1KBNR w KQkq - 0 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f1g2",
+          "g1h3",
+          "e1d1"
+        ],
+        "probabilities": [
+          0.38777858982043156,
+          0.14372568723199297,
+          0.26469130907600535
+        ],
+        "thinking_time": 0.5095328588720268,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b3b4",
+          "e1d1",
+          "h2h4",
+          "g1f3",
+          "g1h3"
+        ],
+        "probabilities": [
+          1.0,
+          0.0,
+          0.864598610860005,
+          0.9544513827553318,
+          0.10839990636436038
+        ],
+        "thinking_time": 0.1053580396507623,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "b3d5",
+        "source": "gameplay_brain",
+        "evaluation": 0.10034436884240006,
+        "from_square": "b3",
+        "to_square": "d5"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppp2/8/3Q2pp/6P1/2P5/PP1PPP1P/RNB1KBNR b KQkq - 1 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b8c6",
+          "c7c6",
+          "e7e5"
+        ],
+        "probabilities": [
+          0.7010048885990816,
+          0.5754825197386048,
+          0.5099590877500424
+        ],
+        "thinking_time": 0.24306013887043673,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c6",
+          "b8a6",
+          "h8h7",
+          "e7e5",
+          "f8h6"
+        ],
+        "probabilities": [
+          0.8461747163844796,
+          1.0,
+          0.0,
+          0.04177560901488861,
+          0.16370856854161545
+        ],
+        "thinking_time": 0.18616285046055903,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "f7f6",
+        "source": "gameplay_brain",
+        "evaluation": -0.2887494960692747,
+        "from_square": "f7",
+        "to_square": "f6"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/ppppp3/5p2/3Q2pp/6P1/2P5/PP1PPP1P/RNB1KBNR w KQkq - 0 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d5d6",
+          "f1g2",
+          "d2d4"
+        ],
+        "probabilities": [
+          0.7634871612274143,
+          0.6425883677803953,
+          0.31611995639467305
+        ],
+        "thinking_time": 0.2145651487623421,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f1g2",
+          "f2f3",
+          "f1h3",
+          "d5d3",
+          "d5c5"
+        ],
+        "probabilities": [
+          0.0,
+          0.8353159148306251,
+          1.0,
+          0.11489858865008305,
+          0.3118150887851629
+        ],
+        "thinking_time": 0.13823140932373948,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "d5d4",
+        "source": "gameplay_brain",
+        "evaluation": -0.42281060960328,
+        "from_square": "d5",
+        "to_square": "d4"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/ppppp3/5p2/6pp/3Q2P1/2P5/PP1PPP1P/RNB1KBNR b KQkq - 1 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "b8a6",
+          "f8h6"
+        ],
+        "probabilities": [
+          0.6253308005813297,
+          0.5914645929610608,
+          0.6262680526993119
+        ],
+        "thinking_time": 0.7703592506388517,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e8f7",
+          "a7a6",
+          "e7e6",
+          "e7e5",
+          "b8c6"
+        ],
+        "probabilities": [
+          0.8330000024976966,
+          0.11653717633307985,
+          1.0,
+          0.0,
+          0.6981168161608986
+        ],
+        "thinking_time": 0.16504078651281873,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "move_made",
+      "data": {
+        "move": "e8f7",
+        "source": "gameplay_brain",
+        "evaluation": -0.2998494665907403,
+        "from_square": "e8",
+        "to_square": "f7"
+      }
+    },
+    {
+      "timestamp": 1756908983.412932,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/pppppk2/5p2/6pp/3Q2P1/2P5/PP1PPP1P/RNB1KBNR w KQ - 2 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "h2h3",
+          "d4c4"
+        ],
+        "probabilities": [
+          0.6778828884086311,
+          0.10568658232171935,
+          0.41918476386732817
+        ],
+        "thinking_time": 0.9621705822998083,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1f3",
+          "f2f4",
+          "d4b6",
+          "f2f3",
+          "d2d3"
+        ],
+        "probabilities": [
+          1.0,
+          0.772035138726131,
+          0.6083575937441654,
+          0.0,
+          0.9828463079749854
+        ],
+        "thinking_time": 0.107612066069304,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "e2e4",
+        "source": "gameplay_brain",
+        "evaluation": 0.35034798086086416,
+        "from_square": "e2",
+        "to_square": "e4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/pppppk2/5p2/6pp/3QP1P1/2P5/PP1P1P1P/RNB1KBNR b KQ - 0 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f6f5",
+          "h5h4",
+          "e7e5"
+        ],
+        "probabilities": [
+          0.20901705795030634,
+          0.10168850989024814,
+          0.6707031670069221
+        ],
+        "thinking_time": 0.35318255108413443,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7g6",
+          "f7g7",
+          "e7e6",
+          "b8a6",
+          "a7a6"
+        ],
+        "probabilities": [
+          0.03010216966579139,
+          1.0,
+          0.6668358556269627,
+          0.0,
+          0.019663123485595593
+        ],
+        "thinking_time": 0.08768101916229529,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "d8e8",
+        "source": "gameplay_brain",
+        "evaluation": -0.2984811674630178,
+        "from_square": "d8",
+        "to_square": "e8"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/pppppk2/5p2/6pp/3QP1P1/2P5/PP1P1P1P/RNB1KBNR w KQ - 1 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f1a6",
+          "h2h3",
+          "f1e2"
+        ],
+        "probabilities": [
+          0.29547376040813056,
+          0.2930867984409359,
+          0.776085508925669
+        ],
+        "thinking_time": 0.4305310128430643,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d4e3",
+          "f1g2",
+          "f1c4",
+          "d2d3",
+          "d4e5"
+        ],
+        "probabilities": [
+          0.0,
+          0.4561921218934442,
+          1.0,
+          0.38520228760368747,
+          0.6317388052179679
+        ],
+        "thinking_time": 0.1589190494096336,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "d4d6",
+        "source": "gameplay_brain",
+        "evaluation": 0.06022627764542077,
+        "from_square": "d4",
+        "to_square": "d6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/pppppk2/3Q1p2/6pp/4P1P1/2P5/PP1P1P1P/RNB1KBNR b KQ - 2 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a7a6",
+          "h8h7",
+          "h8h6"
+        ],
+        "probabilities": [
+          0.4150095657845021,
+          0.3130533619546647,
+          0.8170672704866763
+        ],
+        "thinking_time": 0.463191107761562,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f6f5",
+          "b7b6",
+          "h5g4",
+          "e7d6",
+          "c7c6"
+        ],
+        "probabilities": [
+          0.429894154530954,
+          0.0,
+          1.0,
+          0.21197203278501756,
+          0.6810701462690884
+        ],
+        "thinking_time": 0.13767109342383493,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "f7g7",
+        "source": "gameplay_brain",
+        "evaluation": 0.47421815171927284,
+        "from_square": "f7",
+        "to_square": "g7"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/ppppp1k1/3Q1p2/6pp/4P1P1/2P5/PP1P1P1P/RNB1KBNR w KQ - 3 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e1e2",
+          "d6g3",
+          "e4e5"
+        ],
+        "probabilities": [
+          0.0172040425800406,
+          0.8210528017704821,
+          0.029828772855040042
+        ],
+        "thinking_time": 0.4883035949286805,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d6d5",
+          "f1d3",
+          "f1e2",
+          "f1c4",
+          "d2d3"
+        ],
+        "probabilities": [
+          0.5100780511651438,
+          1.0,
+          0.0,
+          0.14983695130401042,
+          0.31849426391577296
+        ],
+        "thinking_time": 0.07898075002937249,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "d6f4",
+        "source": "gameplay_brain",
+        "evaluation": -0.1381528606294823,
+        "from_square": "d6",
+        "to_square": "f4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/ppppp1k1/5p2/6pp/4PQP1/2P5/PP1P1P1P/RNB1KBNR b KQ - 4 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "g7h6",
+          "f6f5"
+        ],
+        "probabilities": [
+          0.4354416199393336,
+          0.6488107251377515,
+          0.21424585084667058
+        ],
+        "thinking_time": 0.613274112822749,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g8h6",
+          "g7f7",
+          "a7a5",
+          "a7a6",
+          "g5f4"
+        ],
+        "probabilities": [
+          1.0,
+          0.4966924069928858,
+          0.0,
+          0.40966169823702525,
+          0.9366108917315384
+        ],
+        "thinking_time": 0.13466604171290583,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "a7a6",
+        "source": "gameplay_brain",
+        "evaluation": -0.10862015364481159,
+        "from_square": "a7",
+        "to_square": "a6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/1pppp1k1/p4p2/6pp/4PQP1/2P5/PP1P1P1P/RNB1KBNR w KQ - 0 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d2d4",
+          "f4c7",
+          "f4f6"
+        ],
+        "probabilities": [
+          0.14989521181447496,
+          0.429512612070048,
+          0.2735788814960065
+        ],
+        "thinking_time": 0.6398518110665309,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d2d4",
+          "a2a3",
+          "f4e3",
+          "b1a3",
+          "f4g5"
+        ],
+        "probabilities": [
+          0.3243559156787936,
+          0.0,
+          0.3073114174984881,
+          1.0,
+          0.4657311325372758
+        ],
+        "thinking_time": 0.19458461490720114,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "e4e5",
+        "source": "gameplay_brain",
+        "evaluation": 0.07215272614714685,
+        "from_square": "e4",
+        "to_square": "e5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/1pppp1k1/p4p2/4P1pp/5QP1/2P5/PP1P1P1P/RNB1KBNR b KQ - 0 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b7b6",
+          "b8c6",
+          "h8h7"
+        ],
+        "probabilities": [
+          0.5368316700501338,
+          0.040474116267224414,
+          0.7979836234984561
+        ],
+        "thinking_time": 0.8068911227747357,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f6e5",
+          "c7c5",
+          "g7h7",
+          "g7g6",
+          "h8h7"
+        ],
+        "probabilities": [
+          0.0,
+          0.009203857578690569,
+          0.0962555127267006,
+          0.587039577835273,
+          1.0
+        ],
+        "thinking_time": 0.06594402338290004,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "c7c5",
+        "source": "gameplay_brain",
+        "evaluation": 0.17481243783700617,
+        "from_square": "c7",
+        "to_square": "c5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/1p1pp1k1/p4p2/2p1P1pp/5QP1/2P5/PP1P1P1P/RNB1KBNR w KQ - 0 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f4a4",
+          "f4c4",
+          "a2a3"
+        ],
+        "probabilities": [
+          0.5346482052847763,
+          0.42305175553619456,
+          0.04415116099769645
+        ],
+        "thinking_time": 0.6836298405561856,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f1g2",
+          "a2a3",
+          "e1d1",
+          "f4f3",
+          "f1a6"
+        ],
+        "probabilities": [
+          0.9799931019267322,
+          1.0,
+          0.0,
+          0.2103540784190441,
+          0.07707245561698016
+        ],
+        "thinking_time": 0.13390091087260786,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "move_made",
+      "data": {
+        "move": "f1g2",
+        "source": "gameplay_brain",
+        "evaluation": 0.05159917712015516,
+        "from_square": "f1",
+        "to_square": "g2"
+      }
+    },
+    {
+      "timestamp": 1756908983.4139166,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb1qbnr/1p1pp1k1/p4p2/2p1P1pp/5QP1/2P5/PP1P1PBP/RNB1K1NR b KQ - 1 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h8h6",
+          "g8h6",
+          "b8c6"
+        ],
+        "probabilities": [
+          0.46749392497990194,
+          0.8662592142792566,
+          0.2723229150007537
+        ],
+        "thinking_time": 0.43394773495081673,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "h5g4",
+          "g7h6",
+          "b7b5",
+          "d7d5"
+        ],
+        "probabilities": [
+          0.8358723750686492,
+          1.0,
+          0.46343778772610233,
+          0.0,
+          0.647766087393766
+        ],
+        "thinking_time": 0.16621508626056575,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "move_made",
+      "data": {
+        "move": "e8g6",
+        "source": "gameplay_brain",
+        "evaluation": 0.11725480854371273,
+        "from_square": "e8",
+        "to_square": "g6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnb2bnr/1p1pp1k1/p4pq1/2p1P1pp/5QP1/2P5/PP1P1PBP/RNB1K1NR w KQ - 2 11",
+        "game_id": "headless_test_session",
+        "move_number": 11,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "game_end",
+      "data": {
+        "result": "Draw",
+        "reason": "Checkmate",
+        "total_moves": 19,
+        "game_duration": 0.0029916763305664062
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1f3",
+          "e2e4",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.41306514702771313,
+          0.2036339694456627,
+          0.16107863501076558
+        ],
+        "thinking_time": 0.7283871792844703,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g2g3",
+          "e2e4",
+          "b2b3",
+          "a2a4",
+          "a2a3"
+        ],
+        "probabilities": [
+          1.0,
+          0.7614257464354715,
+          0.0,
+          0.6316701857064306,
+          0.26562470243972686
+        ],
+        "thinking_time": 0.08747479881824526,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "move_made",
+      "data": {
+        "move": "d2d4",
+        "source": "gameplay_brain",
+        "evaluation": 0.19933888250143184,
+        "from_square": "d2",
+        "to_square": "d4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "g7g6",
+          "b7b6"
+        ],
+        "probabilities": [
+          0.39609620529605205,
+          0.35520524226772177,
+          0.584320128736947
+        ],
+        "thinking_time": 0.39089674444094513,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b8c6",
+          "e7e6",
+          "b7b5",
+          "g8h6",
+          "d7d5"
+        ],
+        "probabilities": [
+          1.0,
+          0.8189494460706214,
+          0.0,
+          0.4090780353722146,
+          0.7161121246630824
+        ],
+        "thinking_time": 0.10406163424008931,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "move_made",
+      "data": {
+        "move": "g8f6",
+        "source": "gameplay_brain",
+        "evaluation": -0.19157195827809814,
+        "from_square": "g8",
+        "to_square": "f6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a2a3",
+          "f2f3",
+          "c1d2"
+        ],
+        "probabilities": [
+          0.9327900567213889,
+          0.3315944231448563,
+          0.24487679097611803
+        ],
+        "thinking_time": 0.3135531698992901,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d4d5",
+          "g2g4",
+          "e2e4",
+          "b1c3",
+          "g1f3"
+        ],
+        "probabilities": [
+          0.12616993749222327,
+          0.0,
+          0.12405136192358995,
+          0.1941485255507237,
+          1.0
+        ],
+        "thinking_time": 0.14577858716926648,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "move_made",
+      "data": {
+        "move": "c1h6",
+        "source": "gameplay_brain",
+        "evaluation": -0.0728246257235734,
+        "from_square": "c1",
+        "to_square": "h6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/pppppppp/5n1B/8/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e7e6",
+          "d7d5",
+          "c7c6"
+        ],
+        "probabilities": [
+          0.5990540494240147,
+          0.33969528576174657,
+          0.27258810313149695
+        ],
+        "thinking_time": 0.2225316263294151,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c5",
+          "h8g8",
+          "c7c6",
+          "a7a5",
+          "e7e5"
+        ],
+        "probabilities": [
+          0.2778050601516047,
+          0.735730123955175,
+          1.0,
+          0.2708882189146935,
+          0.0
+        ],
+        "thinking_time": 0.14885917591252346,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "move_made",
+      "data": {
+        "move": "a7a5",
+        "source": "gameplay_brain",
+        "evaluation": 0.24972646472303994,
+        "from_square": "a7",
+        "to_square": "a5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4149141,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppppppp/5n1B/p7/3P4/8/PPP1PPPP/RN1QKBNR w KQkq - 0 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a2a3",
+          "c2c4",
+          "b1a3"
+        ],
+        "probabilities": [
+          0.4325556869653291,
+          0.8753804316402479,
+          0.38772784705516383
+        ],
+        "thinking_time": 0.5789282298245048,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h6c1",
+          "f2f4",
+          "d1d3",
+          "f2f3",
+          "g1h3"
+        ],
+        "probabilities": [
+          0.9925117006300402,
+          0.8554988784910256,
+          0.0,
+          0.6266201825685722,
+          1.0
+        ],
+        "thinking_time": 0.15180394655875512,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "h6c1",
+        "source": "gameplay_brain",
+        "evaluation": -0.0710072788998043,
+        "from_square": "h6",
+        "to_square": "c1"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppppppp/5n2/p7/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 1 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c6",
+          "e7e6",
+          "g7g5"
+        ],
+        "probabilities": [
+          0.47615784853015797,
+          0.20280351059125745,
+          0.6290688873292601
+        ],
+        "thinking_time": 0.4474861050540332,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f6e4",
+          "f6g4",
+          "c7c6",
+          "e7e5",
+          "b7b5"
+        ],
+        "probabilities": [
+          1.0,
+          0.48297871947226373,
+          0.0,
+          0.6484594188019992,
+          0.4610608141389556
+        ],
+        "thinking_time": 0.07848097719491347,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "e7e6",
+        "source": "gameplay_brain",
+        "evaluation": 0.22850050640166542,
+        "from_square": "e7",
+        "to_square": "e6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppp1ppp/4pn2/p7/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a2a4",
+          "d1d2",
+          "b1d2"
+        ],
+        "probabilities": [
+          0.7218158905481458,
+          0.6285020438716798,
+          0.5352689568064628
+        ],
+        "thinking_time": 0.7657454297515249,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b1a3",
+          "b2b4",
+          "d4d5",
+          "c2c4",
+          "f2f4"
+        ],
+        "probabilities": [
+          0.0,
+          1.0,
+          0.12572931367430829,
+          0.5425062032985725,
+          0.029501720475948436
+        ],
+        "thinking_time": 0.19940730211763957,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "c2c4",
+        "source": "gameplay_brain",
+        "evaluation": 0.3922693811920642,
+        "from_square": "c2",
+        "to_square": "c4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppp1ppp/4pn2/p7/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a5a4",
+          "d7d6",
+          "a8a6"
+        ],
+        "probabilities": [
+          0.9047071457615546,
+          0.5118678511372002,
+          0.2908409154125393
+        ],
+        "thinking_time": 0.30744928537538896,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a8a6",
+          "h7h6",
+          "f6d5",
+          "a8a7",
+          "f6e4"
+        ],
+        "probabilities": [
+          0.1821408261962985,
+          1.0,
+          0.651775760601897,
+          0.0,
+          0.9077523588649813
+        ],
+        "thinking_time": 0.18484813840571485,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "f6d5",
+        "source": "gameplay_brain",
+        "evaluation": 0.45185987227978086,
+        "from_square": "f6",
+        "to_square": "d5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppp1ppp/4p3/p2n4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f2f3",
+          "d1d3",
+          "c1f4"
+        ],
+        "probabilities": [
+          0.2546295135292601,
+          0.9691962716945912,
+          0.13820262687685703
+        ],
+        "thinking_time": 0.15407444601080164,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c1f4",
+          "c4c5",
+          "b2b4",
+          "d1a4",
+          "g1f3"
+        ],
+        "probabilities": [
+          1.0,
+          0.49569052885412956,
+          0.35965400608691056,
+          0.6211869920448922,
+          0.0
+        ],
+        "thinking_time": 0.1570820463159011,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "g2g3",
+        "source": "gameplay_brain",
+        "evaluation": 0.05412450731152341,
+        "from_square": "g2",
+        "to_square": "g3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1ppp1ppp/4p3/p2n4/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f6",
+          "d5c3",
+          "g7g6"
+        ],
+        "probabilities": [
+          0.8829823033977784,
+          0.955374029214102,
+          0.8338977968937842
+        ],
+        "thinking_time": 0.7763279281502127,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f6",
+          "f8a3",
+          "f8d6",
+          "c7c5",
+          "d5b6"
+        ],
+        "probabilities": [
+          0.7937821365829749,
+          1.0,
+          0.6591915517910608,
+          0.0,
+          0.638753157417438
+        ],
+        "thinking_time": 0.06993789970963563,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "c7c6",
+        "source": "gameplay_brain",
+        "evaluation": 0.49778415438521795,
+        "from_square": "c7",
+        "to_square": "c6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1ppp/2p1p3/p2n4/2PP4/6P1/PP2PP1P/RNBQKBNR w KQkq - 0 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g3g4",
+          "f1g2",
+          "e2e4"
+        ],
+        "probabilities": [
+          0.4527610778876513,
+          0.28390906868666976,
+          0.9303965407179514
+        ],
+        "thinking_time": 0.9200160077684216,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e1d2",
+          "b1c3",
+          "h2h3",
+          "e2e4",
+          "g1f3"
+        ],
+        "probabilities": [
+          0.0,
+          1.0,
+          0.6179094772123764,
+          0.38532603151532524,
+          0.4263799588702144
+        ],
+        "thinking_time": 0.18100261173701637,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "b2b4",
+        "source": "gameplay_brain",
+        "evaluation": -0.40183030872118597,
+        "from_square": "b2",
+        "to_square": "b4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1ppp/2p1p3/p2n4/1PPP4/6P1/P3PP1P/RNBQKBNR b KQkq - 0 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f5",
+          "e6e5",
+          "f8d6"
+        ],
+        "probabilities": [
+          0.34393434392205524,
+          0.896667202802552,
+          0.16523734826558423
+        ],
+        "thinking_time": 0.86949652218581,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f8e7",
+          "f7f5",
+          "e6e5",
+          "b8a6",
+          "g7g6"
+        ],
+        "probabilities": [
+          0.8757522996231063,
+          0.683701301158883,
+          1.0,
+          0.0,
+          0.6768558720770771
+        ],
+        "thinking_time": 0.07642065898872691,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "e6e5",
+        "source": "gameplay_brain",
+        "evaluation": 0.16253238810949922,
+        "from_square": "e6",
+        "to_square": "e5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1ppp/2p5/p2np3/1PPP4/6P1/P3PP1P/RNBQKBNR w KQkq - 0 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c4c5",
+          "h2h3",
+          "d1d2"
+        ],
+        "probabilities": [
+          0.9035437266575134,
+          0.548031913114683,
+          0.6236264869237224
+        ],
+        "thinking_time": 0.3076937412106221,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a2a3",
+          "b4a5",
+          "f1h3",
+          "g1f3",
+          "d4e5"
+        ],
+        "probabilities": [
+          0.266595541250064,
+          1.0,
+          0.0,
+          0.22579796990882245,
+          0.4324828645145092
+        ],
+        "thinking_time": 0.06498065965611763,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "e2e3",
+        "source": "gameplay_brain",
+        "evaluation": 0.4743221453384896,
+        "from_square": "e2",
+        "to_square": "e3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1ppp/2p5/p2np3/1PPP4/4P1P1/P4P1P/RNBQKBNR b KQkq - 0 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b8a6",
+          "d5b6",
+          "d5e3"
+        ],
+        "probabilities": [
+          0.7391683081291679,
+          0.20925895109087267,
+          0.6440876818293348
+        ],
+        "thinking_time": 0.6957440890532455,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f5",
+          "h8g8",
+          "d8g5",
+          "a8a6",
+          "d5f6"
+        ],
+        "probabilities": [
+          0.036266248683076555,
+          0.4317177497699485,
+          0.0,
+          1.0,
+          0.34278860575236225
+        ],
+        "thinking_time": 0.157553848405199,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "move_made",
+      "data": {
+        "move": "g7g5",
+        "source": "gameplay_brain",
+        "evaluation": -0.200333886168371,
+        "from_square": "g7",
+        "to_square": "g5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4159122,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p2np1p1/1PPP4/4P1P1/P4P1P/RNBQKBNR w KQkq - 0 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g3g4",
+          "c1d2",
+          "g1e2"
+        ],
+        "probabilities": [
+          0.5408768409403985,
+          0.5862616083071942,
+          0.1600263356066789
+        ],
+        "thinking_time": 0.2990238828602656,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c4c5",
+          "b4a5",
+          "d1f3",
+          "b1a3",
+          "d1a4"
+        ],
+        "probabilities": [
+          0.5158290465273289,
+          1.0,
+          0.2792593533283809,
+          0.8775872936643141,
+          0.0
+        ],
+        "thinking_time": 0.17875052054890916,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "h2h4",
+        "source": "gameplay_brain",
+        "evaluation": -0.45673841002949667,
+        "from_square": "h2",
+        "to_square": "h4"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p2np1p1/1PPP3P/4P1P1/P4P2/RNBQKBNR b KQkq - 0 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h6",
+          "f7f6",
+          "f8g7"
+        ],
+        "probabilities": [
+          0.9190983350451057,
+          0.6970743287179257,
+          0.018486655082422532
+        ],
+        "thinking_time": 0.4075902002028089,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h6",
+          "e5e4",
+          "b8a6",
+          "f8g7",
+          "a5b4"
+        ],
+        "probabilities": [
+          0.10822904916262098,
+          0.8403859972404479,
+          1.0,
+          0.0,
+          0.9076769340894434
+        ],
+        "thinking_time": 0.18692729062395863,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "d5c3",
+        "source": "gameplay_brain",
+        "evaluation": -0.15202702837977466,
+        "from_square": "d5",
+        "to_square": "c3"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p3p1p1/1PPP3P/2n1P1P1/P4P2/RNBQKBNR w KQkq - 1 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h1h2",
+          "h4h5",
+          "b1d2"
+        ],
+        "probabilities": [
+          0.28327287291162273,
+          0.06680902535889366,
+          0.9816064709155776
+        ],
+        "thinking_time": 0.6047472462458419,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b1a3",
+          "d1d3",
+          "d1g4",
+          "f1g2",
+          "b1c3"
+        ],
+        "probabilities": [
+          0.7021401267525927,
+          0.6665546030268066,
+          1.0,
+          0.3266043116122296,
+          0.0
+        ],
+        "thinking_time": 0.19031937771144009,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "c1a3",
+        "source": "gameplay_brain",
+        "evaluation": -0.26158835727647367,
+        "from_square": "c1",
+        "to_square": "a3"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p3p1p1/1PPP3P/B1n1P1P1/P4P2/RN1QKBNR b KQkq - 2 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d8c7",
+          "d7d5",
+          "e5d4"
+        ],
+        "probabilities": [
+          0.6288907853073977,
+          0.02527915312261253,
+          0.4730156569152969
+        ],
+        "thinking_time": 0.2861815864218204,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h5",
+          "d8b6",
+          "g5g4",
+          "a5a4",
+          "f8e7"
+        ],
+        "probabilities": [
+          0.3026904723204765,
+          0.0,
+          0.9623247448754144,
+          1.0,
+          0.7232513152132388
+        ],
+        "thinking_time": 0.16918014643004115,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "c3d5",
+        "source": "gameplay_brain",
+        "evaluation": 0.49495492437023403,
+        "from_square": "c3",
+        "to_square": "d5"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p2np1p1/1PPP3P/B3P1P1/P4P2/RN1QKBNR w KQkq - 3 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g1h3",
+          "h4g5",
+          "f2f4"
+        ],
+        "probabilities": [
+          0.35451850126019024,
+          0.029131109564061175,
+          0.5965697800670952
+        ],
+        "thinking_time": 0.30447359968981863,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g3g4",
+          "e1d2",
+          "a3b2",
+          "d1d2",
+          "f1e2"
+        ],
+        "probabilities": [
+          0.13848471188053343,
+          0.0,
+          1.0,
+          0.46474971446429986,
+          0.3888811215132396
+        ],
+        "thinking_time": 0.10029137156377138,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "d1c2",
+        "source": "gameplay_brain",
+        "evaluation": 0.4658234822494446,
+        "from_square": "d1",
+        "to_square": "c2"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkb1r/1p1p1p1p/2p5/p2np1p1/1PPP3P/B3P1P1/P1Q2P2/RN2KBNR b KQkq - 4 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f6",
+          "a5b4",
+          "d5c3"
+        ],
+        "probabilities": [
+          0.6904818184931613,
+          0.9143513345013456,
+          0.08843203065478955
+        ],
+        "thinking_time": 0.48868613549018936,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f8c5",
+          "e8e7",
+          "b7b6",
+          "f8b4",
+          "d5f6"
+        ],
+        "probabilities": [
+          0.0,
+          0.6443518166638238,
+          0.5099901161283014,
+          0.04621579605150427,
+          1.0
+        ],
+        "thinking_time": 0.082274924828933,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "h8g8",
+        "source": "gameplay_brain",
+        "evaluation": 0.16623897423760614,
+        "from_square": "h8",
+        "to_square": "g8"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbr1/1p1p1p1p/2p5/p2np1p1/1PPP3P/B3P1P1/P1Q2P2/RN2KBNR w KQq - 5 11",
+        "game_id": "headless_test_session",
+        "move_number": 11,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "game_end",
+      "data": {
+        "result": "White wins",
+        "reason": "Stalemate",
+        "total_moves": 19,
+        "game_duration": 0.00498652458190918
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e2e4",
+          "a2a3",
+          "g1f3"
+        ],
+        "probabilities": [
+          0.3511460875158866,
+          0.15052393751254478,
+          0.32550049576290774
+        ],
+        "thinking_time": 0.6830496789510873,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b1a3",
+          "h2h4",
+          "b1c3",
+          "a2a3",
+          "g2g4"
+        ],
+        "probabilities": [
+          1.0,
+          0.6847447366703896,
+          0.12477946514163833,
+          0.6878750985404054,
+          0.0
+        ],
+        "thinking_time": 0.1162792997918219,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "f2f4",
+        "source": "gameplay_brain",
+        "evaluation": 0.100580776484689,
+        "from_square": "f2",
+        "to_square": "f4"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+        "game_id": "headless_test_session",
+        "move_number": 1,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h6",
+          "g7g5",
+          "b8a6"
+        ],
+        "probabilities": [
+          0.5285225744636908,
+          0.6061468135867321,
+          0.5326939581994519
+        ],
+        "thinking_time": 0.25694780050057825,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c5",
+          "g7g6",
+          "b8c6",
+          "d7d6",
+          "g7g5"
+        ],
+        "probabilities": [
+          0.9511327492401103,
+          0.38227683081767927,
+          0.5267089672721924,
+          0.0,
+          1.0
+        ],
+        "thinking_time": 0.17937619753546252,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "move_made",
+      "data": {
+        "move": "d7d6",
+        "source": "gameplay_brain",
+        "evaluation": -0.25471905001605,
+        "from_square": "d7",
+        "to_square": "d6"
+      }
+    },
+    {
+      "timestamp": 1756908983.416909,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/ppp1pppp/3p4/8/5P2/8/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b1a3",
+          "g2g3",
+          "a2a4"
+        ],
+        "probabilities": [
+          0.42123338865862003,
+          0.9191864464172333,
+          0.7975891856570367
+        ],
+        "thinking_time": 0.38487511705040744,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b2b4",
+          "b2b3",
+          "g1f3",
+          "h2h3",
+          "g2g3"
+        ],
+        "probabilities": [
+          0.10702199112320124,
+          0.8141288616252821,
+          0.0,
+          1.0,
+          0.48176383385407573
+        ],
+        "thinking_time": 0.176091686801371,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "c2c4",
+        "source": "gameplay_brain",
+        "evaluation": 0.06656602695545866,
+        "from_square": "c2",
+        "to_square": "c4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/ppp1pppp/3p4/8/2P2P2/8/PP1PP1PP/RNBQKBNR b KQkq - 0 2",
+        "game_id": "headless_test_session",
+        "move_number": 2,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h7h6",
+          "d6d5",
+          "h7h5"
+        ],
+        "probabilities": [
+          0.6228664793064415,
+          0.03598742651751341,
+          0.030985575432029733
+        ],
+        "thinking_time": 0.8165350681339504,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c6",
+          "a7a5",
+          "g7g5",
+          "h7h5",
+          "c8f5"
+        ],
+        "probabilities": [
+          0.7326747400874616,
+          0.03888382991082289,
+          1.0,
+          0.6857944073600766,
+          0.0
+        ],
+        "thinking_time": 0.08625878364021292,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "a7a6",
+        "source": "gameplay_brain",
+        "evaluation": -0.06046149116934629,
+        "from_square": "a7",
+        "to_square": "a6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/1pp1pppp/p2p4/8/2P2P2/8/PP1PP1PP/RNBQKBNR w KQkq - 0 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a2a4",
+          "h2h3",
+          "g1f3"
+        ],
+        "probabilities": [
+          0.7599659657248586,
+          0.5680575724150563,
+          0.5664471761754782
+        ],
+        "thinking_time": 0.6700051657709403,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g2g3",
+          "b2b4",
+          "d1a4",
+          "h2h4",
+          "c4c5"
+        ],
+        "probabilities": [
+          0.9676862065396268,
+          0.0,
+          1.0,
+          0.5972058557098251,
+          0.9467140230197392
+        ],
+        "thinking_time": 0.09199096978841315,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "b1c3",
+        "source": "gameplay_brain",
+        "evaluation": 0.4235238402224797,
+        "from_square": "b1",
+        "to_square": "c3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/1pp1pppp/p2p4/8/2P2P2/2N5/PP1PP1PP/R1BQKBNR b KQkq - 1 3",
+        "game_id": "headless_test_session",
+        "move_number": 3,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a8a7",
+          "h7h6",
+          "g7g5"
+        ],
+        "probabilities": [
+          0.6221248815537856,
+          0.7291857709285394,
+          0.2357976533900057
+        ],
+        "thinking_time": 0.9229688029021426,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "a6a5",
+          "g7g5",
+          "c8e6",
+          "e7e6",
+          "a8a7"
+        ],
+        "probabilities": [
+          0.9373711299500812,
+          0.31968196251493175,
+          0.0,
+          0.2668598537871893,
+          1.0
+        ],
+        "thinking_time": 0.13713763219209255,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "e8d7",
+        "source": "gameplay_brain",
+        "evaluation": -0.1823733681651054,
+        "from_square": "e8",
+        "to_square": "d7"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppkpppp/p2p4/8/2P2P2/2N5/PP1PP1PP/R1BQKBNR w KQ - 2 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d1b3",
+          "c3a4",
+          "g1f3"
+        ],
+        "probabilities": [
+          0.8114796737030875,
+          0.11557493016183717,
+          0.6909255818242899
+        ],
+        "thinking_time": 0.42878457226345545,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g2g4",
+          "c3a4",
+          "h2h4",
+          "e2e3",
+          "h2h3"
+        ],
+        "probabilities": [
+          0.0,
+          0.1406932061886929,
+          1.0,
+          0.5694647167959974,
+          0.3375074091444332
+        ],
+        "thinking_time": 0.05955772174629406,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "b2b4",
+        "source": "gameplay_brain",
+        "evaluation": 0.2164187428358828,
+        "from_square": "b2",
+        "to_square": "b4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppkpppp/p2p4/8/1PP2P2/2N5/P2PP1PP/R1BQKBNR b KQ - 0 4",
+        "game_id": "headless_test_session",
+        "move_number": 4,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c5",
+          "a8a7",
+          "g8f6"
+        ],
+        "probabilities": [
+          0.8951420048797656,
+          0.32974060787689674,
+          0.6441205333394125
+        ],
+        "thinking_time": 0.735037309558063,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b7b6",
+          "a8a7",
+          "g8f6",
+          "a6a5",
+          "d7c6"
+        ],
+        "probabilities": [
+          0.5951849837774952,
+          0.5901287068324117,
+          0.0,
+          0.5882821051772449,
+          1.0
+        ],
+        "thinking_time": 0.09287309788914408,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "h7h5",
+        "source": "gameplay_brain",
+        "evaluation": -0.18531752948374103,
+        "from_square": "h7",
+        "to_square": "h5"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppkppp1/p2p4/7p/1PP2P2/2N5/P2PP1PP/R1BQKBNR w KQ - 0 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e2e4",
+          "d2d3",
+          "d1b3"
+        ],
+        "probabilities": [
+          0.7391253724779633,
+          0.46828748113615226,
+          0.04388956790285892
+        ],
+        "thinking_time": 0.7229716753437766,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d2d3",
+          "e1f2",
+          "d1b3",
+          "a1b1",
+          "g2g3"
+        ],
+        "probabilities": [
+          0.0,
+          0.5538634283583606,
+          1.0,
+          0.6944789925968545,
+          0.8824551748156079
+        ],
+        "thinking_time": 0.07431127849366405,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "c1a3",
+        "source": "gameplay_brain",
+        "evaluation": -0.18594464263316168,
+        "from_square": "c1",
+        "to_square": "a3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppkppp1/p2p4/7p/1PP2P2/B1N5/P2PP1PP/R2QKBNR b KQ - 1 5",
+        "game_id": "headless_test_session",
+        "move_number": 5,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d7c6",
+          "d6d5",
+          "d8e8"
+        ],
+        "probabilities": [
+          0.6173693087449847,
+          0.21413963563397254,
+          0.8786031482369316
+        ],
+        "thinking_time": 0.2499106178449329,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h8h7",
+          "d7c6",
+          "g8f6",
+          "a6a5",
+          "f7f5"
+        ],
+        "probabilities": [
+          0.0,
+          0.6771374850783575,
+          0.3823926989100204,
+          0.9870419684931293,
+          1.0
+        ],
+        "thinking_time": 0.0760745282107814,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "e7e6",
+        "source": "gameplay_brain",
+        "evaluation": -0.469817618516021,
+        "from_square": "e7",
+        "to_square": "e6"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppk1pp1/p2pp3/7p/1PP2P2/B1N5/P2PP1PP/R2QKBNR w KQ - 0 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c3e4",
+          "e1f2",
+          "g2g4"
+        ],
+        "probabilities": [
+          0.420087047701866,
+          0.5833515156806642,
+          0.22134991912696167
+        ],
+        "thinking_time": 0.49417174119044793,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e1f2",
+          "d1a4",
+          "d2d4",
+          "a3b2",
+          "g1h3"
+        ],
+        "probabilities": [
+          1.0,
+          0.0,
+          0.03379577122100317,
+          0.24944072771673223,
+          0.32153323279106993
+        ],
+        "thinking_time": 0.12979232214316444,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "e1f2",
+        "source": "gameplay_brain",
+        "evaluation": 0.3468833803339496,
+        "from_square": "e1",
+        "to_square": "f2"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1ppk1pp1/p2pp3/7p/1PP2P2/B1N5/P2PPKPP/R2Q1BNR b - - 1 6",
+        "game_id": "headless_test_session",
+        "move_number": 6,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h8h6",
+          "h8h7",
+          "g7g6"
+        ],
+        "probabilities": [
+          0.4878982911973422,
+          0.891426220389995,
+          0.039916269369908663
+        ],
+        "thinking_time": 0.29139361063306046,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h8h6",
+          "a8a7",
+          "b8c6",
+          "c7c6",
+          "f7f6"
+        ],
+        "probabilities": [
+          0.35908256351903933,
+          1.0,
+          0.7832872258509279,
+          0.5591628322967498,
+          0.0
+        ],
+        "thinking_time": 0.08895729080512527,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "d7e7",
+        "source": "gameplay_brain",
+        "evaluation": 0.11315936274857363,
+        "from_square": "d7",
+        "to_square": "e7"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/7p/1PP2P2/B1N5/P2PPKPP/R2Q1BNR w - - 2 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "d1e1",
+          "g2g4",
+          "d1b1"
+        ],
+        "probabilities": [
+          0.615386971951183,
+          0.03962757560170016,
+          0.6847252306442372
+        ],
+        "thinking_time": 0.3355032438380729,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c3a4",
+          "g2g4",
+          "f2g3",
+          "d2d3",
+          "c3b5"
+        ],
+        "probabilities": [
+          1.0,
+          0.9967622878969784,
+          0.09804039401498134,
+          0.28525645086870394,
+          0.0
+        ],
+        "thinking_time": 0.08253640271364177,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "c3e4",
+        "source": "gameplay_brain",
+        "evaluation": -0.38489676105576553,
+        "from_square": "c3",
+        "to_square": "e4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/7p/1PP1NP2/B7/P2PPKPP/R2Q1BNR b - - 3 7",
+        "game_id": "headless_test_session",
+        "move_number": 7,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h5h4",
+          "g7g6",
+          "b7b6"
+        ],
+        "probabilities": [
+          0.5866961685412048,
+          0.29867071597563777,
+          0.5194484525699311
+        ],
+        "thinking_time": 0.6015784715512793,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "f7f6",
+          "c7c6",
+          "f7f5",
+          "e7e8",
+          "d8e8"
+        ],
+        "probabilities": [
+          0.26254661432721194,
+          0.971693637746441,
+          0.7209230876115056,
+          0.0,
+          1.0
+        ],
+        "thinking_time": 0.0770814106526375,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4179058,
+      "event_type": "move_made",
+      "data": {
+        "move": "h5h4",
+        "source": "gameplay_brain",
+        "evaluation": 0.12481822210735904,
+        "from_square": "h5",
+        "to_square": "h4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/8/1PP1NP1p/B7/P2PPKPP/R2Q1BNR w - - 0 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e4g5",
+          "g1h3",
+          "g2g4"
+        ],
+        "probabilities": [
+          0.13479648986146409,
+          0.18851763957680867,
+          0.36034755263252416
+        ],
+        "thinking_time": 0.42397396023595124,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c4c5",
+          "a1c1",
+          "e4f6",
+          "d1e1",
+          "d2d3"
+        ],
+        "probabilities": [
+          1.0,
+          0.2563878965366238,
+          0.0,
+          0.49608091946432875,
+          0.28398111346377247
+        ],
+        "thinking_time": 0.1629165973987734,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "d2d4",
+        "source": "gameplay_brain",
+        "evaluation": 0.3941067815821574,
+        "from_square": "d2",
+        "to_square": "d4"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/8/1PPPNP1p/B7/P3PKPP/R2Q1BNR b - - 0 8",
+        "game_id": "headless_test_session",
+        "move_number": 8,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "g8h6",
+          "g7g6",
+          "c7c6"
+        ],
+        "probabilities": [
+          0.11700561149438016,
+          0.14394473788204043,
+          0.1535357693040731
+        ],
+        "thinking_time": 0.8588037524754621,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "h8h6",
+          "h8h5",
+          "g7g5",
+          "a8a7",
+          "e7e8"
+        ],
+        "probabilities": [
+          1.0,
+          0.4368088184733658,
+          0.0,
+          0.025516224257685304,
+          0.9481929338590446
+        ],
+        "thinking_time": 0.06263820886546898,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "a8a7",
+        "source": "gameplay_brain",
+        "evaluation": 0.29009657651289933,
+        "from_square": "a8",
+        "to_square": "a7"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "1nbq1bnr/rpp1kpp1/p2pp3/8/1PPPNP1p/B7/P3PKPP/R2Q1BNR w - - 1 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e2e3",
+          "d1e1",
+          "d4d5"
+        ],
+        "probabilities": [
+          0.45390673443760887,
+          0.5741526106186735,
+          0.25804935912922
+        ],
+        "thinking_time": 0.2661594184452106,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e4g5",
+          "g1f3",
+          "d1b1",
+          "a3c1",
+          "f2f3"
+        ],
+        "probabilities": [
+          0.4409599892974131,
+          0.9399447030351754,
+          1.0,
+          0.4347638859687877,
+          0.0
+        ],
+        "thinking_time": 0.10790515912876279,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "g1h3",
+        "source": "gameplay_brain",
+        "evaluation": 0.27074817436770404,
+        "from_square": "g1",
+        "to_square": "h3"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "1nbq1bnr/rpp1kpp1/p2pp3/8/1PPPNP1p/B6N/P3PKPP/R2Q1B1R b - - 2 9",
+        "game_id": "headless_test_session",
+        "move_number": 9,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c8d7",
+          "f7f6",
+          "g8f6"
+        ],
+        "probabilities": [
+          0.23292051242284106,
+          0.4313906142230922,
+          0.2714238434290267
+        ],
+        "thinking_time": 0.22477210207765308,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b7b6",
+          "g7g6",
+          "d8e8",
+          "f7f6",
+          "e7d7"
+        ],
+        "probabilities": [
+          0.5247569706352974,
+          0.445856734353152,
+          0.3049100956259231,
+          0.0,
+          1.0
+        ],
+        "thinking_time": 0.12379771615876063,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "a7a8",
+        "source": "gameplay_brain",
+        "evaluation": -0.041874255811832684,
+        "from_square": "a7",
+        "to_square": "a8"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/8/1PPPNP1p/B6N/P3PKPP/R2Q1B1R w - - 3 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e4d6",
+          "e4f6",
+          "d1e1"
+        ],
+        "probabilities": [
+          0.7928861739153956,
+          0.30746322453710107,
+          0.15195610807612492
+        ],
+        "thinking_time": 0.2823752536631725,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "e4g5",
+          "a3b2",
+          "a3c1",
+          "e4d6",
+          "d1e1"
+        ],
+        "probabilities": [
+          0.49076396358895125,
+          1.0,
+          0.6948768148651833,
+          0.7179276330382077,
+          0.0
+        ],
+        "thinking_time": 0.1860832572528811,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "e4d2",
+        "source": "gameplay_brain",
+        "evaluation": 0.1454938008541633,
+        "from_square": "e4",
+        "to_square": "d2"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbq1bnr/1pp1kpp1/p2pp3/8/1PPP1P1p/B6N/P2NPKPP/R2Q1B1R b - - 4 10",
+        "game_id": "headless_test_session",
+        "move_number": 10,
+        "turn": "black"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "b7b5",
+          "e6e5",
+          "b8c6"
+        ],
+        "probabilities": [
+          0.5679460378578984,
+          0.2289968785144545,
+          0.5531924162466961
+        ],
+        "thinking_time": 0.252774292400087,
+        "ai_type": "thinking_brain",
+        "num_candidates": 3
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "thinking_update",
+      "data": {
+        "candidates": [
+          "c7c6",
+          "b8c6",
+          "e7d7",
+          "c8d7",
+          "f7f5"
+        ],
+        "probabilities": [
+          0.4042515882842691,
+          0.08990846300149183,
+          0.0,
+          0.87814438673367,
+          1.0
+        ],
+        "thinking_time": 0.19957895567187772,
+        "ai_type": "gameplay_brain",
+        "num_candidates": 5
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "move_made",
+      "data": {
+        "move": "e7e8",
+        "source": "gameplay_brain",
+        "evaluation": -0.19260095872293093,
+        "from_square": "e7",
+        "to_square": "e8"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "position_update",
+      "data": {
+        "fen": "rnbqkbnr/1pp2pp1/p2pp3/8/1PPP1P1p/B6N/P2NPKPP/R2Q1B1R w - - 5 11",
+        "game_id": "headless_test_session",
+        "move_number": 11,
+        "turn": "white"
+      }
+    },
+    {
+      "timestamp": 1756908983.4189034,
+      "event_type": "game_end",
+      "data": {
+        "result": "White wins",
+        "reason": "Time",
+        "total_moves": 19,
+        "game_duration": 0.00698089599609375
+      }
+    }
+  ]
+}
