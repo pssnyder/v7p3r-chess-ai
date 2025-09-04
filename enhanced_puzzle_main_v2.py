@@ -57,6 +57,8 @@ def main():
     parser.add_argument('--max-rating', type=int, help='Maximum puzzle rating (e.g., 800)')
     parser.add_argument('--min-rating', type=int, help='Minimum puzzle rating (e.g., 600)')
     parser.add_argument('--randomized', action='store_true', help='Randomize puzzle selection within filters')
+    parser.add_argument('--hpts', type=float, help='Hours per training session (time-based instead of puzzle count)')
+    parser.add_argument('--batch-size', type=int, default=100, help='Puzzle batch size for time-based training')
     parser.add_argument('--difficulty-adaptation', action='store_true', default=True, help='Enable adaptive difficulty')
     parser.add_argument('--intelligent-selection', action='store_true', default=True, help='Use intelligent puzzle selection')
     parser.add_argument('--spaced-repetition', action='store_true', default=True, help='Include spaced repetition')
@@ -148,8 +150,13 @@ def main():
             trainer.close()
             return
         
-        # Determine training parameters
-        if args.quick_test:
+        # Determine training mode and parameters
+        if args.hpts:
+            # Time-based training
+            training_hours = args.hpts
+            logger.info(f"⏱️  Starting enhanced V2 time-based training for {training_hours} hours")
+            logger.info(f"   Batch size: {args.batch_size} puzzles per batch")
+        elif args.quick_test:
             num_puzzles = 20
             logger.info("🚀 Running quick V2 test with 20 puzzles")
         else:
@@ -161,23 +168,43 @@ def main():
         logger.info(f"   Target themes: {args.target_themes or 'Auto-selected based on weaknesses'}")
         logger.info(f"   Excluded themes: {args.excluded_themes or 'None'}")
         logger.info(f"   Rating range: {args.min_rating or 'No min'} - {args.max_rating or 'No max'}")
+        if args.hpts:
+            logger.info(f"   Training mode: Time-based ({args.hpts} hours)")
+            logger.info(f"   Batch size: {args.batch_size} puzzles")
         logger.info(f"   Difficulty adaptation: {args.difficulty_adaptation}")
         logger.info(f"   Intelligent selection: {args.intelligent_selection}")
         logger.info(f"   Spaced repetition: {args.spaced_repetition}")
         
-        # Run enhanced V2 training
-        results = trainer.train_enhanced_v2(
-            num_puzzles=num_puzzles,
-            target_themes=args.target_themes,
-            excluded_themes=args.excluded_themes,
-            max_rating=args.max_rating,
-            min_rating=args.min_rating,
-            difficulty_adaptation=args.difficulty_adaptation,
-            intelligent_selection=args.intelligent_selection,
-            spaced_repetition=args.spaced_repetition,
-            checkpoint_interval=25 if args.quick_test else 50,
-            save_progress=True
-        )
+        # Run enhanced V2 training - choose method based on mode
+        if args.hpts:
+            # Time-based training
+            results = trainer.train_enhanced_v2_timed(
+                hours=args.hpts,
+                batch_size=args.batch_size,
+                target_themes=args.target_themes,
+                excluded_themes=args.excluded_themes,
+                max_rating=args.max_rating,
+                min_rating=args.min_rating,
+                difficulty_adaptation=args.difficulty_adaptation,
+                intelligent_selection=args.intelligent_selection,
+                spaced_repetition=args.spaced_repetition,
+                checkpoint_interval=25 if args.quick_test else 50,
+                save_progress=True
+            )
+        else:
+            # Traditional puzzle-count based training
+            results = trainer.train_enhanced_v2(
+                num_puzzles=num_puzzles,
+                target_themes=args.target_themes,
+                excluded_themes=args.excluded_themes,
+                max_rating=args.max_rating,
+                min_rating=args.min_rating,
+                difficulty_adaptation=args.difficulty_adaptation,
+                intelligent_selection=args.intelligent_selection,
+                spaced_repetition=args.spaced_repetition,
+                checkpoint_interval=25 if args.quick_test else 50,
+                save_progress=True
+            )
         
         # Print comprehensive summary
         logger.info("=" * 60)
@@ -213,9 +240,9 @@ def main():
             if v2_analytics:
                 basic_perf = v2_analytics.get('basic_performance', {})
                 logger.info(f"\n🗄️  DATABASE ANALYTICS:")
-                logger.info(f"   Total puzzles in database: {basic_perf.get('total_puzzles', 0)}")
+                logger.info(f"   Total puzzles attempted: {basic_perf.get('total_puzzles', 0)}")
                 logger.info(f"   Overall average score: {basic_perf.get('avg_score') or 0:.2f}")
-                logger.info(f"   Overall learning velocity: {basic_perf.get('avg_learning_velocity') or 0:.3f}")
+                logger.info(f"   Overall learning velocity: {basic_perf.get('avg_learning_velocity') or 0:.6f}")
         
         logger.info("=" * 60)
         logger.info("Enhanced V2 puzzle training session completed successfully! 🎉")

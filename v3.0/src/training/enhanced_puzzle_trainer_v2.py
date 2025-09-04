@@ -230,6 +230,260 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         
         logger.info("🎉 Enhanced V2 puzzle training completed!")
         return performance_summary
+
+    def train_enhanced_v2_timed(self, 
+                               hours: float,
+                               batch_size: int = 100,
+                               target_themes: Optional[List[str]] = None,
+                               excluded_themes: Optional[List[str]] = None,
+                               max_rating: Optional[int] = None,
+                               min_rating: Optional[int] = None,
+                               difficulty_adaptation: bool = True,
+                               intelligent_selection: bool = True,
+                               spaced_repetition: bool = True,
+                               checkpoint_interval: int = 100,
+                               save_progress: bool = True) -> Dict:
+        """
+        Enhanced V2 time-based training - train for a specified duration
+        
+        Args:
+            hours: Training duration in hours
+            batch_size: Number of puzzles to fetch in each batch
+            (other args same as train_enhanced_v2)
+        """
+        import time
+        from datetime import datetime, timedelta
+        
+        start_time = datetime.now()
+        end_time = start_time + timedelta(hours=hours)
+        
+        logger.info(f"🕐 Starting {hours}-hour enhanced V2 training session")
+        logger.info(f"   Session will end at: {end_time.strftime('%H:%M:%S')}")
+        
+        # Initialize session
+        session_id = str(uuid.uuid4())
+        self.current_session_id = session_id
+        self.session_context = {
+            'session_id': session_id,
+            'session_start_time': start_time,
+            'target_end_time': end_time,
+            'training_mode': 'timed',
+            'total_hours': hours,
+            'puzzle_number': 0,
+            'performance_scores': [],  # Track recent performance for fatigue estimation
+            'fatigue_estimate': 0.0,
+            'average_performance': 0.0
+        }
+        
+        # Initialize enhanced stats
+        self.enhanced_stats_v2 = {
+            'stockfish_graded_moves': 0,
+            'average_stockfish_score': 0.0,
+            'moves_in_stockfish_top_5': 0,
+            'regression_recoveries': 0,
+            'session_efficiency': 0.0
+        }
+        
+        logger.info(f"🧩 Starting enhanced V2 timed training session: {session_id}")
+        
+        # Record session start
+        training_config = {
+            'hours': hours,
+            'batch_size': batch_size,
+            'target_themes': target_themes,
+            'excluded_themes': excluded_themes,
+            'max_rating': max_rating,
+            'min_rating': min_rating,
+            'difficulty_adaptation': difficulty_adaptation,
+            'intelligent_selection': intelligent_selection,
+            'spaced_repetition': spaced_repetition
+        }
+        
+        try:
+            self.enhanced_db_v2.connection.execute("""
+                INSERT INTO training_sessions_v2 (
+                    session_id, start_time, model_version, training_config
+                ) VALUES (?, ?, ?, ?)
+            """, (session_id, start_time.isoformat(), self.model_version, 
+                  json.dumps(training_config, cls=DateTimeEncoder)))
+            self.enhanced_db_v2.connection.commit()
+        except Exception as e:
+            logger.warning(f"Could not record session start: {e} - continuing without database recording")
+        
+        all_results = []
+        batch_count = 0
+        last_save_time = start_time
+        puzzles_processed_since_save = 0
+        
+        # Track processed puzzle IDs to avoid repeats across batches
+        processed_puzzle_ids = set()
+        
+        # Progress tracking for time-based training
+        logger.info(f"⏱️  Training for {hours} hours, fetching puzzles in batches of {batch_size}")
+        
+        while datetime.now() < end_time:
+            remaining_time = end_time - datetime.now()
+            if remaining_time.total_seconds() < 60:  # Less than 1 minute left
+                logger.info("⏰ Less than 1 minute remaining - ending session gracefully")
+                break
+                
+            # Get next batch of puzzles (excluding already processed ones)
+            batch_count += 1
+            elapsed_time = datetime.now() - start_time
+            since_save_time = datetime.now() - last_save_time
+            
+            logger.info(f"📦 Fetching puzzle batch {batch_count}")
+            logger.info(f"   ⏱️  Elapsed: {elapsed_time.total_seconds()/3600:.2f}h | Since save: {since_save_time.total_seconds()/60:.1f}m")
+            
+            # Get larger pool to ensure variety after filtering out processed puzzles
+            candidate_pool_size = batch_size * 3  # Get 3x as many to filter from
+            candidate_puzzles = self._get_intelligent_puzzle_selection(
+                candidate_pool_size, target_themes, excluded_themes, max_rating, min_rating,
+                difficulty_adaptation, intelligent_selection, spaced_repetition
+            )
+            
+            if not candidate_puzzles:
+                logger.warning("⚠️  No more puzzles available matching criteria - ending session")
+                break
+            
+            # Filter out already processed puzzles and take only what we need
+            fresh_puzzles = [p for p in candidate_puzzles if p['id'] not in processed_puzzle_ids]
+            puzzles = fresh_puzzles[:batch_size]
+            
+            if not puzzles:
+                logger.warning("⚠️  All available puzzles in this batch already processed - ending session")
+                break
+                
+            # Mark these puzzles as processed
+            for puzzle in puzzles:
+                processed_puzzle_ids.add(puzzle['id'])
+            
+            logger.info(f"   Selected {len(puzzles)} fresh puzzles (filtered from {len(candidate_puzzles)} candidates)")
+            
+            # Train on this batch
+            batch_results = []
+            batch_start_time = datetime.now()
+            
+            with tqdm(total=len(puzzles), 
+                     desc=f"Batch {batch_count} | {(datetime.now() - start_time).total_seconds()/3600:.1f}h/{hours}h",
+                     leave=False) as pbar:
+                
+                for i, puzzle in enumerate(puzzles):
+                    # Check time BEFORE starting puzzle (finish current puzzle philosophy)
+                    current_time = datetime.now()
+                    if current_time >= end_time:
+                        logger.info(f"⏰ Time limit reached - completed {len(batch_results)} puzzles in current batch")
+                        logger.info(f"   Stopping gracefully after finishing last puzzle")
+                        break
+                    
+                    self.session_context['puzzle_number'] = len(all_results) + i + 1
+                    
+                    # Train on puzzle (complete it fully)
+                    result = self._train_on_puzzle_v2(puzzle)
+                    
+                    if result:
+                        batch_results.append(result)
+                        all_results.append(result)
+                        puzzles_processed_since_save += 1
+                        self._update_session_context(result)
+                        self._update_enhanced_stats_v2(result, puzzle)
+                        
+                        # Update progress bar 
+                        self._update_progress_bar_v2(pbar)
+                    
+                    pbar.update(1)
+                    
+                    # Memory management: periodic checkpoints
+                    if save_progress and len(all_results) % checkpoint_interval == 0:
+                        checkpoint_time = datetime.now()
+                        elapsed_since_start = (checkpoint_time - start_time).total_seconds() / 3600.0
+                        elapsed_since_save = (checkpoint_time - last_save_time).total_seconds() / 60.0
+                        
+                        logger.info(f"💾 Checkpoint save #{len(all_results)//checkpoint_interval}")
+                        logger.info(f"   ⏱️  Total elapsed: {elapsed_since_start:.2f}h | Since last save: {elapsed_since_save:.1f}m")
+                        logger.info(f"   📊 Puzzles since last save: {puzzles_processed_since_save}")
+                        
+                        self._save_enhanced_checkpoint_v2(len(all_results), all_results)
+                        
+                        # Reset tracking
+                        last_save_time = checkpoint_time
+                        puzzles_processed_since_save = 0
+                        
+                        # Memory cleanup - clear older results to prevent buildup
+                        if len(all_results) > checkpoint_interval * 2:
+                            # Keep only recent results in memory, rest are saved to disk
+                            import gc
+                            gc.collect()  # Force garbage collection
+            
+            batch_end_time = datetime.now()
+            batch_duration = (batch_end_time - batch_start_time).total_seconds() / 60.0
+            
+            logger.info(f"✅ Completed batch {batch_count}: {len(batch_results)} puzzles in {batch_duration:.1f} minutes")
+            logger.info(f"   📈 Batch rate: {len(batch_results) / (batch_duration/60.0):.1f} puzzles/hour")
+            
+            # Brief pause between batches to prevent system overload
+            time.sleep(2)
+            
+            # Safety check - if we've been training way longer than expected, something might be wrong
+            total_elapsed = (datetime.now() - start_time).total_seconds() / 3600.0
+            if total_elapsed > hours * 1.5:  # 50% longer than planned
+                logger.warning(f"⚠️  Training has exceeded planned duration by 50% ({total_elapsed:.2f}h vs {hours}h)")
+                logger.warning("   Ending session for safety")
+                break
+        
+        # Final session summary  
+        final_time = datetime.now()
+        actual_duration = (final_time - start_time).total_seconds() / 3600.0
+        final_save_duration = (final_time - last_save_time).total_seconds() / 60.0
+        
+        logger.info(f"🏁 Time-based training session completed!")
+        logger.info(f"   ⏱️  Planned duration: {hours:.2f} hours")
+        logger.info(f"   ⏱️  Actual duration: {actual_duration:.2f} hours")
+        logger.info(f"   📊 Total puzzles completed: {len(all_results)}")
+        logger.info(f"   📦 Total batches processed: {batch_count}")
+        logger.info(f"   💾 Final save duration since last checkpoint: {final_save_duration:.1f} minutes")
+        logger.info(f"   📊 Puzzles since last save: {puzzles_processed_since_save}")
+        
+        if len(all_results) > 0:
+            actual_rate = len(all_results) / actual_duration
+            logger.info(f"   📈 Actual training rate: {actual_rate:.1f} puzzles/hour")
+        
+        # Generate final report
+        performance_summary = self._generate_enhanced_report_v2(all_results)
+        
+        # Update session record
+        session_efficiency = len(all_results) / actual_duration if actual_duration > 0 else 0
+        
+        self.enhanced_db_v2.connection.execute("""
+            UPDATE training_sessions_v2 SET
+                end_time = ?, total_puzzles = ?, puzzles_solved = ?,
+                average_score = ?, performance_summary = ?, session_efficiency = ?,
+                learning_momentum = ?, session_quality_score = ?
+            WHERE session_id = ?
+        """, (
+            final_time.isoformat(), len(all_results), 
+            sum(1 for r in all_results if r['found_solution']),
+            sum(r['ai_score'] for r in all_results) / len(all_results) if all_results else 0,
+            json.dumps(performance_summary, cls=DateTimeEncoder), session_efficiency,
+            self.enhanced_stats_v2.get('learning_velocity_improvements', 0),
+            self._calculate_session_quality_score(all_results),
+            session_id
+        ))
+        self.enhanced_db_v2.connection.commit()
+        
+        # Final checkpoint save with timing info
+        if save_progress and all_results:
+            logger.info(f"💾 Saving final checkpoint...")
+            logger.info(f"   ⏱️  Total training duration: {actual_duration:.2f} hours")
+            logger.info(f"   📊 Final puzzle count: {len(all_results)}")
+            self._save_enhanced_final_results_v2(all_results)
+        
+        # Final memory cleanup
+        import gc
+        gc.collect()
+        
+        logger.info("🎉 Enhanced V2 timed training completed!")
+        return performance_summary
     
     def _get_intelligent_puzzle_selection(self, num_puzzles: int, target_themes: Optional[List[str]],
                                         excluded_themes: Optional[List[str]], max_rating: Optional[int], 
@@ -684,6 +938,13 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
     def _generate_enhanced_report_v2(self, results: List[Dict]) -> Dict:
         """Generate comprehensive V2 enhanced training report"""
         basic_report = self._generate_training_report(results)
+        
+        # Fix the top5_rate calculation - base class includes ranks > 5
+        if results:
+            total_puzzles = len(results)
+            correct_top5_hits = sum(1 for r in results if 1 <= r['ai_rank'] <= 5)
+            basic_report['top5_hits'] = correct_top5_hits
+            basic_report['top5_rate'] = (correct_top5_hits / total_puzzles) * 100
         
         # Enhanced V2 analytics
         v2_analytics = self.enhanced_db_v2.get_enhanced_analytics_readonly(self.model_version)
