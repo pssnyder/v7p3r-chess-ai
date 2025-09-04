@@ -110,6 +110,9 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
     def train_enhanced_v2(self, 
                          num_puzzles: int = 1000,
                          target_themes: Optional[List[str]] = None,
+                         excluded_themes: Optional[List[str]] = None,
+                         max_rating: Optional[int] = None,
+                         min_rating: Optional[int] = None,
                          difficulty_adaptation: bool = True,
                          intelligent_selection: bool = True,
                          spaced_repetition: bool = True,
@@ -121,6 +124,9 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         Args:
             num_puzzles: Number of puzzles to train on
             target_themes: Specific themes to focus on (None = auto-select weak themes)
+            excluded_themes: Themes to exclude from selection (e.g., ['long'])
+            max_rating: Maximum puzzle rating (e.g., 800)
+            min_rating: Minimum puzzle rating
             difficulty_adaptation: Automatically adjust difficulty based on performance
             intelligent_selection: Use analytics to select optimal puzzles
             spaced_repetition: Include puzzles ready for optimal revisiting
@@ -158,8 +164,8 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         
         # Get intelligent puzzle selection
         puzzles = self._get_intelligent_puzzle_selection(
-            num_puzzles, target_themes, difficulty_adaptation, 
-            intelligent_selection, spaced_repetition
+            num_puzzles, target_themes, excluded_themes, max_rating, min_rating,
+            difficulty_adaptation, intelligent_selection, spaced_repetition
         )
         
         if not puzzles:
@@ -226,12 +232,34 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         return performance_summary
     
     def _get_intelligent_puzzle_selection(self, num_puzzles: int, target_themes: Optional[List[str]],
-                                        difficulty_adaptation: bool, intelligent_selection: bool,
-                                        spaced_repetition: bool) -> List[Dict]:
-        """Use V2 analytics to intelligently select puzzles for training"""
+                                        excluded_themes: Optional[List[str]], max_rating: Optional[int], 
+                                        min_rating: Optional[int], difficulty_adaptation: bool, 
+                                        intelligent_selection: bool, spaced_repetition: bool) -> List[Dict]:
+        """Use V2 analytics to intelligently select puzzles for training with custom filters"""
         
         cursor = self.enhanced_db_v2.connection.cursor()
         puzzles = []
+        
+        # Build filter conditions and parameters
+        def build_filter_conditions():
+            conditions = []
+            params = []
+            
+            if max_rating is not None:
+                conditions.append("rating <= ?")
+                params.append(max_rating)
+            
+            if min_rating is not None:
+                conditions.append("rating >= ?")
+                params.append(min_rating)
+            
+            if excluded_themes:
+                for theme in excluded_themes:
+                    conditions.append("themes NOT LIKE ?")
+                    params.append(f'%{theme}%')
+            
+            filter_clause = " AND ".join(conditions) if conditions else ""
+            return filter_clause, params
         
         # If no target themes specified, auto-select weak themes
         if not target_themes and intelligent_selection:
@@ -249,16 +277,24 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         # Get spaced repetition puzzles (ready for optimal revisiting)
         spaced_rep_count = 0
         if spaced_repetition:
-            cursor.execute("""
+            filter_clause, filter_params = build_filter_conditions()
+            base_query = """
                 SELECT * FROM puzzles_v2 
                 WHERE ai_encounter_count > 0 
                 AND datetime('now') > datetime(ai_last_encounter_date, '+' || ai_optimal_revisit_interval || ' hours')
                 AND ai_mastery_level IN ('learning', 'competent')
+            """
+            if filter_clause:
+                base_query += f" AND {filter_clause}"
+            
+            base_query += """
                 ORDER BY 
                     CASE WHEN ai_regression_detected = 1 THEN 0 ELSE 1 END,
                     (datetime('now') - datetime(ai_last_encounter_date)) DESC
                 LIMIT ?
-            """, (num_puzzles // 4,))  # 25% spaced repetition
+            """
+            
+            cursor.execute(base_query, filter_params + [num_puzzles // 4])  # 25% spaced repetition
             
             spaced_puzzles = [dict(row) for row in cursor.fetchall()]
             puzzles.extend(spaced_puzzles)
@@ -266,12 +302,17 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             logger.info(f"Added {spaced_rep_count} spaced repetition puzzles")
         
         # Get regression recovery puzzles (high priority)
-        cursor.execute("""
+        filter_clause, filter_params = build_filter_conditions()
+        base_query = """
             SELECT * FROM puzzles_v2 
             WHERE ai_regression_detected = 1
-            ORDER BY ai_consecutive_fails DESC, ai_last_encounter_date ASC
-            LIMIT ?
-        """, (num_puzzles // 10,))  # 10% regression recovery
+        """
+        if filter_clause:
+            base_query += f" AND {filter_clause}"
+        
+        base_query += " ORDER BY ai_consecutive_fails DESC, ai_last_encounter_date ASC LIMIT ?"
+        
+        cursor.execute(base_query, filter_params + [num_puzzles // 10])  # 10% regression recovery
         
         regression_puzzles = [dict(row) for row in cursor.fetchall()]
         puzzles.extend(regression_puzzles)
@@ -285,6 +326,21 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             conditions = ["ai_encounter_count < 3"]  # Prefer less encountered puzzles
             params = []
             
+            # Add custom rating filters
+            if max_rating is not None:
+                conditions.append("rating <= ?")
+                params.append(max_rating)
+            
+            if min_rating is not None:
+                conditions.append("rating >= ?")
+                params.append(min_rating)
+            
+            # Add theme exclusions
+            if excluded_themes:
+                for theme in excluded_themes:
+                    conditions.append("themes NOT LIKE ?")
+                    params.append(f'%{theme}%')
+            
             if target_themes:
                 theme_conditions = []
                 for theme in target_themes:
@@ -292,8 +348,8 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                     params.append(f"%{theme}%")
                 conditions.append(f"({' OR '.join(theme_conditions)})")
             
-            if difficulty_adaptation:
-                # Get current performance level and adjust difficulty
+            if difficulty_adaptation and max_rating is None and min_rating is None:
+                # Only use auto difficulty if no manual rating filters set
                 current_level = self._estimate_current_difficulty_level()
                 difficulty_range = self._get_appropriate_difficulty_range(current_level)
                 conditions.append("rating BETWEEN ? AND ?")

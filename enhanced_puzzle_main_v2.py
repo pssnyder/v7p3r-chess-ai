@@ -53,6 +53,10 @@ def main():
     parser.add_argument('--quick-test', action='store_true', help='Run quick test with 20 puzzles')
     parser.add_argument('--num-puzzles', type=int, default=100, help='Number of puzzles to train on')
     parser.add_argument('--target-themes', nargs='+', help='Specific themes to focus on')
+    parser.add_argument('--excluded-themes', nargs='+', help='Themes to exclude (e.g., long veryLong)')
+    parser.add_argument('--max-rating', type=int, help='Maximum puzzle rating (e.g., 800)')
+    parser.add_argument('--min-rating', type=int, help='Minimum puzzle rating (e.g., 600)')
+    parser.add_argument('--randomized', action='store_true', help='Randomize puzzle selection within filters')
     parser.add_argument('--difficulty-adaptation', action='store_true', default=True, help='Enable adaptive difficulty')
     parser.add_argument('--intelligent-selection', action='store_true', default=True, help='Use intelligent puzzle selection')
     parser.add_argument('--spaced-repetition', action='store_true', default=True, help='Include spaced repetition')
@@ -155,6 +159,8 @@ def main():
         # Show training configuration
         logger.info("🔧 TRAINING CONFIGURATION:")
         logger.info(f"   Target themes: {args.target_themes or 'Auto-selected based on weaknesses'}")
+        logger.info(f"   Excluded themes: {args.excluded_themes or 'None'}")
+        logger.info(f"   Rating range: {args.min_rating or 'No min'} - {args.max_rating or 'No max'}")
         logger.info(f"   Difficulty adaptation: {args.difficulty_adaptation}")
         logger.info(f"   Intelligent selection: {args.intelligent_selection}")
         logger.info(f"   Spaced repetition: {args.spaced_repetition}")
@@ -163,6 +169,9 @@ def main():
         results = trainer.train_enhanced_v2(
             num_puzzles=num_puzzles,
             target_themes=args.target_themes,
+            excluded_themes=args.excluded_themes,
+            max_rating=args.max_rating,
+            min_rating=args.min_rating,
             difficulty_adaptation=args.difficulty_adaptation,
             intelligent_selection=args.intelligent_selection,
             spaced_repetition=args.spaced_repetition,
@@ -170,29 +179,18 @@ def main():
             save_progress=True
         )
         
-        # Debug what we got back
-        print(f"DEBUG: Training returned: {type(results)}")
-        print(f"DEBUG: Results is None: {results is None}")
-        if results:
-            print(f"DEBUG: Results keys: {list(results.keys()) if isinstance(results, dict) else 'Not a dict'}")
-        
         # Print comprehensive summary
         logger.info("=" * 60)
         logger.info("ENHANCED V2 TRAINING COMPLETED")
         logger.info("=" * 60)
         
         if results:
-            # Get the final report which contains the correct metrics
-            final_report = results.get('final_report', {})
-            training_stats = results.get('training_stats', {})
-            all_results = results.get('all_results', [])
-            
-            # Use the actual length of processed puzzles as fallback
-            total_puzzles = final_report.get('total_puzzles', len(all_results))
+            # Basic metrics from top-level results structure
+            total_puzzles = results.get('total_puzzles', 0)
             logger.info(f"✅ Puzzles processed: {total_puzzles}")
-            logger.info(f"🎯 Perfect solutions: {final_report.get('perfect_solutions', 0)}")
-            logger.info(f"📊 Average score: {final_report.get('average_score', 0):.2f}/5.0")
-            logger.info(f"🔝 Top-5 hits: {final_report.get('top5_rate', 0):.1f}%")
+            logger.info(f"🎯 Perfect solutions: {results.get('perfect_solutions', 0)}")
+            logger.info(f"📊 Average score: {results.get('average_score', 0):.2f}/5.0")
+            logger.info(f"🔝 Top-5 hits: {results.get('top5_rate', 0):.1f}%")
             
             # Enhanced V2 metrics
             enhanced_stats = results.get('enhanced_stats_v2', {})
