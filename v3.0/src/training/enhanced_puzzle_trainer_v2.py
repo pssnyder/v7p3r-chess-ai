@@ -509,24 +509,54 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             
             if excluded_themes:
                 for theme in excluded_themes:
-                    conditions.append("themes NOT LIKE ?")
-                    params.append(f'%{theme}%')
+                    # Smart exclusion: if excluding "long", also exclude "veryLong"
+                    if theme.lower() == "long":
+                        conditions.append("themes NOT LIKE ? AND themes NOT LIKE ?")
+                        params.extend([f'%{theme}%', '%veryLong%'])
+                    else:
+                        conditions.append("themes NOT LIKE ?")
+                        params.append(f'%{theme}%')
             
             filter_clause = " AND ".join(conditions) if conditions else ""
             return filter_clause, params
         
-        # If no target themes specified, auto-select weak themes
+        # If no target themes specified, auto-select weak themes (excluding excluded themes)
         if not target_themes and intelligent_selection:
-            cursor.execute("""
+            # Build exclusion conditions for theme selection
+            exclusion_conditions = []
+            exclusion_params = [self.model_version]
+            
+            if excluded_themes:
+                for theme in excluded_themes:
+                    # Smart exclusion: if excluding "long", also exclude "veryLong" and similar
+                    if theme.lower() == "long":
+                        exclusion_conditions.extend([
+                            "theme NOT LIKE ?", 
+                            "theme NOT LIKE ?",
+                            "theme NOT LIKE ?"
+                        ])
+                        exclusion_params.extend([f'%{theme}%', '%veryLong%', '%long%'])
+                    else:
+                        exclusion_conditions.append("theme NOT LIKE ?")
+                        exclusion_params.append(f'%{theme}%')
+            
+            exclusion_clause = ""
+            if exclusion_conditions:
+                exclusion_clause = f" AND {' AND '.join(exclusion_conditions)}"
+            
+            cursor.execute(f"""
                 SELECT theme FROM theme_mastery 
                 WHERE model_version = ? AND confidence_score < 0.6
+                {exclusion_clause}
                 ORDER BY confidence_score ASC, learning_velocity DESC
                 LIMIT 5
-            """, (self.model_version,))
+            """, exclusion_params)
             weak_themes = [row[0] for row in cursor.fetchall()]
             target_themes = weak_themes[:3] if weak_themes else None
             if target_themes:
-                logger.info(f"Auto-selected weak themes for focus: {target_themes}")
+                logger.info(f"Auto-selected weak themes for focus (excluding {excluded_themes}): {target_themes}")
+            else:
+                logger.info(f"No weak themes found that don't match excluded themes: {excluded_themes}")
         
         # Get spaced repetition puzzles (ready for optimal revisiting)
         spaced_rep_count = 0
@@ -592,8 +622,13 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             # Add theme exclusions
             if excluded_themes:
                 for theme in excluded_themes:
-                    conditions.append("themes NOT LIKE ?")
-                    params.append(f'%{theme}%')
+                    # Smart exclusion: if excluding "long", also exclude "veryLong"
+                    if theme.lower() == "long":
+                        conditions.append("themes NOT LIKE ? AND themes NOT LIKE ?")
+                        params.extend([f'%{theme}%', '%veryLong%'])
+                    else:
+                        conditions.append("themes NOT LIKE ?")
+                        params.append(f'%{theme}%')
             
             if target_themes:
                 theme_conditions = []
