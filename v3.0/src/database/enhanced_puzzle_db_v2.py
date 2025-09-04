@@ -519,8 +519,8 @@ class EnhancedPuzzleDatabaseV2:
             cursor.execute("""
                 INSERT INTO puzzles_v2 (id, ai_encounter_count, ai_solved_count, ai_best_score, 
                                       ai_average_score, ai_last_encounter_date)
-                VALUES (?, 1, ?, ?, ?, ?)
-            """, (puzzle_id, 1 if found_solution else 0, ai_score, ai_score, encounter_date))
+                VALUES (?, ?, ?, ?, ?, ?)
+            """, (puzzle_id, 1, 1 if found_solution else 0, ai_score, ai_score, encounter_date))
             return
         
         # Calculate enhanced metrics

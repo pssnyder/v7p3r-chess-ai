@@ -52,6 +52,10 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                  memory_config: Optional[Dict] = None,
                  model_version: str = "v3.0"):
         
+        # Set default Stockfish path to the new engine location
+        if stockfish_path is None:
+            stockfish_path = "v3.0/stockfish/stockfish-windows-x86-64-avx2.exe"
+        
         # Initialize V2 enhanced database
         self.enhanced_db_v2 = EnhancedPuzzleDatabaseV2(puzzle_db_path)
         
@@ -124,13 +128,16 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         }
         
         # Record session start in V2 database
-        self.enhanced_db_v2.connection.execute("""
-            INSERT INTO training_sessions_v2 (
-                session_id, start_time, model_version, training_config
-            ) VALUES (?, ?, ?, ?)
-        """, (self.current_session_id, self.session_context['session_start_time'].isoformat(),
-              self.model_version, json.dumps(training_config, cls=DateTimeEncoder)))
-        self.enhanced_db_v2.connection.commit()
+        try:
+            self.enhanced_db_v2.connection.execute("""
+                INSERT INTO training_sessions_v2 (
+                    session_id, start_time, model_version, training_config
+                ) VALUES (?, ?, ?, ?)
+            """, (self.current_session_id, self.session_context['session_start_time'].isoformat(),
+                  self.model_version, json.dumps(training_config, cls=DateTimeEncoder)))
+            self.enhanced_db_v2.connection.commit()
+        except Exception as e:
+            logger.warning(f"Could not record session start: {e} - continuing without database recording")
         
         logger.info(f"🧩 Starting enhanced V2 puzzle training session: {self.current_session_id}")
         
@@ -408,8 +415,8 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                     session_id=self.current_session_id
                 )
             except Exception as e:
-                logger.warning(f"Could not record enhanced encounter in V2 database: {e}")
-                # Continue without enhanced recording
+                logger.debug(f"Could not record enhanced encounter in V2 database: {e}")
+                # Continue without enhanced recording - non-critical for training
             
             # Neural network training
             if found_solution or score > 0:
@@ -447,20 +454,78 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             return None
     
     def _get_move_stockfish_evaluation(self, fen: str, move: str) -> Optional[Dict]:
-        """Get Stockfish evaluation for a specific move - simplified version"""
+        """Get Stockfish evaluation for a specific move"""
         try:
-            # For now, return a basic evaluation structure
-            # This can be enhanced later with proper Stockfish integration
+            if not os.path.exists(self.stockfish_path):
+                # Create a basic evaluation structure
+                return {
+                    'score': 0,  # Unknown score
+                    'rank': 10,  # Low rank for unknown moves
+                    'centipawn_eval': None,
+                    'mate_in': None,
+                    'move_category': 'not_evaluated'
+                }
+            
+            import chess.engine
+            
+            # Use Stockfish engine directly
+            with chess.engine.SimpleEngine.popen_uci(self.stockfish_path) as engine:
+                board = chess.Board(fen)
+                
+                # Get top moves with multi-PV
+                multipv_info = engine.analyse(board, chess.engine.Limit(depth=15), multipv=10)
+                
+                for i, analysis in enumerate(multipv_info):
+                    best_move = analysis.get('pv', [None])[0]
+                    if best_move and str(best_move) == move:
+                        score_info = analysis.get('score')
+                        
+                        if score_info:
+                            # Convert score to our 0-5 scale
+                            if score_info.is_mate():
+                                mate_moves = score_info.relative.mate()
+                                score = 5 if mate_moves and mate_moves > 0 else 0
+                                mate_in = mate_moves
+                                cp_eval = None
+                            else:
+                                cp_eval = score_info.relative.score()
+                                if cp_eval is None:
+                                    cp_eval = 0
+                                # Convert centipawn to 0-5 scale
+                                score = min(5, max(0, (cp_eval + 500) / 200))
+                                mate_in = None
+                        else:
+                            score = 2.5  # Default score
+                            cp_eval = None
+                            mate_in = None
+                        
+                        return {
+                            'score': score,
+                            'rank': i + 1,
+                            'centipawn_eval': cp_eval,
+                            'mate_in': mate_in,
+                            'move_category': 'stockfish_evaluated'
+                        }
+                
+                # If move not in top 10, it's probably not great
+                return {
+                    'score': 1,  # Low score
+                    'rank': 15,  # Beyond top moves
+                    'centipawn_eval': None,
+                    'mate_in': None,
+                    'move_category': 'poor_move'
+                }
+            
+        except Exception as e:
+            logger.debug(f"Error in Stockfish move evaluation for {move}: {e}")
+            # Return fallback evaluation
             return {
-                'score': 0,  # Unknown score
-                'rank': 10,  # Low rank for unknown moves
+                'score': 0,
+                'rank': 10,
                 'centipawn_eval': None,
                 'mate_in': None,
-                'move_category': 'not_evaluated'
+                'move_category': 'evaluation_failed'
             }
-        except Exception as e:
-            logger.debug(f"Error in move evaluation for {move}: {e}")
-            return None
     
     def _update_session_context(self, result: Dict):
         """Update session context with latest result"""
