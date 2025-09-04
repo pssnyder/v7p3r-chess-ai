@@ -81,7 +81,7 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         # Enhanced training statistics with V2 metrics
         self.enhanced_stats_v2 = {
             'stockfish_graded_moves': 0,
-            'moves_in_stockfish_top_3': 0,
+            'moves_in_stockfish_top_5': 0,
             'average_stockfish_score': 0.0,
             'learning_velocity_improvements': 0,
             'theme_mastery_gains': 0,
@@ -91,6 +91,21 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         }
         
         logger.info("EnhancedPuzzleTrainerV2 initialized with V2 database schema")
+
+    def score_ai_move(self, ai_move: str, stockfish_moves: List[tuple]) -> tuple:
+        """Score AI move against Stockfish recommendations with 0-5 scale"""
+        if not stockfish_moves:
+            return 0.0, -1
+        
+        # Find the rank of AI move in Stockfish recommendations
+        for rank, (sf_move, sf_score) in enumerate(stockfish_moves, 1):
+            if sf_move == ai_move:
+                # Convert rank to score: rank 1 = 5.0, rank 2 = 4.0, ..., rank 5 = 1.0
+                score = max(0.0, 6.0 - rank)
+                return score, rank
+        
+        # AI move not in top 5, assign minimal score
+        return 0.0, len(stockfish_moves) + 1
     
     def train_enhanced_v2(self, 
                          num_puzzles: int = 1000,
@@ -374,9 +389,9 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                 for sf_move, sf_score in stockfish_moves:
                     if sf_move == ai_move:
                         ai_move_stockfish_eval = {
-                            'score': sf_score,
-                            'rank': next((i for i, (m, s) in enumerate(stockfish_moves, 1) if m == ai_move), len(stockfish_moves) + 1),
-                            'centipawn_eval': None,  # Could be enhanced with actual centipawn eval
+                            'score': score,  # Use our 0-5 ranking score, not raw centipawn
+                            'rank': rank,
+                            'centipawn_eval': sf_score,  # Store raw centipawn value here
                             'move_category': 'stockfish_top_moves'
                         }
                         break
@@ -415,8 +430,10 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                     session_id=self.current_session_id
                 )
             except Exception as e:
-                logger.debug(f"Could not record enhanced encounter in V2 database: {e}")
-                # Continue without enhanced recording - non-critical for training
+                logger.error(f"Database recording failed (non-critical): {e}")
+                import traceback
+                logger.error(traceback.format_exc())
+                # Continue training - database recording is supplementary
             
             # Neural network training
             if found_solution or score > 0:
@@ -481,7 +498,7 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                         score_info = analysis.get('score')
                         
                         if score_info:
-                            # Convert score to our 0-5 scale
+                            # Convert score to our 0-5 scale based on RANK, not centipawn
                             if score_info.is_mate():
                                 mate_moves = score_info.relative.mate()
                                 score = 5 if mate_moves and mate_moves > 0 else 0
@@ -489,13 +506,22 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                                 cp_eval = None
                             else:
                                 cp_eval = score_info.relative.score()
-                                if cp_eval is None:
-                                    cp_eval = 0
-                                # Convert centipawn to 0-5 scale
-                                score = min(5, max(0, (cp_eval + 500) / 200))
+                                # Score based on rank in Stockfish top moves (0-5 scale)
+                                if i == 0:  # Best move
+                                    score = 5
+                                elif i == 1:  # 2nd best
+                                    score = 4
+                                elif i == 2:  # 3rd best
+                                    score = 3
+                                elif i == 3:  # 4th best
+                                    score = 2
+                                elif i == 4:  # 5th best
+                                    score = 1
+                                else:  # Beyond top 5
+                                    score = 0
                                 mate_in = None
                         else:
-                            score = 2.5  # Default score
+                            score = 0  # Unknown = worst score
                             cp_eval = None
                             mate_in = None
                         
@@ -507,9 +533,9 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
                             'move_category': 'stockfish_evaluated'
                         }
                 
-                # If move not in top 10, it's probably not great
+                # If move not in top 10, it's a poor move
                 return {
-                    'score': 1,  # Low score
+                    'score': 0,  # Not in Stockfish top moves = 0 score
                     'rank': 15,  # Beyond top moves
                     'centipawn_eval': None,
                     'mate_in': None,
@@ -566,8 +592,9 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             current_total = self.enhanced_stats_v2['average_stockfish_score'] * (self.enhanced_stats_v2['stockfish_graded_moves'] - 1)
             self.enhanced_stats_v2['average_stockfish_score'] = (current_total + sf_score) / self.enhanced_stats_v2['stockfish_graded_moves']
             
-            if sf_rank <= 3:
-                self.enhanced_stats_v2['moves_in_stockfish_top_3'] += 1
+            # Count moves in Stockfish top-5 (score > 0)
+            if sf_score > 0:  # Any positive score means it was in top-5
+                self.enhanced_stats_v2['moves_in_stockfish_top_5'] += 1
         
         # Track other V2 metrics
         if puzzle.get('ai_regression_detected') and result['found_solution']:
@@ -587,14 +614,14 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             # V2 specific metrics
             sf_graded = self.enhanced_stats_v2['stockfish_graded_moves']
             avg_sf_score = self.enhanced_stats_v2['average_stockfish_score']
-            top3_rate = (self.enhanced_stats_v2['moves_in_stockfish_top_3'] / max(1, sf_graded)) * 100
+            top5_rate = (self.enhanced_stats_v2['moves_in_stockfish_top_5'] / max(1, sf_graded)) * 100
             fatigue = self.session_context['fatigue_estimate'] * 100
             
             pbar.set_postfix({
                 'Score': f"{avg_score:.2f}/5",
                 'Solutions': f"{solution_rate:.1f}%", 
-                'SF Score': f"{avg_sf_score:.2f}/5",
-                'Top3': f"{top3_rate:.1f}%",
+                'SF Score': f"{avg_sf_score:.1f}/5",
+                'Top5': f"{top5_rate:.1f}%",
                 'Fatigue': f"{fatigue:.0f}%"
             })
     
@@ -603,7 +630,7 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         basic_report = self._generate_training_report(results)
         
         # Enhanced V2 analytics
-        v2_analytics = self.enhanced_db_v2.get_enhanced_analytics(self.model_version)
+        v2_analytics = self.enhanced_db_v2.get_enhanced_analytics_readonly(self.model_version)
         
         enhanced_report = basic_report.copy()
         enhanced_report.update({
@@ -688,7 +715,7 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             'training_stats': self.training_stats,
             'enhanced_stats_v2': self.enhanced_stats_v2,
             'session_context': self.session_context,
-            'v2_analytics': self.enhanced_db_v2.get_enhanced_analytics(self.model_version),
+            'v2_analytics': self.enhanced_db_v2.get_enhanced_analytics_readonly(self.model_version),
             'recent_results': results[-50:],
             'timestamp': timestamp
         }
@@ -715,7 +742,7 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
             'session_context': self.session_context,
             'all_results': results,
             'final_report': self._generate_enhanced_report_v2(results),
-            'comprehensive_analytics': self.enhanced_db_v2.get_enhanced_analytics(self.model_version),
+            'comprehensive_analytics': self.enhanced_db_v2.get_enhanced_analytics_readonly(self.model_version),
             'model_path': str(final_model_path),
             'model_version': self.model_version,
             'training_methodology': 'enhanced_v2_puzzle_training',
@@ -729,8 +756,8 @@ class EnhancedPuzzleTrainerV2(PuzzleTrainer):
         logger.info(f"Enhanced V2 final model saved: {final_model_path}")
     
     def get_comprehensive_analytics(self) -> Dict:
-        """Get comprehensive V2 analytics dashboard"""
-        return self.enhanced_db_v2.get_enhanced_analytics(self.model_version)
+        """Get comprehensive V2 analytics dashboard with read-only access"""
+        return self.enhanced_db_v2.get_enhanced_analytics_readonly(self.model_version)
     
     def close(self):
         """Clean up resources"""

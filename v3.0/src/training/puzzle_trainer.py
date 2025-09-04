@@ -45,8 +45,10 @@ if puzzle_db_path.exists():
 
 try:
     from database import PuzzleDatabase, Puzzle
+    DATABASE_AVAILABLE = True
 except ImportError:
-    print("Warning: Puzzle database not available. Falling back to synthetic puzzles.")
+    # Only warn if we actually try to use the old database
+    DATABASE_AVAILABLE = False
     PuzzleDatabase = None
     Puzzle = None
 
@@ -123,7 +125,11 @@ class PuzzleTrainer:
         """Load puzzles from database with filtering"""
         
         if not PuzzleDatabase or not os.path.exists(self.puzzle_db_path):
-            logger.warning("Puzzle database not available, generating synthetic puzzles")
+            if PuzzleDatabase is None:
+                if not DATABASE_AVAILABLE:
+                    logger.info("Using enhanced V2 database - old database import not available")
+                else:
+                    logger.warning("Puzzle database not available, generating synthetic puzzles")
             return self._generate_synthetic_puzzles(num_puzzles)
         
         try:

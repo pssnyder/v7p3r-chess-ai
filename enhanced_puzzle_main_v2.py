@@ -2,7 +2,23 @@
 Enhanced Puzzle Training V2 Main Entry Point
 
 This script demonstrates the enhanced V2 puzzle-based training system with comprehensive analytics.
-Uses the migrated V2 database schema for advanced learning intelligence.
+Us        # Show training results
+        logger.info("=" * 60)
+        logger.info("ENHANCED V2 TRAINING COMPLETED")
+        logger.info("=" * 60)
+        
+        if results:
+            # Debug: Check what's actually in results
+            print(f"DEBUG: Results type: {type(results)}")
+            print(f"DEBUG: Results keys: {list(results.keys()) if isinstance(results, dict) else 'Not a dict'}")
+            print(f"DEBUG: total_puzzles value: {results.get('total_puzzles', 'KEY NOT FOUND')}")
+            
+            # The training method returns the final report directly, not wrapped
+            total_puzzles = results.get('total_puzzles', 0)
+            logger.info(f"✅ Puzzles processed: {total_puzzles}")
+            logger.info(f"🎯 Perfect solutions: {results.get('perfect_solutions', 0)}")
+            logger.info(f"📊 Average score: {results.get('average_score', 0):.2f}/5.0")
+            logger.info(f"🔝 Top-5 hits: {results.get('top5_rate', 0):.1f}%")2 database schema for advanced learning intelligence.
 """
 
 import os
@@ -154,24 +170,36 @@ def main():
             save_progress=True
         )
         
+        # Debug what we got back
+        print(f"DEBUG: Training returned: {type(results)}")
+        print(f"DEBUG: Results is None: {results is None}")
+        if results:
+            print(f"DEBUG: Results keys: {list(results.keys()) if isinstance(results, dict) else 'Not a dict'}")
+        
         # Print comprehensive summary
         logger.info("=" * 60)
         logger.info("ENHANCED V2 TRAINING COMPLETED")
         logger.info("=" * 60)
         
         if results:
-            # Basic metrics
-            logger.info(f"✅ Puzzles processed: {results.get('puzzles_solved', 0)}")
-            logger.info(f"🎯 Perfect solutions: {results.get('perfect_solutions', 0)}")
-            logger.info(f"📊 Average score: {results.get('average_score', 0):.2f}/5.0")
-            logger.info(f"🔝 Top-5 hits: {results.get('top5_accuracy', 0):.1f}%")
+            # Get the final report which contains the correct metrics
+            final_report = results.get('final_report', {})
+            training_stats = results.get('training_stats', {})
+            all_results = results.get('all_results', [])
+            
+            # Use the actual length of processed puzzles as fallback
+            total_puzzles = final_report.get('total_puzzles', len(all_results))
+            logger.info(f"✅ Puzzles processed: {total_puzzles}")
+            logger.info(f"🎯 Perfect solutions: {final_report.get('perfect_solutions', 0)}")
+            logger.info(f"📊 Average score: {final_report.get('average_score', 0):.2f}/5.0")
+            logger.info(f"🔝 Top-5 hits: {final_report.get('top5_rate', 0):.1f}%")
             
             # Enhanced V2 metrics
             enhanced_stats = results.get('enhanced_stats_v2', {})
             logger.info(f"\n🧠 ENHANCED V2 METRICS:")
             logger.info(f"   Stockfish graded moves: {enhanced_stats.get('stockfish_graded_moves', 0)}")
             logger.info(f"   Average Stockfish score: {enhanced_stats.get('average_stockfish_score', 0):.2f}/5.0")
-            logger.info(f"   Moves in Stockfish top-3: {enhanced_stats.get('moves_in_stockfish_top_3', 0)}")
+            logger.info(f"   Moves in Stockfish top-5: {enhanced_stats.get('moves_in_stockfish_top_5', 0)}")
             logger.info(f"   Regression recoveries: {enhanced_stats.get('regression_recoveries', 0)}")
             logger.info(f"   Session efficiency: {enhanced_stats.get('session_efficiency', 0):.1f} puzzles/hour")
             

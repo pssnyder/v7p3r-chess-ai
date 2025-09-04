@@ -455,15 +455,24 @@ class EnhancedPuzzleDatabaseV2:
             return 0.0
         
         # Find recent performance on similar puzzles
-        placeholders = ','.join(['?' for _ in themes])
+        # Build the WHERE clause for theme matching
+        theme_conditions = []
+        params = [model_version]
+        
+        for theme in themes:
+            theme_conditions.append("p.themes LIKE ?")
+            params.append(f'%{theme}%')
+        
+        theme_where = ' OR '.join(theme_conditions)
+        
         cursor.execute(f"""
             SELECT AVG(h.ai_score)
             FROM ai_performance_history_v2 h
             JOIN puzzles_v2 p ON h.puzzle_id = p.id
             WHERE h.model_version = ? 
             AND h.encounter_date >= date('now', '-7 days')
-            AND (p.themes LIKE '%' || ? || '%' OR {' OR '.join([f"p.themes LIKE '%' || ? || '%'" for _ in themes[1:]])})
-        """, [model_version] + themes + themes[1:])
+            AND ({theme_where})
+        """, params)
         
         result = cursor.fetchone()
         return result[0] if result and result[0] else 0.0
@@ -684,7 +693,68 @@ class EnhancedPuzzleDatabaseV2:
                 """, (new_encountered, new_solved, new_avg_score, confidence, mastery_level,
                       encounter_date, theme, model_version))
     
-    def get_enhanced_analytics(self, model_version: str = 'v3.0') -> Dict:
+    def get_enhanced_analytics_readonly(self, model_version: str = 'v3.0') -> Dict:
+        """Get comprehensive enhanced analytics with read-only access to avoid database locks"""
+        try:
+            # Use read-only connection to prevent locking issues
+            import sqlite3
+            readonly_conn = sqlite3.connect(f"file:{self.db_path}?mode=ro", uri=True)
+            readonly_conn.row_factory = sqlite3.Row
+            cursor = readonly_conn.cursor()
+            
+            # Basic performance metrics
+            cursor.execute("""
+                SELECT COUNT(*) as total_puzzles, 
+                       AVG(ai_average_score) as avg_score,
+                       AVG(ai_learning_velocity) as avg_learning_velocity,
+                       AVG(ai_stability_score) as avg_stability
+                FROM puzzles_v2 WHERE ai_encounter_count > 0
+            """)
+            basic_stats = dict(cursor.fetchone() or {})
+            
+            # Theme mastery summary
+            cursor.execute("""
+                SELECT theme, mastery_level, confidence_score, average_score
+                FROM theme_mastery 
+                WHERE model_version = ?
+                ORDER BY confidence_score DESC, average_score DESC
+                LIMIT 20
+            """, (model_version,))
+            theme_mastery = [dict(row) for row in cursor.fetchall()]
+            
+            # Recent performance trends
+            cursor.execute("""
+                SELECT DATE(encounter_date) as date, 
+                       AVG(ai_score) as avg_score,
+                       COUNT(*) as puzzle_count,
+                       SUM(CASE WHEN found_solution THEN 1 ELSE 0 END) as solutions
+                FROM ai_performance_history_v2 
+                WHERE model_version = ? 
+                AND encounter_date >= date('now', '-7 days')
+                GROUP BY DATE(encounter_date)
+                ORDER BY date DESC
+            """, (model_version,))
+            recent_performance = [dict(row) for row in cursor.fetchall()]
+            
+            readonly_conn.close()
+            
+            return {
+                'basic_performance': basic_stats,
+                'theme_mastery': theme_mastery,
+                'recent_performance': recent_performance,
+                'model_version': model_version,
+                'timestamp': datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.warning(f"Could not get read-only analytics: {e}")
+            return {
+                'basic_performance': {'total_puzzles': 0, 'avg_score': 0, 'avg_learning_velocity': 0, 'avg_stability': 0},
+                'theme_mastery': [],
+                'recent_performance': [],
+                'model_version': model_version,
+                'error': str(e)
+            }
         """Get comprehensive enhanced analytics"""
         cursor = self.connection.cursor()
         
