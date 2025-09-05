@@ -1,9 +1,9 @@
-__pycache__/*
-stockfish/*
-models/*
-simulations/*
-validation_results/*
-game_history/*
-stockfish/*
+*__pycache__/*
+*stockfish/*
+*models/*
+*simulations/*
+*validation_results/*
+*game_history/*
 
+*.pyc
 *.db*
