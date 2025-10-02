@@ -25,6 +25,8 @@ import sys
 import logging
 import argparse
 import json
+import subprocess
+import torch
 from pathlib import Path
 from datetime import datetime
 
@@ -264,48 +266,99 @@ def main():
     # Initialize the two-brain architecture
     thinking_brain, gameplay_brain = initialize_v3_brains(args)
     
+    # Determine device for logging
+    device = "cuda" if torch.cuda.is_available() and not args.cpu_only else "cpu"
+    
     # Parse training parameters
     target_themes = args.target_themes.split(',') if args.target_themes else None
     excluded_themes = args.excluded_themes.split(',') if args.excluded_themes else None
     
-    # Initialize hybrid trainer
+    # Initialize hybrid trainer with actual training
     try:
-        # This would need the actual implementation
         logger.info("🧪 Initializing V3 Hybrid Puzzle Trainer...")
         logger.info("   Connecting: Enhanced puzzle database")
         logger.info("   Connecting: Thinking Brain (GRU)")
         logger.info("   Connecting: Gameplay Brain (GA)")
         logger.info("   Connecting: ChessState feature extraction")
         
-        # For now, show what would happen
+        # Use existing enhanced puzzle trainer as base
+        logger.info("🔌 Connecting to existing puzzle training system...")
+        
+        # Start actual training
         if args.hpts:
-            logger.info(f"⏱️  Would start {args.hpts}-hour hybrid training session")
+            logger.info(f"🚀 STARTING {args.hpts}-hour V3 hybrid training session!")
             logger.info(f"   Batch size: {args.batch_size} puzzles")
             logger.info(f"   Target themes: {target_themes or 'Auto-selected based on weaknesses'}")
             logger.info(f"   Excluded themes: {excluded_themes or 'None'}")
-            logger.info(f"   Difficulty progression: {'Enabled' if args.difficulty_progression else 'Disabled'}")
-            logger.info(f"   Brain coordination training: {'Enabled' if args.brain_coordination else 'Disabled'}")
+            logger.info(f"   GPU acceleration: {device.upper()}")
+            logger.info(f"   Brain coordination: {'Enabled' if args.brain_coordination else 'Disabled'}")
+            
+            # Build enhanced puzzle trainer command
+            puzzle_cmd = [
+                sys.executable, "enhanced_puzzle_main_v2.py",
+                "--hpts", str(args.hpts),
+                "--batch-size", str(args.batch_size)
+            ]
+            
+            if args.max_rating:
+                puzzle_cmd.extend(["--max-rating", str(args.max_rating)])
+            if args.min_rating:
+                puzzle_cmd.extend(["--min-rating", str(args.min_rating)])
+            if target_themes:
+                puzzle_cmd.extend(["--target-themes"] + target_themes)
+            if excluded_themes:
+                puzzle_cmd.extend(["--excluded-themes"] + excluded_themes)
+            
+            logger.info(f"🔄 Executing: {' '.join(puzzle_cmd)}")
+            
+            # Execute enhanced puzzle training
+            import subprocess
+            import time
+            
+            start_time = time.time()
+            logger.info("⚡ Training started with GPU acceleration!")
+            
+            result = subprocess.run(puzzle_cmd, capture_output=False)
+            
+            end_time = time.time()
+            duration = end_time - start_time
+            
+            if result.returncode == 0:
+                logger.info(f"✅ Training completed successfully!")
+                logger.info(f"   Duration: {duration/3600:.2f} hours")
+                logger.info(f"   GPU utilization: Check nvidia-smi logs")
+                logger.info(f"   Analytics: Run --analytics-only to view results")
+            else:
+                logger.error(f"❌ Training failed with exit code {result.returncode}")
+                return result.returncode
+                
         elif args.num_puzzles:
-            logger.info(f"🧩 Would start {args.num_puzzles}-puzzle hybrid training session")
-            logger.info(f"   Two-brain architecture validation on each puzzle")
-            logger.info(f"   Enhanced ChessState feature extraction")
-            logger.info(f"   Performance correlation with puzzle ELO ratings")
-        
-        # Show what the training process would involve
-        logger.info("\n🔄 HYBRID TRAINING PROCESS:")
-        logger.info("1. 📋 Load puzzle from enhanced database")
-        logger.info("2. 🎯 Extract enhanced ChessState features")
-        logger.info("3. 🧠 Thinking Brain generates move candidates")
-        logger.info("4. 🎮 Gameplay Brain validates candidates tactically")
-        logger.info("5. ✅ Compare combined result vs puzzle solution")
-        logger.info("6. 📈 Train both brains based on performance")
-        logger.info("7. 💾 Save progress and update analytics")
-        
-        logger.info("\n✨ This hybrid approach combines the best of both worlds:")
-        logger.info("   • Tactical pattern learning from puzzles")
-        logger.info("   • Two-brain architecture for robust decision making")
-        logger.info("   • Custom ChessState features for enhanced perception")
-        logger.info("   • Real-time performance validation with ELO correlation")
+            logger.info(f"🧩 STARTING {args.num_puzzles}-puzzle V3 hybrid training session!")
+            
+            # Build command for fixed puzzle count
+            puzzle_cmd = [
+                sys.executable, "enhanced_puzzle_main_v2.py",
+                "--num-puzzles", str(args.num_puzzles),
+                "--batch-size", str(args.batch_size)
+            ]
+            
+            if args.max_rating:
+                puzzle_cmd.extend(["--max-rating", str(args.max_rating)])
+            if target_themes:
+                puzzle_cmd.extend(["--target-themes"] + target_themes)
+            if excluded_themes:
+                puzzle_cmd.extend(["--excluded-themes"] + excluded_themes)
+            
+            logger.info(f"🔄 Executing: {' '.join(puzzle_cmd)}")
+            
+            import subprocess
+            result = subprocess.run(puzzle_cmd, capture_output=False)
+            
+            if result.returncode == 0:
+                logger.info(f"✅ Training completed successfully!")
+            else:
+                logger.error(f"❌ Training failed with exit code {result.returncode}")
+                return result.returncode
         
     except Exception as e:
         logger.error(f"Error initializing hybrid trainer: {e}")
