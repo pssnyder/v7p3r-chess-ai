@@ -96,7 +96,7 @@ def main():
             )
         
         # Initialize Enhanced Puzzle Trainer V2
-        stockfish_path = args.stockfish_path or "v3.0/stockfish.exe"
+        stockfish_path = args.stockfish_path or "v3.0/stockfish/stockfish-windows-x86-64-avx2.exe"
         
         trainer = EnhancedPuzzleTrainerV2(
             thinking_brain=brain,
