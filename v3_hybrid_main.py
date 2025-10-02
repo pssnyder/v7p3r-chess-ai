@@ -143,9 +143,8 @@ def initialize_v3_brains(args):
     # Initialize Gameplay Brain (GA)
     gameplay_brain = GameplayBrain(
         population_size=args.ga_population,
-        max_generations=args.ga_generations,
-        simulation_depth=3,
-        device=device
+        generations=args.ga_generations,
+        simulation_depth=3
     )
     
     logger.info(f"✅ Two-Brain Architecture initialized:")
