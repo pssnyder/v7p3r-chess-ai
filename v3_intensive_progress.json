@@ -1,0 +1,50 @@
+{
+  "start_date": "2025-10-02T14:48:06.790252",
+  "target_completion": "2025-10-07T14:48:06.790270",
+  "daily_goals": {
+    "day_1": {
+      "puzzles": 5000,
+      "accuracy": 0.6,
+      "themes": [
+        "pin",
+        "fork",
+        "skewer"
+      ]
+    },
+    "day_2": {
+      "puzzles": 7000,
+      "accuracy": 0.7,
+      "themes": [
+        "deflection",
+        "xRayAttack",
+        "discoveredAttack"
+      ]
+    },
+    "day_3": {
+      "puzzles": 10000,
+      "accuracy": 0.65,
+      "themes": [
+        "advantage",
+        "crushing",
+        "endgame"
+      ]
+    },
+    "day_4": {
+      "puzzles": 12000,
+      "accuracy": 0.8,
+      "themes": [
+        "mixed_advanced"
+      ]
+    },
+    "day_5": {
+      "puzzles": 15000,
+      "accuracy": 0.75,
+      "themes": [
+        "comprehensive_test"
+      ]
+    }
+  },
+  "daily_actual": {},
+  "gpu_stats": {},
+  "notes": {}
+}
