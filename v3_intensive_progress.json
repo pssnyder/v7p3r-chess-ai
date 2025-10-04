@@ -51,6 +51,13 @@
       "accuracy": 0.74,
       "gpu_utilization": 85.0,
       "completed": true
+    },
+    "day_2": {
+      "date": "2025-10-03T21:11:26.464422",
+      "puzzles_solved": 28499,
+      "accuracy": 0.4,
+      "gpu_utilization": 90.0,
+      "completed": true
     }
   },
   "gpu_stats": {
@@ -58,9 +65,15 @@
       "avg_utilization": 85.0,
       "peak_memory_usage": "N/A",
       "training_speed": "1263 puzzles/hour"
+    },
+    "day_2": {
+      "avg_utilization": 90.0,
+      "peak_memory_usage": "N/A",
+      "training_speed": "2375 puzzles/hour"
     }
   },
   "notes": {
-    "day_1": "Exceeded all targets - 303% of puzzle goal, accuracy above target"
+    "day_1": "Exceeded all targets - 303% of puzzle goal, accuracy above target",
+    "day_2": "Intensive mixed training - AI showed fatigue, accuracy dropped significantly"
   }
 }
