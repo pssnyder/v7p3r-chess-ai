@@ -1,0 +1,52 @@
+# V7P3RAI v4.0 - Requirements
+# Python 3.11+ required
+
+# Core Dependencies
+torch>=2.0.0
+numpy>=1.24.0
+python-chess>=1.999
+
+# Deep Learning
+tensorboard>=2.13.0
+torch-summary>=1.4.5
+
+# Data Processing
+pandas>=2.0.0
+tqdm>=4.65.0
+h5py>=3.9.0
+
+# Chess Utilities
+chess>=1.10.0
+stockfish>=3.28.0  # Python wrapper for Stockfish
+chess-variants>=0.1.0
+
+# Tablebase Support
+python-chess[syzygy]>=1.999
+
+# Training & Monitoring
+wandb>=0.15.0  # Optional: For experiment tracking
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+pyyaml>=6.0
+jsonschema>=4.17.0
+colorama>=0.4.6
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Performance
+numba>=0.57.0  # JIT compilation for hot paths
+cython>=0.29.0  # Optional: For C-level optimizations
+
+# GPU Acceleration
+cuda-python>=12.0.0; sys_platform == 'linux' or sys_platform == 'win32'
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.4.0
+ipython>=8.14.0
+jupyter>=1.0.0

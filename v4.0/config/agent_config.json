@@ -1,0 +1,173 @@
+{
+  "orchestrator": {
+    "enabled": true,
+    "agent_priority_order": [
+      "opening",
+      "endgame",
+      "themes",
+      "corrector",
+      "tactics"
+    ],
+    "fallback_enabled": true,
+    "error_handling": "graceful_degradation"
+  },
+  
+  "themes_agent": {
+    "name": "v7p3r-themes",
+    "enabled": false,
+    "stage": 1,
+    
+    "model": {
+      "path": "models/stage1_themes/final_model.pth",
+      "architecture": "GRU",
+      "input_features": 690
+    },
+    
+    "inference": {
+      "timeout_ms": 5,
+      "batch_inference": false,
+      "cache_enabled": true,
+      "cache_size": 10000
+    },
+    
+    "move_ordering": {
+      "time_budget_thresholds": {
+        "fast": 0.5,
+        "normal": 2.0,
+        "deep": 5.0,
+        "ultra_deep": 10.0
+      },
+      "candidate_counts": {
+        "fast": 5,
+        "normal": 10,
+        "deep": 50,
+        "ultra_deep": 100
+      }
+    },
+    
+    "fallback": {
+      "enabled": true,
+      "use_traditional_ordering": true
+    }
+  },
+  
+  "corrector_agent": {
+    "name": "v7p3r-corrector",
+    "enabled": false,
+    "stage": 2,
+    
+    "model": {
+      "path": "models/stage2_corrector/final_model.pth",
+      "correction_db_path": "models/stage2_corrector/correction_database.db"
+    },
+    
+    "validation": {
+      "confidence_threshold": 0.7,
+      "quality_threshold": 0.3,
+      "override_enabled": true
+    },
+    
+    "logging": {
+      "log_corrections": true,
+      "correction_log_path": "logs/corrections.json"
+    }
+  },
+  
+  "opening_agent": {
+    "name": "v7p3r-opening",
+    "enabled": false,
+    "stage": 3,
+    
+    "book": {
+      "path": "data/opening_book/master_games_db/",
+      "format": "polyglot",
+      "max_book_ply": 15
+    },
+    
+    "novelty": {
+      "enabled": true,
+      "model_path": "models/stage3_opening/novelty_detector.pth",
+      "quality_threshold": 0.7
+    }
+  },
+  
+  "endgame_agent": {
+    "name": "v7p3r-endgame",
+    "enabled": false,
+    "stage": 3,
+    
+    "tablebase": {
+      "path": "data/tablebases/syzygy_6piece/",
+      "enabled": true,
+      "max_pieces": 6,
+      "probe_dtz": true,
+      "probe_wdl": true
+    },
+    
+    "mate_detection": {
+      "enabled": true,
+      "max_depth": 5,
+      "timeout_ms": 500,
+      "model_path": "models/stage3_endgame/mate_detector.pth"
+    },
+    
+    "endgame_principles": {
+      "enabled": true,
+      "model_path": "models/stage3_endgame/endgame_evaluator.pth",
+      "piece_threshold": 12
+    }
+  },
+  
+  "tactics_agent": {
+    "name": "v7p3r-tactics",
+    "enabled": false,
+    "stage": 4,
+    
+    "model": {
+      "policy_network_path": "models/stage4_tactics/policy_network.pth",
+      "value_network_path": "models/stage4_tactics/value_network.pth"
+    },
+    
+    "evaluation": {
+      "use_nn_eval": false,
+      "hybrid_mode": true,
+      "nn_weight": 0.5,
+      "fallback_to_traditional": true
+    },
+    
+    "mcts": {
+      "enabled": false,
+      "simulations": 100,
+      "exploration_constant": 1.4
+    }
+  },
+  
+  "integration": {
+    "engine_path": "../../v7p3r-chess-engine/src/",
+    "feature_flags": {
+      "ai_move_ordering": false,
+      "ai_move_correction": false,
+      "ai_opening_book": false,
+      "ai_endgame": false,
+      "ai_evaluation": false
+    },
+    
+    "performance": {
+      "max_overhead_ms": 20,
+      "parallel_agents": false,
+      "cache_position_features": true
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics": {
+      "agent_call_count": true,
+      "agent_success_rate": true,
+      "agent_latency": true,
+      "fallback_rate": true,
+      "correction_rate": true
+    },
+    "metrics_file": "logs/agent_metrics.json"
+  }
+}
