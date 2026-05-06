@@ -1,0 +1,36 @@
+============================================================
+ENRICHED PUZZLE DATASET STATISTICS
+============================================================
+
+Total puzzles: 100
+Top-N moves per puzzle: 10
+
+Rating Distribution:
+  Min: 655
+  Max: 2464
+  Mean: 1458
+  Median: 1432
+
+Top 20 Themes:
+  short               :     50 ( 50.0%)
+  middlegame          :     49 ( 49.0%)
+  endgame             :     48 ( 48.0%)
+  crushing            :     39 ( 39.0%)
+  advantage           :     34 ( 34.0%)
+  long                :     29 ( 29.0%)
+  mate                :     27 ( 27.0%)
+  fork                :     16 ( 16.0%)
+  mateIn1             :     15 ( 15.0%)
+  oneMove             :     15 ( 15.0%)
+  master              :     14 ( 14.0%)
+  mateIn2             :     10 ( 10.0%)
+  kingsideAttack      :      9 (  9.0%)
+  hangingPiece        :      8 (  8.0%)
+  rookEndgame         :      7 (  7.0%)
+  skewer              :      7 (  7.0%)
+  sacrifice           :      7 (  7.0%)
+  exposedKing         :      6 (  6.0%)
+  veryLong            :      6 (  6.0%)
+  pin                 :      6 (  6.0%)
+
+============================================================

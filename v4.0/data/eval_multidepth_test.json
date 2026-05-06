@@ -1,0 +1,122 @@
+[
+  {
+    "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3pP3/3P4/P1N5/1PP2PPP/R1BQKBNR b KQkq - 0 5",
+    "candidate_moves": [
+      "f6d7",
+      "f6e4",
+      "f6g8",
+      "c6d4",
+      "f6h5"
+    ],
+    "v7p3r_eval": 107,
+    "stockfish_eval": 107,
+    "correct_move": "f6d7",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  },
+  {
+    "fen": "r1bqk2r/ppp2ppp/4p3/2b1P3/3nQ3/P3B3/1PP2PPP/2KR1BNR b kq - 0 10",
+    "candidate_moves": [
+      "c8d7",
+      "d8e7",
+      "c5e7",
+      "d4b3",
+      "c5a3"
+    ],
+    "v7p3r_eval": 485,
+    "stockfish_eval": 485,
+    "correct_move": "c8d7",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  },
+  {
+    "fen": "rnbqk2r/ppp2ppp/4pn2/3p4/1bPP4/2NQ1N2/PP2PPPP/R1B1KB1R b KQkq - 3 5",
+    "candidate_moves": [
+      "c7c5",
+      "e8g8",
+      "f6e4",
+      "b7b6",
+      "h7h6"
+    ],
+    "v7p3r_eval": -7,
+    "stockfish_eval": -7,
+    "correct_move": "c7c5",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  },
+  {
+    "fen": "r1bq1rk1/pp1n1ppp/5B2/2bp4/3Q4/2N2N2/PP2PPPP/R3KB1R b KQ - 0 10",
+    "candidate_moves": [
+      "d8f6",
+      "c5d4",
+      "g7f6",
+      "d8b6",
+      "d8a5"
+    ],
+    "v7p3r_eval": -18,
+    "stockfish_eval": -18,
+    "correct_move": "d8f6",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  },
+  {
+    "fen": "rnb1k2r/pp3pp1/1Qp2b1p/3p4/3P4/2N2N2/PP2PPPP/R3KB1R b KQkq - 0 10",
+    "candidate_moves": [
+      "a7b6",
+      "e8g8",
+      "a7a5",
+      "b8d7",
+      "b8a6"
+    ],
+    "v7p3r_eval": -32,
+    "stockfish_eval": -37,
+    "correct_move": "a7b6",
+    "use_v7p3r": true,
+    "confidence": 1.0
+  },
+  {
+    "fen": "rn2k2r/1p2bpp1/1p2b2p/2PpP3/8/2NB1N1P/PP3PP1/R3K2R b KQkq - 0 15",
+    "candidate_moves": [
+      "b6c5",
+      "e7c5",
+      "e8g8",
+      "b8c6",
+      "e7d8"
+    ],
+    "v7p3r_eval": -74,
+    "stockfish_eval": -149,
+    "correct_move": "b6c5",
+    "use_v7p3r": true,
+    "confidence": 1.0
+  },
+  {
+    "fen": "r1bqkb1r/ppp2ppp/2n1pn2/3pP3/3P4/P1N5/1PP2PPP/R1BQKBNR b KQkq - 0 5",
+    "candidate_moves": [
+      "f6d7",
+      "f6e4",
+      "f6g8",
+      "c6d4",
+      "c6e5"
+    ],
+    "v7p3r_eval": 106,
+    "stockfish_eval": 106,
+    "correct_move": "f6d7",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  },
+  {
+    "fen": "r1bqk2r/ppp2pQp/4p3/2b1P3/3np3/P3B3/1PP2PPP/2KR1BNR b kq - 0 10",
+    "candidate_moves": [
+      "h8f8",
+      "d4b3",
+      "c5f8",
+      "d4e2",
+      "d8d5"
+    ],
+    "v7p3r_eval": 416,
+    "stockfish_eval": 416,
+    "correct_move": "h8f8",
+    "use_v7p3r": false,
+    "confidence": 1.0
+  }
+]

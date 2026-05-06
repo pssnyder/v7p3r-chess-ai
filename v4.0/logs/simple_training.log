@@ -1,0 +1,924 @@
+2026-05-03 17:45:42,066 [INFO] ================================================================================
+2026-05-03 17:45:42,066 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-03 17:45:42,067 [INFO] ================================================================================
+2026-05-03 17:45:42,067 [INFO] Start time: 2026-05-03 17:45:42.064744
+2026-05-03 17:45:42,067 [INFO] Target duration: 48 hours
+2026-05-03 17:45:42,068 [INFO] Auto-recover: True
+2026-05-03 17:45:42,068 [INFO] ================================================================================
+2026-05-03 17:45:42,068 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-03 17:45:42,070 [INFO] Starting training session (attempt 1/3)
+2026-05-03 17:45:46,130 [ERROR] Training failed with code 2
+2026-05-03 17:45:46,132 [ERROR] Output: usage: train_move_ordering.py [-h] --data-path DATA_PATH
+                              [--checkpoint-dir CHECKPOINT_DIR]
+                              [--batch-size BATCH_SIZE]
+                              [--num-epochs NUM_EPOCHS]
+                              [--learning-rate LEARNING_RATE]
+                              [--early-stopping-patience EARLY_STOPPING_PATIENCE]
+                              [--num-workers NUM_WORKERS]
+                              [--gradient-accumulation GRADIENT_ACCUMULATION]
+                              [--max-samples MAX_SAMPLES] [--no-amp]
+train_move_ordering.py: error: the following arguments are required: --data-path
+
+2026-05-03 17:45:46,132 [INFO] Retrying in 60s...
+2026-05-03 17:46:46,188 [INFO] Starting training session (attempt 2/3)
+2026-05-03 17:46:50,132 [ERROR] Training failed with code 2
+2026-05-03 17:46:50,132 [ERROR] Output: usage: train_move_ordering.py [-h] --data-path DATA_PATH
+                              [--checkpoint-dir CHECKPOINT_DIR]
+                              [--batch-size BATCH_SIZE]
+                              [--num-epochs NUM_EPOCHS]
+                              [--learning-rate LEARNING_RATE]
+                              [--early-stopping-patience EARLY_STOPPING_PATIENCE]
+                              [--num-workers NUM_WORKERS]
+                              [--gradient-accumulation GRADIENT_ACCUMULATION]
+                              [--max-samples MAX_SAMPLES] [--no-amp]
+train_move_ordering.py: error: the following arguments are required: --data-path
+
+2026-05-03 17:46:50,132 [INFO] Retrying in 120s...
+2026-05-03 17:48:50,129 [INFO] Starting training session (attempt 3/3)
+2026-05-03 17:48:54,123 [ERROR] Training failed with code 2
+2026-05-03 17:48:54,124 [ERROR] Output: usage: train_move_ordering.py [-h] --data-path DATA_PATH
+                              [--checkpoint-dir CHECKPOINT_DIR]
+                              [--batch-size BATCH_SIZE]
+                              [--num-epochs NUM_EPOCHS]
+                              [--learning-rate LEARNING_RATE]
+                              [--early-stopping-patience EARLY_STOPPING_PATIENCE]
+                              [--num-workers NUM_WORKERS]
+                              [--gradient-accumulation GRADIENT_ACCUMULATION]
+                              [--max-samples MAX_SAMPLES] [--no-amp]
+train_move_ordering.py: error: the following arguments are required: --data-path
+
+2026-05-03 17:48:54,124 [ERROR] ❌ Training session failed after all retries
+2026-05-03 17:48:54,125 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 17:50:03,763 [WARNING] Received signal 15, initiating graceful shutdown...
+2026-05-03 17:50:22,797 [INFO] ================================================================================
+2026-05-03 17:50:22,797 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-03 17:50:22,798 [INFO] ================================================================================
+2026-05-03 17:50:22,798 [INFO] Start time: 2026-05-03 17:50:22.794905
+2026-05-03 17:50:22,798 [INFO] Target duration: 48 hours
+2026-05-03 17:50:22,799 [INFO] Auto-recover: True
+2026-05-03 17:50:22,799 [INFO] ================================================================================
+2026-05-03 17:50:22,799 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-03 17:50:22,801 [INFO] Starting training session (attempt 1/3)
+2026-05-03 17:50:22,802 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 17:50:34,784 [ERROR] Training failed with code 1
+2026-05-03 17:50:34,785 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 17:50:34,785 [INFO] Retrying in 60s...
+2026-05-03 17:51:34,836 [INFO] Starting training session (attempt 2/3)
+2026-05-03 17:51:34,837 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 17:51:44,530 [ERROR] Training failed with code 1
+2026-05-03 17:51:44,531 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 17:51:44,531 [INFO] Retrying in 120s...
+2026-05-03 17:53:44,624 [INFO] Starting training session (attempt 3/3)
+2026-05-03 17:53:44,624 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 17:53:54,761 [ERROR] Training failed with code 1
+2026-05-03 17:53:54,761 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 17:53:54,762 [ERROR] ❌ Training session failed after all retries
+2026-05-03 17:53:54,762 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 17:58:54,844 [INFO] ⏱️  Remaining time: 47.9 hours
+2026-05-03 17:58:54,845 [INFO] Starting training session (attempt 1/3)
+2026-05-03 17:58:54,846 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 17:59:03,709 [ERROR] Training failed with code 1
+2026-05-03 17:59:03,710 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 17:59:03,710 [INFO] Retrying in 60s...
+2026-05-03 18:00:03,767 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:00:03,768 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:00:13,238 [ERROR] Training failed with code 1
+2026-05-03 18:00:13,238 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:00:13,239 [INFO] Retrying in 120s...
+2026-05-03 18:02:13,232 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:02:13,233 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:02:23,302 [ERROR] Training failed with code 1
+2026-05-03 18:02:23,303 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:02:23,303 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:02:23,304 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:07:23,386 [INFO] ⏱️  Remaining time: 47.7 hours
+2026-05-03 18:07:23,388 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:07:23,390 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:07:32,629 [ERROR] Training failed with code 1
+2026-05-03 18:07:32,630 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:07:32,630 [INFO] Retrying in 60s...
+2026-05-03 18:08:32,687 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:08:32,687 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:08:41,930 [ERROR] Training failed with code 1
+2026-05-03 18:08:41,931 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:08:41,931 [INFO] Retrying in 120s...
+2026-05-03 18:10:42,024 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:10:42,025 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:10:52,936 [ERROR] Training failed with code 1
+2026-05-03 18:10:52,936 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:10:52,937 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:10:52,937 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:15:53,016 [INFO] ⏱️  Remaining time: 47.6 hours
+2026-05-03 18:15:53,017 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:15:53,018 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:16:02,431 [ERROR] Training failed with code 1
+2026-05-03 18:16:02,432 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:16:02,432 [INFO] Retrying in 60s...
+2026-05-03 18:17:02,429 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:17:02,430 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:17:12,824 [ERROR] Training failed with code 1
+2026-05-03 18:17:12,825 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:17:12,825 [INFO] Retrying in 120s...
+2026-05-03 18:19:12,918 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:19:12,918 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:19:21,917 [ERROR] Training failed with code 1
+2026-05-03 18:19:21,917 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:19:21,917 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:19:21,918 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:24:22,001 [INFO] ⏱️  Remaining time: 47.4 hours
+2026-05-03 18:24:22,003 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:24:22,004 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:24:30,474 [ERROR] Training failed with code 1
+2026-05-03 18:24:30,475 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:24:30,475 [INFO] Retrying in 60s...
+2026-05-03 18:25:30,532 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:25:30,533 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:25:39,222 [ERROR] Training failed with code 1
+2026-05-03 18:25:39,222 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:25:39,223 [INFO] Retrying in 120s...
+2026-05-03 18:27:39,316 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:27:39,317 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:27:47,950 [ERROR] Training failed with code 1
+2026-05-03 18:27:47,951 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:27:47,951 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:27:47,951 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:32:48,034 [INFO] ⏱️  Remaining time: 47.3 hours
+2026-05-03 18:32:48,036 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:32:48,036 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:32:57,211 [ERROR] Training failed with code 1
+2026-05-03 18:32:57,211 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:32:57,212 [INFO] Retrying in 60s...
+2026-05-03 18:33:57,251 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:33:57,253 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:34:06,779 [ERROR] Training failed with code 1
+2026-05-03 18:34:06,779 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:34:06,779 [INFO] Retrying in 120s...
+2026-05-03 18:36:06,873 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:36:06,874 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:36:16,677 [ERROR] Training failed with code 1
+2026-05-03 18:36:16,677 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:36:16,678 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:36:16,678 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:41:16,760 [INFO] ⏱️  Remaining time: 47.2 hours
+2026-05-03 18:41:16,762 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:41:16,765 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:41:25,273 [ERROR] Training failed with code 1
+2026-05-03 18:41:25,273 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:41:25,274 [INFO] Retrying in 60s...
+2026-05-03 18:42:25,331 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:42:25,332 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:42:33,626 [ERROR] Training failed with code 1
+2026-05-03 18:42:33,626 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:42:33,626 [INFO] Retrying in 120s...
+2026-05-03 18:44:33,674 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:44:33,675 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:44:42,122 [ERROR] Training failed with code 1
+2026-05-03 18:44:42,123 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:44:42,123 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:44:42,124 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:49:42,205 [INFO] ⏱️  Remaining time: 47.0 hours
+2026-05-03 18:49:42,206 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:49:42,207 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:49:51,064 [ERROR] Training failed with code 1
+2026-05-03 18:49:51,064 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:49:51,065 [INFO] Retrying in 60s...
+2026-05-03 18:50:51,079 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:50:51,080 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:50:59,892 [ERROR] Training failed with code 1
+2026-05-03 18:50:59,893 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:50:59,894 [INFO] Retrying in 120s...
+2026-05-03 18:52:59,988 [INFO] Starting training session (attempt 3/3)
+2026-05-03 18:52:59,989 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:53:08,574 [ERROR] Training failed with code 1
+2026-05-03 18:53:08,574 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:53:08,575 [ERROR] ❌ Training session failed after all retries
+2026-05-03 18:53:08,575 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 18:58:08,658 [INFO] ⏱️  Remaining time: 46.9 hours
+2026-05-03 18:58:08,659 [INFO] Starting training session (attempt 1/3)
+2026-05-03 18:58:08,660 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:58:17,824 [ERROR] Training failed with code 1
+2026-05-03 18:58:17,825 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:58:17,825 [INFO] Retrying in 60s...
+2026-05-03 18:59:17,884 [INFO] Starting training session (attempt 2/3)
+2026-05-03 18:59:17,885 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 18:59:28,236 [ERROR] Training failed with code 1
+2026-05-03 18:59:28,236 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 18:59:28,237 [INFO] Retrying in 120s...
+2026-05-03 19:01:28,237 [INFO] Starting training session (attempt 3/3)
+2026-05-03 19:01:28,238 [INFO] Running: python scripts/train_move_ordering.py --data-path data/stage2_training/corrective_dataset.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 19:01:38,907 [ERROR] Training failed with code 1
+2026-05-03 19:01:38,908 [ERROR] Output: 🖥️  Using device: cuda
+   GPU: NVIDIA GeForce RTX 4070 Ti
+   Memory: 12.0 GB
+
+📚 Loading datasets...
+📂 Loading dataset from data/stage2_training/corrective_dataset.json...
+Traceback (most recent call last):
+  File "/workspace/scripts/train_move_ordering.py", line 460, in <module>
+    main()
+  File "/workspace/scripts/train_move_ordering.py", line 403, in main
+    train_dataset = MoveOrderingDataset(
+  File "/workspace/src/training/puzzle_dataset.py", line 84, in __init__
+    all_puzzles = data['puzzles']
+KeyError: 'puzzles'
+
+2026-05-03 19:01:38,909 [ERROR] ❌ Training session failed after all retries
+2026-05-03 19:01:38,909 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 19:03:23,284 [WARNING] Received signal 15, initiating graceful shutdown...
+2026-05-03 19:03:29,351 [INFO] ================================================================================
+2026-05-03 19:03:29,352 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-03 19:03:29,352 [INFO] ================================================================================
+2026-05-03 19:03:29,353 [INFO] Start time: 2026-05-03 19:03:29.347901
+2026-05-03 19:03:29,353 [INFO] Target duration: 48 hours
+2026-05-03 19:03:29,354 [INFO] Auto-recover: True
+2026-05-03 19:03:29,354 [INFO] ================================================================================
+2026-05-03 19:03:29,355 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-03 19:03:29,355 [INFO] Starting training session (attempt 1/3)
+2026-05-03 19:03:29,356 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 19:03:44,903 [ERROR] Training failed with code 1
+2026-05-03 19:03:44,904 [ERROR] Output: etrics = self.train_epoch()
+  File "/workspace/scripts/train_move_ordering.py", line 197, in train_epoch
+    losses = self.compute_total_loss(outputs, batch)
+  File "/workspace/scripts/train_move_ordering.py", line 133, in compute_total_loss
+    theme_loss = self.compute_theme_loss(
+  File "/workspace/scripts/train_move_ordering.py", line 120, in compute_theme_loss
+    return F.binary_cross_entropy(pred_themes, target_themes)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/functional.py", line 3122, in binary_cross_entropy
+    return torch._C._nn.binary_cross_entropy(input, target, weight, reduction_enum)
+RuntimeError: torch.nn.functional.binary_cross_entropy and torch.nn.BCELoss are unsafe to autocast.
+Many models use a sigmoid layer right before the binary cross entropy layer.
+In this case, combine the two layers using torch.nn.functional.binary_cross_entropy_with_logits
+or torch.nn.BCEWithLogitsLoss.  binary_cross_entropy_with_logits and BCEWithLogits are
+safe to autocast.
+
+2026-05-03 19:03:44,904 [INFO] Retrying in 60s...
+2026-05-03 19:04:44,961 [INFO] Starting training session (attempt 2/3)
+2026-05-03 19:04:44,962 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 19:04:57,065 [ERROR] Training failed with code 1
+2026-05-03 19:04:57,066 [ERROR] Output: etrics = self.train_epoch()
+  File "/workspace/scripts/train_move_ordering.py", line 197, in train_epoch
+    losses = self.compute_total_loss(outputs, batch)
+  File "/workspace/scripts/train_move_ordering.py", line 133, in compute_total_loss
+    theme_loss = self.compute_theme_loss(
+  File "/workspace/scripts/train_move_ordering.py", line 120, in compute_theme_loss
+    return F.binary_cross_entropy(pred_themes, target_themes)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/functional.py", line 3122, in binary_cross_entropy
+    return torch._C._nn.binary_cross_entropy(input, target, weight, reduction_enum)
+RuntimeError: torch.nn.functional.binary_cross_entropy and torch.nn.BCELoss are unsafe to autocast.
+Many models use a sigmoid layer right before the binary cross entropy layer.
+In this case, combine the two layers using torch.nn.functional.binary_cross_entropy_with_logits
+or torch.nn.BCEWithLogitsLoss.  binary_cross_entropy_with_logits and BCEWithLogits are
+safe to autocast.
+
+2026-05-03 19:04:57,066 [INFO] Retrying in 120s...
+2026-05-03 19:06:57,159 [INFO] Starting training session (attempt 3/3)
+2026-05-03 19:06:57,160 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4
+2026-05-03 19:07:07,541 [ERROR] Training failed with code 1
+2026-05-03 19:07:07,542 [ERROR] Output: etrics = self.train_epoch()
+  File "/workspace/scripts/train_move_ordering.py", line 197, in train_epoch
+    losses = self.compute_total_loss(outputs, batch)
+  File "/workspace/scripts/train_move_ordering.py", line 133, in compute_total_loss
+    theme_loss = self.compute_theme_loss(
+  File "/workspace/scripts/train_move_ordering.py", line 120, in compute_theme_loss
+    return F.binary_cross_entropy(pred_themes, target_themes)
+  File "/opt/conda/lib/python3.10/site-packages/torch/nn/functional.py", line 3122, in binary_cross_entropy
+    return torch._C._nn.binary_cross_entropy(input, target, weight, reduction_enum)
+RuntimeError: torch.nn.functional.binary_cross_entropy and torch.nn.BCELoss are unsafe to autocast.
+Many models use a sigmoid layer right before the binary cross entropy layer.
+In this case, combine the two layers using torch.nn.functional.binary_cross_entropy_with_logits
+or torch.nn.BCEWithLogitsLoss.  binary_cross_entropy_with_logits and BCEWithLogits are
+safe to autocast.
+
+2026-05-03 19:07:07,543 [ERROR] ❌ Training session failed after all retries
+2026-05-03 19:07:07,543 [WARNING] Training failed, but auto-recovery enabled. Waiting 5min...
+2026-05-03 19:10:48,672 [WARNING] Received signal 15, initiating graceful shutdown...
+2026-05-03 19:10:53,555 [INFO] ================================================================================
+2026-05-03 19:10:53,556 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-03 19:10:53,556 [INFO] ================================================================================
+2026-05-03 19:10:53,556 [INFO] Start time: 2026-05-03 19:10:53.552298
+2026-05-03 19:10:53,557 [INFO] Target duration: 48 hours
+2026-05-03 19:10:53,557 [INFO] Auto-recover: True
+2026-05-03 19:10:53,557 [INFO] ================================================================================
+2026-05-03 19:10:53,558 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-03 19:10:53,558 [INFO] Starting training session (attempt 1/3)
+2026-05-03 19:10:53,559 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-03 20:52:10,457 [INFO] ✅ Training session completed successfully
+2026-05-03 20:52:10,458 [INFO] Progress: 25/200 epochs
+2026-05-03 20:52:10,458 [INFO] ⏱️  Remaining time: 46.3 hours
+2026-05-03 20:52:10,459 [INFO] Starting training session (attempt 1/3)
+2026-05-03 20:52:10,459 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-03 22:52:28,971 [INFO] ✅ Training session completed successfully
+2026-05-03 22:52:28,983 [INFO] Progress: 50/200 epochs
+2026-05-03 22:52:28,983 [INFO] ⏱️  Remaining time: 44.3 hours
+2026-05-03 22:52:28,985 [INFO] Starting training session (attempt 1/3)
+2026-05-03 22:52:28,986 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 00:45:44,856 [INFO] ✅ Training session completed successfully
+2026-05-04 00:45:44,899 [INFO] Progress: 75/200 epochs
+2026-05-04 00:45:44,899 [INFO] ⏱️  Remaining time: 42.4 hours
+2026-05-04 00:45:44,901 [INFO] Starting training session (attempt 1/3)
+2026-05-04 00:45:44,902 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 02:24:20,008 [INFO] ✅ Training session completed successfully
+2026-05-04 02:24:20,054 [INFO] Progress: 100/200 epochs
+2026-05-04 02:24:20,054 [INFO] ⏱️  Remaining time: 40.8 hours
+2026-05-04 02:24:20,059 [INFO] Starting training session (attempt 1/3)
+2026-05-04 02:24:20,059 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 03:55:59,354 [INFO] ✅ Training session completed successfully
+2026-05-04 03:55:59,388 [INFO] Progress: 125/200 epochs
+2026-05-04 03:55:59,389 [INFO] ⏱️  Remaining time: 39.2 hours
+2026-05-04 03:55:59,393 [INFO] Starting training session (attempt 1/3)
+2026-05-04 03:55:59,393 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 05:27:23,922 [INFO] ✅ Training session completed successfully
+2026-05-04 05:27:23,981 [INFO] Progress: 150/200 epochs
+2026-05-04 05:27:23,982 [INFO] ⏱️  Remaining time: 37.7 hours
+2026-05-04 05:27:23,996 [INFO] Starting training session (attempt 1/3)
+2026-05-04 05:27:23,998 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 06:58:20,155 [INFO] ✅ Training session completed successfully
+2026-05-04 06:58:20,214 [INFO] Progress: 175/200 epochs
+2026-05-04 06:58:20,215 [INFO] ⏱️  Remaining time: 36.2 hours
+2026-05-04 06:58:20,229 [INFO] Starting training session (attempt 1/3)
+2026-05-04 06:58:20,229 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 08:46:53,652 [INFO] ✅ Training session completed successfully
+2026-05-04 08:46:53,734 [INFO] Progress: 200/200 epochs
+2026-05-04 08:46:53,735 [INFO] ✅ Training target reached!
+2026-05-04 08:46:53,735 [INFO] ================================================================================
+2026-05-04 08:46:53,735 [INFO] 📋 Training Summary
+2026-05-04 08:46:53,736 [INFO] ================================================================================
+2026-05-04 08:46:53,736 [INFO] Total time: 13:36:00.184515
+2026-05-04 08:46:53,737 [INFO] Training runs: 8
+2026-05-04 08:46:53,737 [INFO] Epochs completed: 200/200
+2026-05-04 08:46:53,737 [INFO] ================================================================================
+2026-05-04 08:46:53,738 [INFO] ✅ Training completed successfully
+2026-05-04 08:46:56,557 [INFO] ================================================================================
+2026-05-04 08:46:56,558 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 08:46:56,558 [INFO] ================================================================================
+2026-05-04 08:46:56,558 [INFO] Start time: 2026-05-04 08:46:56.495412
+2026-05-04 08:46:56,559 [INFO] Target duration: 48 hours
+2026-05-04 08:46:56,559 [INFO] Auto-recover: True
+2026-05-04 08:46:56,559 [INFO] ================================================================================
+2026-05-04 08:46:56,560 [INFO] Resuming from checkpoint: None
+2026-05-04 08:46:56,560 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 08:46:56,561 [INFO] Starting training session (attempt 1/3)
+2026-05-04 08:46:56,561 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 10:25:54,875 [INFO] ✅ Training session completed successfully
+2026-05-04 10:25:54,939 [INFO] Progress: 225/200 epochs
+2026-05-04 10:25:54,939 [INFO] ✅ Training target reached!
+2026-05-04 10:25:54,940 [INFO] ================================================================================
+2026-05-04 10:25:54,940 [INFO] 📋 Training Summary
+2026-05-04 10:25:54,941 [INFO] ================================================================================
+2026-05-04 10:25:54,942 [INFO] Total time: 1:38:58.446542
+2026-05-04 10:25:54,942 [INFO] Training runs: 9
+2026-05-04 10:25:55,043 [INFO] Epochs completed: 225/200
+2026-05-04 10:25:55,044 [INFO] ================================================================================
+2026-05-04 10:25:55,044 [INFO] ✅ Training completed successfully
+2026-05-04 10:25:57,729 [INFO] ================================================================================
+2026-05-04 10:25:57,729 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 10:25:57,730 [INFO] ================================================================================
+2026-05-04 10:25:57,730 [INFO] Start time: 2026-05-04 10:25:57.630020
+2026-05-04 10:25:57,730 [INFO] Target duration: 48 hours
+2026-05-04 10:25:57,731 [INFO] Auto-recover: True
+2026-05-04 10:25:57,731 [INFO] ================================================================================
+2026-05-04 10:25:57,732 [INFO] Resuming from checkpoint: None
+2026-05-04 10:25:57,733 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 10:25:57,734 [INFO] Starting training session (attempt 1/3)
+2026-05-04 10:25:57,734 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 12:02:13,979 [INFO] ✅ Training session completed successfully
+2026-05-04 12:02:14,017 [INFO] Progress: 250/200 epochs
+2026-05-04 12:02:14,018 [INFO] ✅ Training target reached!
+2026-05-04 12:02:14,018 [INFO] ================================================================================
+2026-05-04 12:02:14,018 [INFO] 📋 Training Summary
+2026-05-04 12:02:14,019 [INFO] ================================================================================
+2026-05-04 12:02:14,019 [INFO] Total time: 1:36:16.389390
+2026-05-04 12:02:14,019 [INFO] Training runs: 10
+2026-05-04 12:02:14,020 [INFO] Epochs completed: 250/200
+2026-05-04 12:02:14,020 [INFO] ================================================================================
+2026-05-04 12:02:14,020 [INFO] ✅ Training completed successfully
+2026-05-04 12:02:15,537 [INFO] ================================================================================
+2026-05-04 12:02:15,538 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 12:02:15,538 [INFO] ================================================================================
+2026-05-04 12:02:15,538 [INFO] Start time: 2026-05-04 12:02:15.534225
+2026-05-04 12:02:15,538 [INFO] Target duration: 48 hours
+2026-05-04 12:02:15,539 [INFO] Auto-recover: True
+2026-05-04 12:02:15,539 [INFO] ================================================================================
+2026-05-04 12:02:15,540 [INFO] Resuming from checkpoint: None
+2026-05-04 12:02:15,540 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 12:02:15,541 [INFO] Starting training session (attempt 1/3)
+2026-05-04 12:02:15,541 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 13:34:52,939 [INFO] ✅ Training session completed successfully
+2026-05-04 13:34:52,982 [INFO] Progress: 275/200 epochs
+2026-05-04 13:34:52,983 [INFO] ✅ Training target reached!
+2026-05-04 13:34:52,983 [INFO] ================================================================================
+2026-05-04 13:34:52,983 [INFO] 📋 Training Summary
+2026-05-04 13:34:52,984 [INFO] ================================================================================
+2026-05-04 13:34:52,984 [INFO] Total time: 1:32:37.450224
+2026-05-04 13:34:52,984 [INFO] Training runs: 11
+2026-05-04 13:34:52,985 [INFO] Epochs completed: 275/200
+2026-05-04 13:34:52,985 [INFO] ================================================================================
+2026-05-04 13:34:52,985 [INFO] ✅ Training completed successfully
+2026-05-04 13:34:54,858 [INFO] ================================================================================
+2026-05-04 13:34:54,858 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 13:34:54,867 [INFO] ================================================================================
+2026-05-04 13:34:54,867 [INFO] Start time: 2026-05-04 13:34:54.853765
+2026-05-04 13:34:54,868 [INFO] Target duration: 48 hours
+2026-05-04 13:34:54,868 [INFO] Auto-recover: True
+2026-05-04 13:34:54,868 [INFO] ================================================================================
+2026-05-04 13:34:54,869 [INFO] Resuming from checkpoint: None
+2026-05-04 13:34:54,870 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 13:34:54,870 [INFO] Starting training session (attempt 1/3)
+2026-05-04 13:34:54,871 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 15:07:03,308 [INFO] ✅ Training session completed successfully
+2026-05-04 15:07:03,483 [INFO] Progress: 300/200 epochs
+2026-05-04 15:07:03,484 [INFO] ✅ Training target reached!
+2026-05-04 15:07:03,484 [INFO] ================================================================================
+2026-05-04 15:07:03,485 [INFO] 📋 Training Summary
+2026-05-04 15:07:03,485 [INFO] ================================================================================
+2026-05-04 15:07:03,485 [INFO] Total time: 1:32:08.632084
+2026-05-04 15:07:03,486 [INFO] Training runs: 12
+2026-05-04 15:07:03,486 [INFO] Epochs completed: 300/200
+2026-05-04 15:07:03,486 [INFO] ================================================================================
+2026-05-04 15:07:03,486 [INFO] ✅ Training completed successfully
+2026-05-04 15:07:05,129 [INFO] ================================================================================
+2026-05-04 15:07:05,130 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 15:07:05,130 [INFO] ================================================================================
+2026-05-04 15:07:05,130 [INFO] Start time: 2026-05-04 15:07:05.126621
+2026-05-04 15:07:05,130 [INFO] Target duration: 48 hours
+2026-05-04 15:07:05,131 [INFO] Auto-recover: True
+2026-05-04 15:07:05,131 [INFO] ================================================================================
+2026-05-04 15:07:05,132 [INFO] Resuming from checkpoint: None
+2026-05-04 15:07:05,132 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 15:07:05,133 [INFO] Starting training session (attempt 1/3)
+2026-05-04 15:07:05,133 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 16:39:37,175 [INFO] ✅ Training session completed successfully
+2026-05-04 16:39:37,239 [INFO] Progress: 325/200 epochs
+2026-05-04 16:39:37,240 [INFO] ✅ Training target reached!
+2026-05-04 16:39:37,241 [INFO] ================================================================================
+2026-05-04 16:39:37,241 [INFO] 📋 Training Summary
+2026-05-04 16:39:37,242 [INFO] ================================================================================
+2026-05-04 16:39:37,242 [INFO] Total time: 1:32:32.115766
+2026-05-04 16:39:37,242 [INFO] Training runs: 13
+2026-05-04 16:39:37,242 [INFO] Epochs completed: 325/200
+2026-05-04 16:39:37,243 [INFO] ================================================================================
+2026-05-04 16:39:37,243 [INFO] ✅ Training completed successfully
+2026-05-04 16:39:39,157 [INFO] ================================================================================
+2026-05-04 16:39:39,157 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 16:39:39,158 [INFO] ================================================================================
+2026-05-04 16:39:39,158 [INFO] Start time: 2026-05-04 16:39:39.141525
+2026-05-04 16:39:39,158 [INFO] Target duration: 48 hours
+2026-05-04 16:39:39,158 [INFO] Auto-recover: True
+2026-05-04 16:39:39,159 [INFO] ================================================================================
+2026-05-04 16:39:39,173 [INFO] Resuming from checkpoint: None
+2026-05-04 16:39:39,173 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 16:39:39,174 [INFO] Starting training session (attempt 1/3)
+2026-05-04 16:39:39,175 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 18:11:42,681 [INFO] ✅ Training session completed successfully
+2026-05-04 18:11:42,778 [INFO] Progress: 350/200 epochs
+2026-05-04 18:11:42,779 [INFO] ✅ Training target reached!
+2026-05-04 18:11:42,779 [INFO] ================================================================================
+2026-05-04 18:11:42,779 [INFO] 📋 Training Summary
+2026-05-04 18:11:42,780 [INFO] ================================================================================
+2026-05-04 18:11:42,781 [INFO] Total time: 1:32:03.639394
+2026-05-04 18:11:42,781 [INFO] Training runs: 14
+2026-05-04 18:11:42,781 [INFO] Epochs completed: 350/200
+2026-05-04 18:11:42,781 [INFO] ================================================================================
+2026-05-04 18:11:42,782 [INFO] ✅ Training completed successfully
+2026-05-04 18:11:44,694 [INFO] ================================================================================
+2026-05-04 18:11:44,694 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 18:11:44,694 [INFO] ================================================================================
+2026-05-04 18:11:44,695 [INFO] Start time: 2026-05-04 18:11:44.506469
+2026-05-04 18:11:44,695 [INFO] Target duration: 48 hours
+2026-05-04 18:11:44,695 [INFO] Auto-recover: True
+2026-05-04 18:11:44,696 [INFO] ================================================================================
+2026-05-04 18:11:44,696 [INFO] Resuming from checkpoint: None
+2026-05-04 18:11:44,697 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 18:11:44,697 [INFO] Starting training session (attempt 1/3)
+2026-05-04 18:11:44,697 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 19:44:24,559 [INFO] ✅ Training session completed successfully
+2026-05-04 19:44:24,597 [INFO] Progress: 375/200 epochs
+2026-05-04 19:44:24,602 [INFO] ✅ Training target reached!
+2026-05-04 19:44:24,605 [INFO] ================================================================================
+2026-05-04 19:44:24,605 [INFO] 📋 Training Summary
+2026-05-04 19:44:24,606 [INFO] ================================================================================
+2026-05-04 19:44:24,607 [INFO] Total time: 1:32:40.100597
+2026-05-04 19:44:24,607 [INFO] Training runs: 15
+2026-05-04 19:44:24,614 [INFO] Epochs completed: 375/200
+2026-05-04 19:44:24,614 [INFO] ================================================================================
+2026-05-04 19:44:24,614 [INFO] ✅ Training completed successfully
+2026-05-04 19:44:25,980 [INFO] ================================================================================
+2026-05-04 19:44:25,980 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 19:44:25,981 [INFO] ================================================================================
+2026-05-04 19:44:25,981 [INFO] Start time: 2026-05-04 19:44:25.976783
+2026-05-04 19:44:25,982 [INFO] Target duration: 48 hours
+2026-05-04 19:44:25,982 [INFO] Auto-recover: True
+2026-05-04 19:44:25,982 [INFO] ================================================================================
+2026-05-04 19:44:25,983 [INFO] Resuming from checkpoint: None
+2026-05-04 19:44:25,983 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 19:44:25,984 [INFO] Starting training session (attempt 1/3)
+2026-05-04 19:44:25,984 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 21:17:00,334 [INFO] ✅ Training session completed successfully
+2026-05-04 21:17:00,592 [INFO] Progress: 400/200 epochs
+2026-05-04 21:17:00,593 [INFO] ✅ Training target reached!
+2026-05-04 21:17:00,593 [INFO] ================================================================================
+2026-05-04 21:17:00,594 [INFO] 📋 Training Summary
+2026-05-04 21:17:00,594 [INFO] ================================================================================
+2026-05-04 21:17:00,595 [INFO] Total time: 1:32:34.618241
+2026-05-04 21:17:00,595 [INFO] Training runs: 16
+2026-05-04 21:17:00,595 [INFO] Epochs completed: 400/200
+2026-05-04 21:17:00,596 [INFO] ================================================================================
+2026-05-04 21:17:00,596 [INFO] ✅ Training completed successfully
+2026-05-04 21:17:02,521 [INFO] ================================================================================
+2026-05-04 21:17:02,521 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 21:17:02,522 [INFO] ================================================================================
+2026-05-04 21:17:02,522 [INFO] Start time: 2026-05-04 21:17:02.517338
+2026-05-04 21:17:02,522 [INFO] Target duration: 48 hours
+2026-05-04 21:17:02,523 [INFO] Auto-recover: True
+2026-05-04 21:17:02,523 [INFO] ================================================================================
+2026-05-04 21:17:02,524 [INFO] Resuming from checkpoint: None
+2026-05-04 21:17:02,524 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 21:17:02,525 [INFO] Starting training session (attempt 1/3)
+2026-05-04 21:17:02,526 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 22:44:06,282 [INFO] ✅ Training session completed successfully
+2026-05-04 22:44:06,310 [INFO] Progress: 425/200 epochs
+2026-05-04 22:44:06,310 [INFO] ✅ Training target reached!
+2026-05-04 22:44:06,311 [INFO] ================================================================================
+2026-05-04 22:44:06,311 [INFO] 📋 Training Summary
+2026-05-04 22:44:06,311 [INFO] ================================================================================
+2026-05-04 22:44:06,312 [INFO] Total time: 1:27:03.794865
+2026-05-04 22:44:06,312 [INFO] Training runs: 17
+2026-05-04 22:44:06,312 [INFO] Epochs completed: 425/200
+2026-05-04 22:44:06,313 [INFO] ================================================================================
+2026-05-04 22:44:06,313 [INFO] ✅ Training completed successfully
+2026-05-04 22:44:07,349 [INFO] ================================================================================
+2026-05-04 22:44:07,350 [INFO] 🚀 V7P3R AI Simple 48-Hour Training
+2026-05-04 22:44:07,350 [INFO] ================================================================================
+2026-05-04 22:44:07,350 [INFO] Start time: 2026-05-04 22:44:07.346968
+2026-05-04 22:44:07,351 [INFO] Target duration: 48 hours
+2026-05-04 22:44:07,351 [INFO] Auto-recover: True
+2026-05-04 22:44:07,352 [INFO] ================================================================================
+2026-05-04 22:44:07,353 [INFO] Resuming from checkpoint: None
+2026-05-04 22:44:07,354 [INFO] ⏱️  Remaining time: 48.0 hours
+2026-05-04 22:44:07,355 [INFO] Starting training session (attempt 1/3)
+2026-05-04 22:44:07,355 [INFO] Running: python scripts/train_move_ordering.py --data-path data/preprocessed_puzzles/checkpoint_100000_100000.json --num-epochs 25 --checkpoint-dir checkpoints --batch-size 64 --learning-rate 0.001 --num-workers 4 --no-amp
+2026-05-04 23:55:03,703 [WARNING] Received signal 15, initiating graceful shutdown...

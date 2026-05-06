@@ -1,0 +1,2306 @@
+[
+  {
+    "fen": "r1bqk2r/ppp1bppp/2n1p3/4P3/3Pp3/P3B3/1PP2PPP/R2QKBNR w KQkq - 2 8",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 15,
+    "v7p3r_played": "d1g4",
+    "v7p3r_eval": 0,
+    "stockfish_top5": [
+      [
+        "d1g4",
+        234
+      ],
+      [
+        "h2h4",
+        124
+      ],
+      [
+        "f1c4",
+        124
+      ],
+      [
+        "g1e2",
+        122
+      ],
+      [
+        "c2c3",
+        113
+      ]
+    ],
+    "stockfish_best": "d1g4",
+    "stockfish_eval": 234,
+    "eval_difference": 234,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqk2r/ppp2ppp/4p3/2b1P3/3nQ3/P3B3/1PP2PPP/2KR1BNR b kq - 0 10",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 20,
+    "v7p3r_played": "f7f5",
+    "v7p3r_eval": 8,
+    "stockfish_top5": [
+      [
+        "c8d7",
+        475
+      ],
+      [
+        "d8d5",
+        500
+      ],
+      [
+        "d8e7",
+        509
+      ],
+      [
+        "f7f5",
+        529
+      ],
+      [
+        "d4b3",
+        539
+      ]
+    ],
+    "stockfish_best": "c8d7",
+    "stockfish_eval": 475,
+    "eval_difference": 467,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bq1rk1/ppp3pp/4pP2/8/3bQ3/P7/1PP2PPP/2KR1BNR w - - 0 13",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 25,
+    "v7p3r_played": "e4d4",
+    "v7p3r_eval": 298,
+    "stockfish_top5": [
+      [
+        "e4d4",
+        550
+      ],
+      [
+        "f6f7",
+        546
+      ],
+      [
+        "d1d4",
+        531
+      ],
+      [
+        "g1f3",
+        468
+      ],
+      [
+        "c2c3",
+        406
+      ]
+    ],
+    "stockfish_best": "e4d4",
+    "stockfish_eval": 550,
+    "eval_difference": 252,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1b2rk1/ppp4p/4pp2/8/8/P7/1PP2PPP/2K1RBNR b - - 1 15",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 30,
+    "v7p3r_played": "g8f7",
+    "v7p3r_eval": -222,
+    "stockfish_top5": [
+      [
+        "c8d7",
+        532
+      ],
+      [
+        "b7b5",
+        533
+      ],
+      [
+        "f8d8",
+        535
+      ],
+      [
+        "b7b6",
+        537
+      ],
+      [
+        "g8f7",
+        556
+      ]
+    ],
+    "stockfish_best": "c8d7",
+    "stockfish_eval": 532,
+    "eval_difference": 754,
+    "needs_correction": true
+  },
+  {
+    "fen": "r4r2/pp1b1k1p/4pp2/2p5/8/P3R3/1PP1NPPP/2K2B1R w - - 2 18",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 35,
+    "v7p3r_played": "e2f4",
+    "v7p3r_eval": 258,
+    "stockfish_top5": [
+      [
+        "e2f4",
+        561
+      ],
+      [
+        "e2c3",
+        522
+      ],
+      [
+        "g2g3",
+        516
+      ],
+      [
+        "h1g1",
+        517
+      ],
+      [
+        "e2g3",
+        503
+      ]
+    ],
+    "stockfish_best": "e2f4",
+    "stockfish_eval": 561,
+    "eval_difference": 303,
+    "needs_correction": true
+  },
+  {
+    "fen": "5r2/pp1brk1p/4pp2/2p5/2B2N2/P3R3/1PP2PPP/2KR4 b - - 7 20",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 40,
+    "v7p3r_played": "b7b5",
+    "v7p3r_eval": -252,
+    "stockfish_top5": [
+      [
+        "b7b5",
+        592
+      ],
+      [
+        "f8e8",
+        598
+      ],
+      [
+        "f6f5",
+        598
+      ],
+      [
+        "f8h8",
+        613
+      ],
+      [
+        "d7c8",
+        614
+      ]
+    ],
+    "stockfish_best": "b7b5",
+    "stockfish_eval": 592,
+    "eval_difference": 844,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r4/p2brk1p/4pp2/1p1N4/2p5/P3R3/1PP1BPPP/2KR4 w - - 2 23",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 45,
+    "v7p3r_played": "d5e7",
+    "v7p3r_eval": 486,
+    "stockfish_top5": [
+      [
+        "d5e7",
+        688
+      ],
+      [
+        "e2h5",
+        678
+      ],
+      [
+        "d5c3",
+        571
+      ],
+      [
+        "d5f4",
+        564
+      ],
+      [
+        "d5b4",
+        544
+      ]
+    ],
+    "stockfish_best": "d5e7",
+    "stockfish_eval": 688,
+    "eval_difference": 202,
+    "needs_correction": true
+  },
+  {
+    "fen": "7r/p2bk2p/4pp2/1p6/2p5/P5R1/1PP1BPPP/2KR4 b - - 3 25",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 50,
+    "v7p3r_played": "d7c6",
+    "v7p3r_eval": -404,
+    "stockfish_top5": [
+      [
+        "d7e8",
+        760
+      ],
+      [
+        "f6f5",
+        806
+      ],
+      [
+        "h8d8",
+        830
+      ],
+      [
+        "h8f8",
+        867
+      ],
+      [
+        "e7d8",
+        848
+      ]
+    ],
+    "stockfish_best": "d7e8",
+    "stockfish_eval": 760,
+    "eval_difference": 1164,
+    "needs_correction": true
+  },
+  {
+    "fen": "4k2r/R6p/2b1pp2/1p6/2p5/P7/1PP1BPPP/2KR4 w - - 1 28",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_1",
+    "move_number": 55,
+    "v7p3r_played": "e2h5",
+    "v7p3r_eval": 510,
+    "stockfish_top5": [
+      [
+        "e2h5",
+        9700
+      ],
+      [
+        "d1d6",
+        897
+      ],
+      [
+        "a7c7",
+        850
+      ],
+      [
+        "a3a4",
+        815
+      ],
+      [
+        "f2f4",
+        803
+      ]
+    ],
+    "stockfish_best": "e2h5",
+    "stockfish_eval": 9700,
+    "eval_difference": 9190,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqkb1r/ppp1pppp/1n3n2/3P4/2Q2P2/2N5/PP2P1PP/R1B1KBNR w KQkq - 1 8",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 15,
+    "v7p3r_played": "c4b5",
+    "v7p3r_eval": 108,
+    "stockfish_top5": [
+      [
+        "c4b5",
+        -94
+      ],
+      [
+        "c4b3",
+        -142
+      ],
+      [
+        "c4d3",
+        -154
+      ],
+      [
+        "c4d4",
+        -178
+      ],
+      [
+        "c4b4",
+        -236
+      ]
+    ],
+    "stockfish_best": "c4b5",
+    "stockfish_eval": -94,
+    "eval_difference": 202,
+    "needs_correction": true
+  },
+  {
+    "fen": "r2qkb1r/pppb1ppp/1n2pn2/3P4/4PP2/2NQ4/PP4PP/R1B1KBNR b KQkq - 0 10",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 20,
+    "v7p3r_played": "e6d5",
+    "v7p3r_eval": 56,
+    "stockfish_top5": [
+      [
+        "e6d5",
+        -180
+      ],
+      [
+        "h7h6",
+        -97
+      ],
+      [
+        "f8c5",
+        -86
+      ],
+      [
+        "d8e7",
+        -83
+      ],
+      [
+        "a7a6",
+        -82
+      ]
+    ],
+    "stockfish_best": "e6d5",
+    "stockfish_eval": -180,
+    "eval_difference": 236,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3k2r/pppbqppp/1n1b1n2/3P4/5P2/2N1Q3/PP4PP/R1B1KBNR w KQkq - 3 13",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 25,
+    "v7p3r_played": "f1b5",
+    "v7p3r_eval": 72,
+    "stockfish_top5": [
+      [
+        "e3e7",
+        -259
+      ],
+      [
+        "g1f3",
+        -296
+      ],
+      [
+        "g1h3",
+        -318
+      ],
+      [
+        "g1e2",
+        -324
+      ],
+      [
+        "e3e2",
+        -349
+      ]
+    ],
+    "stockfish_best": "e3e7",
+    "stockfish_eval": -259,
+    "eval_difference": 331,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3k2r/ppp1bppp/1n3n2/1N1P4/5P2/8/PP4PP/R1B1K1NR b KQkq - 0 15",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 30,
+    "v7p3r_played": "e7b4",
+    "v7p3r_eval": 160,
+    "stockfish_top5": [
+      [
+        "f6d5",
+        -359
+      ],
+      [
+        "e7b4",
+        -342
+      ],
+      [
+        "b6d5",
+        -331
+      ],
+      [
+        "e8c8",
+        -315
+      ],
+      [
+        "e8d7",
+        -230
+      ]
+    ],
+    "stockfish_best": "f6d5",
+    "stockfish_eval": -359,
+    "eval_difference": 519,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3k2r/1pp2ppp/p4n2/1N1n4/1b3P2/5N2/PP2K1PP/R1B4R w kq - 0 18",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 35,
+    "v7p3r_played": "b5d4",
+    "v7p3r_eval": -58,
+    "stockfish_top5": [
+      [
+        "b5a3",
+        -319
+      ],
+      [
+        "b5d4",
+        -353
+      ],
+      [
+        "b5c3",
+        -498
+      ],
+      [
+        "b5a7",
+        -515
+      ],
+      [
+        "b5c7",
+        -523
+      ]
+    ],
+    "stockfish_best": "b5a3",
+    "stockfish_eval": -319,
+    "eval_difference": 261,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3k2r/1p3p1p/p2N1np1/2pn4/1b3P2/5N2/PP2K1PP/R1B4R b kq - 1 20",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 40,
+    "v7p3r_played": "e8e7",
+    "v7p3r_eval": 96,
+    "stockfish_top5": [
+      [
+        "e8e7",
+        -94
+      ],
+      [
+        "e8f8",
+        -7
+      ],
+      [
+        "e8d7",
+        12
+      ],
+      [
+        "e8d8",
+        266
+      ]
+    ],
+    "stockfish_best": "e8e7",
+    "stockfish_eval": -94,
+    "eval_difference": 190,
+    "needs_correction": true
+  },
+  {
+    "fen": "r7/1r3p1p/p4np1/R2nN3/3k1P2/8/1P1BK1PP/7R w - - 6 28",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 55,
+    "v7p3r_played": "a5a4",
+    "v7p3r_eval": -2,
+    "stockfish_top5": [
+      [
+        "h1c1",
+        454
+      ],
+      [
+        "e5f3",
+        414
+      ],
+      [
+        "h1a1",
+        369
+      ],
+      [
+        "e5c6",
+        346
+      ],
+      [
+        "g2g4",
+        244
+      ]
+    ],
+    "stockfish_best": "h1c1",
+    "stockfish_eval": 454,
+    "eval_difference": 456,
+    "needs_correction": true
+  },
+  {
+    "fen": "r7/1r3p1p/p4np1/Rk1nN3/5P2/8/1P1BK1PP/2R5 b - - 11 30",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 60,
+    "v7p3r_played": "b5b6",
+    "v7p3r_eval": -40,
+    "stockfish_top5": [
+      [
+        "b5b6",
+        710
+      ]
+    ],
+    "stockfish_best": "b5b6",
+    "stockfish_eval": 710,
+    "eval_difference": 750,
+    "needs_correction": true
+  },
+  {
+    "fen": "rk6/1r3p1p/R4np1/R2nN3/5P2/8/1P1BK1PP/8 w - - 1 33",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 65,
+    "v7p3r_played": "a6a8",
+    "v7p3r_eval": 592,
+    "stockfish_top5": [
+      [
+        "a6a8",
+        709
+      ],
+      [
+        "e5d7",
+        481
+      ],
+      [
+        "e5c6",
+        473
+      ],
+      [
+        "d2c1",
+        122
+      ],
+      [
+        "a6d6",
+        121
+      ]
+    ],
+    "stockfish_best": "a6a8",
+    "stockfish_eval": 709,
+    "eval_difference": 117,
+    "needs_correction": true
+  },
+  {
+    "fen": "8/R1k2p1p/5np1/3nN3/5P2/8/1P1BK1PP/8 b - - 0 35",
+    "game_id": "lichess_v7p3r_bot_2026-03-01.pgn_2",
+    "move_number": 70,
+    "v7p3r_played": "c7b6",
+    "v7p3r_eval": -638,
+    "stockfish_top5": [
+      [
+        "c7d6",
+        713
+      ],
+      [
+        "c7c8",
+        731
+      ],
+      [
+        "c7b6",
+        736
+      ],
+      [
+        "c7d8",
+        737
+      ],
+      [
+        "c7b8",
+        761
+      ]
+    ],
+    "stockfish_best": "c7d6",
+    "stockfish_eval": 713,
+    "eval_difference": 1351,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bq1rk1/pp1n1ppp/4pn2/2Pp2B1/1bP5/2NQ1N2/PP2PPPP/R3KB1R w KQ - 3 8",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 15,
+    "v7p3r_played": "c4d5",
+    "v7p3r_eval": 148,
+    "stockfish_top5": [
+      [
+        "c4d5",
+        -41
+      ],
+      [
+        "a2a3",
+        -42
+      ],
+      [
+        "d3c2",
+        -49
+      ],
+      [
+        "g5f6",
+        -63
+      ],
+      [
+        "c5c6",
+        -82
+      ]
+    ],
+    "stockfish_best": "c4d5",
+    "stockfish_eval": -41,
+    "eval_difference": 189,
+    "needs_correction": true
+  },
+  {
+    "fen": "r2r2k1/pp1b1ppp/8/3p4/n2N4/2P1RP2/P3P1PP/4KB1R w K - 3 18",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 35,
+    "v7p3r_played": "e1d2",
+    "v7p3r_eval": 78,
+    "stockfish_top5": [
+      [
+        "e3d3",
+        -149
+      ],
+      [
+        "g2g4",
+        -160
+      ],
+      [
+        "g2g3",
+        -167
+      ],
+      [
+        "e1f2",
+        -170
+      ],
+      [
+        "h2h4",
+        -171
+      ]
+    ],
+    "stockfish_best": "e3d3",
+    "stockfish_eval": -149,
+    "eval_difference": 227,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r1r1k1/pp1b1ppp/8/3p4/n2N2P1/2PR1P2/P2KP2P/5B1R b - - 2 20",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 40,
+    "v7p3r_played": "a4b2",
+    "v7p3r_eval": -36,
+    "stockfish_top5": [
+      [
+        "a4b2",
+        -289
+      ],
+      [
+        "g8f8",
+        -176
+      ],
+      [
+        "g7g6",
+        -180
+      ],
+      [
+        "h7h5",
+        -173
+      ],
+      [
+        "a4c5",
+        -164
+      ]
+    ],
+    "stockfish_best": "a4b2",
+    "stockfish_eval": -289,
+    "eval_difference": 253,
+    "needs_correction": true
+  },
+  {
+    "fen": "4r1k1/pprb1pp1/7p/3p4/3N2P1/2PRPP2/Pn1K2BP/7R w - - 2 23",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 45,
+    "v7p3r_played": "h1e1",
+    "v7p3r_eval": -68,
+    "stockfish_top5": [
+      [
+        "h1b1",
+        -307
+      ],
+      [
+        "a2a3",
+        -315
+      ],
+      [
+        "h1c1",
+        -317
+      ],
+      [
+        "h2h4",
+        -317
+      ],
+      [
+        "f3f4",
+        -332
+      ]
+    ],
+    "stockfish_best": "h1b1",
+    "stockfish_eval": -307,
+    "eval_difference": 239,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r3k1/pprb1pp1/7p/3p4/3N2P1/2PKPP2/P5BP/2R5 b - - 2 25",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 50,
+    "v7p3r_played": "c7c5",
+    "v7p3r_eval": 86,
+    "stockfish_top5": [
+      [
+        "b7b5",
+        -338
+      ],
+      [
+        "c7c5",
+        -333
+      ],
+      [
+        "g8f8",
+        -317
+      ],
+      [
+        "c7c4",
+        -314
+      ],
+      [
+        "g7g5",
+        -310
+      ]
+    ],
+    "stockfish_best": "b7b5",
+    "stockfish_eval": -338,
+    "eval_difference": 424,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r3k1/pp1b1pp1/7p/3p4/3N2PP/r1PKPP2/P1R3B1/8 w - - 3 28",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 55,
+    "v7p3r_played": "d4f5",
+    "v7p3r_eval": -20,
+    "stockfish_top5": [
+      [
+        "h4h5",
+        -360
+      ],
+      [
+        "g4g5",
+        -373
+      ],
+      [
+        "d4b3",
+        -373
+      ],
+      [
+        "f3f4",
+        -382
+      ],
+      [
+        "d3d2",
+        -414
+      ]
+    ],
+    "stockfish_best": "h4h5",
+    "stockfish_eval": -360,
+    "eval_difference": 340,
+    "needs_correction": true
+  },
+  {
+    "fen": "2N5/pp3ppk/7p/3p4/b5PP/r1PKPP2/P1R3B1/8 b - - 0 30",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 60,
+    "v7p3r_played": "a4c2",
+    "v7p3r_eval": -52,
+    "stockfish_top5": [
+      [
+        "a4c2",
+        -444
+      ],
+      [
+        "b7b5",
+        299
+      ],
+      [
+        "d5d4",
+        390
+      ],
+      [
+        "a4b5",
+        412
+      ],
+      [
+        "g7g6",
+        415
+      ]
+    ],
+    "stockfish_best": "a4c2",
+    "stockfish_eval": -444,
+    "eval_difference": 392,
+    "needs_correction": true
+  },
+  {
+    "fen": "2N5/pp3ppk/7p/3p4/3K1PPP/1bP1P3/r5B1/8 w - - 1 33",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 65,
+    "v7p3r_played": "g2f1",
+    "v7p3r_eval": -128,
+    "stockfish_top5": [
+      [
+        "g2f1",
+        -480
+      ],
+      [
+        "g2h1",
+        -515
+      ],
+      [
+        "g2f3",
+        -512
+      ],
+      [
+        "g2h3",
+        -550
+      ],
+      [
+        "c3c4",
+        -564
+      ]
+    ],
+    "stockfish_best": "g2f1",
+    "stockfish_eval": -480,
+    "eval_difference": 352,
+    "needs_correction": true
+  },
+  {
+    "fen": "2N5/pp3ppk/7p/2Kp4/5PPP/1bP1P3/6B1/3r4 b - - 6 35",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 70,
+    "v7p3r_played": "d1d2",
+    "v7p3r_eval": 222,
+    "stockfish_top5": [
+      [
+        "d1g1",
+        -517
+      ],
+      [
+        "a7a5",
+        -474
+      ],
+      [
+        "b7b6",
+        -469
+      ],
+      [
+        "d1d2",
+        -447
+      ],
+      [
+        "d1d3",
+        -438
+      ]
+    ],
+    "stockfish_best": "d1g1",
+    "stockfish_eval": -517,
+    "eval_difference": 739,
+    "needs_correction": true
+  },
+  {
+    "fen": "2N5/pp3ppk/3K3p/3p4/5PPP/1bP1rB2/8/8 w - - 0 38",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 75,
+    "v7p3r_played": "f3d5",
+    "v7p3r_eval": -210,
+    "stockfish_top5": [
+      [
+        "f3h1",
+        -539
+      ],
+      [
+        "f3g2",
+        -550
+      ],
+      [
+        "f3d5",
+        -540
+      ],
+      [
+        "f4f5",
+        -601
+      ],
+      [
+        "c8a7",
+        -603
+      ]
+    ],
+    "stockfish_best": "f3h1",
+    "stockfish_eval": -539,
+    "eval_difference": 329,
+    "needs_correction": true
+  },
+  {
+    "fen": "2N5/p4ppk/3K3p/8/4BPPP/1b4r1/8/8 b - - 2 40",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 80,
+    "v7p3r_played": "h7g8",
+    "v7p3r_eval": 174,
+    "stockfish_top5": [
+      [
+        "h7g8",
+        -463
+      ],
+      [
+        "h7h8",
+        -460
+      ],
+      [
+        "g7g6",
+        -441
+      ],
+      [
+        "f7f5",
+        -381
+      ]
+    ],
+    "stockfish_best": "h7g8",
+    "stockfish_eval": -463,
+    "eval_difference": 637,
+    "needs_correction": true
+  },
+  {
+    "fen": "5k2/p3Npp1/3K3p/6P1/4BP1P/1b2r3/8/8 w - - 3 43",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 85,
+    "v7p3r_played": "e4d5",
+    "v7p3r_eval": -152,
+    "stockfish_top5": [
+      [
+        "e4d5",
+        -550
+      ],
+      [
+        "g5h6",
+        -542
+      ],
+      [
+        "e4c6",
+        -552
+      ],
+      [
+        "e7c6",
+        -553
+      ],
+      [
+        "h4h5",
+        -553
+      ]
+    ],
+    "stockfish_best": "e4d5",
+    "stockfish_eval": -550,
+    "eval_difference": 398,
+    "needs_correction": true
+  },
+  {
+    "fen": "5k2/p3Np2/3K3p/3B1P2/7P/1b1r4/8/8 b - - 0 45",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 90,
+    "v7p3r_played": "f8e8",
+    "v7p3r_eval": 174,
+    "stockfish_top5": [
+      [
+        "a7a5",
+        -634
+      ],
+      [
+        "h6h5",
+        -582
+      ],
+      [
+        "a7a6",
+        -582
+      ],
+      [
+        "b3d5",
+        -574
+      ],
+      [
+        "d3d2",
+        -546
+      ]
+    ],
+    "stockfish_best": "a7a5",
+    "stockfish_eval": -634,
+    "eval_difference": 808,
+    "needs_correction": true
+  },
+  {
+    "fen": "4k3/p4p2/3K1P1p/3N4/3r3P/8/8/8 w - - 1 48",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 95,
+    "v7p3r_played": "h4h5",
+    "v7p3r_eval": -48,
+    "stockfish_top5": [
+      [
+        "d6c6",
+        -727
+      ],
+      [
+        "h4h5",
+        -752
+      ],
+      [
+        "d6e5",
+        -761
+      ],
+      [
+        "d6c5",
+        -784
+      ],
+      [
+        "d6c7",
+        -823
+      ]
+    ],
+    "stockfish_best": "d6c6",
+    "stockfish_eval": -727,
+    "eval_difference": 679,
+    "needs_correction": true
+  },
+  {
+    "fen": "3k4/p4p2/3K1P1p/3N3P/4r3/8/8/8 b - - 4 50",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 100,
+    "v7p3r_played": "e4e6",
+    "v7p3r_eval": 84,
+    "stockfish_top5": [
+      [
+        "e4d4",
+        -840
+      ],
+      [
+        "e4e6",
+        -819
+      ],
+      [
+        "a7a5",
+        -634
+      ],
+      [
+        "a7a6",
+        -574
+      ],
+      [
+        "e4a4",
+        -569
+      ]
+    ],
+    "stockfish_best": "e4d4",
+    "stockfish_eval": -840,
+    "eval_difference": 924,
+    "needs_correction": true
+  },
+  {
+    "fen": "8/3k1p2/4rP1p/p2N3P/3K4/8/8/8 w - - 0 53",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_1",
+    "move_number": 105,
+    "v7p3r_played": "d4c4",
+    "v7p3r_eval": -72,
+    "stockfish_top5": [
+      [
+        "d4c3",
+        -591
+      ],
+      [
+        "d5f4",
+        -618
+      ],
+      [
+        "d5c3",
+        -671
+      ],
+      [
+        "d4c4",
+        -609
+      ],
+      [
+        "d5e7",
+        -681
+      ]
+    ],
+    "stockfish_best": "d4c3",
+    "stockfish_eval": -591,
+    "eval_difference": 519,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqkb1r/p1ppp1pp/1p6/3P1Q2/1P6/5N2/P1P2PPP/R1B1KB1R b KQkq - 0 10",
+    "game_id": "lichess_v7p3r_bot_2026-03-15.pgn_2",
+    "move_number": 20,
+    "v7p3r_played": "a7a5",
+    "v7p3r_eval": -362,
+    "stockfish_top5": [
+      [
+        "g7g6",
+        495
+      ],
+      [
+        "e7e6",
+        567
+      ],
+      [
+        "e7e5",
+        577
+      ],
+      [
+        "c7c6",
+        602
+      ],
+      [
+        "d7d6",
+        605
+      ]
+    ],
+    "stockfish_best": "g7g6",
+    "stockfish_eval": 495,
+    "eval_difference": 857,
+    "needs_correction": true
+  },
+  {
+    "fen": "rn2k2r/1p2bpp1/1pp4p/3pP3/3P2b1/2N2N2/PP3PPP/R3KB1R w KQkq - 1 13",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 25,
+    "v7p3r_played": "h2h3",
+    "v7p3r_eval": 68,
+    "stockfish_top5": [
+      [
+        "f1d3",
+        -59
+      ],
+      [
+        "f1e2",
+        -76
+      ],
+      [
+        "h2h3",
+        -81
+      ],
+      [
+        "a2a3",
+        -103
+      ],
+      [
+        "h2h4",
+        -118
+      ]
+    ],
+    "stockfish_best": "f1d3",
+    "stockfish_eval": -59,
+    "eval_difference": 127,
+    "needs_correction": true
+  },
+  {
+    "fen": "rn2k2r/1p2bpp1/1p2b2p/2PpP3/8/2NB1N1P/PP3PP1/R3K2R b KQkq - 0 15",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 30,
+    "v7p3r_played": "b6c5",
+    "v7p3r_eval": -44,
+    "stockfish_top5": [
+      [
+        "b6c5",
+        -159
+      ],
+      [
+        "e7c5",
+        -2
+      ],
+      [
+        "e8g8",
+        35
+      ],
+      [
+        "b8c6",
+        51
+      ],
+      [
+        "e7d8",
+        51
+      ]
+    ],
+    "stockfish_best": "b6c5",
+    "stockfish_eval": -159,
+    "eval_difference": 115,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3k2r/1p2bpp1/2n1b2p/2p1P3/3p2P1/2NB1N1P/PP3P1R/R3K3 w Qkq - 0 18",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 35,
+    "v7p3r_played": "c3e4",
+    "v7p3r_eval": 50,
+    "stockfish_top5": [
+      [
+        "c3b5",
+        -332
+      ],
+      [
+        "c3e2",
+        -355
+      ],
+      [
+        "c3b1",
+        -377
+      ],
+      [
+        "c3e4",
+        -413
+      ],
+      [
+        "c3d1",
+        -394
+      ]
+    ],
+    "stockfish_best": "c3b5",
+    "stockfish_eval": -332,
+    "eval_difference": 382,
+    "needs_correction": true
+  },
+  {
+    "fen": "r4rk1/1p2bpp1/2n1b2p/4P3/P1ppN1P1/5N1P/1P3P1R/R3KB2 b Q - 0 20",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 40,
+    "v7p3r_played": "f8d8",
+    "v7p3r_eval": 52,
+    "stockfish_top5": [
+      [
+        "f8d8",
+        -485
+      ],
+      [
+        "e7b4",
+        -480
+      ],
+      [
+        "b7b5",
+        -449
+      ],
+      [
+        "f8c8",
+        -441
+      ],
+      [
+        "e6d5",
+        -429
+      ]
+    ],
+    "stockfish_best": "f8d8",
+    "stockfish_eval": -485,
+    "eval_difference": 537,
+    "needs_correction": true
+  },
+  {
+    "fen": "r2r2k1/1p2bpp1/2nN3p/4P3/P1pp2P1/5b1P/1P3PBR/R3K3 w Q - 0 23",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 45,
+    "v7p3r_played": "g2f3",
+    "v7p3r_eval": -42,
+    "stockfish_top5": [
+      [
+        "g2f3",
+        -559
+      ],
+      [
+        "d6b7",
+        -593
+      ],
+      [
+        "d6c4",
+        -598
+      ],
+      [
+        "d6f5",
+        -618
+      ],
+      [
+        "e1f1",
+        -661
+      ]
+    ],
+    "stockfish_best": "g2f3",
+    "stockfish_eval": -559,
+    "eval_difference": 517,
+    "needs_correction": true
+  },
+  {
+    "fen": "1r1r2k1/1B2bpp1/7p/4n3/P1Np2P1/7P/1P3P1R/R3K3 b Q - 0 25",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 50,
+    "v7p3r_played": "e5c4",
+    "v7p3r_eval": 236,
+    "stockfish_top5": [
+      [
+        "e5c4",
+        -614
+      ],
+      [
+        "e7b4",
+        -551
+      ],
+      [
+        "e5d3",
+        -264
+      ],
+      [
+        "e7f6",
+        -192
+      ],
+      [
+        "e5g6",
+        -108
+      ]
+    ],
+    "stockfish_best": "e5c4",
+    "stockfish_eval": -614,
+    "eval_difference": 850,
+    "needs_correction": true
+  },
+  {
+    "fen": "1r1r2k1/1B3pp1/7p/8/Pb1p2P1/1P5P/1n3P1R/R2K4 w - - 3 28",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 55,
+    "v7p3r_played": "d1c2",
+    "v7p3r_eval": -270,
+    "stockfish_top5": [
+      [
+        "d1c2",
+        -640
+      ],
+      [
+        "d1c1",
+        -681
+      ],
+      [
+        "d1e2",
+        -732
+      ]
+    ],
+    "stockfish_best": "d1c2",
+    "stockfish_eval": -640,
+    "eval_difference": 370,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r2k1/4rpp1/7p/8/Pb1p2P1/1P5P/RK3P1R/8 b - - 0 30",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 60,
+    "v7p3r_played": "e7e2",
+    "v7p3r_eval": 300,
+    "stockfish_top5": [
+      [
+        "e7e2",
+        -8600
+      ],
+      [
+        "d4d3",
+        -762
+      ],
+      [
+        "e7e1",
+        -742
+      ],
+      [
+        "d8e8",
+        -722
+      ],
+      [
+        "g7g5",
+        -679
+      ]
+    ],
+    "stockfish_best": "e7e2",
+    "stockfish_eval": -8600,
+    "eval_difference": 8900,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r2k1/5pp1/7p/8/Pb4P1/1P1p3P/RK3P1R/4r3 w - - 0 33",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 65,
+    "v7p3r_played": "a2a1",
+    "v7p3r_eval": -312,
+    "stockfish_top5": [
+      [
+        "f2f4",
+        -9200
+      ],
+      [
+        "f2f3",
+        -9200
+      ],
+      [
+        "h2h1",
+        -9400
+      ],
+      [
+        "h3h4",
+        -9500
+      ],
+      [
+        "g4g5",
+        -9500
+      ]
+    ],
+    "stockfish_best": "f2f4",
+    "stockfish_eval": -9200,
+    "eval_difference": 8888,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r3k1/5pp1/7p/8/Pb4P1/1P1p3P/4rP1R/RK6 b - - 5 35",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_1",
+    "move_number": 70,
+    "v7p3r_played": "e2e1",
+    "v7p3r_eval": 516,
+    "stockfish_top5": [
+      [
+        "e2e1",
+        -9800
+      ],
+      [
+        "b4a3",
+        -9700
+      ],
+      [
+        "c8c2",
+        -9500
+      ],
+      [
+        "e2c2",
+        -9500
+      ],
+      [
+        "g7g6",
+        -9400
+      ]
+    ],
+    "stockfish_best": "e2e1",
+    "stockfish_eval": -9800,
+    "eval_difference": 10316,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1b1kb1r/ppp1pppp/2nq1n2/3p4/3P3P/4P3/PPPBNPP1/RN1QKB1R b KQkq - 2 5",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_2",
+    "move_number": 10,
+    "v7p3r_played": "e7e5",
+    "v7p3r_eval": 96,
+    "stockfish_top5": [
+      [
+        "e7e5",
+        -95
+      ],
+      [
+        "c8d7",
+        -77
+      ],
+      [
+        "a7a6",
+        -75
+      ],
+      [
+        "a8b8",
+        -63
+      ],
+      [
+        "h7h5",
+        -60
+      ]
+    ],
+    "stockfish_best": "e7e5",
+    "stockfish_eval": -95,
+    "eval_difference": 191,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqkbnr/ppp1pppp/8/n2P4/Q1p5/5N2/PP2PPPP/RNB1KB1R b KQkq - 2 5",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 10,
+    "v7p3r_played": "c7c6",
+    "v7p3r_eval": 46,
+    "stockfish_top5": [
+      [
+        "c7c6",
+        200
+      ],
+      [
+        "b7b5",
+        386
+      ],
+      [
+        "c8d7",
+        401
+      ],
+      [
+        "d8d7",
+        421
+      ],
+      [
+        "a5c6",
+        517
+      ]
+    ],
+    "stockfish_best": "c7c6",
+    "stockfish_eval": 200,
+    "eval_difference": 154,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1b1kbnr/p3pppp/2p5/Bp1q4/Q1p5/5N2/PP2PPPP/RN2KB1R w KQkq - 0 8",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 15,
+    "v7p3r_played": "a4c2",
+    "v7p3r_eval": 46,
+    "stockfish_top5": [
+      [
+        "a4c2",
+        311
+      ],
+      [
+        "a4b4",
+        299
+      ],
+      [
+        "a4a3",
+        294
+      ],
+      [
+        "a4d1",
+        264
+      ],
+      [
+        "b1c3",
+        -152
+      ]
+    ],
+    "stockfish_best": "a4c2",
+    "stockfish_eval": 311,
+    "eval_difference": 265,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3kbnr/p3pppp/2p5/Bp3b2/2p5/5N2/PP1NPPPP/R3KB1R b KQkq - 0 10",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 20,
+    "v7p3r_played": "g8f6",
+    "v7p3r_eval": -70,
+    "stockfish_top5": [
+      [
+        "g8f6",
+        371
+      ],
+      [
+        "g7g6",
+        371
+      ],
+      [
+        "g7g5",
+        372
+      ],
+      [
+        "f7f6",
+        377
+      ],
+      [
+        "f5e6",
+        398
+      ]
+    ],
+    "stockfish_best": "g8f6",
+    "stockfish_eval": 371,
+    "eval_difference": 441,
+    "needs_correction": true
+  },
+  {
+    "fen": "r3kb1r/p3pppp/2p5/Bp6/2p1n3/5NP1/PP2PP1P/R3KB1R w KQkq - 0 13",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 25,
+    "v7p3r_played": "f1g2",
+    "v7p3r_eval": 104,
+    "stockfish_top5": [
+      [
+        "f1g2",
+        499
+      ],
+      [
+        "f3d2",
+        454
+      ],
+      [
+        "a1d1",
+        442
+      ],
+      [
+        "h2h4",
+        430
+      ],
+      [
+        "f3e5",
+        425
+      ]
+    ],
+    "stockfish_best": "f1g2",
+    "stockfish_eval": 499,
+    "eval_difference": 395,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r1kb1r/p3pppp/8/BNp5/2p1n3/6P1/PP2PPBP/R3K2R b KQk - 0 15",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 30,
+    "v7p3r_played": "f7f5",
+    "v7p3r_eval": -160,
+    "stockfish_top5": [
+      [
+        "f7f5",
+        575
+      ],
+      [
+        "e4d6",
+        645
+      ],
+      [
+        "c4c3",
+        681
+      ],
+      [
+        "g7g6",
+        686
+      ],
+      [
+        "g7g5",
+        698
+      ]
+    ],
+    "stockfish_best": "f7f5",
+    "stockfish_eval": 575,
+    "eval_difference": 735,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r1kb1r/p5pp/8/BNp2p2/2p1n3/8/PP2PPBP/R3K2R w KQk - 0 18",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 35,
+    "v7p3r_played": "h1g1",
+    "v7p3r_eval": 154,
+    "stockfish_top5": [
+      [
+        "g2e4",
+        528
+      ],
+      [
+        "b5c3",
+        520
+      ],
+      [
+        "a1d1",
+        521
+      ],
+      [
+        "e1g1",
+        510
+      ],
+      [
+        "a2a4",
+        508
+      ]
+    ],
+    "stockfish_best": "g2e4",
+    "stockfish_eval": 528,
+    "eval_difference": 374,
+    "needs_correction": true
+  },
+  {
+    "fen": "4kb1r/p5pp/8/B1p2p2/2p1n3/2N5/Pr2PPBP/2KR2R1 b k - 1 20",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 40,
+    "v7p3r_played": "b2b7",
+    "v7p3r_eval": -56,
+    "stockfish_top5": [
+      [
+        "e4c3",
+        520
+      ],
+      [
+        "b2b8",
+        534
+      ],
+      [
+        "b2b4",
+        572
+      ],
+      [
+        "b2b7",
+        601
+      ],
+      [
+        "b2b6",
+        605
+      ]
+    ],
+    "stockfish_best": "e4c3",
+    "stockfish_eval": 520,
+    "eval_difference": 576,
+    "needs_correction": true
+  },
+  {
+    "fen": "4kb1r/p4rpp/8/B1p5/2p1B3/8/P3PP1P/2KR2R1 w k - 1 23",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 45,
+    "v7p3r_played": "e4c6",
+    "v7p3r_eval": 240,
+    "stockfish_top5": [
+      [
+        "e4c6",
+        776
+      ],
+      [
+        "f2f3",
+        612
+      ],
+      [
+        "e4f3",
+        600
+      ],
+      [
+        "d1d8",
+        597
+      ],
+      [
+        "g1g2",
+        580
+      ]
+    ],
+    "stockfish_best": "e4c6",
+    "stockfish_eval": 776,
+    "eval_difference": 536,
+    "needs_correction": true
+  },
+  {
+    "fen": "5b1r/p3k1pp/2B5/B1p5/2p5/4R3/P3Pr1P/2KR4 b - - 1 25",
+    "game_id": "lichess_v7p3r_bot_2026-03-26.pgn_3",
+    "move_number": 50,
+    "v7p3r_played": "e7f6",
+    "v7p3r_eval": -110,
+    "stockfish_top5": [
+      [
+        "e7f7",
+        626
+      ],
+      [
+        "e7f6",
+        8800
+      ]
+    ],
+    "stockfish_best": "e7f7",
+    "stockfish_eval": 626,
+    "eval_difference": 736,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqk2r/ppp1bppp/2n1p3/4P3/3Pp3/P3B3/1PP2PPP/R2QKBNR w KQkq - 2 8",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 15,
+    "v7p3r_played": "d1g4",
+    "v7p3r_eval": 0,
+    "stockfish_top5": [
+      [
+        "d1g4",
+        245
+      ],
+      [
+        "c2c3",
+        123
+      ],
+      [
+        "f1c4",
+        115
+      ],
+      [
+        "h2h4",
+        118
+      ],
+      [
+        "g1e2",
+        117
+      ]
+    ],
+    "stockfish_best": "d1g4",
+    "stockfish_eval": 245,
+    "eval_difference": 245,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqk2r/ppp2pQp/4p3/2b1P3/3np3/P3B3/1PP2PPP/2KR1BNR b kq - 0 10",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 20,
+    "v7p3r_played": "h8f8",
+    "v7p3r_eval": -20,
+    "stockfish_top5": [
+      [
+        "h8f8",
+        428
+      ],
+      [
+        "d4b3",
+        615
+      ],
+      [
+        "c5f8",
+        625
+      ],
+      [
+        "d8h4",
+        677
+      ],
+      [
+        "c8d7",
+        678
+      ]
+    ],
+    "stockfish_best": "h8f8",
+    "stockfish_eval": 428,
+    "eval_difference": 448,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1bqkr2/pp3pQp/4p3/2p1P3/3bp3/P1P5/1P3PPP/2KR1BNR w q - 0 13",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 25,
+    "v7p3r_played": "c3d4",
+    "v7p3r_eval": 200,
+    "stockfish_top5": [
+      [
+        "f1b5",
+        381
+      ],
+      [
+        "g1e2",
+        373
+      ],
+      [
+        "c3d4",
+        328
+      ],
+      [
+        "g7g4",
+        307
+      ],
+      [
+        "c1b1",
+        304
+      ]
+    ],
+    "stockfish_best": "f1b5",
+    "stockfish_eval": 381,
+    "eval_difference": 181,
+    "needs_correction": true
+  },
+  {
+    "fen": "r2qkr2/pp1b1pQp/4p3/1B2P3/3Rp3/P7/1P3PPP/2K3NR b q - 0 15",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 30,
+    "v7p3r_played": "d8c8",
+    "v7p3r_eval": -262,
+    "stockfish_top5": [
+      [
+        "d8c8",
+        394
+      ],
+      [
+        "d7b5",
+        415
+      ],
+      [
+        "d8c7",
+        445
+      ],
+      [
+        "a8c8",
+        468
+      ],
+      [
+        "e4e3",
+        607
+      ]
+    ],
+    "stockfish_best": "d8c8",
+    "stockfish_eval": 394,
+    "eval_difference": 656,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r1kr2/pp1b1pQ1/4p3/1B2P2p/4p3/P7/1P3PPP/2K3NR w - - 0 18",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 35,
+    "v7p3r_played": "c1b1",
+    "v7p3r_eval": 318,
+    "stockfish_top5": [
+      [
+        "c1b1",
+        492
+      ],
+      [
+        "b5c6",
+        434
+      ],
+      [
+        "c1d2",
+        465
+      ],
+      [
+        "b5c4",
+        417
+      ],
+      [
+        "c1d1",
+        388
+      ]
+    ],
+    "stockfish_best": "c1b1",
+    "stockfish_eval": 492,
+    "eval_difference": 174,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r1kr2/pp3pQ1/4p3/4P2p/4p3/P2b3N/1P3PPP/K6R b - - 3 20",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 40,
+    "v7p3r_played": "c8c5",
+    "v7p3r_eval": -258,
+    "stockfish_top5": [
+      [
+        "b7b5",
+        516
+      ],
+      [
+        "a7a5",
+        570
+      ],
+      [
+        "e4e3",
+        505
+      ],
+      [
+        "e8d7",
+        505
+      ],
+      [
+        "h5h4",
+        510
+      ]
+    ],
+    "stockfish_best": "b7b5",
+    "stockfish_eval": 516,
+    "eval_difference": 774,
+    "needs_correction": true
+  },
+  {
+    "fen": "4kr2/pp3pQ1/4p3/4P1Np/8/P2bP3/1Pr3PP/K6R w - - 1 23",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 45,
+    "v7p3r_played": "h1d1",
+    "v7p3r_eval": 404,
+    "stockfish_top5": [
+      [
+        "h1d1",
+        701
+      ],
+      [
+        "g7f6",
+        644
+      ],
+      [
+        "e3e4",
+        624
+      ],
+      [
+        "g5h7",
+        617
+      ],
+      [
+        "h2h4",
+        572
+      ]
+    ],
+    "stockfish_best": "h1d1",
+    "stockfish_eval": 701,
+    "eval_difference": 297,
+    "needs_correction": true
+  },
+  {
+    "fen": "4kQ2/pp3p2/4N3/4P2p/8/P3P3/1Pr3PP/K2b4 b - - 0 25",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_1",
+    "move_number": 50,
+    "v7p3r_played": "e8d7",
+    "v7p3r_eval": -658,
+    "stockfish_top5": [
+      [
+        "e8d7",
+        9800
+      ]
+    ],
+    "stockfish_best": "e8d7",
+    "stockfish_eval": 9800,
+    "eval_difference": 10458,
+    "needs_correction": true
+  },
+  {
+    "fen": "r1b1kb1r/pp2pppp/2P2n2/4p3/4P3/2N5/PPP2PPP/R1BqKB1R w KQkq - 0 8",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 15,
+    "v7p3r_played": "c3d1",
+    "v7p3r_eval": -12,
+    "stockfish_top5": [
+      [
+        "e1d1",
+        125
+      ],
+      [
+        "c3d1",
+        101
+      ]
+    ],
+    "stockfish_best": "e1d1",
+    "stockfish_eval": 125,
+    "eval_difference": 137,
+    "needs_correction": true
+  },
+  {
+    "fen": "1rb1k2r/p4ppp/2pbpn2/4p1B1/4P3/3B4/PPP2PPP/R2N1RK1 w k - 6 13",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 25,
+    "v7p3r_played": "d1e3",
+    "v7p3r_eval": -36,
+    "stockfish_top5": [
+      [
+        "g5e3",
+        124
+      ],
+      [
+        "g5d2",
+        113
+      ],
+      [
+        "b2b3",
+        104
+      ],
+      [
+        "a2a3",
+        103
+      ],
+      [
+        "c2c3",
+        84
+      ]
+    ],
+    "stockfish_best": "g5e3",
+    "stockfish_eval": 124,
+    "eval_difference": 160,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r4/p1r1kp1p/2pbpp2/4p3/2N1P3/2PR4/PP3PPP/R5K1 w - - 10 23",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 45,
+    "v7p3r_played": "a1d1",
+    "v7p3r_eval": -58,
+    "stockfish_top5": [
+      [
+        "a1d1",
+        244
+      ],
+      [
+        "g2g4",
+        175
+      ],
+      [
+        "g1f1",
+        172
+      ],
+      [
+        "d3h3",
+        144
+      ],
+      [
+        "a2a4",
+        139
+      ]
+    ],
+    "stockfish_best": "a1d1",
+    "stockfish_eval": 244,
+    "eval_difference": 302,
+    "needs_correction": true
+  },
+  {
+    "fen": "2r5/p2rkp1p/2pbpp2/4p3/2N1P3/2PR4/PP3PPP/3R2K1 b - - 15 25",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 50,
+    "v7p3r_played": "c8d8",
+    "v7p3r_eval": 54,
+    "stockfish_top5": [
+      [
+        "c8d8",
+        245
+      ],
+      [
+        "c8b8",
+        494
+      ],
+      [
+        "h7h5",
+        511
+      ],
+      [
+        "f6f5",
+        504
+      ],
+      [
+        "a7a5",
+        504
+      ]
+    ],
+    "stockfish_best": "c8d8",
+    "stockfish_eval": 245,
+    "eval_difference": 191,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r4/p1r1kp2/2pbpp2/N3p2p/1P2P3/2PR4/P4PPP/3R2K1 w - - 0 28",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 55,
+    "v7p3r_played": "a5c4",
+    "v7p3r_eval": 12,
+    "stockfish_top5": [
+      [
+        "a2a3",
+        327
+      ],
+      [
+        "a5c4",
+        302
+      ],
+      [
+        "c3c4",
+        272
+      ],
+      [
+        "g1f1",
+        302
+      ],
+      [
+        "d3d2",
+        291
+      ]
+    ],
+    "stockfish_best": "a2a3",
+    "stockfish_eval": 327,
+    "eval_difference": 315,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r4/p1r1kp2/2pbpp2/N3p3/1P2P2p/2PR4/P2R1PPP/6K1 w - - 4 33",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 65,
+    "v7p3r_played": "a5c4",
+    "v7p3r_eval": 6,
+    "stockfish_top5": [
+      [
+        "a5c4",
+        295
+      ],
+      [
+        "a2a3",
+        272
+      ],
+      [
+        "h2h3",
+        243
+      ],
+      [
+        "g1f1",
+        228
+      ],
+      [
+        "d2d1",
+        221
+      ]
+    ],
+    "stockfish_best": "a5c4",
+    "stockfish_eval": 295,
+    "eval_difference": 289,
+    "needs_correction": true
+  },
+  {
+    "fen": "3r4/p1r2p2/2pNpk2/4pP2/1P5p/2PR4/P2R1PPP/6K1 b - - 0 35",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 70,
+    "v7p3r_played": "d8g8",
+    "v7p3r_eval": -240,
+    "stockfish_top5": [
+      [
+        "d8g8",
+        523
+      ],
+      [
+        "d8a8",
+        531
+      ],
+      [
+        "d8b8",
+        528
+      ],
+      [
+        "d8f8",
+        529
+      ],
+      [
+        "e6f5",
+        581
+      ]
+    ],
+    "stockfish_best": "d8g8",
+    "stockfish_eval": 523,
+    "eval_difference": 763,
+    "needs_correction": true
+  },
+  {
+    "fen": "8/p1r2pr1/2p1k3/4p3/1P2N2p/2PR4/P2R1PPP/6K1 w - - 2 38",
+    "game_id": "lichess_v7p3r_bot_2026-04-09.pgn_2",
+    "move_number": 75,
+    "v7p3r_played": "e4c5",
+    "v7p3r_eval": 334,
+    "stockfish_top5": [
+      [
+        "g1f1",
+        585
+      ],
+      [
+        "e4c5",
+        577
+      ],
+      [
+        "d3e3",
+        562
+      ],
+      [
+        "f2f3",
+        564
+      ],
+      [
+        "f2f4",
+        559
+      ]
+    ],
+    "stockfish_best": "g1f1",
+    "stockfish_eval": 585,
+    "eval_difference": 251,
+    "needs_correction": true
+  }
+]

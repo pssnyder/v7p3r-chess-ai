@@ -1,0 +1,66 @@
+[
+  {
+    "fen": "2r1kr2/pp3pQ1/4p3/4P2p/4p3/P2b3N/1P3PPP/K6R b - - 3 20",
+    "game_id": "lichess_v7p3r_bot_2026-04-09_game1",
+    "move_number": 40,
+    "v7p3r_played": "c8c5",
+    "stockfish_best": "e8d7",
+    "stockfish_top5": [
+      [
+        "e8d7",
+        473
+      ],
+      [
+        "b7b5",
+        509
+      ],
+      [
+        "d3c2",
+        521
+      ],
+      [
+        "e4e3",
+        521
+      ],
+      [
+        "a7a5",
+        488
+      ]
+    ],
+    "stockfish_eval": 473,
+    "needs_correction": true,
+    "v7p3r_wrong": true
+  },
+  {
+    "fen": "r1bqkb1r/ppp1pppp/3p1n2/3Pn3/4P3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 1 5",
+    "game_id": "lichess_v7p3r_bot_2026-04-09_game2",
+    "move_number": 10,
+    "v7p3r_played": "c7c6",
+    "stockfish_best": "e5f3",
+    "stockfish_top5": [
+      [
+        "e5f3",
+        29
+      ],
+      [
+        "e7e6",
+        75
+      ],
+      [
+        "e5d7",
+        95
+      ],
+      [
+        "a7a6",
+        106
+      ],
+      [
+        "g7g6",
+        114
+      ]
+    ],
+    "stockfish_eval": 29,
+    "needs_correction": true,
+    "v7p3r_wrong": true
+  }
+]
