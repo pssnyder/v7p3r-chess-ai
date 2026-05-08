@@ -1,8 +1,0 @@
-============================================================
-ENRICHED PUZZLE DATASET STATISTICS
-============================================================
-
-Total puzzles: 0
-Top-N moves per puzzle: 10
-
-Rating Distribution:
