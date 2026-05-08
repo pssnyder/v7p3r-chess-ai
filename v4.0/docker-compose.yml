@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  training:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: v7p3r-training
+    
+    # GPU support (requires nvidia-docker)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    
+    # Volume mounts for persistence
+    volumes:
+      - ./data:/workspace/data
+      - ./models:/workspace/models
+      - ./logs:/workspace/logs
+      - ./tensorboard_logs:/workspace/tensorboard_logs
+    
+    # Environment variables
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONUNBUFFERED=1
+      - TRAINING_DURATION=48h
+      - AUTO_RECOVER=true
+      - ENABLE_TENSORBOARD=true
+      - LOG_LEVEL=INFO
+    
+    # Restart policy for auto-recovery
+    restart: unless-stopped
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "scripts/training_health_check.py"]
+      interval: 5m
+      timeout: 30s
+      retries: 3
+      start_period: 5m
+    
+    # Resource limits (adjust based on your hardware)
+    mem_limit: 32g
+    memswap_limit: 32g
+    shm_size: 8g
+    
+    # Expose TensorBoard port
+    ports:
+      - "6006:6006"
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"
+    
+    # Network
+    networks:
+      - training-network
+
+  # TensorBoard service for monitoring
+  tensorboard:
+    image: tensorflow/tensorflow:latest
+    container_name: v7p3r-tensorboard
+    command: python -m tensorboard.main --logdir=/logs --host=0.0.0.0 --port=6006
+    
+    volumes:
+      - ./tensorboard_logs:/logs:ro
+    
+    ports:
+      - "6007:6006"
+    
+    restart: unless-stopped
+    
+    networks:
+      - training-network
+    
+    depends_on:
+      - training
+
+networks:
+  training-network:
+    driver: bridge
+
+# CPU-only fallback configuration (uncomment if no GPU)
+# To use: docker-compose -f docker-compose.yml -f docker-compose.cpu.yml up

@@ -1,0 +1,104 @@
+{
+  "engine": {
+    "name": "V7P3R Chess Engine",
+    "version": "18.4.0",
+    "path": "../../v7p3r-chess-engine/src/"
+  },
+  
+  "deployment": {
+    "environment": "development",
+    "gcp_instance": "v7p3r-production-bot",
+    "docker_container": "v7p3r-production",
+    "auto_deploy": false
+  },
+  
+  "ai_integration": {
+    "enabled": false,
+    "active_agents": [],
+    "deployment_mode": "staged",
+    
+    "stage1_deployment": {
+      "enabled": false,
+      "agents": ["themes"],
+      "validation_required": true,
+      "min_games_tested": 1000,
+      "acceptance_criteria": {
+        "elo_improvement": 100,
+        "cutoff_improvement": 0.30,
+        "zero_crashes": true
+      }
+    },
+    
+    "stage2_deployment": {
+      "enabled": false,
+      "agents": ["themes", "corrector"],
+      "validation_required": true,
+      "min_games_tested": 500,
+      "acceptance_criteria": {
+        "correction_rate": 0.90,
+        "false_positive_rate": 0.05,
+        "elo_improvement": 50
+      }
+    },
+    
+    "stage3_deployment": {
+      "enabled": false,
+      "agents": ["themes", "corrector", "opening", "endgame"],
+      "validation_required": true,
+      "min_games_tested": 500,
+      "acceptance_criteria": {
+        "opening_book_coverage": 1.0,
+        "tablebase_accuracy": 1.0,
+        "mate_detection_rate": 1.0,
+        "elo_improvement": 100
+      }
+    },
+    
+    "stage4_deployment": {
+      "enabled": false,
+      "agents": ["themes", "corrector", "opening", "endgame", "tactics"],
+      "validation_required": true,
+      "min_games_tested": 1000,
+      "acceptance_criteria": {
+        "nn_eval_stability": true,
+        "elo_neutral_or_positive": true,
+        "puzzle_accuracy": 0.95
+      }
+    }
+  },
+  
+  "rollback": {
+    "enabled": true,
+    "baseline_version": "18.4.0",
+    "auto_rollback_on_error": true,
+    "auto_rollback_on_elo_drop": true,
+    "elo_drop_threshold": -50
+  },
+  
+  "files_to_deploy": [
+    "src/agents/v7p3r_themes_agent.py",
+    "src/agents/v7p3r_corrector_agent.py",
+    "src/agents/v7p3r_opening_agent.py",
+    "src/agents/v7p3r_endgame_agent.py",
+    "src/agents/v7p3r_tactics_agent.py",
+    "src/core/agent_orchestrator.py",
+    "src/engine_integration/ai_evaluator.py",
+    "src/engine_integration/ai_move_sorter.py",
+    "src/engine_integration/ai_validator.py",
+    "config/agent_config.json"
+  ],
+  
+  "model_files": {
+    "stage1": ["models/stage1_themes/final_model.pth"],
+    "stage2": ["models/stage2_corrector/final_model.pth", "models/stage2_corrector/correction_database.db"],
+    "stage3": [
+      "models/stage3_opening/novelty_detector.pth",
+      "models/stage3_endgame/mate_detector.pth",
+      "models/stage3_endgame/endgame_evaluator.pth"
+    ],
+    "stage4": [
+      "models/stage4_tactics/policy_network.pth",
+      "models/stage4_tactics/value_network.pth"
+    ]
+  }
+}
