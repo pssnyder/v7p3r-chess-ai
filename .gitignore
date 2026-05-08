@@ -8,16 +8,15 @@ build/
 dist/
 
 # Large data directories (exclude from Git)
-v4.0/data/preprocessed_puzzles/*.json
-v4.0/data/stage2_games/*.json
-v4.0/data/stage2_training/*.json
-v4.0/data/stage2_positions/*.json
-v4.0/data/stage2_temp/*.pgn
-v4.0/checkpoints/*.pth
-v4.0/checkpoints/*.pt
+*.json
+*.pgn
+*.pth
+*.pt
 
 # Allow small config JSONs
 !v4.0/config/*.json
 
 *.pyc
 *.db*
+*.jsonl
+*.log
