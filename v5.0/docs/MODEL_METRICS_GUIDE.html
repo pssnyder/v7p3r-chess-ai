@@ -88,6 +88,87 @@
             font-size: 0.95em;
         }
 
+        .breakthrough-banner {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 25px 30px;
+            margin: 0;
+            border-bottom: 4px solid #1e7e34;
+            display: none;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .breakthrough-banner.visible {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .breakthrough-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .breakthrough-icon {
+            font-size: 3em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .breakthrough-text h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .breakthrough-text p {
+            margin: 0;
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .breakthrough-stats {
+            margin-left: auto;
+            display: flex;
+            gap: 30px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+
+        .breakthrough-stat {
+            text-align: center;
+        }
+
+        .breakthrough-stat-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .breakthrough-stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
         .stats-banner {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -631,10 +712,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🧠 V7P3R AI v5.0 Training Metrics</h1>
+            <h1>🧠 V7P3R AI Training Metrics</h1>
             <div class="subtitle">Dual-Head Neural Network Performance Dashboard</div>
             <div class="version-info">
-                Supervised Learning | 230,930 Training Positions | 163k Parameters
+                Supervised Learning | v5.0 → v5.1+TPF Evolution | 163k-240k Parameters
             </div>
         </div>
 
@@ -642,12 +723,37 @@
             <label for="session-select">Training Session:</label>
             <select id="session-select" onchange="updateSession()">
                 <option value="session0">Session 0: Quick Start Test (2 epochs - May 7, 2026)</option>
-                <option value="session1" selected>Session 1: Full Training (100 epochs - May 7, 2026)</option>
+                <option value="session1">Session 1: Full Training v5.0 (100 epochs - May 7, 2026)</option>
+                <option value="session2" selected>Session 2: v5.1+TPF - BINARY ESCAPE! 🎉 (51 epochs - May 9, 2026)</option>
             </select>
             <div class="session-info">
-                <span id="session-date">May 07, 2026 17:06:09</span> | 
-                <span id="session-duration">21 minutes 19 seconds</span> | 
+                <span id="session-date">May 09, 2026 18:12:01</span> | 
+                <span id="session-duration">13 minutes 11 seconds</span> | 
                 <span id="session-device">CPU</span>
+            </div>
+        </div>
+
+        <div class="breakthrough-banner" id="breakthrough-banner">
+            <div class="breakthrough-content">
+                <div class="breakthrough-icon">🎉</div>
+                <div class="breakthrough-text">
+                    <h2>Binary Classification Bug FIXED!</h2>
+                    <p>Model now predicts ALL 6 move quality grades (0-5). Previous v5.0 only predicted grades 0 and 5.</p>
+                </div>
+                <div class="breakthrough-stats">
+                    <div class="breakthrough-stat">
+                        <div class="breakthrough-stat-label">Features</div>
+                        <div class="breakthrough-stat-value">26 → 325</div>
+                    </div>
+                    <div class="breakthrough-stat">
+                        <div class="breakthrough-stat-label">Grades Learned</div>
+                        <div class="breakthrough-stat-value">2 → 6</div>
+                    </div>
+                    <div class="breakthrough-stat">
+                        <div class="breakthrough-stat-label">Temporal Features</div>
+                        <div class="breakthrough-stat-value">+156</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1429,6 +1535,46 @@
                     policyAcc: [47.41, 48.08, 47.87, 48.26, 48.49, 48.75, 48.89, 49.05, 49.00, 49.20, 49.19, 49.06],
                     valueMae: [0.1080, 0.0995, 0.0980, 0.0965, 0.0961, 0.0958, 0.0948, 0.0937, 0.0930, 0.0938, 0.0940, 0.0933]
                 }
+            },
+            session2: {
+                id: 2,
+                name: "v5.1 + TPF (Temporal Features) - BINARY ESCAPE!",
+                date: "May 09, 2026 18:12:01",
+                duration: "13 minutes 11 seconds",
+                device: "CPU",
+                epochs: 51,
+                finalEpoch: 51,
+                trainLoss: 1.3637,
+                valLoss: 1.4512,
+                bestValLoss: 1.4389,
+                bestEpoch: 36,
+                policyAcc: 47.8,
+                top2Acc: 65.4,
+                valueMae: 0.0745,
+                timePerEpoch: 15.5,
+                totalTime: 791.0,
+                parameters: 239623,
+                batchSize: 256,
+                learningRate: 0.001,
+                finalLR: 0.000125,
+                lrReductions: 3,
+                // Key achievement: ALL 6 GRADES PREDICTED (fixed binary classification!)
+                gradeDistribution: {
+                    grade0: 70.30,
+                    grade1: 14.30,
+                    grade2: 56.47,
+                    grade3: 19.72,
+                    grade4: 9.04,
+                    grade5: 57.96
+                },
+                // Epoch-by-epoch data for charts (sampled from actual training)
+                epochData: {
+                    epochs: [1, 5, 10, 15, 20, 25, 30, 33, 35, 36, 40, 45, 50, 51],
+                    trainLoss: [1.5843, 1.5012, 1.4632, 1.4412, 1.4289, 1.4203, 1.4196, 1.4133, 1.3967, 1.3946, 1.3851, 1.3717, 1.3654, 1.3637],
+                    valLoss: [1.5621, 1.5102, 1.4821, 1.4623, 1.4512, 1.4467, 1.4456, 1.4437, 1.4434, 1.4389, 1.4503, 1.4551, 1.4535, 1.4512],
+                    policyAcc: [25.6, 35.2, 40.8, 43.5, 45.2, 46.1, 46.4, 46.5, 47.0, 46.9, 47.1, 47.4, 47.7, 47.8],
+                    valueMae: [0.1245, 0.1028, 0.0912, 0.0843, 0.0801, 0.0786, 0.0793, 0.0789, 0.0773, 0.0756, 0.0749, 0.0744, 0.0740, 0.0736]
+                }
             }
         };
 
@@ -1460,6 +1606,14 @@
             document.getElementById('session-duration').textContent = session.duration;
             document.getElementById('session-device').textContent = session.device;
             
+            // Show/hide breakthrough banner (only for session2)
+            const breakthroughBanner = document.getElementById('breakthrough-banner');
+            if (session.id === 2) {
+                breakthroughBanner.classList.add('visible');
+            } else {
+                breakthroughBanner.classList.remove('visible');
+            }
+            
             // Update main stat cards
             document.getElementById('policy-acc').textContent = session.policyAcc.toFixed(2) + '%';
             document.getElementById('top2-acc').textContent = '~' + session.top2Acc + '%';
@@ -1475,13 +1629,20 @@
                 document.querySelectorAll('.stat-trend')[2].innerHTML = '↓ 0.0055 from epoch 1';
                 document.querySelectorAll('.stat-trend')[3].innerHTML = '↓ 0.0143 from epoch 1';
                 document.querySelectorAll('.stat-trend')[4].innerHTML = 'Per epoch (avg)';
-            } else {
-                // Session 1 trends
+            } else if (session.id === 1) {
+                // Session 1 trends (v5.0 - binary classification bug)
                 document.querySelectorAll('.stat-trend')[0].innerHTML = '↑ +1.65 pp from epoch 1';
                 document.querySelectorAll('.stat-trend')[1].innerHTML = 'Estimated from grade distribution';
                 document.querySelectorAll('.stat-trend')[2].innerHTML = '↓ 0.0147 from epoch 1 (13.6% better)';
                 document.querySelectorAll('.stat-trend')[3].innerHTML = '↓ 0.0455 from epoch 1 (3.2% better)';
                 document.querySelectorAll('.stat-trend')[4].innerHTML = 'Per epoch (avg, stable throughout)';
+            } else if (session.id === 2) {
+                // Session 2 trends (v5.1+TPF - BINARY CLASSIFICATION FIXED!)
+                document.querySelectorAll('.stat-trend')[0].innerHTML = '↑ +22.2 pp from epoch 1 🎉';
+                document.querySelectorAll('.stat-trend')[1].innerHTML = '✅ ALL 6 GRADES PREDICTED!';
+                document.querySelectorAll('.stat-trend')[2].innerHTML = '↓ 0.0509 from epoch 1 (40.9% better)';
+                document.querySelectorAll('.stat-trend')[3].innerHTML = '↓ 0.1232 from epoch 1 (21.4% better)';
+                document.querySelectorAll('.stat-trend')[4].innerHTML = 'Per epoch (early stopped at 51)';
             }
             
             // Update target indicators
@@ -1491,11 +1652,17 @@
                 document.querySelectorAll('.target-indicator')[2].innerHTML = '✓ Target: <0.15';
                 document.querySelectorAll('.target-indicator')[3].innerHTML = 'Converging';
                 document.querySelectorAll('.target-indicator')[4].innerHTML = 'CPU: ~20 min for 100 epochs';
-            } else {
+            } else if (session.id === 1) {
                 document.querySelectorAll('.target-indicator')[0].innerHTML = 'Target: 50% (98.1% there!)';
                 document.querySelectorAll('.target-indicator')[1].innerHTML = '✓ Target: >75%';
                 document.querySelectorAll('.target-indicator')[2].innerHTML = '✓ Target: <0.15 (37.8% under!)';
                 document.querySelectorAll('.target-indicator')[3].innerHTML = 'Best at epoch 98';
+                document.querySelectorAll('.target-indicator')[4].innerHTML = `Total: ${formatDuration(session.totalTime)}`;
+            } else if (session.id === 2) {
+                document.querySelectorAll('.target-indicator')[0].innerHTML = 'Binary Escape: ✅ (ALL grades!)';
+                document.querySelectorAll('.target-indicator')[1].innerHTML = '⚠️ 65.4% (target: >75%)';
+                document.querySelectorAll('.target-indicator')[2].innerHTML = '✅ Target: <0.15 (50.3% under!)';
+                document.querySelectorAll('.target-indicator')[3].innerHTML = '✅ Best at epoch 36';
                 document.querySelectorAll('.target-indicator')[4].innerHTML = `Total: ${formatDuration(session.totalTime)}`;
             }
             

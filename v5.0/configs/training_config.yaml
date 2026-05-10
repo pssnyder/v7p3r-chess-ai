@@ -1,9 +1,10 @@
-# V7P3R AI v5.0 - Training Configuration
+# V7P3R AI v5.1 + TPF - Training Configuration
+# Updated for v5.1 (expanded features) + Phase 1C (temporal features)
 
 # Model Architecture
 model:
-  input_dim: 26              # Current feature count (expandable to 40+)
-  shared_dims: [256, 256, 128, 64]  # Deep architecture for future expansion
+  input_dim: 325             # UPDATED: Preprocessing generated 325 features (60 num + 44 bool + 221 one-hot)
+  shared_dims: [256, 256, 128, 64]  # Deep architecture (unchanged - designed for expansion!)
   policy_hidden: 64
   value_hidden: 32
   dropout: 0.3
@@ -39,7 +40,7 @@ training:
   huber_delta: 0.5           # Huber loss delta for value head
   
   # Checkpoints
-  checkpoint_dir: 'checkpoints'
+  checkpoint_dir: 'models/v5.1_tpf'  # UPDATED: Save v5.1+TPF models here
 
 # Evaluation
 evaluation:

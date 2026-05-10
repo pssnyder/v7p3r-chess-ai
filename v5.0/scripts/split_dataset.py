@@ -42,6 +42,34 @@ def save_jsonl(records, filepath):
             f.write(json.dumps(record, ensure_ascii=False) + '\n')
 
 
+def get_record_grade(record):
+    """
+    Extract move quality grade from a record.
+    
+    For game positions: use stockfish_analysis.move_quality_grade
+    For puzzle positions: use synthetic grade based on puzzle rating
+    """
+    # Game position - has stockfish analysis
+    if 'stockfish_analysis' in record and 'move_quality_grade' in record['stockfish_analysis']:
+        return record['stockfish_analysis']['move_quality_grade']
+    
+    # Puzzle position - map puzzle rating to synthetic grade
+    if 'puzzle_rating' in record:
+        rating = record['puzzle_rating']
+        # Map puzzle difficulty to grades (harder puzzles = better moves required)
+        if rating < 1200:
+            return 2  # Easy puzzles
+        elif rating < 1600:
+            return 3  # Medium puzzles
+        elif rating < 2000:
+            return 4  # Hard puzzles
+        else:
+            return 5  # Very hard puzzles
+    
+    # Fallback: unknown source, use neutral grade
+    return 3
+
+
 def stratified_split(records, train_ratio, val_ratio, test_ratio, random_seed=42):
     """
     Split records into train/val/test with stratification by move quality grade
@@ -61,7 +89,7 @@ def stratified_split(records, train_ratio, val_ratio, test_ratio, random_seed=42
     # Group records by grade
     grade_groups = {}
     for record in records:
-        grade = record['stockfish_analysis']['move_quality_grade']
+        grade = get_record_grade(record)
         if grade not in grade_groups:
             grade_groups[grade] = []
         grade_groups[grade].append(record)
@@ -95,7 +123,7 @@ def stratified_split(records, train_ratio, val_ratio, test_ratio, random_seed=42
 
 def get_grade_distribution(records):
     """Get distribution of grades in records"""
-    grades = [r['stockfish_analysis']['move_quality_grade'] for r in records]
+    grades = [get_record_grade(r) for r in records]
     return dict(Counter(grades))
 
 

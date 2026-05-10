@@ -229,6 +229,26 @@ class FeatureCalculator:
         
         return features
     
+    def calculate_features_from_fen(self, fen: str, move_uci: str = None) -> Dict[str, Any]:
+        """
+        Calculate features from just a FEN string (for temporal calculator).
+        
+        Args:
+            fen: Position FEN string
+            move_uci: Ignored (kept for backwards compatibility)
+            
+        Returns:
+            Features dictionary
+        """
+        # Create minimal record structure WITHOUT move
+        # The FEN represents the position AFTER any move, so we don't analyze a move
+        record = {
+            'position': {'fen': fen},
+            'engine_decision': {},  # No move to analyze
+            'stockfish_analysis': {}
+        }
+        return self.calculate_features(record)
+    
     # ========================================================================
     # CORE POSITION FEATURES (F001-F005) - REQUIRED
     # ========================================================================
