@@ -1,0 +1,23 @@
+{
+  "name": "Tal",
+  "description": "Aggressive, tactical, sacrificial style. High complexity seeking.",
+  "weights": {
+    "forest_darkness": 0.15,
+    "piece_tension": 0.1,
+    "move_diversity": 0.05,
+    "material_sacrifice_bonus": 0.1,
+    "material_threshold": 5,
+    "complexity_threshold": 0.2,
+    "king_risk_penalty": -0.05,
+    "king_risk_tolerance": 2.0,
+    "attack_bonus": 0.08,
+    "center_control": 0.05,
+    "passed_pawns": 0.03,
+    "bishop_pair": 0.02,
+    "active_rooks": 0.04,
+    "endgame_complexity_weight": 0.5
+  },
+  "example_positions": [],
+  "author": "V7P3R",
+  "version": "v7.0"
+}

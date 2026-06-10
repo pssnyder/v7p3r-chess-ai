@@ -1,0 +1,160 @@
+{
+  "analysis_date": "2026-05-31",
+  "version_counts": {
+    "v5": 395,
+    "v4": 1685,
+    "v1": 1627,
+    "v6": 284,
+    "v7": 36693,
+    "v8": 257,
+    "v9": 338,
+    "v10": 2784,
+    "v11": 106,
+    "v12": 1686,
+    "v14": 2251,
+    "v13": 44,
+    "v3": 1,
+    "v15": 151,
+    "v16": 159,
+    "v17": 677,
+    "v2": 84,
+    "v18": 141
+  },
+  "statistics": {
+    "total_versions": 18,
+    "total_games": 49363,
+    "mean_games_per_version": 2742.3888888888887,
+    "median_games_per_version": 311.0,
+    "std_games_per_version": 8516.813158058656,
+    "min_games": 1,
+    "max_games": 36693,
+    "outliers": [
+      [
+        "v7",
+        36693
+      ]
+    ],
+    "mean_without_outliers": 745.2941176470588,
+    "median_without_outliers": 284,
+    "recommended_target": 284
+  },
+  "recommended_selfplay_target": 284,
+  "version_files_sample": {
+    "v5": [
+      "Best of Engine Battle 20250821.pgn",
+      "Best of Engine Battle 20250822.pgn",
+      "Engine Battle 20250821.pgn",
+      "Engine Battle 20250821_2.pgn",
+      "Engine Battle 20250821_3.pgn"
+    ],
+    "v4": [
+      "Best of Engine Battle 20250821.pgn",
+      "Engine Battle 20250814.pgn",
+      "Engine Battle 20250815.pgn",
+      "Engine Battle 20250817.pgn",
+      "Engine Battle 20250817_2.pgn"
+    ],
+    "v1": [
+      "Engine Battle 20250809.pgn",
+      "Engine Battle 20250810.pgn",
+      "Engine Battle 20250810_2.pgn",
+      "Engine Battle 20250811.pgn",
+      "Engine Battle 20250811_2.pgn"
+    ],
+    "v6": [
+      "Engine Battle 20250822_2.pgn",
+      "Engine Battle 20250822_3.pgn",
+      "Engine Battle 20250822_4.pgn",
+      "Engine Battle 20250823.pgn",
+      "Engine Regression Battle 20250829.pgn"
+    ],
+    "v7": [
+      "Engine Battle 20250823.pgn",
+      "Engine Battle 20250824.pgn",
+      "Engine Battle 20250825.pgn",
+      "Engine Battle 20250826.pgn",
+      "Engine Battle 20250827.pgn"
+    ],
+    "v8": [
+      "Engine Battle 20250828.pgn",
+      "Engine Battle 20250830.pgn",
+      "Engine Regression Battle 20250829.pgn",
+      "Engine All Out Battle 20250915.pgn",
+      "Engine All Out Battle 20250917.pgn"
+    ],
+    "v9": [
+      "Engine Battle 20250829.pgn",
+      "Engine Battle 20250829_2.pgn",
+      "Engine Battle 20250830.pgn",
+      "Engine Regression Battle 20250829.pgn",
+      "Engine Regression Battle 20250831.pgn"
+    ],
+    "v10": [
+      "Engine Battle 20250831.pgn",
+      "Engine All Out Battle 20250915.pgn",
+      "Engine All Out Battle 20250917.pgn",
+      "Engine All Out Battle 20250917_2.pgn",
+      "Engine Battle 20250901.pgn"
+    ],
+    "v11": [
+      "Engine Battle 20250921.pgn",
+      "Engine Battle 20250922.pgn",
+      "Engine Regression Battle 20250921.pgn",
+      "Engine Regression Battle 20250921_2.pgn",
+      "Engine Regression Battle 20250922.pgn"
+    ],
+    "v12": [
+      "Engine Battle 20250922.pgn",
+      "Engine Battle 20250923.pgn",
+      "Engine Battle 20250923_2.pgn",
+      "Engine Battle 20250924.pgn",
+      "Engine Battle 20250925.pgn"
+    ],
+    "v14": [
+      "Engine Battle 20251026.pgn",
+      "Engine Battle 20251030.pgn",
+      "Engine Battle 20251031.pgn",
+      "Engine Regression Battle 20251025_2.pgn",
+      "Engine Regression Battle 20251025_3.pgn"
+    ],
+    "v13": [
+      "Engine Regression Battle 20251025.pgn",
+      "Engine Regression Battle 20251025_2.pgn",
+      "Engine Regression Battle 20251027_2.pgn"
+    ],
+    "v3": [
+      "C0BR4_v3.1 vs v3.1_20251102_0118.pgn"
+    ],
+    "v15": [
+      "Engine Battle 20251118.pgn",
+      "Engine Battle 20251119.pgn",
+      "Engine Battle 20251119_2.pgn",
+      "V7P3R 15.4 Gauntlet 20251119.pgn",
+      "V7P3R 15.5 Gauntlet 20251119.pgn"
+    ],
+    "v16": [
+      "Engine Battle 20251119_3.pgn",
+      "Engine Battle 20251120.pgn",
+      "Engine Battle 20251120_2.pgn",
+      "V7P3R Debug Tournament 20251120.pgn",
+      "V7P3R v16 Regression Battle 20251118.pgn"
+    ],
+    "v17": [
+      "Engine Battle 20251121.pgn",
+      "Engine Battle 20251121_2.pgn",
+      "Engine Battle 20251122.pgn",
+      "Engine Battle 20251126.pgn",
+      "Engine Battle 20251126_2.pgn"
+    ],
+    "v2": [
+      "Opponent v2 Battle 20251119.pgn"
+    ],
+    "v18": [
+      "V7P3R v18 vs v17.1 Battle 20251218.pgn",
+      "V7P3R v18 vs v17.1 Battle 20251219.pgn",
+      "V7P3R v18 vs v17.1 Battle 20251219_2.pgn",
+      "V7P3R v18 vs v17.1 Battle 20251219_3.pgn",
+      "V7P3R v18 vs v17.1 Battle 20251220.pgn"
+    ]
+  }
+}

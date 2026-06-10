@@ -1,0 +1,26 @@
+{
+  "games_completed": 284,
+  "target_games": 284,
+  "timestamp": "2026-05-31T23:48:03.946831",
+  "stats": {
+    "total_games": 284,
+    "total_positions": 7557,
+    "games_by_scenario": {
+      "blitz_midgame": 59,
+      "rapid_early": 29,
+      "blitz_early": 68,
+      "rapid_midgame": 29,
+      "blitz_endgame": 43,
+      "bullet_early": 16,
+      "bullet_midgame": 19,
+      "bullet_endgame": 21
+    },
+    "games_by_result": {
+      "1-0": 165,
+      "0-1": 115,
+      "1/2-1/2": 0
+    },
+    "avg_moves_per_game": 26.623239436619716,
+    "avg_positions_per_game": 26.609154929577464
+  }
+}

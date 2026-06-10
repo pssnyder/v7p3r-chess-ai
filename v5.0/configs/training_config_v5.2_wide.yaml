@@ -1,0 +1,69 @@
+# V7P3R AI v5.2 - WIDE ARCHITECTURE - Training Configuration
+# Expanded from v5.1+TPF to break through 45% accuracy plateau
+# Architecture scaled up to accommodate 325 features with deeper capacity
+
+# Model Architecture - WIDENED FOR CAPACITY
+model:
+  input_dim: 325             # Preprocessing: 60 num + 44 bool + 221 one-hot
+  shared_dims: [512, 512, 256, 128]  # WIDENED: Was [256, 256, 128, 64] → ~4x parameters!
+  policy_hidden: 128         # DOUBLED: Was 64
+  value_hidden: 64           # DOUBLED: Was 32
+  dropout: 0.3               # Keep dropout same for now
+  use_residuals: true        # Residual connections enabled
+
+# Training Parameters
+training:
+  # Data
+  batch_size: 256            # Keep same initially (can increase to 512 if GPU allows)
+  num_workers: 4
+  pin_memory: true
+  
+  # Epochs and Early Stopping
+  epochs: 100
+  early_stopping_patience: 20  # INCREASED: More patience for larger model
+  save_every: 10             # Save checkpoint every N epochs
+  
+  # Loss Weights (adjustable)
+  policy_weight: 1.0         # Policy loss weight
+  value_weight: 0.1          # Value loss weight
+  
+  # Optimizer
+  learning_rate: 0.001       # 1e-3 (start same, may need adjustment)
+  weight_decay: 0.0001       # 1e-4 (L2 regularization)
+  grad_clip: 1.0             # Gradient clipping threshold
+  
+  # Learning Rate Scheduler
+  lr_patience: 7             # INCREASED: More patience before LR reduction
+  lr_factor: 0.5             # Reduce LR by this factor
+  min_lr: 0.000001           # 1e-6
+  
+  # Loss Functions
+  huber_delta: 0.5           # Huber loss delta for value head
+  
+  # Class Weights (for imbalanced grades)
+  # Grade distribution: 0(14%), 1(3%), 2(10%), 3(10%), 4(14%), 5(29%)
+  # Weights favor rare grades (1, 3) to force learning all 6 classes
+  class_weights: [1.0, 5.0, 3.5, 2.5, 1.8, 1.0]  # Same as v5.1
+  
+  # Checkpoints
+  checkpoint_dir: 'models/v5.2_wide'  # NEW: Save v5.2 wide models here
+
+# Evaluation
+evaluation:
+  metrics:
+    - policy_accuracy
+    - policy_top2_accuracy    # Within best 2 grades
+    - value_mae
+    - value_correlation
+  
+# Logging
+logging:
+  log_dir: 'logs'
+  tensorboard: false         # Enable TensorBoard logging (optional)
+  save_predictions: false    # Save validation predictions for analysis
+
+# Expected Improvements
+# - v5.1 Parameters: 239,623 → v5.2 Parameters: ~950,000 (4x increase)
+# - v5.1 Accuracy: 45.15% → v5.2 Target: 50-53% (+5-8pp improvement)
+# - Training time: 13min → ~25-30min per 50 epochs (CPU)
+# - Memory: ~500MB → ~1.2GB (still CPU-friendly)

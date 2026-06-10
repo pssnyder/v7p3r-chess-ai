@@ -1,0 +1,23 @@
+{
+  "name": "DarkForestAssassin",
+  "description": "Ultra-aggressive middlegame tactician with technical endgame conversion. Freely sacrifices material for initiative and chaos. Selectively exposes king when attacking. Never accepts draws in fighting positions. Transitions from sharp tactics to technical precision.",
+  "weights": {
+    "forest_darkness": 0.2,
+    "piece_tension": 0.15,
+    "move_diversity": 0.08,
+    "material_sacrifice_bonus": 0.15,
+    "material_threshold": 7,
+    "complexity_threshold": 0.15,
+    "king_risk_penalty": -0.03,
+    "king_risk_tolerance": 3.0,
+    "attack_bonus": 0.12,
+    "center_control": 0.07,
+    "passed_pawns": 0.05,
+    "bishop_pair": 0.03,
+    "active_rooks": 0.05,
+    "endgame_complexity_weight": 0.4
+  },
+  "example_positions": [],
+  "author": "V7P3R User",
+  "version": "v7.0"
+}

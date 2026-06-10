@@ -1,3 +1,5 @@
+
+# Large data directories (exclude from Git)
 __pycache__/
 stockfish/
 models/
@@ -6,19 +8,19 @@ validation_results/
 game_history/
 build/
 dist/
+*training/
+*puzzles/
+v4.0/data/
 
-# Large data directories (exclude from Git)
-*.json
+# Specific file type exclusions
 *.pgn
+*.csv
 *.pth
 *.pt
 *.pkl
 *.npy
-
-# Allow small config JSONs
-!v4.0/config/*.json
-
 *.pyc
 *.db*
 *.jsonl
 *.log
+*.parquet

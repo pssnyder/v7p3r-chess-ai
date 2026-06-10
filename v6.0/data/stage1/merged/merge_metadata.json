@@ -1,0 +1,14 @@
+{
+  "merge_date": "2026-06-02",
+  "dataset_version": "1.1",
+  "total_positions": 1655448,
+  "good_count": 827724,
+  "bad_count": 827724,
+  "balance_ratio": 1.0,
+  "sources": {
+    "original_good": 824000,
+    "original_bad": 824000,
+    "selfplay_good": 3724,
+    "selfplay_bad": 3724
+  }
+}

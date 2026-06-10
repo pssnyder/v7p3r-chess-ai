@@ -1,0 +1,10 @@
+{
+  "extraction_date": "2026-06-01",
+  "source_dir": "data\\stage2\\selfplay_batch_284",
+  "total_positions": 7448,
+  "good_count": 3724,
+  "bad_count": 3724,
+  "good_threshold_cp": 50,
+  "bad_threshold_cp": -50,
+  "balance_ratio": 1.0
+}

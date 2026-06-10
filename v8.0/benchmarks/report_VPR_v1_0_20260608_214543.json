@@ -1,0 +1,343 @@
+{
+  "engine_name": "VPR_v1.0",
+  "engine_path": "E:\\Programming Stuff\\Chess Engines\\Tournament Engines\\VPR\\VPR_v1.0\\VPR_v1.0.bat",
+  "estimated_elo": 200,
+  "confidence_range": [
+    100,
+    400
+  ],
+  "total_score": 0,
+  "max_score": 100,
+  "overall_accuracy": 0.0,
+  "tier_performance": [
+    {
+      "tier_name": "tier1_beginner",
+      "rating_range": [
+        400,
+        800
+      ],
+      "total_puzzles": 20,
+      "solved": 0,
+      "total_score": 0,
+      "max_score": 100,
+      "accuracy": 0.0,
+      "avg_time_ms": 0.0
+    },
+    {
+      "tier_name": "tier2_weak",
+      "rating_range": [
+        800,
+        1200
+      ],
+      "total_puzzles": 0,
+      "solved": 0,
+      "total_score": 0,
+      "max_score": 0,
+      "accuracy": 0.0,
+      "avg_time_ms": 0.0
+    },
+    {
+      "tier_name": "tier3_intermediate",
+      "rating_range": [
+        1200,
+        1600
+      ],
+      "total_puzzles": 0,
+      "solved": 0,
+      "total_score": 0,
+      "max_score": 0,
+      "accuracy": 0.0,
+      "avg_time_ms": 0.0
+    },
+    {
+      "tier_name": "tier4_advanced",
+      "rating_range": [
+        1600,
+        2000
+      ],
+      "total_puzzles": 0,
+      "solved": 0,
+      "total_score": 0,
+      "max_score": 0,
+      "accuracy": 0.0,
+      "avg_time_ms": 0.0
+    },
+    {
+      "tier_name": "tier5_expert",
+      "rating_range": [
+        2000,
+        2400
+      ],
+      "total_puzzles": 0,
+      "solved": 0,
+      "total_score": 0,
+      "max_score": 0,
+      "accuracy": 0.0,
+      "avg_time_ms": 0.0
+    }
+  ],
+  "puzzle_results": [
+    {
+      "puzzle_id": "00cSF",
+      "tier": "tier1_beginner",
+      "rating": 774,
+      "engine_move": null,
+      "expected_moves": [
+        "g6g3"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "008Nz",
+      "tier": "tier1_beginner",
+      "rating": 457,
+      "engine_move": null,
+      "expected_moves": [
+        "d1d8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "0042j",
+      "tier": "tier1_beginner",
+      "rating": 489,
+      "engine_move": null,
+      "expected_moves": [
+        "d2d8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00kRi",
+      "tier": "tier1_beginner",
+      "rating": 733,
+      "engine_move": null,
+      "expected_moves": [
+        "c7c6"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00HHN",
+      "tier": "tier1_beginner",
+      "rating": 631,
+      "engine_move": null,
+      "expected_moves": [
+        "e8e1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00GRa",
+      "tier": "tier1_beginner",
+      "rating": 404,
+      "engine_move": null,
+      "expected_moves": [
+        "e4h7"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00F6y",
+      "tier": "tier1_beginner",
+      "rating": 785,
+      "engine_move": null,
+      "expected_moves": [
+        "e3e8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "009L0",
+      "tier": "tier1_beginner",
+      "rating": 706,
+      "engine_move": null,
+      "expected_moves": [
+        "c1d1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "008LD",
+      "tier": "tier1_beginner",
+      "rating": 411,
+      "engine_move": null,
+      "expected_moves": [
+        "f3f1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00f9v",
+      "tier": "tier1_beginner",
+      "rating": 717,
+      "engine_move": null,
+      "expected_moves": [
+        "g4d1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00Vt0",
+      "tier": "tier1_beginner",
+      "rating": 771,
+      "engine_move": null,
+      "expected_moves": [
+        "c5d7"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "007fJ",
+      "tier": "tier1_beginner",
+      "rating": 548,
+      "engine_move": null,
+      "expected_moves": [
+        "c3c2"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00aZP",
+      "tier": "tier1_beginner",
+      "rating": 738,
+      "engine_move": null,
+      "expected_moves": [
+        "d1d8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00OXc",
+      "tier": "tier1_beginner",
+      "rating": 686,
+      "engine_move": null,
+      "expected_moves": [
+        "f3h3"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00465",
+      "tier": "tier1_beginner",
+      "rating": 671,
+      "engine_move": null,
+      "expected_moves": [
+        "f4f8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00DYf",
+      "tier": "tier1_beginner",
+      "rating": 525,
+      "engine_move": null,
+      "expected_moves": [
+        "c2c1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00FHX",
+      "tier": "tier1_beginner",
+      "rating": 496,
+      "engine_move": null,
+      "expected_moves": [
+        "c1c8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00Ui0",
+      "tier": "tier1_beginner",
+      "rating": 691,
+      "engine_move": null,
+      "expected_moves": [
+        "f4e2"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00awK",
+      "tier": "tier1_beginner",
+      "rating": 611,
+      "engine_move": null,
+      "expected_moves": [
+        "f7f8"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    },
+    {
+      "puzzle_id": "00Xiu",
+      "tier": "tier1_beginner",
+      "rating": 605,
+      "engine_move": null,
+      "expected_moves": [
+        "h4e1"
+      ],
+      "score": 0,
+      "time_ms": 0,
+      "success": false,
+      "error": "[Errno 22] Invalid argument"
+    }
+  ],
+  "runtime_seconds": 0.6728038787841797,
+  "timestamp": "2026-06-08 21:45:43"
+}

@@ -1,0 +1,81 @@
+{
+  "session_id": 0,
+  "session_name": "Quick Start Test",
+  "timestamp": "2026-05-07T17:14:43.703389",
+  "date_formatted": "May 07, 2026 17:14:43",
+  "config": {
+    "model": {
+      "input_dim": 26,
+      "shared_dims": [
+        256,
+        256,
+        128,
+        64
+      ],
+      "policy_hidden": 64,
+      "value_hidden": 32,
+      "dropout": 0.3,
+      "use_residuals": true
+    },
+    "training": {
+      "batch_size": 256,
+      "num_workers": 4,
+      "pin_memory": true,
+      "epochs": 2,
+      "early_stopping_patience": 15,
+      "save_every": 1,
+      "policy_weight": 1.0,
+      "value_weight": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "lr_patience": 5,
+      "lr_factor": 0.5,
+      "min_lr": 1e-06,
+      "huber_delta": 0.5,
+      "checkpoint_dir": "checkpoints_test"
+    },
+    "evaluation": {
+      "metrics": [
+        "policy_accuracy",
+        "policy_top2_accuracy",
+        "value_mae",
+        "value_correlation"
+      ]
+    },
+    "logging": {
+      "log_dir": "logs_test",
+      "tensorboard": false,
+      "save_predictions": false
+    }
+  },
+  "metrics": {
+    "final_epoch": 2,
+    "train_loss": 1.4341209160010524,
+    "val_loss": 1.4028772124329665,
+    "policy_acc": 0.4755944389103036,
+    "policy_top2_acc": null,
+    "value_mae": 0.10392301850560745,
+    "value_corr": null,
+    "best_val_loss": 1.4028772124329665,
+    "best_epoch": 2,
+    "total_time": 25.0,
+    "time_per_epoch": 12.5
+  },
+  "model_info": {
+    "parameters": 164491,
+    "architecture": {
+      "input_dim": 26,
+      "shared_dims": [
+        256,
+        256,
+        128,
+        64
+      ],
+      "policy_hidden": 64,
+      "value_hidden": 32,
+      "dropout": 0.3,
+      "use_residuals": true
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "E:\\Programming Stuff\\Chess Engines\\V7P3R Chess AI\\v7p3r-chess-ai\\v8.0\\src",
+    "total_puzzles": 100,
+    "tiers": 5,
+    "puzzles_per_tier": 20,
+    "source": "Lichess Puzzle Database",
+    "description": "Standardized benchmark for UCI chess engine ELO estimation"
+  },
+  "tiers": {
+    "tier1_beginner": {
+      "rating_range": [
+        400,
+        800
+      ],
+      "expected_count": 20,
+      "actual_count": 20,
+      "puzzles": [
+        {
+          "id": "00cSF",
+          "fen": "r1b3k1/pp3p1p/6q1/2pp1r2/8/P1P1PQ1P/1P3PP1/RN3R1K w - - 7 19",
+          "moves": "f3g3 g6g3 f2g3 f5f1",
+          "rating": 774,
+          "themes": "crushing kingsideAttack middlegame short",
+          "popularity": 86
+        },
+        {
+          "id": "008Nz",
+          "fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P1bPPR1/r6r/3R2K1 b - - 1 29",
+          "moves": "d3e2 d1d8",
+          "rating": 457,
+          "themes": "backRankMate mate mateIn1 middlegame oneMove",
+          "popularity": 84
+        },
+        {
+          "id": "0042j",
+          "fen": "3r2k1/4nppp/pq1p1b2/1p2P3/2r2P2/2P1NR2/PP1Q2BP/3R2K1 b - - 0 24",
+          "moves": "d6e5 d2d8 b6d8 d1d8",
+          "rating": 489,
+          "themes": "backRankMate mate mateIn2 middlegame short",
+          "popularity": 94
+        },
+        {
+          "id": "00kRi",
+          "fen": "2r1kb1r/p1q2ppp/2p1p3/3pPbP1/Q2P3P/2R2P2/PP1N4/R1B1K3 w Qk - 3 20",
+          "moves": "c3c6 c7c6 a4c6 c8c6",
+          "rating": 733,
+          "themes": "crushing middlegame short",
+          "popularity": 81
+        },
+        {
+          "id": "00HHN",
+          "fen": "4r2k/p6p/1p3R2/2p5/2P5/1P4R1/r5PP/2K5 w - - 0 32",
+          "moves": "f6f7 e8e1",
+          "rating": 631,
+          "themes": "endgame mate mateIn1 oneMove rookEndgame",
+          "popularity": 98
+        },
+        {
+          "id": "00GRa",
+          "fen": "1r3rk1/2p1Nppb/p2nq3/1p2p1Pp/4Qn1P/2P1N3/PPB2P1K/3R2R1 b - - 5 28",
+          "moves": "e6e7 e4h7",
+          "rating": 404,
+          "themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+          "popularity": 96
+        },
+        {
+          "id": "00F6y",
+          "fen": "2k3r1/ppp2prp/1q2b3/8/Q7/2P1R1P1/P4P1P/4R1K1 b - - 3 23",
+          "moves": "e6d7 e3e8 d7e8 e1e8 g8e8 a4e8",
+          "rating": 785,
+          "themes": "long mate mateIn3 middlegame queensideAttack sacrifice",
+          "popularity": 92
+        },
+        {
+          "id": "009L0",
+          "fen": "6k1/pb2r1pN/1n4Bp/3p4/1P2pR2/P7/3R1PPP/2r3K1 w - - 2 30",
+          "moves": "d2d1 c1d1",
+          "rating": 706,
+          "themes": "backRankMate hangingPiece mate mateIn1 middlegame oneMove",
+          "popularity": 18
+        },
+        {
+          "id": "008LD",
+          "fen": "8/6pp/4N1k1/5p2/5P2/5rPb/4R2P/6K1 w - - 0 35",
+          "moves": "e6g5 f3f1",
+          "rating": 411,
+          "themes": "endgame mate mateIn1 oneMove",
+          "popularity": 78
+        },
+        {
+          "id": "00f9v",
+          "fen": "5rk1/2p3p1/1p1p4/3Pp2p/1PP1N1q1/3Qr2N/6PP/6K1 w - - 0 29",
+          "moves": "d3e3 g4d1 e3e1 d1e1",
+          "rating": 717,
+          "themes": "endgame mate mateIn2 short",
+          "popularity": 100
+        },
+        {
+          "id": "00Vt0",
+          "fen": "1k4r1/pp3p2/3qp3/2N5/1P1bp3/P3P3/5P2/2RR1K2 b - - 1 27",
+          "moves": "d6e5 c5d7 b8a8 d7e5",
+          "rating": 771,
+          "themes": "advantage endgame fork short",
+          "popularity": 93
+        },
+        {
+          "id": "007fJ",
+          "fen": "8/1P3ppp/8/8/8/2pk3P/3p2P1/3K4 w - - 0 52",
+          "moves": "b7b8q c3c2",
+          "rating": 548,
+          "themes": "advancedPawn endgame mate mateIn1 oneMove queenEndgame",
+          "popularity": 92
+        },
+        {
+          "id": "00aZP",
+          "fen": "r1b1k2r/p1p2ppp/1pN2n2/2n1b3/2B1P3/P1N5/1PP2PPP/R1BR2K1 b kq - 0 13",
+          "moves": "e5c3 d1d8",
+          "rating": 738,
+          "themes": "mate mateIn1 oneMove opening",
+          "popularity": 95
+        },
+        {
+          "id": "00OXc",
+          "fen": "8/5K1p/1p4pk/8/3brp2/5R2/8/8 b - - 5 50",
+          "moves": "g6g5 f3h3",
+          "rating": 686,
+          "themes": "endgame master mate mateIn1 oneMove",
+          "popularity": 92
+        },
+        {
+          "id": "00465",
+          "fen": "3r1Q1k/pp4pp/2p5/6q1/5R2/2P5/P1P2PPP/3rR1K1 b - - 8 27",
+          "moves": "d8f8 f4f8",
+          "rating": 671,
+          "themes": "backRankMate endgame mate mateIn1 oneMove queenRookEndgame",
+          "popularity": 100
+        },
+        {
+          "id": "00DYf",
+          "fen": "1R6/6kp/3p1pp1/2r1p3/P7/1P6/2r2PPP/1R4K1 w - - 4 30",
+          "moves": "b3b4 c2c1 b1c1 c5c1",
+          "rating": 525,
+          "themes": "backRankMate endgame mate mateIn2 rookEndgame short",
+          "popularity": 100
+        },
+        {
+          "id": "00FHX",
+          "fen": "2r3k1/5p1p/4pP2/3p3P/8/5P2/p1b3P1/2R3K1 b - - 0 30",
+          "moves": "c2b1 c1c8",
+          "rating": 496,
+          "themes": "endgame hangingPiece mate mateIn1 oneMove",
+          "popularity": 85
+        },
+        {
+          "id": "00Ui0",
+          "fen": "r5k1/5pp1/2p5/P1N4p/2Pp1n2/1P3P2/5P1P/3R2K1 w - - 1 26",
+          "moves": "d1d4 f4e2 g1f1 e2d4",
+          "rating": 691,
+          "themes": "crushing endgame fork short",
+          "popularity": 92
+        },
+        {
+          "id": "00awK",
+          "fen": "r5k1/2p2Qpp/p7/4b3/8/8/1PP1KR2/2q5 b - - 0 24",
+          "moves": "g8h8 f7f8 a8f8 f2f8",
+          "rating": 611,
+          "themes": "backRankMate endgame mate mateIn2 sacrifice short",
+          "popularity": 100
+        },
+        {
+          "id": "00Xiu",
+          "fen": "8/pp3Q1p/1n2B1pk/8/6Pq/7P/PPP2P2/2K5 w - - 10 31",
+          "moves": "f2f4 h4e1",
+          "rating": 605,
+          "themes": "endgame mate mateIn1 oneMove",
+          "popularity": 79
+        }
+      ]
+    },
+    "tier2_weak": {
+      "rating_range": [
+        800,
+        1200
+      ],
+      "expected_count": 20,
+      "actual_count": 20,
+      "puzzles": [
+        {
+          "id": "003jv",
+          "fen": "1R6/1p2k2p/p2n2p1/4K3/8/6P1/P6P/8 w - - 10 37",
+          "moves": "b8h8 d6f7 e5e4 f7h8",
+          "rating": 1006,
+          "themes": "crushing endgame fork short",
+          "popularity": 89
+        },
+        {
+          "id": "00Ec4",
+          "fen": "2rq1r1k/p5pp/8/1p1BpPb1/2Pp2Q1/P2P2R1/6PP/R5K1 b - - 3 25",
+          "moves": "c8c7 g4g5 d8g5 g3g5",
+          "rating": 827,
+          "themes": "crushing middlegame short",
+          "popularity": 85
+        },
+        {
+          "id": "00DBg",
+          "fen": "rn2kbnr/pp6/2p2p2/4P3/4P1pq/2N3N1/PPPB2B1/R2Q1RK1 w kq - 1 17",
+          "moves": "g1f2 f8c5 d2e3 c5e3 f2e3 h4g3",
+          "rating": 1045,
+          "themes": "advantage attraction exposedKing long middlegame",
+          "popularity": 100
+        },
+        {
+          "id": "00EDa",
+          "fen": "r1bk3r/ppp1np1p/3p2pP/1N2P1q1/2BP1n2/8/PPP3P1/R1BQ2KR w - - 1 14",
+          "moves": "e5d6 g5g2",
+          "rating": 811,
+          "themes": "kingsideAttack mate mateIn1 oneMove opening",
+          "popularity": 100
+        },
+        {
+          "id": "00Af3",
+          "fen": "8/8/2B2p1p/P4Pp1/3p1kP1/1b1Pb2P/8/4K3 b - - 0 50",
+          "moves": "f4g3 a5a6 b3c4 a6a7",
+          "rating": 1113,
+          "themes": "advancedPawn bishopEndgame crushing endgame short",
+          "popularity": 96
+        },
+        {
+          "id": "008tL",
+          "fen": "8/7k/pR5p/3p4/5r2/2P1p2P/P5P1/6K1 w - - 0 40",
+          "moves": "b6a6 e3e2 a6e6 f4f1",
+          "rating": 1062,
+          "themes": "advancedPawn crushing endgame master rookEndgame short",
+          "popularity": 95
+        },
+        {
+          "id": "004JD",
+          "fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP6/P2KNP2/8 w - - 3 41",
+          "moves": "d2e3 a3c2",
+          "rating": 1187,
+          "themes": "endgame mate mateIn1 oneMove",
+          "popularity": 91
+        },
+        {
+          "id": "009bR",
+          "fen": "4r2k/3q2r1/1p4pQ/p1pP4/2P4P/1N4p1/PP3RK1/8 b - - 1 37",
+          "moves": "g7h7 f2f8 e8f8 h6f8",
+          "rating": 1048,
+          "themes": "endgame mate mateIn2 short",
+          "popularity": 82
+        },
+        {
+          "id": "00BJm",
+          "fen": "r2q1rk1/1Q2bppp/p1N1p3/1p6/2pP1n2/2P5/PP3PPP/R4RK1 b - - 1 18",
+          "moves": "d8d5 c6e7 g8h8 e7d5",
+          "rating": 1078,
+          "themes": "advantage fork hangingPiece middlegame short",
+          "popularity": 100
+        },
+        {
+          "id": "0050w",
+          "fen": "5rk1/1p2p1rp/p2p4/2pPb2R/2P1P3/1P1BKP1R/8/8 b - - 4 30",
+          "moves": "g7g3 h3g3 e5g3 h5g5 g8f7 g5g3",
+          "rating": 1068,
+          "themes": "crushing endgame fork long",
+          "popularity": 90
+        },
+        {
+          "id": "0009B",
+          "fen": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+          "moves": "b6c5 e2g4 h3g4 d1g4",
+          "rating": 1080,
+          "themes": "advantage middlegame short",
+          "popularity": 87
+        },
+        {
+          "id": "00FH6",
+          "fen": "r6r/1q2bpk1/7p/p1p1pPpn/Pp2P1nP/1P1B1N2/2P3P1/2BRR1QK w - - 7 30",
+          "moves": "c1b2 h5g3",
+          "rating": 954,
+          "themes": "mate mateIn1 middlegame oneMove",
+          "popularity": 100
+        },
+        {
+          "id": "003Jb",
+          "fen": "6k1/3bqr1p/2rpp1pR/p7/Pp1QP3/1B3P2/1PP3P1/2KR4 w - - 6 22",
+          "moves": "d4a7 e7g5 c1b1 g5h6",
+          "rating": 993,
+          "themes": "advantage fork master middlegame short",
+          "popularity": 90
+        },
+        {
+          "id": "0092z",
+          "fen": "2r3k1/2qR1ppp/p7/2p2Q2/P7/7P/5PP1/6K1 b - - 3 26",
+          "moves": "c7c6 f5f7 g8h8 f7g7",
+          "rating": 945,
+          "themes": "endgame mate mateIn2 short",
+          "popularity": 94
+        },
+        {
+          "id": "0071K",
+          "fen": "3N1r2/6R1/kp6/p2pPp1Q/2pP2P1/2q5/2P5/2K5 w - - 0 38",
+          "moves": "g7a7 a6a7 h5h7 a7a6",
+          "rating": 1161,
+          "themes": "crushing defensiveMove endgame hangingPiece short",
+          "popularity": 92
+        },
+        {
+          "id": "003AX",
+          "fen": "2r2rk1/5ppp/bq2p3/p1ppP1N1/Pb1P2P1/1P2P2P/2QN4/2R1K2R b K - 1 18",
+          "moves": "c5d4 c2h7",
+          "rating": 960,
+          "themes": "kingsideAttack mate mateIn1 middlegame oneMove",
+          "popularity": 96
+        },
+        {
+          "id": "003r5",
+          "fen": "r2qr1k1/ppp2ppp/4b3/3P4/1nP2Q2/2N2N1P/PP3KP1/R4R2 w - - 1 15",
+          "moves": "d5e6 b4d3 f2g1 d3f4",
+          "rating": 1107,
+          "themes": "crushing fork middlegame short",
+          "popularity": 88
+        },
+        {
+          "id": "002O7",
+          "fen": "r3qrk1/2p2pp1/p2bpn1p/2ppNb2/3P1P2/1PP1P1B1/P2N2PP/R2Q1RK1 b - - 0 14",
+          "moves": "f5g4 e5g4 f6g4 d1g4",
+          "rating": 969,
+          "themes": "crushing middlegame short",
+          "popularity": 91
+        },
+        {
+          "id": "001xl",
+          "fen": "8/4R1k1/p5pp/3B4/5q2/8/5P1P/6K1 b - - 5 40",
+          "moves": "g7f6 e7f7 f6e5 f7f4",
+          "rating": 1152,
+          "themes": "advantage endgame master masterVsMaster short skewer superGM",
+          "popularity": 94
+        },
+        {
+          "id": "0088O",
+          "fen": "7Q/2p5/1p2prp1/p4k1p/P4p1P/8/6RK/3q4 b - - 2 37",
+          "moves": "d1a4 g2g5 f5e4 h8f6",
+          "rating": 1108,
+          "themes": "crushing deflection endgame short",
+          "popularity": 85
+        }
+      ]
+    },
+    "tier3_intermediate": {
+      "rating_range": [
+        1200,
+        1600
+      ],
+      "expected_count": 20,
+      "actual_count": 20,
+      "puzzles": [
+        {
+          "id": "002Z9",
+          "fen": "4r1k1/1p2R1p1/p2p2Pp/P1pP4/5q2/1R3p2/1P1Q3P/5B1K b - - 0 34",
+          "moves": "f4d2 e7e8",
+          "rating": 1237,
+          "themes": "endgame hangingPiece master mate mateIn1 oneMove",
+          "popularity": 69
+        },
+        {
+          "id": "00BSo",
+          "fen": "2r3k1/4R1pp/p1p2p2/2p5/2P5/1PbN3P/P4PP1/6K1 w - - 0 25",
+          "moves": "d3c5 c3b4 e7a7 b4c5",
+          "rating": 1256,
+          "themes": "advantage endgame short",
+          "popularity": 93
+        },
+        {
+          "id": "00B3B",
+          "fen": "2K5/3P4/5b2/p1B5/P7/3k4/6p1/8 w - - 7 77",
+          "moves": "d7d8q f6d8 c8d8 d3c4",
+          "rating": 1427,
+          "themes": "crushing endgame short",
+          "popularity": 94
+        },
+        {
+          "id": "00HzX",
+          "fen": "4r1k1/5pp1/2R4p/1p6/8/1PP3QP/2q2PP1/6K1 w - - 0 29",
+          "moves": "c6h6 c2c1 g1h2 c1h6",
+          "rating": 1591,
+          "themes": "crushing endgame fork short",
+          "popularity": 92
+        },
+        {
+          "id": "008D5",
+          "fen": "r1bqk2r/pp3ppp/4p2n/3pP3/1b1P1P2/2N5/PP4PP/R1BQKB1R b KQkq - 2 9",
+          "moves": "h6f5 d1a4 c8d7 a4b4",
+          "rating": 1423,
+          "themes": "advantage fork master opening short",
+          "popularity": 85
+        },
+        {
+          "id": "000lC",
+          "fen": "3r3r/pQNk1ppp/1qnb1n2/1B6/8/8/PPP3PP/3R1R1K w - - 5 19",
+          "moves": "d1d6 d7d6 b7b6 a7b6",
+          "rating": 1496,
+          "themes": "advantage hangingPiece middlegame short",
+          "popularity": 95
+        },
+        {
+          "id": "00Kyy",
+          "fen": "8/P7/8/5k2/8/5pr1/5r2/R6K w - - 0 50",
+          "moves": "a7a8q g3h3 h1g1 f2g2 g1f1 h3h1",
+          "rating": 1238,
+          "themes": "endgame exposedKing long master mate mateIn3 queenRookEndgame",
+          "popularity": 83
+        },
+        {
+          "id": "00Ea3",
+          "fen": "3r4/p5k1/1p1qprnp/1Q1pN1p1/3P1pP1/1PP5/P5PP/4RRK1 b - - 3 29",
+          "moves": "g6e5 d4e5 d6c5 b5c5 b6c5 e5f6",
+          "rating": 1317,
+          "themes": "crushing fork long middlegame",
+          "popularity": 87
+        },
+        {
+          "id": "00GBV",
+          "fen": "3r1rk1/pp2n1pp/8/8/Nq6/1PB5/P3QPPP/4R1K1 b - - 1 25",
+          "moves": "b4d6 e2e7 d6e7 e1e7",
+          "rating": 1464,
+          "themes": "advantage middlegame short",
+          "popularity": 85
+        },
+        {
+          "id": "003UW",
+          "fen": "8/6pk/7p/2p5/2qp4/5PP1/P3QK1P/8 b - - 1 40",
+          "moves": "c4d5 e2e4 d5e4 f3e4",
+          "rating": 1527,
+          "themes": "advantage endgame queenEndgame short",
+          "popularity": 94
+        },
+        {
+          "id": "00Bp0",
+          "fen": "1r2kr2/pp3p1p/2b1pn2/4N3/2P5/1N1B4/P3KP1P/6R1 b - - 4 21",
+          "moves": "f6e4 e5c6 b7c6 d3e4",
+          "rating": 1320,
+          "themes": "advantage capturingDefender middlegame short",
+          "popularity": 93
+        },
+        {
+          "id": "002Tf",
+          "fen": "r3kbnr/ppp1qppp/2n5/3pP3/5B2/4PQ2/PPP2PPP/RN2KB1R w KQkq - 1 7",
+          "moves": "f1b5 e7b4 b1c3 b4b2",
+          "rating": 1576,
+          "themes": "advantage fork opening short",
+          "popularity": 84
+        },
+        {
+          "id": "00H1C",
+          "fen": "r3r3/1kpRnqpp/p4p2/Qp2P2P/1N6/4Pb2/PPP3P1/2K2R2 b - - 0 22",
+          "moves": "e7c6 a5c7",
+          "rating": 1472,
+          "themes": "mate mateIn1 middlegame oneMove",
+          "popularity": 94
+        },
+        {
+          "id": "009zS",
+          "fen": "r3r1k1/1p3p1p/p1p3p1/8/6bP/Q3b3/PP2B1P1/R3K2R w KQ - 2 20",
+          "moves": "g2g3 g4e2 e1e2 e3c5 e2f3 c5a3",
+          "rating": 1421,
+          "themes": "advantage discoveredAttack exposedKing long middlegame",
+          "popularity": 97
+        },
+        {
+          "id": "00IPp",
+          "fen": "4Q3/6pk/p3p2p/5p2/1p1P2P1/4q2P/2B1n2B/7K w - - 0 35",
+          "moves": "g4f5 e3f3",
+          "rating": 1580,
+          "themes": "endgame mate mateIn1 oneMove",
+          "popularity": 90
+        },
+        {
+          "id": "00IF1",
+          "fen": "1k6/p1p5/P2p4/3P4/1PK2N1p/4P3/5r2/4B3 b - - 12 57",
+          "moves": "f2f4 e3f4 h4h3 e1g3",
+          "rating": 1225,
+          "themes": "crushing defensiveMove endgame hangingPiece short",
+          "popularity": 93
+        },
+        {
+          "id": "00Bg0",
+          "fen": "8/3k4/3P1K2/p2R4/5r2/5P2/8/8 w - - 1 57",
+          "moves": "d5f5 f4f5 f6f5 a5a4 f5e4 a4a3 e4d3 a3a2",
+          "rating": 1312,
+          "themes": "advancedPawn crushing endgame quietMove rookEndgame veryLong",
+          "popularity": 94
+        },
+        {
+          "id": "00HZC",
+          "fen": "4r1k1/pp1qn3/2p4R/6p1/3P1rR1/3Q2P1/PP3P1P/6K1 b - - 0 31",
+          "moves": "f4g4 d3h7 g8f8 h6f6",
+          "rating": 1524,
+          "themes": "endgame mate mateIn2 short",
+          "popularity": 74
+        },
+        {
+          "id": "005Bm",
+          "fen": "4rk2/p1q5/1p3Q1b/8/1p5N/2P1p3/P3P3/2K5 b - - 0 43",
+          "moves": "c7f7 h4g6 f8g8 f6h8",
+          "rating": 1314,
+          "themes": "endgame mate mateIn2 pin short",
+          "popularity": 96
+        },
+        {
+          "id": "00Kbj",
+          "fen": "8/8/6p1/PR3p2/1P3k2/7P/r5P1/7K w - - 1 39",
+          "moves": "h3h4 f4g3 b5d5 a2a1 d5d1 a1d1",
+          "rating": 1500,
+          "themes": "endgame long mate mateIn3 rookEndgame",
+          "popularity": 93
+        }
+      ]
+    },
+    "tier4_advanced": {
+      "rating_range": [
+        1600,
+        2000
+      ],
+      "expected_count": 20,
+      "actual_count": 20,
+      "puzzles": [
+        {
+          "id": "001h8",
+          "fen": "2r3k1/2r4p/4p1p1/1p1q1pP1/p1bP1P1Q/P6R/5B2/2R3K1 b - - 5 34",
+          "moves": "c4e2 h4h7 c7h7 c1c8 g8g7 c8c7",
+          "rating": 1780,
+          "themes": "crushing deflection kingsideAttack long middlegame sacrifice",
+          "popularity": 88
+        },
+        {
+          "id": "0017R",
+          "fen": "r2qk2r/pp2ppbp/1n1p2p1/3Pn3/2P5/2NBBP1P/PP3P2/R2QK2R b KQkq - 0 12",
+          "moves": "e5c4 d3c4 b6c4 d1a4 d8d7 a4c4",
+          "rating": 1644,
+          "themes": "advantage fork long middlegame",
+          "popularity": 96
+        },
+        {
+          "id": "00Lhb",
+          "fen": "2n4k/p3b2p/Pp6/1PpPp3/2B1PpP1/1P6/5BK1/8 b - - 0 33",
+          "moves": "c8d6 f2c5 b6c5 b5b6 a7b6 a6a7",
+          "rating": 1790,
+          "themes": "advancedPawn advantage endgame long master masterVsMaster sacrifice",
+          "popularity": 89
+        },
+        {
+          "id": "006E1",
+          "fen": "5rk1/R4pp1/1p5p/3Q4/1PPp2q1/3P2P1/5P2/4nK2 w - - 0 34",
+          "moves": "f1e1 f8e8 e1f1 g4h3 d5g2 e8e1 f1e1 h3g2",
+          "rating": 1703,
+          "themes": "crushing deflection endgame veryLong",
+          "popularity": 96
+        },
+        {
+          "id": "00Nte",
+          "fen": "r4k2/8/2p3Bb/4p1n1/3q4/PQ6/2K2P2/1N4R1 w - - 3 30",
+          "moves": "g1g5 d4f2 b1d2 h6g5 b3f3 f2f3",
+          "rating": 1621,
+          "themes": "advantage intermezzo long middlegame",
+          "popularity": 85
+        },
+        {
+          "id": "009FS",
+          "fen": "r2qr1k1/p5bp/1pp1b1p1/8/2QN1p2/2P1n2P/PP3PP1/R1B1RNK1 w - - 1 18",
+          "moves": "d4e6 e3c4 e6d8 e8e1",
+          "rating": 1714,
+          "themes": "crushing discoveredAttack opening short",
+          "popularity": 79
+        },
+        {
+          "id": "001xO",
+          "fen": "k1r1b3/p1r1nppp/1p1qpn2/2Np4/1P1P4/PQRBPN2/5PPP/2R3K1 w - - 0 19",
+          "moves": "d3a6 b6c5 a6c8 c5c4",
+          "rating": 1795,
+          "themes": "crushing master masterVsMaster middlegame sacrifice short",
+          "popularity": 92
+        },
+        {
+          "id": "002Ua",
+          "fen": "r4rk1/pp3ppp/3p1q2/P1P1p3/2B5/2B2n2/2P2P1P/R2Q1RK1 w - - 0 16",
+          "moves": "g1h1 f6f4 d1f3 f4f3",
+          "rating": 1661,
+          "themes": "crushing kingsideAttack middlegame short",
+          "popularity": 95
+        },
+        {
+          "id": "00Bex",
+          "fen": "1rb1qrk1/6bp/2np4/2pNpp2/2P5/3P1B2/1B3PPP/1R1QR1K1 b - - 0 22",
+          "moves": "c8e6 d5c7 e8f7 c7e6",
+          "rating": 1695,
+          "themes": "crushing middlegame short",
+          "popularity": 33
+        },
+        {
+          "id": "007ku",
+          "fen": "r1bq3Q/1np2kp1/p5B1/1p1Pp3/1Pn2BP1/2b2P2/P3K3/R4N2 b - - 5 35",
+          "moves": "f7g6 h8h5 g6f6 f4g5",
+          "rating": 1627,
+          "themes": "mate mateIn2 middlegame short",
+          "popularity": 89
+        },
+        {
+          "id": "00EXS",
+          "fen": "r3r1k1/p2Q1p1p/1p2p1p1/8/1P1P4/P3P3/1B2Nb1q/2KR1R2 w - - 0 19",
+          "moves": "f1h1 f2e3 c1b1 h2e2",
+          "rating": 1605,
+          "themes": "advantage discoveredAttack middlegame short",
+          "popularity": 63
+        },
+        {
+          "id": "00LMb",
+          "fen": "8/8/1n4kP/1P3p2/3P1K2/2p1N3/8/8 w - - 4 49",
+          "moves": "f4e5 b6c4 e3c4 c3c2",
+          "rating": 1771,
+          "themes": "advancedPawn crushing endgame knightEndgame sacrifice short",
+          "popularity": 79
+        },
+        {
+          "id": "00BM8",
+          "fen": "r4rk1/pp2bppp/2ppnn2/8/N1P1P3/q1P4P/P2N2PB/R2Q1R1K b - - 0 16",
+          "moves": "a8d8 d2b1 a3a4 d1a4",
+          "rating": 1718,
+          "themes": "advantage master middlegame short trappedPiece",
+          "popularity": 93
+        },
+        {
+          "id": "004Ao",
+          "fen": "4qk2/1b3rR1/p7/1p2Q3/4P2P/P2P3K/2r5/3R4 w - - 5 41",
+          "moves": "g7f7 e8f7 e5h8 f8e7",
+          "rating": 1711,
+          "themes": "advantage endgame short",
+          "popularity": 86
+        },
+        {
+          "id": "00BPh",
+          "fen": "r4rk1/1b1p1p1p/p2NpQpq/1p6/3R4/P7/1P3PPP/3R2K1 b - - 9 23",
+          "moves": "b7d5 d4d5 h6g7 f6g7",
+          "rating": 1839,
+          "themes": "advantage kingsideAttack middlegame short",
+          "popularity": 33
+        },
+        {
+          "id": "00B7G",
+          "fen": "1rb2r1k/4q2p/p2p4/3B1p2/1pPb4/1P2NQ2/P5PP/2R2RK1 w - - 1 24",
+          "moves": "g1h1 e7e3 f3e3 d4e3",
+          "rating": 1662,
+          "themes": "crushing master masterVsMaster middlegame short",
+          "popularity": 86
+        },
+        {
+          "id": "005YX",
+          "fen": "2rr4/2N2pk1/p1Q1b1pp/1p4q1/3pP3/1B1P4/PPP3PP/6RK w - - 7 25",
+          "moves": "c7e6 f7e6 c6b7 g7h8",
+          "rating": 1770,
+          "themes": "defensiveMove equality middlegame short",
+          "popularity": 100
+        },
+        {
+          "id": "00LoE",
+          "fen": "2k5/1p4p1/p4b2/3p4/3P4/2PQN3/PP3q2/1K6 w - - 0 37",
+          "moves": "e3d5 f2g1 b1c2 g1g2",
+          "rating": 1858,
+          "themes": "crushing endgame short",
+          "popularity": 46
+        },
+        {
+          "id": "007en",
+          "fen": "rn3rk1/4pp1p/3p2pB/2q4P/3bP1b1/Pp2Q3/1P2B3/1K1R2NR w - - 0 20",
+          "moves": "e3d4 c5c2 b1a1 a8a3 b2a3 c2a2",
+          "rating": 1876,
+          "themes": "long mate mateIn3 middlegame queensideAttack sacrifice",
+          "popularity": 97
+        },
+        {
+          "id": "00ME0",
+          "fen": "8/1p6/p1b5/5k1p/1PB1p2P/P3P1K1/8/8 b - - 2 35",
+          "moves": "f5e5 c4f7 c6d7 f7h5",
+          "rating": 1601,
+          "themes": "bishopEndgame crushing endgame short",
+          "popularity": 94
+        }
+      ]
+    },
+    "tier5_expert": {
+      "rating_range": [
+        2000,
+        2400
+      ],
+      "expected_count": 20,
+      "actual_count": 20,
+      "puzzles": [
+        {
+          "id": "00UQj",
+          "fen": "6r1/pp1qbpk1/8/2pPp1r1/2P1Pp2/P1N2Qp1/3B2K1/R6R w - - 0 31",
+          "moves": "h1h3 d7h3 g2h3 g3g2",
+          "rating": 2305,
+          "themes": "advancedPawn crushing master middlegame sacrifice short",
+          "popularity": 89
+        },
+        {
+          "id": "00TEQ",
+          "fen": "r3k1nr/1bq2ppp/p2p4/1p2p1NQ/3nP3/1BN4P/PP3PP1/R2R2K1 b kq - 2 15",
+          "moves": "g8f6 h5f7 c7f7 g5f7",
+          "rating": 2346,
+          "themes": "advantage attackingF2F7 middlegame short",
+          "popularity": 90
+        },
+        {
+          "id": "004b0",
+          "fen": "5kB1/4b3/4P3/2p2P2/2b5/8/p7/B6K w - - 4 48",
+          "moves": "g8f7 e7g5 f5f6 g5e3 a1e5 e3f4 e5f4 a2a1q",
+          "rating": 2368,
+          "themes": "advancedPawn bishopEndgame crushing deflection endgame promotion quietMove veryLong",
+          "popularity": 47
+        },
+        {
+          "id": "00QjF",
+          "fen": "8/8/1pr1p1kp/pbPp2pN/3Pp1P1/1P2K3/P6P/2R5 b - - 0 29",
+          "moves": "e6e5 c5b6 c6c1 b6b7 c1e1 e3d2",
+          "rating": 2103,
+          "themes": "advancedPawn crushing endgame long master sacrifice",
+          "popularity": 86
+        },
+        {
+          "id": "00SlL",
+          "fen": "r5k1/2p1qp1p/2b1p1pQ/pp5P/3P2P1/3P1r2/PP2N3/2KR3R b - - 0 23",
+          "moves": "f3d3 d1d3 c6h1 h5g6 f7g6 h6h1",
+          "rating": 2399,
+          "themes": "advantage discoveredAttack long middlegame",
+          "popularity": 95
+        },
+        {
+          "id": "007gO",
+          "fen": "2r3rk/5p2/4p2p/4q3/1Q6/8/1P3PPP/R4RK1 w - - 0 31",
+          "moves": "a1c1 e5g5 g2g3 c8c1",
+          "rating": 2177,
+          "themes": "crushing endgame short",
+          "popularity": 76
+        },
+        {
+          "id": "00NGM",
+          "fen": "3k1rr1/pR1b3Q/2pqp3/8/N2P4/8/5PB1/R4K2 w - - 5 34",
+          "moves": "b7a7 f8f2 f1e1 d6b4 a4c3 b4c3 e1f2 c3d4 f2f1 g8f8",
+          "rating": 2244,
+          "themes": "crushing middlegame veryLong",
+          "popularity": 67
+        },
+        {
+          "id": "00WoW",
+          "fen": "8/4kppR/r1p1p2p/p3P2P/4P1P1/1pP1KP2/6B1/8 w - - 0 29",
+          "moves": "e3d2 a5a4 g2f1 a4a3 f1a6 a3a2",
+          "rating": 2083,
+          "themes": "advancedPawn advantage endgame long master quietMove sacrifice",
+          "popularity": 91
+        },
+        {
+          "id": "00Ac7",
+          "fen": "8/2p1pk1p/Pp4p1/8/p1P2P2/3r2P1/3PR2P/3K4 b - - 1 33",
+          "moves": "a4a3 a6a7 d3d8 e2e3 a3a2 e3a3",
+          "rating": 2092,
+          "themes": "advancedPawn advantage endgame long rookEndgame",
+          "popularity": 93
+        },
+        {
+          "id": "0078T",
+          "fen": "rk5r/1b3R2/pp2p2q/4P2p/B2p3B/4R2P/PP4P1/5Q1K b - - 0 27",
+          "moves": "d4e3 f7b7 b8b7 f1f7 b7b8 h4e7",
+          "rating": 2248,
+          "themes": "attraction crushing defensiveMove exposedKing long middlegame queensideAttack sacrifice",
+          "popularity": 81
+        },
+        {
+          "id": "00LZf",
+          "fen": "r1b1kb1r/pppp1ppp/2n1p3/3nN3/3P2q1/4B3/PPP1BPPP/RN1Q1RK1 b kq - 9 8",
+          "moves": "d5e3 f2e3 g4g5 e5f7 g5e3 g1h1",
+          "rating": 2185,
+          "themes": "advantage attackingF2F7 fork long opening",
+          "popularity": 25
+        },
+        {
+          "id": "00JFF",
+          "fen": "4r1k1/ppqb3p/6B1/3pb2Q/8/2P5/PP1B2PP/5RK1 b - - 0 20",
+          "moves": "h7g6 h5g6 e5g7 f1f7 c7c5 g1h1 c5f8 f7f8",
+          "rating": 2008,
+          "themes": "crushing middlegame pin veryLong",
+          "popularity": 88
+        },
+        {
+          "id": "00CXr",
+          "fen": "r2k2nr/pp2qBb1/3p3p/Q5p1/3n1B2/2N2R2/PPP3P1/R5K1 b - - 1 18",
+          "moves": "b7b6 a5d5 d4f3 g2f3 a8c8 f4d6",
+          "rating": 2038,
+          "themes": "advantage long middlegame sacrifice",
+          "popularity": 91
+        },
+        {
+          "id": "00VlM",
+          "fen": "1k6/1p2rp1p/1p4b1/1N1B4/2P2p2/3p3P/P2Rr3/2K2R2 w - - 4 34",
+          "moves": "f1f4 e2e1 c1b2 e7e2 b2c3 e1c1 c3d4 e2d2",
+          "rating": 2187,
+          "themes": "advantage clearance deflection exposedKing middlegame veryLong",
+          "popularity": 91
+        },
+        {
+          "id": "00OR6",
+          "fen": "2r4k/5Q1p/p7/1pq5/4p2N/2P3bP/PP4P1/4R2K b - - 0 34",
+          "moves": "g3e1 f7f6 h8g8 h4f5 c5f5 f6f5",
+          "rating": 2265,
+          "themes": "advantage endgame long quietMove",
+          "popularity": 82
+        },
+        {
+          "id": "0092V",
+          "fen": "r2qk1nr/ppp3pp/2n5/1B1pp3/1b1P4/5Q1P/PP1B1PP1/RN2K2R b KQkq - 3 11",
+          "moves": "e5e4 b5c6 b7c6 f3h5 g7g6 h5e5",
+          "rating": 2254,
+          "themes": "crushing exposedKing long opening",
+          "popularity": 85
+        },
+        {
+          "id": "00FHO",
+          "fen": "8/1pp5/p2p3p/3P1Pk1/P3K1P1/1P5R/8/2r5 w - - 1 39",
+          "moves": "e4f3 c1c3 f3g2 c3h3 g2h3 h6h5 g4h5 g5h5",
+          "rating": 2236,
+          "themes": "crushing endgame rookEndgame veryLong",
+          "popularity": 66
+        },
+        {
+          "id": "00Ytk",
+          "fen": "2k5/pp2PR2/2p4p/2Pp4/3Nb3/2K1P2r/PP6/8 b - - 0 33",
+          "moves": "h3e3 c3d2 e3d3 d2e2 c8d7 d4e6",
+          "rating": 2297,
+          "themes": "crushing defensiveMove endgame long",
+          "popularity": 85
+        },
+        {
+          "id": "00ZEW",
+          "fen": "r1b5/pppqNkp1/3p3p/6rn/1PP2p1N/P5P1/4Q2P/4RRK1 b - - 3 22",
+          "moves": "g5e5 e2h5 e5h5 f1f4 f7e8 e7g6",
+          "rating": 2319,
+          "themes": "advantage discoveredAttack long middlegame pin sacrifice",
+          "popularity": 90
+        },
+        {
+          "id": "004Op",
+          "fen": "2kr2r1/1bp4n/1pq1p2p/p1P5/1P3B2/P6P/5RP1/RB2Q1K1 w - - 3 26",
+          "moves": "e1f1 d8d1 f1d1 g8g2 g1f1 g2g1 f1e2 g1d1",
+          "rating": 2142,
+          "themes": "crushing deflection kingsideAttack middlegame pin sacrifice skewer veryLong",
+          "popularity": 92
+        }
+      ]
+    }
+  }
+}

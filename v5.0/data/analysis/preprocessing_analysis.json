@@ -1,0 +1,142 @@
+{
+  "total_positions": 230930,
+  "null_features": {},
+  "numerical_features": [
+    "F003_material_balance_cp",
+    "F005_total_piece_count",
+    "F030_black_piece_mobility",
+    "F030_white_piece_mobility",
+    "F031_black_pieces_on_strong_squares",
+    "F031_white_pieces_on_strong_squares"
+  ],
+  "boolean_features": [
+    "F010_black_king_castled",
+    "F010_white_king_castled",
+    "F011_black_king_has_pawn_shield",
+    "F011_white_king_has_pawn_shield",
+    "F012_black_king_under_attack",
+    "F012_white_king_under_attack",
+    "F032_black_has_bishop_pair",
+    "F032_white_has_bishop_pair",
+    "F050_is_capture",
+    "F051_is_check",
+    "F052_is_promotion",
+    "F053_is_castling"
+  ],
+  "categorical_features": [
+    "F001_position_fen",
+    "F002_game_phase",
+    "F004_material_advantage_category"
+  ],
+  "feature_ranges": {
+    "F003_material_balance_cp": {
+      "min": -5400,
+      "max": 4400
+    },
+    "F005_total_piece_count": {
+      "min": 3,
+      "max": 32
+    },
+    "F010_white_king_castled": {
+      "min": false,
+      "max": true
+    },
+    "F010_black_king_castled": {
+      "min": false,
+      "max": true
+    },
+    "F011_white_king_has_pawn_shield": {
+      "min": false,
+      "max": true
+    },
+    "F011_black_king_has_pawn_shield": {
+      "min": false,
+      "max": true
+    },
+    "F012_white_king_under_attack": {
+      "min": false,
+      "max": true
+    },
+    "F012_black_king_under_attack": {
+      "min": false,
+      "max": true
+    },
+    "F030_white_piece_mobility": {
+      "min": 0,
+      "max": 89
+    },
+    "F030_black_piece_mobility": {
+      "min": 0,
+      "max": 108
+    },
+    "F031_white_pieces_on_strong_squares": {
+      "min": 0,
+      "max": 4
+    },
+    "F031_black_pieces_on_strong_squares": {
+      "min": 0,
+      "max": 3
+    },
+    "F032_white_has_bishop_pair": {
+      "min": false,
+      "max": true
+    },
+    "F032_black_has_bishop_pair": {
+      "min": false,
+      "max": true
+    },
+    "F050_is_capture": {
+      "min": false,
+      "max": true
+    },
+    "F051_is_check": {
+      "min": false,
+      "max": true
+    },
+    "F052_is_promotion": {
+      "min": false,
+      "max": true
+    },
+    "F053_is_castling": {
+      "min": false,
+      "max": true
+    }
+  },
+  "categorical_samples": {
+    "F001_position_fen": [
+      "r1b1k2r/pp3ppp/4pn2/q2pN3/5P2/2PP4/P1P1B1PP/1RB1K2R w Kkq - 1 12",
+      "r1b1r1k1/pp3ppp/4Pn2/3pN3/2P5/3PqB2/1B4PP/1RR3K1 w - - 1 19",
+      "r1bqk2r/pp3ppp/4pn2/3pN3/5P2/2bP4/PPP1B1PP/1RB1K2R w Kkq - 0 11",
+      "r1b1k2r/pp3ppp/4pn2/3pN3/2P2P2/3P4/1Bq1B1PP/1R3RK1 w kq - 0 15",
+      "r1b1r1k1/pp3ppp/4pn2/3pNP2/2P5/3P1B2/1B1q2PP/1RR3K1 w - - 1 18",
+      "r1b1k2r/pp3ppp/4pn2/3pN3/q4P2/2PP4/1BP1B1PP/1R3RK1 w kq - 2 14",
+      "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "rnbqkb1r/pppp1ppp/4pn2/8/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 2 3",
+      "r1b1k2r/pp3ppp/4pn2/3pN3/5P2/2PP4/qBP1B1PP/1R2K2R w Kkq - 0 13",
+      "r1bqkb1r/ppp2ppp/4pn2/3pN3/1n1P4/2NQ4/PPP1PPPP/R1B1KB1R w KQkq - 4 6",
+      "rnbqkbnr/pppp1ppp/4p3/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "rnbqkb1r/ppp2ppp/4pn2/3p4/3P4/2N2N2/PPP1PPPP/R1BQKB1R w KQkq - 0 4",
+      "r1bqk2r/pp3ppp/4pn2/3pN3/3b4/2NP4/PPP1BPPP/1RB1K2R w Kkq - 2 10",
+      "r1bqkb1r/ppp2ppp/4pn2/3pN3/3P4/2Nn4/PPP1PPPP/1RB1KB1R w Kkq - 0 7",
+      "r1bqkb1r/pp3ppp/4pn2/2ppN3/3P4/2NP4/PPP2PPP/1RB1KB1R w Kkq - 0 8",
+      "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "r1b2rk1/pp3ppp/4pn2/3pN3/2P2P2/3P1B2/1Bq3PP/1R3RK1 w - - 2 16",
+      "r1b2rk1/pp3ppp/4pn2/3pN3/2P2P2/3P1B2/1B1q2PP/1RR3K1 w - - 4 17",
+      "r1bqkb1r/ppp2ppp/2n1pn2/3p4/3P4/2NQ1N2/PPP1PPPP/R1B1KB1R w KQkq - 2 5",
+      "r1bqk2r/pp3ppp/4pn2/2bpN3/8/2NP4/PPP2PPP/1RB1KB1R w Kkq - 0 9"
+    ],
+    "F002_game_phase": [
+      "opening",
+      "middlegame",
+      "endgame"
+    ],
+    "F004_material_advantage_category": [
+      "black_winning",
+      "equal",
+      "black_advantage",
+      "white_winning",
+      "white_advantage"
+    ]
+  },
+  "total_input_dims": 46
+}

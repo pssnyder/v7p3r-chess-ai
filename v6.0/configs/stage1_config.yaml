@@ -1,0 +1,77 @@
+# Stage 1 Configuration - V7P3R AI v6.0
+
+# Data Filtering
+data:
+  input: "../v5.0/data/final/v7p3r_ai_v5.3_merged.jsonl"
+  output_dir: "data/stage1"
+  
+  # Grade filtering
+  eval_variance_threshold: 50  # Max eval diff (cp) for Grade 1 inclusion
+  
+  # Sources to exclude
+  exclude_sources:
+    - "c0br4_game"  # Failed Stockfish analysis
+
+# Graph Building
+graph:
+  similarity_metric: "tactical_features"  # Options: tactical_features, material, king_safety
+  k_neighbors: 10  # Number of similar positions to link
+  sample_size: 10000  # Sample size for similarity analysis (null = full dataset)
+
+# Training (TODO)
+training:
+  architecture: "graph_nn"
+  
+  # Network architecture
+  layers:
+    - 512
+    - 256
+    - 128
+  
+  dropout: 0.3
+  activation: "relu"
+  output_activation: "sigmoid"
+  
+  # Training parameters
+  batch_size: 2048
+  epochs: 100
+  learning_rate: 0.001
+  
+  # Class weighting
+  class_weights:
+    good: 0.006  # Low weight for common class
+    bad: 1.0     # High weight for rare class
+  
+  # Graph regularization
+  graph_weight: 0.1  # Weight for graph smoothness loss
+  
+  # Early stopping
+  patience: 10
+  min_delta: 0.001
+  
+  # Data split
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+# Validation
+validation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+  
+  # Transposition consistency check
+  check_transposition_consistency: true
+  consistency_threshold: 0.8  # Min correlation for similar positions
+  
+  # V7P3R style matching
+  check_v7p3r_style: true
+  v7p3r_agreement_threshold: 0.6  # Min agreement on V7P3R moves
+
+# Output
+output:
+  model_path: "models/stage1_policy.h5"
+  embeddings_path: "models/position_embeddings.npy"
+  metrics_path: "models/stage1_metrics.json"

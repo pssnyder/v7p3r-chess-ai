@@ -1,0 +1,1383 @@
+{
+  "engine_name": "SlowMate 0.1.03",
+  "engine_path": "E:\\Programming Stuff\\Chess Engines\\Tournament Engines\\SlowMate\\SlowMate_v0.2.0.exe",
+  "estimated_elo": 1300,
+  "confidence_range": [
+    1200,
+    1400
+  ],
+  "total_score": 195,
+  "max_score": 500,
+  "overall_accuracy": 0.39,
+  "tier_performance": [
+    {
+      "tier_name": "tier1_beginner",
+      "rating_range": [
+        400,
+        800
+      ],
+      "total_puzzles": 20,
+      "solved": 13,
+      "total_score": 65,
+      "max_score": 100,
+      "accuracy": 0.65,
+      "avg_time_ms": 19.9
+    },
+    {
+      "tier_name": "tier2_weak",
+      "rating_range": [
+        800,
+        1200
+      ],
+      "total_puzzles": 20,
+      "solved": 9,
+      "total_score": 45,
+      "max_score": 100,
+      "accuracy": 0.45,
+      "avg_time_ms": 31.85
+    },
+    {
+      "tier_name": "tier3_intermediate",
+      "rating_range": [
+        1200,
+        1600
+      ],
+      "total_puzzles": 20,
+      "solved": 11,
+      "total_score": 55,
+      "max_score": 100,
+      "accuracy": 0.55,
+      "avg_time_ms": 28.4
+    },
+    {
+      "tier_name": "tier4_advanced",
+      "rating_range": [
+        1600,
+        2000
+      ],
+      "total_puzzles": 20,
+      "solved": 3,
+      "total_score": 15,
+      "max_score": 100,
+      "accuracy": 0.15,
+      "avg_time_ms": 46.8
+    },
+    {
+      "tier_name": "tier5_expert",
+      "rating_range": [
+        2000,
+        2400
+      ],
+      "total_puzzles": 20,
+      "solved": 3,
+      "total_score": 15,
+      "max_score": 100,
+      "accuracy": 0.15,
+      "avg_time_ms": 49.7
+    }
+  ],
+  "puzzle_results": [
+    {
+      "puzzle_id": "00cSF",
+      "tier": "tier1_beginner",
+      "rating": 774,
+      "engine_move": "g6g3",
+      "expected_moves": [
+        "g6g3"
+      ],
+      "score": 5,
+      "time_ms": 37,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "008Nz",
+      "tier": "tier1_beginner",
+      "rating": 457,
+      "engine_move": "d1d8",
+      "expected_moves": [
+        "d1d8"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0042j",
+      "tier": "tier1_beginner",
+      "rating": 489,
+      "engine_move": "d2d4",
+      "expected_moves": [
+        "d2d8"
+      ],
+      "score": 0,
+      "time_ms": 52,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00kRi",
+      "tier": "tier1_beginner",
+      "rating": 733,
+      "engine_move": "c7c6",
+      "expected_moves": [
+        "c7c6"
+      ],
+      "score": 5,
+      "time_ms": 64,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00HHN",
+      "tier": "tier1_beginner",
+      "rating": 631,
+      "engine_move": "e8e1",
+      "expected_moves": [
+        "e8e1"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00GRa",
+      "tier": "tier1_beginner",
+      "rating": 404,
+      "engine_move": "e4h7",
+      "expected_moves": [
+        "e4h7"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00F6y",
+      "tier": "tier1_beginner",
+      "rating": 785,
+      "engine_move": "a4b3",
+      "expected_moves": [
+        "e3e8"
+      ],
+      "score": 0,
+      "time_ms": 56,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "009L0",
+      "tier": "tier1_beginner",
+      "rating": 706,
+      "engine_move": "c1d1",
+      "expected_moves": [
+        "c1d1"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "008LD",
+      "tier": "tier1_beginner",
+      "rating": 411,
+      "engine_move": "f3f1",
+      "expected_moves": [
+        "f3f1"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00f9v",
+      "tier": "tier1_beginner",
+      "rating": 717,
+      "engine_move": "g7g5",
+      "expected_moves": [
+        "g4d1"
+      ],
+      "score": 0,
+      "time_ms": 43,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Vt0",
+      "tier": "tier1_beginner",
+      "rating": 771,
+      "engine_move": "e3d4",
+      "expected_moves": [
+        "c5d7"
+      ],
+      "score": 0,
+      "time_ms": 29,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "007fJ",
+      "tier": "tier1_beginner",
+      "rating": 548,
+      "engine_move": "c3c2",
+      "expected_moves": [
+        "c3c2"
+      ],
+      "score": 5,
+      "time_ms": 1,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00aZP",
+      "tier": "tier1_beginner",
+      "rating": 738,
+      "engine_move": "d1d8",
+      "expected_moves": [
+        "d1d8"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00OXc",
+      "tier": "tier1_beginner",
+      "rating": 686,
+      "engine_move": "f3h3",
+      "expected_moves": [
+        "f3h3"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00465",
+      "tier": "tier1_beginner",
+      "rating": 671,
+      "engine_move": "f4f8",
+      "expected_moves": [
+        "f4f8"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00DYf",
+      "tier": "tier1_beginner",
+      "rating": 525,
+      "engine_move": "c5b5",
+      "expected_moves": [
+        "c2c1"
+      ],
+      "score": 0,
+      "time_ms": 33,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00FHX",
+      "tier": "tier1_beginner",
+      "rating": 496,
+      "engine_move": "c1c8",
+      "expected_moves": [
+        "c1c8"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Ui0",
+      "tier": "tier1_beginner",
+      "rating": 691,
+      "engine_move": "f4e6",
+      "expected_moves": [
+        "f4e2"
+      ],
+      "score": 0,
+      "time_ms": 23,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00awK",
+      "tier": "tier1_beginner",
+      "rating": 611,
+      "engine_move": "f7a2",
+      "expected_moves": [
+        "f7f8"
+      ],
+      "score": 0,
+      "time_ms": 38,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Xiu",
+      "tier": "tier1_beginner",
+      "rating": 605,
+      "engine_move": "h4e1",
+      "expected_moves": [
+        "h4e1"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "003jv",
+      "tier": "tier2_weak",
+      "rating": 1006,
+      "engine_move": "d6f7",
+      "expected_moves": [
+        "d6f7"
+      ],
+      "score": 5,
+      "time_ms": 14,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Ec4",
+      "tier": "tier2_weak",
+      "rating": 827,
+      "engine_move": "g4g5",
+      "expected_moves": [
+        "g4g5"
+      ],
+      "score": 5,
+      "time_ms": 56,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00DBg",
+      "tier": "tier2_weak",
+      "rating": 1045,
+      "engine_move": "h4h1",
+      "expected_moves": [
+        "f8c5"
+      ],
+      "score": 0,
+      "time_ms": 51,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00EDa",
+      "tier": "tier2_weak",
+      "rating": 811,
+      "engine_move": "g5g2",
+      "expected_moves": [
+        "g5g2"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Af3",
+      "tier": "tier2_weak",
+      "rating": 1113,
+      "engine_move": "e1e2",
+      "expected_moves": [
+        "a5a6"
+      ],
+      "score": 0,
+      "time_ms": 16,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "008tL",
+      "tier": "tier2_weak",
+      "rating": 1062,
+      "engine_move": "f4a4",
+      "expected_moves": [
+        "e3e2"
+      ],
+      "score": 0,
+      "time_ms": 24,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "004JD",
+      "tier": "tier2_weak",
+      "rating": 1187,
+      "engine_move": "a3c2",
+      "expected_moves": [
+        "a3c2"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "009bR",
+      "tier": "tier2_weak",
+      "rating": 1048,
+      "engine_move": "h6g6",
+      "expected_moves": [
+        "f2f8"
+      ],
+      "score": 0,
+      "time_ms": 45,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00BJm",
+      "tier": "tier2_weak",
+      "rating": 1078,
+      "engine_move": "c6b8",
+      "expected_moves": [
+        "c6e7"
+      ],
+      "score": 0,
+      "time_ms": 58,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0050w",
+      "tier": "tier2_weak",
+      "rating": 1068,
+      "engine_move": "h3g3",
+      "expected_moves": [
+        "h3g3"
+      ],
+      "score": 5,
+      "time_ms": 22,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0009B",
+      "tier": "tier2_weak",
+      "rating": 1080,
+      "engine_move": "e2g4",
+      "expected_moves": [
+        "e2g4"
+      ],
+      "score": 5,
+      "time_ms": 43,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00FH6",
+      "tier": "tier2_weak",
+      "rating": 954,
+      "engine_move": "h5g3",
+      "expected_moves": [
+        "h5g3"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "003Jb",
+      "tier": "tier2_weak",
+      "rating": 993,
+      "engine_move": "d7e8",
+      "expected_moves": [
+        "e7g5"
+      ],
+      "score": 0,
+      "time_ms": 47,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0092z",
+      "tier": "tier2_weak",
+      "rating": 945,
+      "engine_move": "d7c7",
+      "expected_moves": [
+        "f5f7"
+      ],
+      "score": 0,
+      "time_ms": 44,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0071K",
+      "tier": "tier2_weak",
+      "rating": 1161,
+      "engine_move": "a6a7",
+      "expected_moves": [
+        "a6a7"
+      ],
+      "score": 5,
+      "time_ms": 4,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "003AX",
+      "tier": "tier2_weak",
+      "rating": 960,
+      "engine_move": "c2h7",
+      "expected_moves": [
+        "c2h7"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "003r5",
+      "tier": "tier2_weak",
+      "rating": 1107,
+      "engine_move": "b4d5",
+      "expected_moves": [
+        "b4d3"
+      ],
+      "score": 0,
+      "time_ms": 65,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "002O7",
+      "tier": "tier2_weak",
+      "rating": 969,
+      "engine_move": "d1g4",
+      "expected_moves": [
+        "e5g4"
+      ],
+      "score": 0,
+      "time_ms": 76,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "001xl",
+      "tier": "tier2_weak",
+      "rating": 1152,
+      "engine_move": "e7e4",
+      "expected_moves": [
+        "e7f7"
+      ],
+      "score": 0,
+      "time_ms": 32,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0088O",
+      "tier": "tier2_weak",
+      "rating": 1108,
+      "engine_move": "h8f6",
+      "expected_moves": [
+        "g2g5"
+      ],
+      "score": 0,
+      "time_ms": 30,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "002Z9",
+      "tier": "tier3_intermediate",
+      "rating": 1237,
+      "engine_move": "e7e8",
+      "expected_moves": [
+        "e7e8"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00BSo",
+      "tier": "tier3_intermediate",
+      "rating": 1256,
+      "engine_move": "c3b4",
+      "expected_moves": [
+        "c3b4"
+      ],
+      "score": 5,
+      "time_ms": 25,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00B3B",
+      "tier": "tier3_intermediate",
+      "rating": 1427,
+      "engine_move": "f6d8",
+      "expected_moves": [
+        "f6d8"
+      ],
+      "score": 5,
+      "time_ms": 7,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00HzX",
+      "tier": "tier3_intermediate",
+      "rating": 1591,
+      "engine_move": "c2g6",
+      "expected_moves": [
+        "c2c1"
+      ],
+      "score": 0,
+      "time_ms": 39,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "008D5",
+      "tier": "tier3_intermediate",
+      "rating": 1423,
+      "engine_move": "h2h4",
+      "expected_moves": [
+        "d1a4"
+      ],
+      "score": 0,
+      "time_ms": 54,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "000lC",
+      "tier": "tier3_intermediate",
+      "rating": 1496,
+      "engine_move": "d7d6",
+      "expected_moves": [
+        "d7d6"
+      ],
+      "score": 5,
+      "time_ms": 6,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Kyy",
+      "tier": "tier3_intermediate",
+      "rating": 1238,
+      "engine_move": "f2a2",
+      "expected_moves": [
+        "g3h3"
+      ],
+      "score": 0,
+      "time_ms": 16,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Ea3",
+      "tier": "tier3_intermediate",
+      "rating": 1317,
+      "engine_move": "d4e5",
+      "expected_moves": [
+        "d4e5"
+      ],
+      "score": 5,
+      "time_ms": 52,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00GBV",
+      "tier": "tier3_intermediate",
+      "rating": 1464,
+      "engine_move": "e2e7",
+      "expected_moves": [
+        "e2e7"
+      ],
+      "score": 5,
+      "time_ms": 61,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "003UW",
+      "tier": "tier3_intermediate",
+      "rating": 1527,
+      "engine_move": "e2d2",
+      "expected_moves": [
+        "e2e4"
+      ],
+      "score": 0,
+      "time_ms": 23,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Bp0",
+      "tier": "tier3_intermediate",
+      "rating": 1320,
+      "engine_move": "g1g6",
+      "expected_moves": [
+        "e5c6"
+      ],
+      "score": 0,
+      "time_ms": 52,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "002Tf",
+      "tier": "tier3_intermediate",
+      "rating": 1576,
+      "engine_move": "e7a3",
+      "expected_moves": [
+        "e7b4"
+      ],
+      "score": 0,
+      "time_ms": 58,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00H1C",
+      "tier": "tier3_intermediate",
+      "rating": 1472,
+      "engine_move": "a5c7",
+      "expected_moves": [
+        "a5c7"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "009zS",
+      "tier": "tier3_intermediate",
+      "rating": 1421,
+      "engine_move": "g4e2",
+      "expected_moves": [
+        "g4e2"
+      ],
+      "score": 5,
+      "time_ms": 56,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00IPp",
+      "tier": "tier3_intermediate",
+      "rating": 1580,
+      "engine_move": "e3f3",
+      "expected_moves": [
+        "e3f3"
+      ],
+      "score": 5,
+      "time_ms": 2,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00IF1",
+      "tier": "tier3_intermediate",
+      "rating": 1225,
+      "engine_move": "e3f4",
+      "expected_moves": [
+        "e3f4"
+      ],
+      "score": 5,
+      "time_ms": 7,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Bg0",
+      "tier": "tier3_intermediate",
+      "rating": 1312,
+      "engine_move": "f4f5",
+      "expected_moves": [
+        "f4f5"
+      ],
+      "score": 5,
+      "time_ms": 11,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00HZC",
+      "tier": "tier3_intermediate",
+      "rating": 1524,
+      "engine_move": "d3e3",
+      "expected_moves": [
+        "d3h7"
+      ],
+      "score": 0,
+      "time_ms": 48,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "005Bm",
+      "tier": "tier3_intermediate",
+      "rating": 1314,
+      "engine_move": "f6f7",
+      "expected_moves": [
+        "h4g6"
+      ],
+      "score": 0,
+      "time_ms": 34,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Kbj",
+      "tier": "tier3_intermediate",
+      "rating": 1500,
+      "engine_move": "a2b2",
+      "expected_moves": [
+        "f4g3"
+      ],
+      "score": 0,
+      "time_ms": 12,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "001h8",
+      "tier": "tier4_advanced",
+      "rating": 1780,
+      "engine_move": "c1c7",
+      "expected_moves": [
+        "h4h7"
+      ],
+      "score": 0,
+      "time_ms": 45,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0017R",
+      "tier": "tier4_advanced",
+      "rating": 1644,
+      "engine_move": "e3b6",
+      "expected_moves": [
+        "d3c4"
+      ],
+      "score": 0,
+      "time_ms": 83,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Lhb",
+      "tier": "tier4_advanced",
+      "rating": 1790,
+      "engine_move": "f2c5",
+      "expected_moves": [
+        "f2c5"
+      ],
+      "score": 5,
+      "time_ms": 20,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "006E1",
+      "tier": "tier4_advanced",
+      "rating": 1703,
+      "engine_move": "g8h8",
+      "expected_moves": [
+        "f8e8"
+      ],
+      "score": 0,
+      "time_ms": 35,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Nte",
+      "tier": "tier4_advanced",
+      "rating": 1621,
+      "engine_move": "d4d3",
+      "expected_moves": [
+        "d4f2"
+      ],
+      "score": 0,
+      "time_ms": 41,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "009FS",
+      "tier": "tier4_advanced",
+      "rating": 1714,
+      "engine_move": "d8d4",
+      "expected_moves": [
+        "e3c4"
+      ],
+      "score": 0,
+      "time_ms": 77,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "001xO",
+      "tier": "tier4_advanced",
+      "rating": 1795,
+      "engine_move": "d6c5",
+      "expected_moves": [
+        "b6c5"
+      ],
+      "score": 0,
+      "time_ms": 62,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "002Ua",
+      "tier": "tier4_advanced",
+      "rating": 1661,
+      "engine_move": "f3h2",
+      "expected_moves": [
+        "f6f4"
+      ],
+      "score": 0,
+      "time_ms": 55,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Bex",
+      "tier": "tier4_advanced",
+      "rating": 1695,
+      "engine_move": "b2e5",
+      "expected_moves": [
+        "d5c7"
+      ],
+      "score": 0,
+      "time_ms": 59,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "007ku",
+      "tier": "tier4_advanced",
+      "rating": 1627,
+      "engine_move": "h8d8",
+      "expected_moves": [
+        "h8h5"
+      ],
+      "score": 0,
+      "time_ms": 53,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00EXS",
+      "tier": "tier4_advanced",
+      "rating": 1605,
+      "engine_move": "f2g1",
+      "expected_moves": [
+        "f2e3"
+      ],
+      "score": 0,
+      "time_ms": 56,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00LMb",
+      "tier": "tier4_advanced",
+      "rating": 1771,
+      "engine_move": "g6h6",
+      "expected_moves": [
+        "b6c4"
+      ],
+      "score": 0,
+      "time_ms": 10,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00BM8",
+      "tier": "tier4_advanced",
+      "rating": 1718,
+      "engine_move": "h2d6",
+      "expected_moves": [
+        "d2b1"
+      ],
+      "score": 0,
+      "time_ms": 61,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "004Ao",
+      "tier": "tier4_advanced",
+      "rating": 1711,
+      "engine_move": "f8f7",
+      "expected_moves": [
+        "e8f7"
+      ],
+      "score": 0,
+      "time_ms": 7,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00BPh",
+      "tier": "tier4_advanced",
+      "rating": 1839,
+      "engine_move": "d6f5",
+      "expected_moves": [
+        "d4d5"
+      ],
+      "score": 0,
+      "time_ms": 73,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00B7G",
+      "tier": "tier4_advanced",
+      "rating": 1662,
+      "engine_move": "e7e3",
+      "expected_moves": [
+        "e7e3"
+      ],
+      "score": 5,
+      "time_ms": 65,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "005YX",
+      "tier": "tier4_advanced",
+      "rating": 1770,
+      "engine_move": "f7e6",
+      "expected_moves": [
+        "f7e6"
+      ],
+      "score": 5,
+      "time_ms": 10,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00LoE",
+      "tier": "tier4_advanced",
+      "rating": 1858,
+      "engine_move": "f2d4",
+      "expected_moves": [
+        "f2g1"
+      ],
+      "score": 0,
+      "time_ms": 29,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "007en",
+      "tier": "tier4_advanced",
+      "rating": 1876,
+      "engine_move": "c5d4",
+      "expected_moves": [
+        "c5c2"
+      ],
+      "score": 0,
+      "time_ms": 80,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00ME0",
+      "tier": "tier4_advanced",
+      "rating": 1601,
+      "engine_move": "b4b5",
+      "expected_moves": [
+        "c4f7"
+      ],
+      "score": 0,
+      "time_ms": 15,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00UQj",
+      "tier": "tier5_expert",
+      "rating": 2305,
+      "engine_move": "b7b5",
+      "expected_moves": [
+        "d7h3"
+      ],
+      "score": 0,
+      "time_ms": 58,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00TEQ",
+      "tier": "tier5_expert",
+      "rating": 2346,
+      "engine_move": "g5e6",
+      "expected_moves": [
+        "h5f7"
+      ],
+      "score": 0,
+      "time_ms": 82,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "004b0",
+      "tier": "tier5_expert",
+      "rating": 2368,
+      "engine_move": "c4e6",
+      "expected_moves": [
+        "e7g5"
+      ],
+      "score": 0,
+      "time_ms": 11,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00QjF",
+      "tier": "tier5_expert",
+      "rating": 2103,
+      "engine_move": "d4e5",
+      "expected_moves": [
+        "c5b6"
+      ],
+      "score": 0,
+      "time_ms": 30,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00SlL",
+      "tier": "tier5_expert",
+      "rating": 2399,
+      "engine_move": "h5g6",
+      "expected_moves": [
+        "d1d3"
+      ],
+      "score": 0,
+      "time_ms": 51,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "007gO",
+      "tier": "tier5_expert",
+      "rating": 2177,
+      "engine_move": "e5c3",
+      "expected_moves": [
+        "e5g5"
+      ],
+      "score": 0,
+      "time_ms": 55,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00NGM",
+      "tier": "tier5_expert",
+      "rating": 2244,
+      "engine_move": "d6f4",
+      "expected_moves": [
+        "f8f2"
+      ],
+      "score": 0,
+      "time_ms": 64,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00WoW",
+      "tier": "tier5_expert",
+      "rating": 2083,
+      "engine_move": "f7f5",
+      "expected_moves": [
+        "a5a4"
+      ],
+      "score": 0,
+      "time_ms": 15,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Ac7",
+      "tier": "tier5_expert",
+      "rating": 2092,
+      "engine_move": "e2e3",
+      "expected_moves": [
+        "a6a7"
+      ],
+      "score": 0,
+      "time_ms": 19,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0078T",
+      "tier": "tier5_expert",
+      "rating": 2248,
+      "engine_move": "f7f8",
+      "expected_moves": [
+        "f7b7"
+      ],
+      "score": 0,
+      "time_ms": 59,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00LZf",
+      "tier": "tier5_expert",
+      "rating": 2185,
+      "engine_move": "e2g4",
+      "expected_moves": [
+        "f2e3"
+      ],
+      "score": 0,
+      "time_ms": 82,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00JFF",
+      "tier": "tier5_expert",
+      "rating": 2008,
+      "engine_move": "h5e5",
+      "expected_moves": [
+        "h5g6"
+      ],
+      "score": 0,
+      "time_ms": 54,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00CXr",
+      "tier": "tier5_expert",
+      "rating": 2038,
+      "engine_move": "f4e5",
+      "expected_moves": [
+        "a5d5"
+      ],
+      "score": 0,
+      "time_ms": 92,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00VlM",
+      "tier": "tier5_expert",
+      "rating": 2187,
+      "engine_move": "g6e4",
+      "expected_moves": [
+        "e2e1"
+      ],
+      "score": 0,
+      "time_ms": 30,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00OR6",
+      "tier": "tier5_expert",
+      "rating": 2265,
+      "engine_move": "f7e6",
+      "expected_moves": [
+        "f7f6"
+      ],
+      "score": 0,
+      "time_ms": 37,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "0092V",
+      "tier": "tier5_expert",
+      "rating": 2254,
+      "engine_move": "b5c6",
+      "expected_moves": [
+        "b5c6"
+      ],
+      "score": 5,
+      "time_ms": 86,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00FHO",
+      "tier": "tier5_expert",
+      "rating": 2236,
+      "engine_move": "c1c3",
+      "expected_moves": [
+        "c1c3"
+      ],
+      "score": 5,
+      "time_ms": 20,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00Ytk",
+      "tier": "tier5_expert",
+      "rating": 2297,
+      "engine_move": "c3d2",
+      "expected_moves": [
+        "c3d2"
+      ],
+      "score": 5,
+      "time_ms": 3,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "00ZEW",
+      "tier": "tier5_expert",
+      "rating": 2319,
+      "engine_move": "e2e5",
+      "expected_moves": [
+        "e2h5"
+      ],
+      "score": 0,
+      "time_ms": 71,
+      "success": true,
+      "error": null
+    },
+    {
+      "puzzle_id": "004Op",
+      "tier": "tier5_expert",
+      "rating": 2142,
+      "engine_move": "c6g2",
+      "expected_moves": [
+        "d8d1"
+      ],
+      "score": 0,
+      "time_ms": 75,
+      "success": true,
+      "error": null
+    }
+  ],
+  "runtime_seconds": 98.25715494155884,
+  "timestamp": "2026-06-08 23:00:06"
+}

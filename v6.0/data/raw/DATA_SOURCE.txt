@@ -1,0 +1,4 @@
+Source data location: E:\Programming Stuff\Chess Engines\V7P3R Chess AI\v7p3r-chess-ai\v5.0\data\final\v7p3r_ai_v5.3_merged.jsonl
+
+This file points to the v5.0 merged dataset (23.7 GB).
+Scripts will read directly from this location to avoid duplication.

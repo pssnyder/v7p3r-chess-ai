@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-05-07T14:28:50.092786",
+  "splits": {
+    "train": 184742,
+    "val": 23089,
+    "test": 23099,
+    "total": 230930
+  },
+  "feature_dimensions": {
+    "numerical": 6,
+    "boolean": 12,
+    "game_phase": 3,
+    "material_category": 5,
+    "total": 26
+  },
+  "numerical_stats": {
+    "mean": [
+      -10.313843089281267,
+      22.143540721655064,
+      30.1860757164045,
+      29.19664721611761,
+      0.21760617509824512,
+      0.20468004027237985
+    ],
+    "std": [
+      540.5257068548374,
+      7.51877463993924,
+      11.58841281008361,
+      11.321516611658861,
+      0.4552069633651713,
+      0.4380357721681339
+    ]
+  },
+  "categorical_stats": {
+    "game_phase_categories": [
+      "endgame",
+      "middlegame",
+      "opening"
+    ],
+    "material_categories": [
+      "black_advantage",
+      "black_winning",
+      "equal",
+      "white_advantage",
+      "white_winning"
+    ]
+  },
+  "target_stats": {
+    "policy_grade_distribution": {
+      "0": 45463,
+      "1": 8326,
+      "2": 11485,
+      "3": 16556,
+      "4": 27852,
+      "5": 75060
+    },
+    "value_range": [
+      -0.9900000095367432,
+      1.0
+    ],
+    "value_mean": 0.02927509695291519,
+    "value_std": 0.2995864152908325
+  }
+}

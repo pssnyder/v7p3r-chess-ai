@@ -1,0 +1,120 @@
+{
+  "tactical": {
+    "total": 5,
+    "top1_accuracy": 0.0,
+    "top3_accuracy": 0.0,
+    "top5_accuracy": 0.0,
+    "avg_time_ms": 4.460716247558594,
+    "results": [
+      {
+        "name": "Scholar's Mate Defense",
+        "best_moves": [
+          "Qf7"
+        ],
+        "predicted_top5": [
+          "a2a4",
+          "b2b4",
+          "c4e2",
+          "b2b3",
+          "a2a3"
+        ],
+        "found_in_top1": false,
+        "found_in_top3": false,
+        "found_in_top5": false
+      },
+      {
+        "name": "Back Rank Mate",
+        "best_moves": [
+          "Re8"
+        ],
+        "predicted_top5": [
+          "e1e4",
+          "e1e7",
+          "e1e6",
+          "f2f4",
+          "e1e3"
+        ],
+        "found_in_top1": false,
+        "found_in_top3": false,
+        "found_in_top5": false
+      },
+      {
+        "name": "Fork Opportunity",
+        "best_moves": [
+          "Nxe5"
+        ],
+        "predicted_top5": [
+          "d1e2",
+          "a2a4",
+          "c4e2",
+          "b2b4",
+          "a2a3"
+        ],
+        "found_in_top1": false,
+        "found_in_top3": false,
+        "found_in_top5": false
+      },
+      {
+        "name": "Pin Tactic",
+        "best_moves": [
+          "Ng5",
+          "Bxf7"
+        ],
+        "predicted_top5": [
+          "d1e2",
+          "a2a4",
+          "b2b4",
+          "c4e2",
+          "a2a3"
+        ],
+        "found_in_top1": false,
+        "found_in_top3": false,
+        "found_in_top5": false
+      },
+      {
+        "name": "Mate in 1",
+        "best_moves": [
+          "Re8"
+        ],
+        "predicted_top5": [
+          "e1e7",
+          "e1e6",
+          "g2g4",
+          "e1e4",
+          "g1h1"
+        ],
+        "found_in_top1": false,
+        "found_in_top3": false,
+        "found_in_top5": false
+      }
+    ]
+  },
+  "game_phases": {
+    "Opening": {
+      "tested": 100,
+      "top5_match": 66,
+      "accuracy": 0.66,
+      "avg_time_ms": 4.003760814666748
+    },
+    "Middlegame": {
+      "tested": 100,
+      "top5_match": 73,
+      "accuracy": 0.73,
+      "avg_time_ms": 3.685002326965332
+    },
+    "Endgame": {
+      "tested": 100,
+      "top5_match": 88,
+      "accuracy": 0.88,
+      "avg_time_ms": 3.4737658500671387
+    }
+  },
+  "speed": {
+    "iterations": 100,
+    "total_time": 0.3316330909729004,
+    "avg_time_ms": 3.316330909729004,
+    "positions_per_sec": 301.5380633658526,
+    "moves_evaluated": 2000,
+    "moves_per_sec": 6030.761267317052
+  }
+}

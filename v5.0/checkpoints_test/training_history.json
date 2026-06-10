@@ -1,0 +1,92 @@
+{
+  "config": {
+    "model": {
+      "input_dim": 26,
+      "shared_dims": [
+        256,
+        256,
+        128,
+        64
+      ],
+      "policy_hidden": 64,
+      "value_hidden": 32,
+      "dropout": 0.3,
+      "use_residuals": true
+    },
+    "training": {
+      "batch_size": 256,
+      "num_workers": 4,
+      "pin_memory": true,
+      "epochs": 2,
+      "early_stopping_patience": 15,
+      "save_every": 1,
+      "policy_weight": 1.0,
+      "value_weight": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "lr_patience": 5,
+      "lr_factor": 0.5,
+      "min_lr": 1e-06,
+      "huber_delta": 0.5,
+      "checkpoint_dir": "checkpoints_test"
+    },
+    "evaluation": {
+      "metrics": [
+        "policy_accuracy",
+        "policy_top2_accuracy",
+        "value_mae",
+        "value_correlation"
+      ]
+    },
+    "logging": {
+      "log_dir": "logs_test",
+      "tensorboard": false,
+      "save_predictions": false
+    }
+  },
+  "metrics": {
+    "train_loss": [
+      1.532084486560954,
+      1.4341209160010524
+    ],
+    "train_policy_loss": [
+      1.5256419144643019,
+      1.4311893136117426
+    ],
+    "train_value_loss": [
+      0.06442571818845359,
+      0.029316031167962827
+    ],
+    "train_policy_acc": [
+      0.4415725714780613,
+      0.46370072858364636
+    ],
+    "val_loss": [
+      1.417229547409328,
+      1.4028772124329665
+    ],
+    "val_policy_loss": [
+      1.4144186149448308,
+      1.4003107539808937
+    ],
+    "val_value_loss": [
+      0.028109363354899032,
+      0.02566459382290012
+    ],
+    "val_policy_acc": [
+      0.47464160422712115,
+      0.4755944389103036
+    ],
+    "val_value_mae": [
+      0.10943516508177839,
+      0.10392301850560745
+    ],
+    "learning_rates": [
+      0.001,
+      0.001
+    ]
+  },
+  "best_val_loss": 1.4028772124329665,
+  "total_epochs": 2
+}

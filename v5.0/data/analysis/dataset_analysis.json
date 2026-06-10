@@ -1,0 +1,212 @@
+{
+  "analysis_timestamp": "2026-05-07T12:53:34.049947",
+  "dataset_file": "data\\final\\v7p3r_ai_v5_training_dataset_complete.jsonl",
+  "total_positions": 230930,
+  "source_distribution": {
+    "v7p3r_pgn": 210054,
+    "puzzle_analysis": 20876
+  },
+  "version_distribution": {
+    "18.3": 212318,
+    "v10.3": 71,
+    "v10.4": 9,
+    "v10.5": 86,
+    "v10.6": 1068,
+    "v10.7": 97,
+    "v10.8": 3024,
+    "v10": 84,
+    "v11.2": 103,
+    "v11": 4420,
+    "v12.1": 2654,
+    "v12.2": 3375,
+    "v12.3": 2093,
+    "v14.8": 242,
+    "v17.1.1": 1176,
+    "v8.0": 110
+  },
+  "phase_distribution": {
+    "opening": 185782,
+    "middlegame": 36575,
+    "endgame": 8573
+  },
+  "grade_distribution": {
+    "overall": {
+      "4": 34815,
+      "2": 14357,
+      "0": 56829,
+      "5": 93826,
+      "3": 20695,
+      "1": 10408
+    },
+    "by_phase": {
+      "opening": {
+        "4": 27901,
+        "2": 11255,
+        "0": 47896,
+        "5": 74202,
+        "3": 16413,
+        "1": 8115
+      },
+      "middlegame": {
+        "3": 3432,
+        "5": 15935,
+        "0": 7506,
+        "4": 5489,
+        "1": 1787,
+        "2": 2426
+      },
+      "endgame": {
+        "2": 676,
+        "3": 850,
+        "4": 1425,
+        "1": 506,
+        "5": 3689,
+        "0": 1427
+      }
+    },
+    "by_source": {
+      "v7p3r_pgn": {
+        "4": 33705,
+        "2": 14005,
+        "0": 55399,
+        "5": 76590,
+        "3": 20198,
+        "1": 10157
+      },
+      "puzzle_analysis": {
+        "5": 17236,
+        "0": 1430,
+        "4": 1110,
+        "2": 352,
+        "3": 497,
+        "1": 251
+      }
+    }
+  },
+  "move_type_distribution": {
+    "capture": 60357,
+    "check": 30192,
+    "castling": 3227,
+    "en_passant": 233,
+    "promotion": 1346,
+    "quiet": 147192
+  },
+  "evaluation_statistics": {
+    "mate_positions": 0,
+    "best_move_eval_mean": 295.86764330162083,
+    "best_move_eval_median": 11,
+    "eval_drop_mean": 13.281078224708645,
+    "eval_drop_median": 0,
+    "eval_drop_max": 19766
+  },
+  "feature_statistics": {
+    "F003_material_balance_cp": {
+      "count": 230930,
+      "mean": -10.551249296323562,
+      "sample_min": -1700,
+      "sample_max": 1900
+    },
+    "F005_total_piece_count": {
+      "count": 230930,
+      "mean": 22.16671718702637,
+      "sample_min": 8,
+      "sample_max": 32
+    },
+    "F010_white_king_castled": {
+      "count": 230930,
+      "mean": 0.26011345429350885,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F010_black_king_castled": {
+      "count": 230930,
+      "mean": 0.27313038583120425,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F011_white_king_has_pawn_shield": {
+      "count": 230930,
+      "mean": 0.35884467154549,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F011_black_king_has_pawn_shield": {
+      "count": 230930,
+      "mean": 0.3677867752132681,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F012_white_king_under_attack": {
+      "count": 230930,
+      "mean": 0.043498029705971504,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F012_black_king_under_attack": {
+      "count": 230930,
+      "mean": 0.04369722426709392,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F030_white_piece_mobility": {
+      "count": 230930,
+      "mean": 30.195964144978998,
+      "sample_min": 1,
+      "sample_max": 62
+    },
+    "F030_black_piece_mobility": {
+      "count": 230930,
+      "mean": 29.214532542328843,
+      "sample_min": 1,
+      "sample_max": 57
+    },
+    "F031_white_pieces_on_strong_squares": {
+      "count": 230930,
+      "mean": 0.2183302299398086,
+      "sample_min": 0,
+      "sample_max": 3
+    },
+    "F031_black_pieces_on_strong_squares": {
+      "count": 230930,
+      "mean": 0.20468973281946912,
+      "sample_min": 0,
+      "sample_max": 2
+    },
+    "F032_white_has_bishop_pair": {
+      "count": 230930,
+      "mean": 0.4270038539817261,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F032_black_has_bishop_pair": {
+      "count": 230930,
+      "mean": 0.41617806261637724,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F050_is_capture": {
+      "count": 230930,
+      "mean": 0.26136491577534315,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F051_is_check": {
+      "count": 230930,
+      "mean": 0.13074091716104447,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F052_is_promotion": {
+      "count": 230930,
+      "mean": 0.005828606071103797,
+      "sample_min": false,
+      "sample_max": true
+    },
+    "F053_is_castling": {
+      "count": 230930,
+      "mean": 0.013973931494392241,
+      "sample_min": false,
+      "sample_max": true
+    }
+  }
+}

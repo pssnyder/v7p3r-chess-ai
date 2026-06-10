@@ -1,0 +1,33 @@
+{
+  "conversion_date": "2026-06-03T12:12:27.830179",
+  "threshold": 0.0,
+  "threshold_type": "zero-crossing",
+  "source_files": [
+    "E:\\Programming Stuff\\Chess Engines\\V7P3R Chess AI\\v7p3r-chess-ai\\v6.0\\data\\raw\\human_move_sentiment.csv",
+    "E:\\Programming Stuff\\Chess Engines\\V7P3R Chess AI\\v7p3r-chess-ai\\v6.0\\data\\raw\\bot_move_sentiment.csv"
+  ],
+  "original_counts": {
+    "good": 291816,
+    "bad": 150062,
+    "total": 441878
+  },
+  "balanced_counts": {
+    "good": 150062,
+    "bad": 150062,
+    "total": 300124
+  },
+  "color_distribution_good": {
+    "white": 75978,
+    "black": 74084
+  },
+  "color_distribution_bad": {
+    "white": 75096,
+    "black": 74966
+  },
+  "sentiment_stats": {
+    "good_mean": 1.7873200578446693,
+    "good_std": 2.391405889515101,
+    "bad_mean": -0.5947230478069064,
+    "bad_std": 0.5951503238761238
+  }
+}

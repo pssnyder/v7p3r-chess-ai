@@ -1,0 +1,11 @@
+{
+  "games_played": 3,
+  "total_training_time": 0.0,
+  "wins": 0,
+  "draws": 0,
+  "losses": 3,
+  "avg_game_length": 10.0,
+  "avg_move_time": 0.2607527662206579,
+  "latest_model_loss": 0.0,
+  "performance_milestones": []
+}

@@ -1,0 +1,96 @@
+{
+    "game_config": {
+        "game_count": 1,
+        "white_player": "v7p3r",
+        "black_player": "stockfish"
+    },
+    "v7p3r_config": {
+        "engine_id": "v7p3r_chess_ai_dev",
+        "name": "v7p3r_ai",
+        "version": "0.0.1",
+        "elo_rating": 0,
+        "model_path": "models/v7p3r_model.pkl",
+        "search_depth": 3,
+        "use_personal_history": true,
+        "personal_pgn_path": "data/v7p3r_games.pgn",
+        "personal_style_weights": {
+            "opening_style_influence": 0.8,
+            "middlegame_style_influence": 0.6,
+            "endgame_style_influence": 0.7,
+            "winning_patterns_influence": 0.9,
+            "checkmate_patterns_influence": 1.0,
+            "blunder_possibility": 0.0
+        }
+    },
+    "stockfish_config": {
+        "engine_id": "stockfish_python_release",
+        "name": "stockfish",
+        "version": "17.1",
+        "elo_rating": 400,
+        "stockfish_path": "stockfish.exe",
+        "depth": 4,
+        "debug_mode": false
+    },
+    "training_config": {
+        "learning_rate": 0.001,
+        "discount_factor": 0.99,
+        "exploration_rate": 0.1,
+        "exploration_decay": 0.995,
+        "min_exploration_rate": 0.01,
+        "batch_size": 64,
+        "memory_size": 10000,
+        "episodes": 1000,
+        "target_update_frequency": 10,
+        "save_frequency": 100,
+        "validation_frequency": 50,
+        "rewards": {
+            "checkmate": 100.0,
+            "stalemate": -10.0,
+            "draw": -5.0,
+            "check": 5.0,
+            "safe_capture": {
+                "pawn": 1.0,
+                "knight": 3.0,
+                "bishop": 3.0,
+                "rook": 5.0,
+                "queen": 9.0
+            },
+            "unsafe_capture": {
+                "pawn": -0.5,
+                "knight": -1.5,
+                "bishop": -1.5,
+                "rook": -2.5,
+                "queen": -4.5
+            },
+            "material_advantage": 0.1,
+            "piece_development": 0.5,
+            "center_control": 0.3,
+            "king_safety": 0.8,
+            "castling": 3.0,
+            "pawn_promotion": 8.0,
+            "en_passant_capture": 1.2
+        },
+        "penalties": {
+            "checkmate_against": -100.0,
+            "in_check": -3.0,
+            "piece_hanging": -2.0,
+            "material_disadvantage": -0.1,
+            "undeveloped_pieces": -0.3,
+            "weak_king_position": -0.5,
+            "losing_castling_rights": -1.0,
+            "blocked_pieces": -0.4,
+            "isolated_pawns": -0.2,
+            "doubled_pawns": -0.3
+        },
+        "feature_weights": {
+            "material": 1.0,
+            "position": 0.8,
+            "mobility": 0.6,
+            "king_safety": 1.2,
+            "pawn_structure": 0.5,
+            "center_control": 0.7,
+            "piece_coordination": 0.4,
+            "attacks": 0.9
+        }
+    }
+}
