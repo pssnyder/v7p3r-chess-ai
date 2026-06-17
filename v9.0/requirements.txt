@@ -1,0 +1,13 @@
+# PyTorch with CUDA 12.1 Support
+--index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+torchaudio
+numpy>=1.26.0
+ijson>=3.3.0
+matplotlib>=3.8.0
+
+# Data & Visualization
+numpy>=1.26.0
+ijson>=3.3.0
+matplotlib>=3.8.0
