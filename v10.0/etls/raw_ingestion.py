@@ -9,14 +9,30 @@ import chess.pgn
 import json
 import pyarrow as pa
 import pyarrow.parquet as pq
-from dataset_analyzer import DatasetAnalyzer
+import time
 
+"""
+    Core Record (88 bytes):
+    ├── fen_hash (8 bytes)              ← Deduplication tracking
+    ├── evaluation (2 bytes)
+    ├── depth (1 byte)
+    ├── material (2 bytes)
+    ├── piece_count (1 byte)
+    ├── phase (1 byte)
+    ├── wdl (1 byte)
+    ├── time (4 bytes)
+    ├── clock (2 bytes)
+    ├── castling_en_passant (1 byte)    ← New: bitpacked
+    ├── active_color_halfmove (1 byte)  ← New: bitpacked
+    ├── board_state (64 bytes)          ← New: the actual position
+    └── [total: 88 bytes]
+"""
 # Analysis Mode & Configurations
 ANALYSIS_MODE = True
 FILE_LIMIT = 10
-CSV_MAX_ROWS = 10  # Max rows to read from each CSV file for analysis (set to None for no limit)
-JSONL_MAX_ROWS = 10  # Max lines to read from each JSONL file for analysis (set to None for no limit)
-PGN_MAX_GAMES = 10  # Max games to read from each PGN file for analysis (set to None for no limit)
+CSV_MAX_ROWS = 250000  # Max rows to read from each CSV file for analysis (set to None for no limit)
+JSONL_MAX_ROWS = 250000  # Max lines to read from each JSONL file for analysis (set to None for no limit)
+PGN_MAX_GAMES = 250  # Max games to read from each PGN file for analysis (set to None for no limit)
 
 # Set null, min, and max values
 NULL_FEN_HASH = 0
@@ -54,6 +70,21 @@ ROOK_VALUE = 500
 QUEEN_VALUE = 900
 KING_VALUE = 0
 
+# Piece encoding (4 bits per square):
+EMPTY     = 0b0000
+W_PAWN    = 0b0001
+W_KNIGHT  = 0b0010
+W_BISHOP  = 0b0011
+W_ROOK    = 0b0100
+W_QUEEN   = 0b0101
+W_KING    = 0b0110
+B_PAWN    = 0b1001
+B_KNIGHT  = 0b1010
+B_BISHOP  = 0b1011
+B_ROOK    = 0b1100
+B_QUEEN   = 0b1101
+B_KING    = 0b1110
+
 # Define the directories to scan
 data_directories = [
     r"E:\Programming Stuff\Chess Engines\Chess Engine Playground\engine-metrics\raw_data\game_records",
@@ -83,8 +114,8 @@ file_type_map = {
     '.db': db_files
 }
 
-# Initialize the analyzer
-#data_analyzer = DatasetAnalyzer(parquet_dir="path/to/parquet/files")
+# Timer for the process
+start_time = time.time()
 
 # Scan directories
 for directory in data_directories:
@@ -200,6 +231,44 @@ if ANALYSIS_MODE:
 # ----------------
 # Helper Functions
 # ----------------
+def encode_position(fen_string):
+    """Convert FEN to compact binary representation"""
+    board = chess.Board(fen_string)
+    
+    # 1. Encode board state (64 bytes)
+    board_state = bytearray(64)
+    for square in chess.SQUARES:
+        piece = board.piece_at(square)
+        board_state[square] = encode_piece(piece)
+    
+    # 2. Castling rights (4 bits)
+    castling = 0
+    if board.has_kingside_castling_rights(chess.WHITE):
+        castling |= 0b0100
+    if board.has_queenside_castling_rights(chess.WHITE):
+        castling |= 0b0010
+    if board.has_kingside_castling_rights(chess.BLACK):
+        castling |= 0b1000
+    if board.has_queenside_castling_rights(chess.BLACK):
+        castling |= 0b0001
+    
+    # 3. En passant (2 bits for file 0-7, if target exists)
+    ep_byte = 0
+    if board.ep_square:
+        ep_byte = (chess.square_file(board.ep_square) << 1) | 0x01  # Mark valid
+    
+    castling_ep_byte = (castling << 4) | ep_byte
+    
+    # 4. Active color + halfmove
+    color_byte = ((board.turn << 7) | min(board.halfmove_clock, 127))
+    
+    return {
+        'piece_count': board.piece_count(),
+        'castling_en_passant': castling_ep_byte,
+        'active_color_halfmove': color_byte,
+        'board_state': bytes(board_state),  # 64 bytes
+    }
+
 def extract_eval_and_depth(comment_text: str):
     """Extract eval (cp) and depth from comment text."""
     if not comment_text:
@@ -377,6 +446,7 @@ def ingest_pgn_file(pgn_filepath: str) -> pd.DataFrame:
         while True:
             game = chess.pgn.read_game(pgn_file)  # Read next game
             if game is None or game_count >= PGN_MAX_GAMES:  # No more games or hit limit
+                print(f"Finished reading PGN file: {pgn_filepath} (total games processed: {game_count})")
                 break
             
             game_count += 1
@@ -422,7 +492,9 @@ def ingest_pgn_file(pgn_filepath: str) -> pd.DataFrame:
                     {1: PAWN_VALUE, 2: KNIGHT_VALUE, 3: BISHOP_VALUE, 4: ROOK_VALUE, 5: QUEEN_VALUE, 6: KING_VALUE}.get(p.piece_type, 0)
                     for p in piece_map.values()
                 )
-                piece_count = len(piece_map)
+                # FIX: Apply clamping to material and piece count
+                material = max(MIN_MATERIAL, min(MAX_MATERIAL, material))
+                piece_count = max(MIN_PIECE_COUNT, min(MAX_PIECE_COUNT, len(piece_map)))
 
                 current_turn = board.turn 
 
@@ -446,22 +518,43 @@ def ingest_pgn_file(pgn_filepath: str) -> pd.DataFrame:
                         eval_cp = NULL_EVAL
                     
                     node_depth = node.eval_depth()
-                    depth = int(node_depth) if node_depth is not None else NULL_DEPTH
+                    # FIX: Apply clamping to depth value
+                    depth = max(MIN_DEPTH, min(MAX_DEPTH, int(node_depth))) if node_depth is not None else NULL_DEPTH
                 else:
                     # Fallback when node has no evaluation
                     eval_cp, depth = extract_eval_and_depth(combined_comment)
-
+                """
+                    Core Record (88 bytes):
+                    ├── fen_hash (8 bytes)              ← Deduplication tracking
+                    ├── evaluation (2 bytes)
+                    ├── depth (1 byte)
+                    ├── material (2 bytes)
+                    ├── piece_count (1 byte)
+                    ├── phase (1 byte)
+                    ├── wdl (1 byte)
+                    ├── time (4 bytes)
+                    ├── clock (2 bytes)
+                    ├── castling_en_passant (1 byte)    ← New: bitpacked
+                    ├── active_color_halfmove (1 byte)  ← New: bitpacked
+                    ├── board_state (64 bytes)          ← New: the actual position
+                    └── [total: 88 bytes]
+                """
                 all_records.append({
                     "fen_hash": hash(fen) & 0xFFFFFFFFFFFFFFFF,
                     "evaluation": eval_cp,
                     "depth": depth,
+                    "material": material,
+                    "piece_count": piece_count
+                    "phase": calculate_game_phase(fen),
+                    "wdl": wdl,
                     "time": move_time,
                     "clock": clk_remaining if clk_remaining is not None else NULL_CLOCK,
-                    "wdl": wdl,
-                    "material": material,
-                    "phase": calculate_game_phase(fen),
-                    "piece_count": piece_count,
-                    "fen": fen
+                    "castling_en_passant": 
+                    "active_color_halfmove": 
+                    board_state: 
+                    
+                    
+                    
                 })
 
     return pd.DataFrame(all_records)
@@ -483,6 +576,8 @@ def ingest_jsonl_file(jsonl_filepath: str) -> pd.DataFrame:
                 json_data.append(record)
             except json.JSONDecodeError:
                 continue
+
+    print(f"Finished reading JSONL file: {jsonl_filepath} (total evaluations processed: {len(json_data)})")
 
     # Convert JSONL evaluation example to structured format
     jsonl_records = []
@@ -509,13 +604,22 @@ def ingest_jsonl_file(jsonl_filepath: str) -> pd.DataFrame:
             if pvs_list and isinstance(pvs_list, list):
                 cp_val = pvs_list[0].get("cp", NULL_EVAL)
 
+        # Clamping
+        if depth_val != NULL_DEPTH:
+            depth_val = max(MIN_DEPTH, min(MAX_DEPTH, int(depth_val)))
+
+        if cp_val != NULL_EVAL:
+            cp_val = max(MIN_EVAL, min(MAX_EVAL, int(cp_val)))
+
         # Calculate piece count from fen string (count pieces by counting uppercase and lowercase letters)
         piece_count = sum(c.isalpha() for c in fen_str)
 
         # Calculate material count from fen string
+        piece_zone = fen_str.split()[0]
+        piece_count = sum(c.isalpha() for c in piece_zone)
         material = sum(
             {"p": PAWN_VALUE, "n": KNIGHT_VALUE, "b": BISHOP_VALUE, "r": ROOK_VALUE, "q": QUEEN_VALUE, "k": KING_VALUE}.get(c.lower(), 0)
-            for c in fen_str
+            for c in piece_zone
         )
 
         # Calculate WDL from the perspective of the current side to move in the FEN
@@ -549,70 +653,61 @@ def ingest_jsonl_file(jsonl_filepath: str) -> pd.DataFrame:
 
 def ingest_csv_file(csv_filepath: str) -> pd.DataFrame:
     """Parses a CSV file containing chess puzzles into a structured DataFrame."""
-    # --- Load the file straight into raw_df, sampling only the first 10 rows ---
     raw_df = pd.read_csv(csv_filepath, nrows=CSV_MAX_ROWS)
 
-    # Convert csv puzzles to structured format
     csv_records = []
 
-    # Process rows row-by-row
     for _, row in raw_df.iterrows():
-        # 1. Initialize the board with this puzzle's starting FEN
         start_fen = str(row["FEN"]).strip()
         board = chess.Board(start_fen)
-        
-        # 2. Extract and split ALL available moves into an accessible list
         moves_list = str(row["Moves"]).strip().split()
 
-        for p in range(4):  # Loop through plies 0 to 3 (0=starting position, 1=blunder, 2=solution, 3=post-solution)
-            wdl = NULL_WDL  # Default WDL since we don't know the starting eval
+        for p in range(4):  # Loop through plies 0 to 3
+            wdl = NULL_WDL
 
-            # 3. Step forward sequentially through plies
-            if p > 0:
-                # Ensure the puzzle sequence actually contains enough moves
-                if len(moves_list) >= p:
-                    # p=1 reads moves_list[0] (Blunder)
-                    # p=2 reads moves_list[1] (Solution)
-                    next_move = moves_list[p - 1] 
-                    
-                    try:                       
-                        if p % 2 == 1:
-                            wdl = 1
-                        elif p % 2 == 0:
-                            wdl = -1
-                        move = board.parse_san(next_move)
-                        board.push(move)  # State mutates normally to the next side's turn
-                    except ValueError:
-                        # If parse_san fails, it means we grabbed an illegal/wrong move
-                        pass
+            if p > 0 and len(moves_list) >= p:
+                next_move = moves_list[p - 1]
+                try:
+                    if p % 2 == 1:
+                        wdl = 1
+                    elif p % 2 == 0:
+                        wdl = -1
+                    # FIX: Use from_uci() instead of parse_san() for coordinate notation (e2e4 format)
+                    move = chess.Move.from_uci(next_move)
+                    # Verify the move is legal before applying it
+                    if move in board.legal_moves:
+                        board.push(move)
+                except Exception:
+                    # If move parsing/validation fails, board state stays frozen
+                    pass
 
-            # 4. Gather the newly generated board parameters
             fen_str = board.fen()
             piece_map = board.piece_map()
 
-            # 5. Calculate material score from piece map
             material_score = sum(
-                {1: 100, 2: 320, 3: 330, 4: 500, 5: 900, 6: 0}.get(p.piece_type, 0) 
-                for p in piece_map.values()
+                {1: PAWN_VALUE, 2: KNIGHT_VALUE, 3: BISHOP_VALUE, 4: ROOK_VALUE, 5: QUEEN_VALUE, 6: KING_VALUE}.get(pc.piece_type, 0) 
+                for pc in piece_map.values()
             )
+            material_score = max(MIN_MATERIAL, min(MAX_MATERIAL, material_score))
+            piece_count = max(MIN_PIECE_COUNT, min(MAX_PIECE_COUNT, len(piece_map)))
 
-            # Append mapped structured row entries
             csv_records.append(
                 {
                     "fen_hash": hash(fen_str) & 0xFFFFFFFFFFFFFFFF,
-                    "evaluation": NULL_EVAL,                    # Puzzles don't have evals
-                    "depth": NULL_DEPTH,                           # Static puzzle starting points carry no search depth
-                    "time": NULL_TIME,                     # No move timer fields present
-                    "clock": NULL_CLOCK,                         # No running clocks active
-                    "wdl": wdl,                             # No W/D/L data in CSV puzzle example
+                    "evaluation": NULL_EVAL,
+                    "depth": NULL_DEPTH,
+                    "time": NULL_TIME,
+                    "clock": NULL_CLOCK,
+                    "wdl": wdl,
                     "material": material_score,
                     "phase": calculate_game_phase(fen_str),
-                    "piece_count": len(piece_map),
+                    "piece_count": piece_count,
                     "fen": fen_str
                 }
             )
 
-    # Wrap into the output DataFrame
+    print(f"Finished reading CSV file: {csv_filepath} (total positions processed: {len(csv_records)})")
+
     return pd.DataFrame(csv_records)
 
 # PGN Ingestion
@@ -700,3 +795,4 @@ if ANALYSIS_MODE:
     print(csv_df.head(100))
 
     print(f"Combined dataset contains {len(combined_df)} total positions.")
+    print(f"\nProcessing time: {time.time() - start_time:.2f/60} minutes")

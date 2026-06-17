@@ -1,13 +1,14 @@
 # PyTorch with CUDA 12.1 Support
---index-url https://download.pytorch.org/whl/cu121
+--extra-index-url https://download.pytorch.org/whl/cu121
 torch
 torchvision
 torchaudio
+
+# Data Processing
+pandas>=2.0.0
 numpy>=1.26.0
 ijson>=3.3.0
 matplotlib>=3.8.0
 
-# Data & Visualization
-numpy>=1.26.0
-ijson>=3.3.0
-matplotlib>=3.8.0
+# Chess-Specific Libraries
+python-chess>=1.999

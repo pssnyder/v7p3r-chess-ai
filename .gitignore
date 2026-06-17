@@ -11,6 +11,8 @@ dist/
 *training/
 *puzzles/
 v4.0/data/
+.venv/
+v9.0/data/
 
 # Specific file type exclusions
 *.pgn
@@ -24,3 +26,4 @@ v4.0/data/
 *.jsonl
 *.log
 *.parquet
+v9.0/.venv/*
