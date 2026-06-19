@@ -20,49 +20,52 @@ warnings.filterwarnings("ignore", message=".*Using padding='same' with even kern
 HEADLESS_MODE = True  
 CHECKPOINT_PATH = "models/chess_model_checkpoint_latest.pth"
 # Updated target tracking your newly generated jsonl data splits
-TARGET_TRAINING_DATASET = "data/encoded/split/chess_puzzle_training_dataset_202606171141_train.json"  
+TARGET_TRAINING_DATASET = "data/encoded/split/chess_puzzle_training_dataset_202606171718_train.json"  
 LEARNING_RATE = 0.001
 ESTOP_PATIENCE = 10
 TRAINING_EPOCHS = 100
 SCHEDULER_FACTOR = 0.1  
 SCHEDULER_PATIENCE = 5  
 
-class ParallelLineConv(nn.Module):
+class BoardForceAttention(nn.Module):
     """
-    Scans a 6x6 spatial region on the 8x8 board but zeros out the center cells.
-    Maintains parallel line scanning context adapted for piece relations.
+    Self-Attention engine that maps long-range piece dependencies.
+    Treats the 64 squares as interconnected force points, calculating
+    pairwise tactical relationships regardless of physical board distance.
     """
-    def __init__(self, in_channels, out_channels):
-        super(ParallelLineConv, self).__init__()
-        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=6, padding='same')
-        mask = torch.zeros(6, 6)
-        mask[:, 0] = 1.0  
-        mask[:, 2] = 1.0  
-        self.register_buffer('mask', mask.unsqueeze(0).unsqueeze(0)) 
+    def __init__(self, in_channels, embedding_dim=64):
+        super(BoardForceAttention, self).__init__()
+        self.embedding_dim = embedding_dim
+        # Compress spatial channels into an interaction embedding space
+        self.proj = nn.Conv2d(in_channels, embedding_dim, kernel_size=1)
+        
+        self.query = nn.Linear(embedding_dim, embedding_dim)
+        self.key   = nn.Linear(embedding_dim, embedding_dim)
+        self.value = nn.Linear(embedding_dim, embedding_dim)
+        
+        self.out_conv = nn.Conv2d(embedding_dim, embedding_dim, kernel_size=1)
+        self.bn = nn.BatchNorm2d(embedding_dim)
 
     def forward(self, x):
-        with torch.no_grad():
-            self.conv.weight.mul_(self.mask)
-        return self.conv(x)
-
-class SnakePathConv(nn.Module):
-    """
-    Scans an asymmetric 6x4 bounding box following a coordinate path matrix.
-    Useful for tracking winding piece attacks or knight maneuvers.
-    """
-    def __init__(self, in_channels, out_channels):
-        super(SnakePathConv, self).__init__()
-        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=(6, 4), padding='same')
-        mask = torch.zeros(6, 4)
-        path = [(0,0), (1,0), (2,0), (2,1), (2,2), (2,3), (3,3), (4,3), (5,3)]
-        for r, c in path:
-            mask[r, c] = 1.0
-        self.register_buffer('mask', mask.unsqueeze(0).unsqueeze(0)) 
-
-    def forward(self, x):
-        with torch.no_grad():
-            self.conv.weight.mul_(self.mask)
-        return self.conv(x)
+        batch, c, h, w = x.size()
+        
+        # 1. Project channels and flatten to 64 spatial tokens (8x8 grid)
+        feat = self.proj(x).view(batch, self.embedding_dim, h * w).permute(0, 2, 1) # (B, 64, Dim)
+        
+        # 2. Linear projection for Attention matrices
+        Q = self.query(feat)
+        K = self.key(feat)
+        V = self.value(feat)
+        
+        # 3. Calculate force-field interaction scores (64 x 64 matrix)
+        scores = torch.bmm(Q, K.permute(0, 2, 1)) / (self.embedding_dim ** 0.5)
+        attn_weights = F.softmax(scores, dim=-1)
+        
+        # 4. Contextualize values and reshape back to standard 8x8 grid
+        context = torch.bmm(attn_weights, V) # (B, 64, Dim)
+        context = context.permute(0, 2, 1).view(batch, self.embedding_dim, h, w)
+        
+        return F.relu(self.bn(self.out_conv(context)))
     
 class ChessDataset(Dataset):
     def __init__(self, puzzles, solutions_from, solutions_to):
@@ -122,32 +125,32 @@ def load_and_pack_dataset(file_path):
 
 class V7P3RChessCNN(nn.Module):
     """
-    Refactored version of your multi-lens architecture optimized for an 8x8 board.
-    Implements a dual classification output head for piece origins and targets.
+    Refactored Chess Engine Policy Network.
+    Combines your multi-scale local spatial lenses with a long-range
+    global self-attention force-field layer for high-fidelity move prediction.
     """
     def __init__(self):
         super(V7P3RChessCNN, self).__init__()
         
-        # --- LAYER 1: MULTI-SCALE GEOMETRIC CHESS LENSES ---
-        # Input: 12 channels (Bitboard piece configurations)
-        # Output: 16 filters * 8 lenses = 128 channels
+        # --- PHASE 1: MICRO-SPATIAL REGIONAL LENSES ---
+        # Input: 12 standard bitboard channels
+        # Retaining your structural layout for pawns, blocks, and local clusters
         self.conv2x2 = nn.Conv2d(12, 16, kernel_size=2, padding='same')
         self.conv3x3 = nn.Conv2d(12, 16, kernel_size=3, padding='same')
         self.conv4x4 = nn.Conv2d(12, 16, kernel_size=4, padding='same')
-        self.conv2x6 = nn.Conv2d(12, 16, kernel_size=(2, 6), padding='same')
-        self.conv1x5 = nn.Conv2d(12, 16, kernel_size=(1, 5), padding='same')
-        self.conv5x1 = nn.Conv2d(12, 16, kernel_size=(5, 1), padding='same')
-        self.parallel_lens = ParallelLineConv(12, 16)  
-        self.snake_lens = SnakePathConv(12, 16)  
-
-        self.dropout = nn.Dropout2d(p=0.1)
         
-        # --- LAYER 2: THE SYNTHESIZER ---
-        self.layer2 = nn.Conv2d(128, 64, kernel_size=3, padding='same')
+        # --- PHASE 2: LONG-RANGE FORCE-FIELD OBSERVATION ---
+        # Captures active lines of sight, pins, and King defenses globally
+        self.global_force_lens = BoardForceAttention(in_channels=12, embedding_dim=48)
+        
+        # Combine channels: 16*3 (local) + 48 (global) = 96 feature layers
+        self.dropout = nn.Dropout2d(p=0.3)
+        
+        # --- PHASE 3: THE SYNTHESIZER ---
+        self.layer2 = nn.Conv2d(96, 64, kernel_size=3, padding='same')
         self.bn2 = nn.BatchNorm2d(64)
         
-        # --- LAYER 3: DUAL POLICY HEADS ---
-        # Splitting predictions into departure logits (64) and arrival logits (64)
+        # --- PHASE 4: DUAL POLICY DENSE HEADS ---
         self.from_head = nn.Sequential(
             nn.Conv2d(64, 32, kernel_size=1),
             nn.Flatten(),
@@ -165,24 +168,22 @@ class V7P3RChessCNN(nn.Module):
         )
 
     def forward(self, x):
+        # 1. Run local geometric lenses
         out2x2 = F.relu(self.conv2x2(x))
         out3x3 = F.relu(self.conv3x3(x))
         out4x4 = F.relu(self.conv4x4(x))
-        out2x6 = F.relu(self.conv2x6(x))
-        out1x5 = F.relu(self.conv1x5(x))
-        out5x1 = F.relu(self.conv5x1(x))
-        out_parallel = F.relu(self.parallel_lens(x))  
-        out_snake = F.relu(self.snake_lens(x))  
         
-        x1 = torch.cat([
-            out2x2, out3x3, out4x4, out2x6, out1x5, out5x1, 
-            out_parallel, out_snake        
-        ], dim=1)
+        # 2. Run long-range global relationship lens
+        out_forces = self.global_force_lens(x)
         
+        # 3. Concatenate local shapes and global attention views seamlessly
+        x1 = torch.cat([out2x2, out3x3, out4x4, out_forces], dim=1)
         x1_regularized = self.dropout(x1)
+        
+        # 4. Synthesize down to core features
         x2 = F.relu(self.bn2(self.layer2(x1_regularized)))
         
-        # Branch decisions across separate heads
+        # 5. Output raw move action scores
         logits_from = self.from_head(x2)
         logits_to = self.to_head(x2)
         
